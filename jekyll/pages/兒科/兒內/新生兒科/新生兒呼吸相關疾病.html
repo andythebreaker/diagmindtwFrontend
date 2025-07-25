@@ -35,6 +35,7 @@ title: "新生兒呼吸相關疾病"
     --onenoteInterpreter-new-font-size-h4: calc(var(--onenoteInterpreter-new-font-size-original-L2) - calc(var(--onenoteInterpreter-new-font-size-original-diff) * 2));
     --onenoteInterpreter-new-font-size-h5: calc(var(--onenoteInterpreter-new-font-size-original-L2) - calc(var(--onenoteInterpreter-new-font-size-original-diff) * 3));
     --onenoteInterpreter-new-font-size-h6: calc(var(--onenoteInterpreter-new-font-size-original-L2) - calc(var(--onenoteInterpreter-new-font-size-original-diff) * 4));
+--bangs-height: 14vh;
 }
 
 .newFontSizeRank-1 {
@@ -86,7 +87,7 @@ ul {
     margin-right: 0px !important;
     padding-left: 1rem !important;
     padding-right: 1rem !important;
-    padding-top: 14vh !important;
+    padding-top:var(--bangs-height) !important;
     padding-bottom: 0px !important;
     border: 0px !important;
     background: #ffffffff !important;
@@ -218,29 +219,59 @@ td {
     position: fixed;
     top: 0px;
     left: 0px;
-    background-color: #f6e5c9!important;
+    background-color: #f6e5c9 !important;
     padding: 0 7% 0 3%;
     display: grid;
     align-items: center;
     gap: 2%;
-    height: 14vh;
+    height:var(--bangs-height);
     width: 100vw;
     box-sizing: border-box;
     z-index: 1000;
     direction: rtl;
-    grid-template-columns: 7% 25% 3% 3% 3% 1fr;
+    grid-template-columns: 7% 25% 3% 3% 3% 1fr 18%;
+    /* 增加 logo 區 */
 }
 
-.buttonLogin{
-   background: #5b3717 !important;
-   border-radius: 8%;
-   color: #ffffff !important;
+.logoGroup {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 4px;
+    height: 100%;
 }
 
-.buttonSearch{
-   background: #E0CFBB !important;
-   border-radius: 28%;
-   color: #ffffff !important;
+.logoText {
+    background-color: #ffc0cb00 !important;
+    background-image: url('https://diagmindtw.com/logo/logo%20%E5%AD%97%E5%8E%BB%E8%83%8C.png') !important;
+    background-repeat: no-repeat!important;
+    background-size: contain!important;
+    background-position: center!important;
+    height: calc(calc(var(--bangs-height)*54)/100);
+    width: calc(calc(calc(var(--bangs-height)*54)/100)*3.5);
+}
+
+.logoImage {
+    background-color: #ffc0cb00 !important;
+    background-image: url('https://diagmindtw.com/logo/logo%20%E5%9C%96%E5%8E%BB%E8%83%8C.png') !important;
+    background-repeat: no-repeat!important;
+    background-size: contain!important;
+    background-position: center!important;
+    height: calc(calc(var(--bangs-height)*73)/100);
+    width: calc(calc(var(--bangs-height)*73)/100);
+}
+
+.buttonLogin {
+    background: #5b3717 !important;
+    border-radius: 8%;
+    color: #ffffff !important;
+}
+
+.buttonSearch {
+    background: #E0CFBB !important;
+    border-radius: 28%;
+    color: #ffffff !important;
 }
 
 .itemBangs {
@@ -343,14 +374,18 @@ td {
         <script src="https://kit.fontawesome.com/7042399e68.js" crossorigin="anonymous"></script></head>
 
 <body lang="zh-TW" class="oldFontSize-11.0Pt oldFontFamily-Calibri">
-  <div class="containerBangs newFontSizeRank-3">
-    <div class="itemBangs buttonLogin"><p>登入</p></div>
-    <div class="itemBangs buttonSearch"><p>搜尋</p></div>
-    <div class="itemBangs"><p>題目</p></div>
-    <div class="itemBangs"><p>主題</p></div>
-    <div class="itemBangs"><p>分科</p></div>
-    <div class="itemBangs"><p>彈性空間</p></div>
+<div class="containerBangs newFontSizeRank-3">
+  <div class="itemBangs buttonLogin"><p>登入</p></div>
+  <div class="itemBangs buttonSearch"><p>搜尋</p></div>
+  <div class="itemBangs"><p>題目</p></div>
+  <div class="itemBangs"><p>主題</p></div>
+  <div class="itemBangs"><p>分科</p></div>
+  <div class="itemBangs"></div>
+  <div class="logoGroup">
+  <div class="logoText"></div>
+  <div class="logoImage"></div>
   </div>
+</div>
   <div style="direction:ltr; margin-top:.2187in; margin-left:0in; width:7.6041in" class="outerSpace debugclass250725-2" data-aos="fade-up">
 
 <p style="color:#000000; margin:0in; margin-left:.375in; text-indent:-.1666in; color:black" class="oldFontSize-11.0Pt oldFontFamily-微軟正黑體 oldColor-000000" data-aos="fade-up"><img src="新生兒呼吸相關疾病_asset_0.png" width="16" height="16" alt="相關條目" data-aos="fade-up" class="display-none">&nbsp;相關條目<i class="fa-solid fa-colon"></i></p>
