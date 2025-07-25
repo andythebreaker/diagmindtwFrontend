@@ -31,15 +31,20 @@ function processHtml(html) {
 
   const titleText = $('head > title').text().replace(/\s+/g, '').toLowerCase();
 
-  // Skip if title is empty
-  if (!titleText.trim()) {
-    console.log('Skipped: title is empty');
-    return '';
-  }
+  // Don't skip files with empty titles - many OneNote exported files don't have title tags
+  // if (!titleText.trim()) {
+  //   console.log('Skipped: title is empty');
+  //   return '';
+  // }
 
   const skipTitleKeywords = ['圖庫資源', '模板試作', '工程組', '示範']; // 可加其他你想排除的關鍵詞
 
-  const shouldSkipByTitle = skipTitleKeywords.some(keyword => titleText.includes(keyword));
+  const shouldSkipByTitle = titleText && skipTitleKeywords.some(keyword => titleText.includes(keyword));
+
+  if (shouldSkipByTitle) {
+    console.log('Skipped: title contains keyword indicating a gallery page');
+    return '';
+  }
 
   if (shouldSkipByTitle) {
     console.log('Skipped: title contains keyword indicating a gallery page');
@@ -47,8 +52,8 @@ function processHtml(html) {
   }
 
   const bodyText = $('body').text().replace(/\s+/g, '');
-  if (bodyText.length < 300) {
-    console.log('Skipped: body inner text < 300');
+  if (bodyText.length < 100) {  // Reduced from 300 to 100
+    console.log('Skipped: body inner text < 100');
     return ''; // 回傳空字串，作為「略過」訊號
   }
 
@@ -216,6 +221,39 @@ function processHtml(html) {
   $('table > tbody > tr > td > span').each((_, el) => {
     $(el).addClass('in-table-text-resize');
   });
+
+  $('img').each((_, el) => {
+    const $el = $(el);
+    let width, height;
+    
+    // 先檢查 width 和 height 屬性
+    const widthAttr = $el.attr('width');
+    const heightAttr = $el.attr('height');
+    
+    if (widthAttr && heightAttr) {
+      width = parseInt(widthAttr, 10);
+      height = parseInt(heightAttr, 10);
+    } else {
+      // 如果沒有屬性，再檢查 style
+      const style = $el.attr('style');
+      if (!style) return;
+      const widthMatch = style.match(/width\s*:\s*(\d+)\s*;?/i);
+      const heightMatch = style.match(/height\s*:\s*(\d+)\s*;?/i);
+      if (widthMatch && heightMatch) {
+        width = parseInt(widthMatch[1], 10);
+        height = parseInt(heightMatch[1], 10);
+      } else {
+        return;
+      }
+    }
+    
+    if (width < 20 && height < 20) {
+      $el.addClass('display-none');
+    }
+  });
+
+
+  
 
   return $.html();
 }

@@ -3,4 +3,9 @@ layout: default
 title: Home
 ---
 
-{{ site.data.sections[0].sectionPages[0].pageBody }}
+{% for section in site.data.sections %}
+  {% if section.sectionPages.size > 0 %}
+    {{ section.sectionPages[0].pageBody }}
+    {% break %}
+  {% endif %}
+{% endfor %}

@@ -84,16 +84,20 @@ ul {
     border: 0px !important;
 }
 
-html,
+html {
+    overflow-y: scroll;
+}
+
 body {
     margin: 0px;
     /*padding: 0px; 重要更動 2025 07 24*/
-    padding-top: 1rem;
-    padding-bottom: 1rem;
+    /*padding-top: 1rem;
+    padding-bottom: 1rem;*/
     /*overflow: hidden; 重要更動 2025 07 24*/
-    overflow-y: scroll;
+    overflow-y: hidden;
+    height: max-content;
     overflow-x: hidden;
-    background: #ddb98b !important;
+    background: #f6e5c9 !important;
 }
 
 canvas {

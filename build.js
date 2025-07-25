@@ -83,23 +83,58 @@ fs.rmSync(jekyllSrc, { recursive: true, force: true });
 fs.mkdirSync(pagesDir, { recursive: true });
 fs.mkdirSync(dataDir, { recursive: true });
 
+// Copy image files from a0725v1 directories to dist/pages, preserving structure
+function copyImageFiles(sourceDir, destDir) {
+  function copyImagesRecursively(currentSourceDir, currentDestDir) {
+    const items = fs.readdirSync(currentSourceDir, { withFileTypes: true });
+    
+    items.forEach(item => {
+      const sourcePath = path.join(currentSourceDir, item.name);
+      const destPath = path.join(currentDestDir, item.name);
+      
+      if (item.isDirectory()) {
+        // Recursively copy subdirectories
+        copyImagesRecursively(sourcePath, destPath);
+      } else if (item.isFile() && /\.(png|jpg|jpeg|gif|svg|webp)$/i.test(item.name)) {
+        // Copy image files
+        fs.mkdirSync(currentDestDir, { recursive: true });
+        fs.copyFileSync(sourcePath, destPath);
+        console.log(`Copied image: ${item.name} to ${currentDestDir}`);
+      }
+    });
+  }
+  
+  copyImagesRecursively(sourceDir, destDir);
+}
+
+// Copy images to dist/pages preserving directory structure
+// This will be done after Jekyll generates the site
+
 // Deep copy sections and add URLs while generating page files
 const sectionsForSite = JSON.parse(JSON.stringify(sections));
 
 sectionsForSite.forEach((section, sIndex) => {
-  // 過濾掉要略過的 page
+  // 过滤掉要略过的 page
   section.sectionPages = section.sectionPages.filter((page, pIndex) => {
-    const fileName = `${sIndex}-${pIndex}.html`;
     const processedBody = processHtml(page.pageBody);
 
     if (!processedBody.trim()) {
-      console.log(`Skipped file ${fileName} due to short body text`);
-      return false; // 從 sectionPages 中剔除
+      console.log(`Skipped file ${page.pageInfo.title}.html due to short body text`);
+      return false; // 从 sectionPages 中剔除
     }
 
-    page.url = `/pages/${fileName}`;
+    // Create directory structure in pages folder matching a0725v1
+    const sectionPath = section.sectionInfo.displayName;
+    const pageDirPath = path.join(pagesDir, sectionPath);
+    fs.mkdirSync(pageDirPath, { recursive: true });
+    
+    // Use original filename
+    const fileName = `${page.pageInfo.title}.html`;
+    const filePath = path.join(pageDirPath, fileName);
+    
+    page.url = `/pages/${sectionPath}/${fileName}`;
     const pageContent = `---\nlayout: default\ntitle: ${JSON.stringify(page.pageInfo.title)}\n---\n\n${processedBody}\n`;
-    fs.writeFileSync(path.join(pagesDir, fileName), pageContent);
+    fs.writeFileSync(filePath, pageContent);
     return true;
   });
 });
@@ -111,7 +146,17 @@ const layoutContent = `{{ content }}`;
 fs.mkdirSync(path.join(jekyllSrc, '_layouts'), { recursive: true });
 fs.writeFileSync(path.join(jekyllSrc, '_layouts', 'default.html'), layoutContent);
 
-const indexContent = `---\nlayout: default\ntitle: Home\n---\n\n{{ site.data.sections[0].sectionPages[0].pageBody }}`;
+const indexContent = `---
+layout: default
+title: Home
+---
+
+{% for section in site.data.sections %}
+  {% if section.sectionPages.size > 0 %}
+    {{ section.sectionPages[0].pageBody }}
+    {% break %}
+  {% endif %}
+{% endfor %}`;
 fs.writeFileSync(path.join(jekyllSrc, 'index.html'), indexContent);
 
 fs.writeFileSync(path.join(jekyllSrc, '_config.yml'), 'title: OneNote Notebook\n');
@@ -137,6 +182,8 @@ try {
 
 console.log('Static site generated in ./dist');
 
+// Copy images to dist/pages preserving directory structure
+copyImageFiles(dataPath, path.join(__dirname, 'dist', 'pages'));
 
 const destDir = path.resolve(__dirname, './dist');
 
