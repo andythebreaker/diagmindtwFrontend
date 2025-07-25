@@ -253,15 +253,18 @@ function processHtml(html) {
       if (!text) return;
 
       text = text
+        .replace(/[=＝]/g, '@@@@@i class="fa-solid fa-equals"@@@@@@@@@@/i@@@@@')
         .replace(/[<]/g, '<i class="fa-light fa-chevron-left"')
+        .replace(/[^-]->/g, '<i class="fa-light fa-arrow-right"></i>')
         .replace(/[>]/g, '<i class="fa-light fa-chevron-right"></i>')
         .replace(/[\(（]/g, '<i class="fa-light fa-bracket-round"></i>')
         .replace(/[\)）]/g, '<i class="fa-light fa-bracket-round-right"></i>')
         .replace(/[,，]/g, '<i class="fa-solid fa-comma"></i>')
-        .replace(/[:：]/g, '<i class="fa-solid fa-colon"></i>');
-
-        // Replace all <i class="fa-light fa-chevron-left" with <i class="fa-light fa-chevron-left"></i>
-        text = text.replace(/<i class="fa-light fa-chevron-left"/g, '<i class="fa-light fa-chevron-left"></i>');
+        .replace(/[:：]/g, '<i class="fa-solid fa-colon"></i>')
+        .replace(/[＆&]/g, '<i class="fa-light fa-ampersand"></i>');
+        
+      text = text.replace(/<i class="fa-light fa-chevron-left"/g, '<i class="fa-light fa-chevron-left"></i>')
+      .replace(/@@@@@i class="fa-solid fa-equals"@@@@@@@@@@\/i@@@@@/g, '<i class="fa-solid fa-equals"></i>');
 
       $(textNode).replaceWith(text);
     });
