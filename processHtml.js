@@ -74,10 +74,13 @@ function processHtml(html) {
     if ($children.length > 1) {
       $children.eq(1).addClass('dateTimeStringDom');
     }
-    $children.each((idx, el) => {
-      if (idx === 2 || idx > 2) {
+    // Convert to array, reverse, then process
+    Array.from($children).reverse().forEach((el, reversedIdx) => {
+      const originalIdx = $children.length - 1 - reversedIdx;
+      if (originalIdx === 2 || originalIdx > 2) {
         const $el = $(el);
         $el.addClass('outerSpace');
+        $el.addClass(`debugclass250725-${originalIdx}`);
         $el.prependTo('body');
       }
     });
@@ -115,7 +118,9 @@ function processHtml(html) {
     // 處理 font-family
     const fontFamilyMatch = style.match(/font-family\s*:\s*([^;]+)/i);
     if (fontFamilyMatch) {
-      const fontFamily = fontFamilyMatch[1].trim().replace(/['"]/g, '').replace(/\s+/g, '');
+      let fontFamily = fontFamilyMatch[1].trim();
+      // 處理 HTML entities 如 &quot;
+      fontFamily = fontFamily.replace(/&quot;/g, '"').replace(/['"]/g, '').replace(/\s+/g, '');
       $el.addClass(`oldFontFamily-${fontFamily}`);
     }
 
@@ -232,13 +237,38 @@ function processHtml(html) {
     `);
   }
 
+  $('body *').each((_, el) => {
+    const $el = $(el);
+
+    // Skip script elements
+    if ($el.is('script')) return;
+
+    // Only process elements that have direct text content (not nested HTML)
+    const textNodes = $el.contents().filter(function () {
+      return this.nodeType === 3; // Text node
+    });
+
+    textNodes.each((_, textNode) => {
+      let text = $(textNode).text();
+      if (!text) return;
+
+      text = text
+        .replace(/[<]/g, '<i class="fa-light fa-chevron-left"')
+        .replace(/[>]/g, '<i class="fa-light fa-chevron-right"></i>')
+        .replace(/[\(（]/g, '<i class="fa-light fa-bracket-round"></i>')
+        .replace(/[\)）]/g, '<i class="fa-light fa-bracket-round-right"></i>')
+        .replace(/[,，]/g, '<i class="fa-solid fa-comma"></i>')
+        .replace(/[:：]/g, '<i class="fa-solid fa-colon"></i>');
+
+        // Replace all <i class="fa-light fa-chevron-left" with <i class="fa-light fa-chevron-left"></i>
+        text = text.replace(/<i class="fa-light fa-chevron-left"/g, '<i class="fa-light fa-chevron-left"></i>');
+
+      $(textNode).replaceWith(text);
+    });
+  });// 一定要在插index html 之前
+
   // 插入 script 為 body 的最後一個子元素
   $('body').append(readTextFileSync("index.html"));
-
-  // $('img').each((_, el) => {
-  //   const $img = $(el);
-  //   $img.wrap('<div class="image-wrapper-h-center"></div>');
-  // });
 
   $('*').each((_, el) => {//跟上面只移除部分fontsize有功能重複一點點
     const $el = $(el);
@@ -247,7 +277,7 @@ function processHtml(html) {
     const newStyle = style
       .split(';')
       .map(s => s.trim())
-      .filter(s => !/^font-size\s*:/i.test(s))
+      .filter(s => !/^font-size\s*:/i.test(s) && !/^font-family\s*:/i.test(s))
       .join('; ');
     if (newStyle) {
       $el.attr('style', newStyle);

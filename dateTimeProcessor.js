@@ -97,7 +97,10 @@ function dateTimeProcessor($) {
 
     $('head').append(`<link href="https://fonts.googleapis.com/css2?family=Quicksand&display=swap" rel="stylesheet">
         <script src="//s3-ap-northeast-1.amazonaws.com/justfont-user-script/jf-65691.js"></script>
-        <script src="https://kit.fontawesome.com/65b47a30d3.js" crossorigin="anonymous"></script>`);
+        <!--light-->
+        <script src="https://kit.fontawesome.com/65b47a30d3.js" crossorigin="anonymous"></script>
+        <!--solid-->
+        <script src="https://kit.fontawesome.com/7042399e68.js" crossorigin="anonymous"></script>`);
 
     return $;
 }
