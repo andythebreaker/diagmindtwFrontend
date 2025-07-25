@@ -112,6 +112,13 @@ function processHtml(html) {
       $el.addClass(`oldFontSize-${size}Pt`);
     }
 
+    // 處理 font-family
+    const fontFamilyMatch = style.match(/font-family\s*:\s*([^;]+)/i);
+    if (fontFamilyMatch) {
+      const fontFamily = fontFamilyMatch[1].trim().replace(/['"]/g, '').replace(/\s+/g, '');
+      $el.addClass(`oldFontFamily-${fontFamily}`);
+    }
+
     // 處理 color
     const colorMatch = style.match(/color\s*:\s*(#[0-9a-fA-F]{3,6})/i);
     if (colorMatch) {

@@ -13,6 +13,8 @@ function htmlPreprocessMiddleware(htmlString) {
         .replace(/\b(en-US|en-[a-zA-Z]{2})\b/gi, 'zh-TW')
         .replace(/lang\s*=\s*["']en["']/gi, 'lang="zh-TW"');
 
+    processedHtml = processedHtml.replace(/➔/g, '<i class="fa-light fa-arrow-right"></i>');
+
     return processedHtml;
 }
 
