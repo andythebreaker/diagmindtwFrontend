@@ -50,7 +50,7 @@
 }
 
 * {
-    font-family: 'Source Han Sans TC', 'Iansui', sans-serif !important;
+    font-family: 'Quicksand', 'jf-lanyangming', 'Source Han Sans TC', 'Iansui', sans-serif !important;
     font-weight: 600 !important;
     background: #ffffff00 !important;
 }
@@ -75,13 +75,20 @@ ul {
     box-sizing: border-box ! important;
     /* 100vh 減去上下 margin 各 1rem */
     /*height: var(--outerSpace-height) !important; 重要更動 2025 07 24*/
-    width: var(--outerSpace-width) !important;
+    width: 100vw !important;
+    /*var(--outerSpace-width) !important;*/
     height: fit-content !important;
     /*margin: 1rem !important; 重要更動 2025 07 24*/
-    margin-left: 1rem !important;
-    margin-right: 1rem !important;
-    padding: 0px !important;
+    margin-top: 14vh !important;
+    margin-bottom: 0px !important;
+    margin-left: 0px !important;
+    margin-right: 0px !important;
+    padding-left: 1rem !important;
+    padding-right: 1rem !important;
+    padding-top: 0px !important;
+    padding-bottom: 0px !important;
     border: 0px !important;
+    background: #ffffffff !important;
 }
 
 html {
@@ -89,10 +96,13 @@ html {
 }
 
 body {
-    margin: 0px;
+    margin-bottom: 0px;
+    margin-top: 0px;
+    margin-left: 0px;
+    margin-right: 0px;
     /*padding: 0px; 重要更動 2025 07 24*/
-    /*padding-top: 1rem;
-    padding-bottom: 1rem;*/
+    /*padding-top: 14vh; XXX*/
+    /*padding-bottom: 1rem;*/
     /*overflow: hidden; 重要更動 2025 07 24*/
     overflow-y: hidden;
     height: max-content;
@@ -213,9 +223,33 @@ td {
     display: none !important;
 }
 
-.outerSpaceWithTopic{
+.outerSpaceWithTopic {
     display: none !important;
 }
+
+/*瀏海區****************************/
+
+.containerBangs {
+    position: sticky;
+    background-color: #f6e5c9;
+    padding: 26% 7% 26% 3%;
+    display: grid;
+    grid-template-columns: 7% 25% 3% 3% 3% 1fr;
+    direction: rtl;
+    gap: 2%;
+    height: 14vh;
+    max-height: 14vh;
+    box-sizing: border-box;
+}
+
+.itemBangs {
+    background-color: #ccc;
+    text-align: center;
+    padding: 10px;
+    border: 1px solid #999;
+}
+
+/*end of瀏海區****************************/
 
 /*
 這一段是AI自動產生的(跟垃圾一樣)

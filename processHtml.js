@@ -286,6 +286,17 @@ function processHtml(html) {
   // Call dateTimeProcessor to process date/time information
   dateTimeProcessor($);
 
+  $('body').prepend(`
+  <div class="containerBangs">
+    <div class="itemBangs">7%</div>
+    <div class="itemBangs">25%</div>
+    <div class="itemBangs">3%</div>
+    <div class="itemBangs">3%</div>
+    <div class="itemBangs">3%</div>
+    <div class="itemBangs">彈性空間</div>
+  </div>
+  `);
+
   return $.html();
 }
 
