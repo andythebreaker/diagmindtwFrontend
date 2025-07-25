@@ -216,7 +216,6 @@ function processHtml(html) {
   });
 
   const styleTag = `<style>
-  ${readTextFileSync('fonts.css')}
   ${readTextFileSync('index.css')}
   </style>`;
 
