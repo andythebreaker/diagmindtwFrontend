@@ -22,47 +22,55 @@ if (!fs.existsSync(dataPath)) {
 function readSectionsFromDirectory(baseDir) {
   const sections = [];
   
-  // Read all directories in a0725v1 (these are the main sections)
-  const sectionDirs = fs.readdirSync(baseDir, { withFileTypes: true })
-    .filter(dirent => dirent.isDirectory())
-    .map(dirent => dirent.name);
-  
-  sectionDirs.forEach(sectionName => {
-    const sectionPath = path.join(baseDir, sectionName);
-    const sectionPages = [];
+  function traverseDirectory(currentDir, relativePath = '') {
+    const items = fs.readdirSync(currentDir, { withFileTypes: true });
     
-    // Read all HTML files in this section directory (skip .mht files)
-    const files = fs.readdirSync(sectionPath, { withFileTypes: true })
-      .filter(dirent => dirent.isFile() && dirent.name.endsWith('.html') && !dirent.name.endsWith('.mht'))
-      .map(dirent => dirent.name);
+    // First, collect all HTML files in current directory
+    const htmlFiles = items
+      .filter(item => item.isFile() && item.name.endsWith('.html') && !item.name.endsWith('.mht'))
+      .map(item => item.name);
     
-    files.forEach(fileName => {
-      const filePath = path.join(sectionPath, fileName);
-      try {
-        const pageBody = fs.readFileSync(filePath, 'utf8');
-        const pageTitle = fileName.replace('.html', '');
-        
-        sectionPages.push({
-          pageInfo: {
-            title: pageTitle
-          },
-          pageBody: pageBody
-        });
-      } catch (err) {
-        console.warn(`Failed to read file ${filePath}:`, err.message);
-      }
-    });
-    
-    if (sectionPages.length > 0) {
-      sections.push({
-        sectionInfo: {
-          displayName: sectionName
-        },
-        sectionPages: sectionPages
+    if (htmlFiles.length > 0) {
+      const sectionPages = [];
+      
+      htmlFiles.forEach(fileName => {
+        const filePath = path.join(currentDir, fileName);
+        try {
+          const pageBody = fs.readFileSync(filePath, 'utf8');
+          const pageTitle = fileName.replace('.html', '');
+          
+          sectionPages.push({
+            pageInfo: {
+              title: pageTitle
+            },
+            pageBody: pageBody
+          });
+        } catch (err) {
+          console.warn(`Failed to read file ${filePath}:`, err.message);
+        }
       });
+      
+      if (sectionPages.length > 0) {
+        const sectionName = relativePath || path.basename(currentDir);
+        sections.push({
+          sectionInfo: {
+            displayName: sectionName
+          },
+          sectionPages: sectionPages
+        });
+      }
     }
-  });
+    
+    // Then, recursively traverse subdirectories
+    const subDirs = items.filter(item => item.isDirectory());
+    subDirs.forEach(subDir => {
+      const subDirPath = path.join(currentDir, subDir.name);
+      const newRelativePath = relativePath ? `${relativePath}/${subDir.name}` : subDir.name;
+      traverseDirectory(subDirPath, newRelativePath);
+    });
+  }
   
+  traverseDirectory(baseDir);
   return sections;
 }
 
@@ -108,14 +116,6 @@ fs.writeFileSync(path.join(jekyllSrc, 'index.html'), indexContent);
 
 fs.writeFileSync(path.join(jekyllSrc, '_config.yml'), 'title: OneNote Notebook\n');
 
-// copy assets if directory exists
-const assetsPath = path.join(__dirname, 'assets');
-if (fs.existsSync(assetsPath)) {
-  fs.cpSync(assetsPath, path.join(jekyllSrc, 'assets'), { recursive: true });
-} else {
-  console.log('Assets directory not found, skipping assets copy');
-}
-
 const tmpBatPath = path.join(__dirname, 'run_jekyll_build.bat');
 const batContent = `@echo off
 jekyll build -s "${jekyllSrc}" -d "dist"
@@ -138,14 +138,13 @@ try {
 console.log('Static site generated in ./dist');
 
 
-const srcDir = path.resolve(__dirname, '../');
 const destDir = path.resolve(__dirname, './dist');
 
 // Ensure the destination directory exists
 fse.ensureDirSync(destDir);
 
-// Copy 'fonts' directory
-const fontsSrc = path.join(srcDir, 'fonts');
+// Copy 'fonts' directory (same directory as build.js)
+const fontsSrc = path.join(__dirname, 'fonts');
 const fontsDest = path.join(destDir, 'fonts');
 
 fse.copy(fontsSrc, fontsDest, { overwrite: true }, (err) => {
@@ -156,8 +155,8 @@ fse.copy(fontsSrc, fontsDest, { overwrite: true }, (err) => {
   }
 });
 
-// Copy 'shader.frag' file
-const shaderSrc = path.join(srcDir, '/onenote/shader.frag');
+// Copy 'shader.frag' file (same directory as build.js)
+const shaderSrc = path.join(__dirname, 'shader.frag');
 const shaderDest = path.join(destDir, 'shader.frag');
 
 fse.copyFile(shaderSrc, shaderDest, (err) => {

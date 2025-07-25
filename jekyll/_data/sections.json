@@ -7,7 +7,151 @@
   },
   {
     "sectionInfo": {
+      "displayName": "兒科/兒內"
+    },
+    "sectionPages": []
+  },
+  {
+    "sectionInfo": {
+      "displayName": "兒科/兒內/新生兒科"
+    },
+    "sectionPages": []
+  },
+  {
+    "sectionInfo": {
+      "displayName": "兒科/兒外"
+    },
+    "sectionPages": []
+  },
+  {
+    "sectionInfo": {
       "displayName": "內科"
+    },
+    "sectionPages": []
+  },
+  {
+    "sectionInfo": {
+      "displayName": "內科/CV"
+    },
+    "sectionPages": []
+  },
+  {
+    "sectionInfo": {
+      "displayName": "內科/CV/Aortic disease"
+    },
+    "sectionPages": []
+  },
+  {
+    "sectionInfo": {
+      "displayName": "內科/CV/Ischemic heart disease（IHD）"
+    },
+    "sectionPages": []
+  },
+  {
+    "sectionInfo": {
+      "displayName": "內科/CV/Vascular disease"
+    },
+    "sectionPages": []
+  },
+  {
+    "sectionInfo": {
+      "displayName": "內科/GI"
+    },
+    "sectionPages": []
+  },
+  {
+    "sectionInfo": {
+      "displayName": "內科/GI/上消化道-上消化道出血"
+    },
+    "sectionPages": []
+  },
+  {
+    "sectionInfo": {
+      "displayName": "內科/GI/上消化道-吞嚥困難與食道疾病"
+    },
+    "sectionPages": []
+  },
+  {
+    "sectionInfo": {
+      "displayName": "內科/GI/上消化道-胃部疾病"
+    },
+    "sectionPages": []
+  },
+  {
+    "sectionInfo": {
+      "displayName": "內科/GI/小腸疾病-腹瀉與吸收障礙"
+    },
+    "sectionPages": []
+  },
+  {
+    "sectionInfo": {
+      "displayName": "內科/GI/急性腹症"
+    },
+    "sectionPages": []
+  },
+  {
+    "sectionInfo": {
+      "displayName": "內科/GI/結腸疾病"
+    },
+    "sectionPages": []
+  },
+  {
+    "sectionInfo": {
+      "displayName": "內科/GI/膽道感染與腫瘤"
+    },
+    "sectionPages": []
+  },
+  {
+    "sectionInfo": {
+      "displayName": "內科/GI/膽道疾病-膽結石與膽囊炎"
+    },
+    "sectionPages": []
+  },
+  {
+    "sectionInfo": {
+      "displayName": "內科/內科值班常見情形"
+    },
+    "sectionPages": []
+  },
+  {
+    "sectionInfo": {
+      "displayName": "內科/胸內"
+    },
+    "sectionPages": []
+  },
+  {
+    "sectionInfo": {
+      "displayName": "內科/胸內/Critical care"
+    },
+    "sectionPages": []
+  },
+  {
+    "sectionInfo": {
+      "displayName": "內科/胸內/Respiratory failure"
+    },
+    "sectionPages": []
+  },
+  {
+    "sectionInfo": {
+      "displayName": "內科/胸內/感染"
+    },
+    "sectionPages": []
+  },
+  {
+    "sectionInfo": {
+      "displayName": "內科/胸內/肋膜疾病"
+    },
+    "sectionPages": []
+  },
+  {
+    "sectionInfo": {
+      "displayName": "內科/胸內/阻塞性肺疾病"
+    },
+    "sectionPages": []
+  },
+  {
+    "sectionInfo": {
+      "displayName": "內科/胸內/限制性肺疾病"
     },
     "sectionPages": []
   },
@@ -19,7 +163,79 @@
   },
   {
     "sectionInfo": {
+      "displayName": "其他科/皮膚科"
+    },
+    "sectionPages": []
+  },
+  {
+    "sectionInfo": {
+      "displayName": "其他科/眼科"
+    },
+    "sectionPages": []
+  },
+  {
+    "sectionInfo": {
+      "displayName": "其他科/精神科"
+    },
+    "sectionPages": []
+  },
+  {
+    "sectionInfo": {
       "displayName": "外科"
+    },
+    "sectionPages": []
+  },
+  {
+    "sectionInfo": {
+      "displayName": "外科/GS"
+    },
+    "sectionPages": []
+  },
+  {
+    "sectionInfo": {
+      "displayName": "外科/NS"
+    },
+    "sectionPages": []
+  },
+  {
+    "sectionInfo": {
+      "displayName": "外科/心外"
+    },
+    "sectionPages": []
+  },
+  {
+    "sectionInfo": {
+      "displayName": "外科/心外/冠狀動脈疾病及冠狀動脈繞道手術"
+    },
+    "sectionPages": []
+  },
+  {
+    "sectionInfo": {
+      "displayName": "外科/心外/周邊血管疾病"
+    },
+    "sectionPages": []
+  },
+  {
+    "sectionInfo": {
+      "displayName": "外科/心外/心臟瓣膜疾病"
+    },
+    "sectionPages": []
+  },
+  {
+    "sectionInfo": {
+      "displayName": "外科/心外/發紺型先天心臟病"
+    },
+    "sectionPages": []
+  },
+  {
+    "sectionInfo": {
+      "displayName": "外科/胸外"
+    },
+    "sectionPages": []
+  },
+  {
+    "sectionInfo": {
+      "displayName": "外科/骨科"
     },
     "sectionPages": []
   },
@@ -31,7 +247,85 @@
   },
   {
     "sectionInfo": {
+      "displayName": "婦產科/GYN"
+    },
+    "sectionPages": []
+  },
+  {
+    "sectionInfo": {
+      "displayName": "婦產科/GYN/一般婦科學"
+    },
+    "sectionPages": []
+  },
+  {
+    "sectionInfo": {
+      "displayName": "婦產科/GYN/不孕症"
+    },
+    "sectionPages": []
+  },
+  {
+    "sectionInfo": {
+      "displayName": "婦產科/GYN/女性內分泌學"
+    },
+    "sectionPages": []
+  },
+  {
+    "sectionInfo": {
+      "displayName": "婦產科/GYN/婦科良性與惡性腫瘤"
+    },
+    "sectionPages": []
+  },
+  {
+    "sectionInfo": {
+      "displayName": "婦產科/OB"
+    },
+    "sectionPages": []
+  },
+  {
+    "sectionInfo": {
+      "displayName": "婦產科/OB/生產時期"
+    },
+    "sectionPages": []
+  },
+  {
+    "sectionInfo": {
+      "displayName": "婦產科/OB/產後時期"
+    },
+    "sectionPages": []
+  },
+  {
+    "sectionInfo": {
+      "displayName": "婦產科/OP"
+    },
+    "sectionPages": []
+  },
+  {
+    "sectionInfo": {
+      "displayName": "婦產科/URO"
+    },
+    "sectionPages": []
+  },
+  {
+    "sectionInfo": {
+      "displayName": "婦產科/胚胎解剖學"
+    },
+    "sectionPages": []
+  },
+  {
+    "sectionInfo": {
+      "displayName": "婦產科/高危險妊娠"
+    },
+    "sectionPages": []
+  },
+  {
+    "sectionInfo": {
       "displayName": "籌備行政事項"
+    },
+    "sectionPages": []
+  },
+  {
+    "sectionInfo": {
+      "displayName": "籌備行政事項/FC架構參考"
     },
     "sectionPages": []
   }
