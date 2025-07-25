@@ -1,0 +1,208 @@
+<!--AOS 區-->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js" integrity="sha512-A7AYk1fGKX6S2SsHywmPkrnzTZHrgiVT7GcQkLGDe2ev0aWb8zejytzS8wjo7PGEXKqJOrjQ4oORtnimIRZBtw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" integrity="sha512-1cK78a1o+ht2JcaW6g8OXYwqpev9+6GqOkz9xmBN9iUUhIndKtxwILGWYOSibOKjLsEdjyjZvYDq/cZwNeak0w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+<script>
+  AOS.init();
+</script>
+<!--ENDOF AOS 區-->
+
+<!--important 背景GPU區-->
+<!--script src="https://cdn.jsdelivr.net/npm/glslCanvas@0.2.6/dist/GlslCanvas.min.js"></script>
+<script>
+    fetch("/shader.frag")
+        .then(res => res.text())
+        .then(fragmentShader => {
+            const canvas = document.getElementById("glsl-canvas");
+            canvas.setAttribute("data-fragment", fragmentShader);
+            new GlslCanvas(canvas);
+        });
+</script-->
+<!--ENDOF 背景GPU區-->
+<!--important 字體選擇區 (生產環境請移除) -->
+<script src="
+https://cdn.jsdelivr.net/npm/sweetalert2@11.22.2/dist/sweetalert2.all.min.js
+"></script>
+<link href="
+https://cdn.jsdelivr.net/npm/sweetalert2@11.22.2/dist/sweetalert2.min.css
+" rel="stylesheet">
+<script>
+    function selFont() {
+        const fonts = {
+            "ChenYuluoyan Mono": [100],
+            "ChenYuluoyan": [100],
+            "GenKiGothic2TW": [200, 300, 400, 500, 700, 800],
+            "GenYoGothic2TW": [200, 300, 400, 500, 550, 700, 800],
+            "Iansui": [400],
+            "PingFang HK": [100, 200, 300, 400, 500, 600],
+            "PingFang SC": [100, 200, 300, 400, 500, 600],
+            "PingFang TC": [100, 200, 300, 400, 500, 600],
+            "Source Han Sans TC": [200, 300, 400, 500, 600, 700, 800],
+            "Source Han Serif TC": [200, 300, 400, 500, 600, 700, 800]
+        };
+
+        const fontOptions = Object.keys(fonts).map(f => `<option value="${f}">${f}</option>`).join('');
+        const weightOptions = wList => wList.map(w => `<option value="${w}">${w}</option>`).join('');
+
+        Swal.fire({
+            title: '選擇字體與權重(共有48種組合)',
+            html: `
+      <label for="font-select">字體:</label>
+      <select id="font-select" class="swal2-select" onchange="updateWeightOptions()">
+        ${fontOptions}
+      </select>
+      <br><br>
+      <label for="weight-select">權重:</label>
+      <select id="weight-select" class="swal2-select">
+        ${weightOptions(fonts["ChenYuluoyan Mono"])}
+      </select>
+    `,
+            didOpen: () => {
+                window.updateWeightOptions = function () {
+                    const font = document.getElementById("font-select").value;
+                    const weightSelect = document.getElementById("weight-select");
+                    weightSelect.innerHTML = weightOptions(fonts[font]);
+                }
+            },
+            preConfirm: () => {
+                const font = document.getElementById("font-select").value;
+                const weight = document.getElementById("weight-select").value;
+                return { font, weight };
+            },
+            showCancelButton: true,
+            confirmButtonText: '套用',
+            cancelButtonText: '取消'
+        }).then((result) => {
+            if (result.isConfirmed) {
+                const { font, weight } = result.value;
+                const style = document.createElement('style');
+                style.innerHTML = `
+        * {
+          font-family: '${font}', sans-serif !important;
+          font-weight: ${weight} !important;
+        }
+      `;
+                document.head.appendChild(style);
+            }
+        });
+    }
+</script>
+<button class="float-button" onclick="selFont()">選擇字體</button>
+<!--ENDOF 字體選擇區 (生產環境請移除) -->
+<!--important 主字體大小選擇區 (生產環境請移除) 此段AI生成 (些微手動更動)-->
+<div id="font-controls">
+    <button id="decrease">➖</button>
+    <span id="font-size-display">16px</span>
+    <button id="increase">➕</button>
+</div>
+<script>
+    const html = document.documentElement;
+    const step = 2; // 每次加減 px 數
+    const min = 12;
+    const max = 48;
+
+    function getFontSize() {
+        return parseFloat(getComputedStyle(html).fontSize);
+    }
+
+    function setFontSize(size) {
+        html.style.fontSize = size + 'px';
+        document.getElementById('font-size-display').textContent = size + 'px';
+    }
+
+    document.getElementById('increase').addEventListener('click', () => {
+        let newSize = getFontSize() + step;
+        if (newSize <= max) setFontSize(newSize);
+    });
+
+    document.getElementById('decrease').addEventListener('click', () => {
+        let newSize = getFontSize() - step;
+        if (newSize >= min) setFontSize(newSize);
+    });
+
+    document.getElementById('font-size-display').textContent = getFontSize() + 'px';
+</script>
+<!--ENDOF 主字體大小選擇區 (生產環境請移除) -->
+
+<!--dev only 上一頁下一頁導航區-->
+<div class="dev-toc-nav-buttons">
+    <button id="prev-page" class="dev-toc-nav-button" title="上一頁">◀</button>
+    <button id="next-page" class="dev-toc-nav-button" title="下一頁">▶</button>
+</div>
+
+<script>
+function initNavigation() {
+    // 解析 TOC 結構
+    const tocDiv = document.getElementById('toc-for-dev');
+    const pages = [];
+    
+    if (tocDiv) {
+        const links = tocDiv.querySelectorAll('a[href]');
+        links.forEach(link => {
+            pages.push({
+                url: link.getAttribute('href'),
+                title: link.textContent.trim()
+            });
+        });
+    }
+    
+    // 獲取當前頁面 URL
+    const currentUrl = window.location.pathname;
+    
+    // 找到當前頁面在 TOC 中的位置
+    const currentIndex = pages.findIndex(page => page.url === currentUrl);
+    
+    const prevButton = document.getElementById('prev-page');
+    const nextButton = document.getElementById('next-page');
+    
+    // 設置上一頁按鈕
+    if (currentIndex > 0) {
+        prevButton.disabled = false;
+        prevButton.onclick = () => {
+            window.location.href = pages[currentIndex - 1].url;
+        };
+        prevButton.title = `上一頁: ${pages[currentIndex - 1].title}`;
+    } else {
+        prevButton.disabled = true;
+    }
+    
+    // 設置下一頁按鈕
+    if (currentIndex >= 0 && currentIndex < pages.length - 1) {
+        nextButton.disabled = false;
+        nextButton.onclick = () => {
+            window.location.href = pages[currentIndex + 1].url;
+        };
+        nextButton.title = `下一頁: ${pages[currentIndex + 1].title}`;
+    } else {
+        nextButton.disabled = true;
+    }
+    
+    // 如果當前頁面不在 TOC 中，禁用所有按鈕
+    if (currentIndex === -1) {
+        prevButton.disabled = true;
+        nextButton.disabled = true;
+    }
+}
+
+// 頁面載入完成後初始化導航
+document.addEventListener('DOMContentLoaded', initNavigation);
+</script>
+<!--ENDOF 上一頁下一頁導航區-->
+
+<!--開發用toc-->
+<div id="toc-for-dev" class="ui grid" style="display:none;">
+    <div class="four wide column">
+        <ul>
+            {% for section in site.data.sections %}
+            <li>
+                <h3>{{ section.sectionInfo.displayName | default: section.sectionInfo.name }}</h3>
+                <ul>
+                    {% for page in section.sectionPages %}
+                    <li><a href="{{ page.url }}">{{ page.pageInfo.title }}</a></li>
+                    {% endfor %}
+                </ul>
+            </li>
+            {% endfor %}
+        </ul>
+    </div>
+</div>
+<!--END OF開發用toc-->

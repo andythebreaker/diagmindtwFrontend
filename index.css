@@ -1,0 +1,291 @@
+:root {
+    --outerSpace-width: calc(100vw - 2rem);
+    --outerSpace-height: calc(100vh - 2rem);
+    --outerSpace-left: 0px;
+    --outerSpace-top: 0px;
+    --color-wakakusa-2: #fff3c1;
+    --color-wakakusa-4: #3eb4b6;
+    --color-wakakusa-1: #fffef3;
+    --color-akizakura-1: #f8f3f9;
+    --color-akizakura-3: #e1a3c7;
+    --color-akizakura-5: #960533;
+    --color-akizakura-6: #700329;
+    --color-enbi-6: #372d4e;
+    --color-enbi-4: #68486c;
+    --onenoteInterpreter-new-font-size-original-L1: 1.7rem;
+    /*1.5rem;*/
+    --onenoteInterpreter-new-font-size-original-L2: 1.5rem;
+    /*1.12rem;*/
+    --onenoteInterpreter-new-font-size-original-diff: calc(var(--onenoteInterpreter-new-font-size-original-L1) - var(--onenoteInterpreter-new-font-size-original-L2));
+    --onenoteInterpreter-new-font-size-h1: var(--onenoteInterpreter-new-font-size-original-L1);
+    --onenoteInterpreter-new-font-size-h2: var(--onenoteInterpreter-new-font-size-original-L2);
+    --onenoteInterpreter-new-font-size-h3: calc(var(--onenoteInterpreter-new-font-size-original-L2) - var(--onenoteInterpreter-new-font-size-original-diff));
+    --onenoteInterpreter-new-font-size-h4: calc(var(--onenoteInterpreter-new-font-size-original-L2) - calc(var(--onenoteInterpreter-new-font-size-original-diff) * 2));
+    --onenoteInterpreter-new-font-size-h5: calc(var(--onenoteInterpreter-new-font-size-original-L2) - calc(var(--onenoteInterpreter-new-font-size-original-diff) * 3));
+    --onenoteInterpreter-new-font-size-h6: calc(var(--onenoteInterpreter-new-font-size-original-L2) - calc(var(--onenoteInterpreter-new-font-size-original-diff) * 4));
+}
+
+.newFontSizeRank-1 {
+    font-size: var(--onenoteInterpreter-new-font-size-h1) !important;
+}
+
+.newFontSizeRank-2 {
+    font-size: var(--onenoteInterpreter-new-font-size-h2) !important;
+}
+
+.newFontSizeRank-3 {
+    font-size: var(--onenoteInterpreter-new-font-size-h3) !important;
+}
+
+.newFontSizeRank-4 {
+    font-size: var(--onenoteInterpreter-new-font-size-h4) !important;
+}
+
+.newFontSizeRank-5 {
+    font-size: var(--onenoteInterpreter-new-font-size-h5) !important;
+}
+
+.newFontSizeRank-6 {
+    font-size: var(--onenoteInterpreter-new-font-size-h6) !important;
+}
+
+* {
+    font-family: 'Source Han Sans TC', 'Iansui', sans-serif !important;
+    font-weight: 600 !important;
+    background: #ffffff00 !important;
+}
+
+ul,
+li {
+    margin-top: 0.2rem !important;
+    margin-bottom: 0.2rem !important;
+}
+
+ul {
+    padding-inline-start: 2vw;
+    /* 更小的縮排 */
+}
+
+.outerSpace {
+    /*overflow-y: scroll !important; 重要更動 2025 07 24*/
+    position: static !important;
+    top: var(--outerSpace-top) !important;
+    left: var(--outerSpace-left) !important;
+    /* 元素的 width 和 height，會包含 padding 和 border。*/
+    box-sizing: border-box ! important;
+    /* 100vh 減去上下 margin 各 1rem */
+    /*height: var(--outerSpace-height) !important; 重要更動 2025 07 24*/
+    width: var(--outerSpace-width) !important;
+    height: fit-content !important;
+    /*margin: 1rem !important; 重要更動 2025 07 24*/
+    margin-left: 1rem !important;
+    margin-right: 1rem !important;
+    padding: 0px !important;
+    border: 0px !important;
+}
+
+html,
+body {
+    margin: 0px;
+    /*padding: 0px; 重要更動 2025 07 24*/
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    /*overflow: hidden; 重要更動 2025 07 24*/
+    overflow-y: scroll;
+    overflow-x: hidden;
+    background: #ddb98b !important;
+}
+
+canvas {
+    display: #ffffff;
+    width: 100vw;
+    height: 100vh;
+}
+
+/*.titleL1*/
+.outerSpace>ul {
+    list-style-type: none;
+    padding-inline-start: 0;
+    padding-left: 1vw ! important;
+    padding-right: 1vw ! important;
+}
+
+.outerSpace>ul>li {
+    list-style-type: none !important;
+}
+
+.outerSpace>ul>li>p:first-of-type {
+    background-color: var(--color-wakakusa-4) !important;
+    padding-left: 0.4rem ! important;
+    padding-bottom: 0.8rem !important;
+    padding-top: 0.8rem !important;
+    padding-right: 0.4rem !important;
+    margin-top: 0.4rem !important;
+    margin-bottom: 0.4rem !important;
+    text-align: center !important;
+    box-shadow: 0 0 0.3rem var(--color-enbi-4);
+}
+
+.outerSpace>ul>li>p>span:first-of-type {
+    /*
+    x-large 96*27 (1.5rem)
+    2rem:138*36
+    */
+    font-size: var(--onenoteInterpreter-new-font-size-h1);
+    color: var(--color-wakakusa-1) !important;
+}
+
+/*.titleL2 struture copyed from above*/
+.titleL2ul {
+    list-style-type: none;
+    padding-inline-start: 0;
+    padding-left: 0.5vw ! important;
+    padding-right: 0.5vw ! important;
+}
+
+.titleL2li {
+    list-style-type: none !important;
+}
+
+.titleL2p {
+    box-shadow: 0 0 0.3rem var(--color-enbi-4);
+    background: linear-gradient(to right, var(--color-akizakura-1), var(--color-akizakura-3)) !important;
+    background-color: var(--color-akizakura-3) !important;
+    padding-left: 0.4rem ! important;
+    padding-right: 0.4rem !important;
+
+    padding-bottom: 0.3rem !important;
+    padding-top: 0.4rem !important;
+    margin-top: 0.4rem !important;
+    margin-bottom: 0.5rem !important;
+
+    border-bottom-width: 2px !important;
+    border-bottom-style: groove !important;
+    border-bottom-color: var(--color-akizakura-5) !important;
+    /*border-radius: 50% / 25% ! important;*/
+}
+
+.titleL2span {
+    /* 我原本是寫 larger(105.61*20) 但 larger 是 相對父層變大 large( 108*20 ) (1.12rem 107.53*20)比較合適 (1.1 rem = 105.61*20)*/
+    font-size: var(--onenoteInterpreter-new-font-size-h2) !important;
+    color: var(--color-akizakura-6) !important;
+}
+
+img,
+tbody {
+    /* 關鍵：保持在文件流中，但允許使用 left */
+    position: relative !important;
+    /* 使用 CSS 變數 */
+    left: calc(var(--outerSpace-left) + calc(var(--outerSpace-width) / 2)) !important;
+    /* 將圖片水平居中 */
+    transform: translateX(-50%) !important;
+    /* 確保圖片是塊級元素 */
+    display: block !important;
+    border-radius: 1rem;
+    padding: 0.3rem;
+    border: var(--color-enbi-6) 0.2rem dashed;
+    box-shadow: 0 0 0.4rem var(--color-enbi-4);
+    margin: 0.3rem !important;
+}
+
+table {
+    border: 0px !important;
+}
+
+.in-table-text-resize {
+    font-size: var(--onenoteInterpreter-new-font-size-h5) !important;
+}
+
+table img {
+    position: static !important;
+    transform: translateX(0%) !important;
+}
+
+td {
+    padding: 0.2rem !important;
+}
+
+.display-none {
+    display: none !important;
+}
+
+/*
+這一段是AI自動產生的(跟垃圾一樣)
+*/
+
+.float-button {
+    position: fixed !important;
+    bottom: 1rem !important;
+    right: 1rem !important;
+    z-index: 1000 !important;
+    background-color: var(--color-wakakusa-2) !important;
+    border-radius: 50% !important;
+    padding: 0.5rem !important;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2) !important;
+}
+
+#font-controls {
+    position: fixed;
+    top: 10px;
+    right: 10px;
+    display: flex;
+    gap: 0.5rem;
+    z-index: 9999;
+}
+
+#font-controls button {
+    font-size: 18px;
+    padding: 10px 14px;
+    cursor: pointer;
+    border: none;
+    border-radius: 8px;
+    /*手動調整*/
+    background-color: #ffc0da !important;
+    color: white;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+    transition: background-color 0.2s !important;
+}
+
+#font-controls button:hover {
+    /*手動調整*/
+    background-color: #ffc0cb !important;
+}
+
+/*上一頁下一頁導航區 (AI)*/
+.dev-toc-nav-buttons {
+    position: absolute;
+    /*bottom: 20px; 重要更動 24 07 24*/
+    top: 90vw;
+    left: 20px;
+    display: flex;
+    gap: 10px;
+    z-index: 1000;
+}
+
+.dev-toc-nav-button {
+    background: rgba(68, 211, 32, 0.747) !important;
+    color: white;
+    border: none;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    cursor: pointer;
+    font-size: 18px;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.dev-toc-nav-button:hover {
+    background: rgba(0, 0, 0, 0.9);
+    transform: scale(1.1);
+}
+
+.dev-toc-nav-button:disabled {
+    background: rgba(0, 0, 0, 0.3);
+    cursor: not-allowed;
+    transform: none;
+}
+
+/*END OF AI*/
