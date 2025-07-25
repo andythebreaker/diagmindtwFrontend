@@ -418,50 +418,29 @@ li {
 
 ul {
     padding-inline-start: 2vw;
-    /* 更小的縮排 */
 }
 
 .outerSpace {
-    /*overflow-y: scroll !important; 重要更動 2025 07 24*/
-    position: static !important;
-    top: var(--outerSpace-top) !important;
-    left: var(--outerSpace-left) !important;
-    /* 元素的 width 和 height，會包含 padding 和 border。*/
     box-sizing: border-box ! important;
-    /* 100vh 減去上下 margin 各 1rem */
-    /*height: var(--outerSpace-height) !important; 重要更動 2025 07 24*/
     width: 100vw !important;
-    /*var(--outerSpace-width) !important;*/
-    height: fit-content !important;
-    /*margin: 1rem !important; 重要更動 2025 07 24*/
-    margin-top: 14vh !important;
+    margin-top: 0px !important;
     margin-bottom: 0px !important;
     margin-left: 0px !important;
     margin-right: 0px !important;
     padding-left: 1rem !important;
     padding-right: 1rem !important;
-    padding-top: 0px !important;
+    padding-top: 14vh !important;
     padding-bottom: 0px !important;
     border: 0px !important;
     background: #ffffffff !important;
 }
 
-/*html {
-    overflow-y: scroll;
-}*/
 
 body {
     margin-bottom: 0px;
     margin-top: 0px;
     margin-left: 0px;
     margin-right: 0px;
-    /*padding: 0px; 重要更動 2025 07 24*/
-    /*padding-top: 14vh; XXX*/
-    /*padding-bottom: 1rem;*/
-    /*overflow: hidden; 重要更動 2025 07 24*/
-    /*overflow-y: hidden;*/
-    height: max-content;
-    /*overflow-x: hidden;*/
     background: #f6e5c9 !important;
 }
 
@@ -496,10 +475,6 @@ canvas {
 }
 
 .outerSpace>ul>li>p>span:first-of-type {
-    /*
-    x-large 96*27 (1.5rem)
-    2rem:138*36
-    */
     font-size: var(--onenoteInterpreter-new-font-size-h1);
     color: var(--color-wakakusa-1) !important;
 }
@@ -531,11 +506,9 @@ canvas {
     border-bottom-width: 2px !important;
     border-bottom-style: groove !important;
     border-bottom-color: var(--color-akizakura-5) !important;
-    /*border-radius: 50% / 25% ! important;*/
 }
 
 .titleL2span {
-    /* 我原本是寫 larger(105.61*20) 但 larger 是 相對父層變大 large( 108*20 ) (1.12rem 107.53*20)比較合適 (1.1 rem = 105.61*20)*/
     font-size: var(--onenoteInterpreter-new-font-size-h2) !important;
     color: var(--color-akizakura-6) !important;
 }
@@ -588,27 +561,39 @@ td {
     position: fixed;
     top: 0px;
     left: 0px;
-    background-color: #f6e5c9;
-    padding-right: 7%;
-    padding-left: 3%;
+    background-color: #f6e5c9!important;
+    padding: 0 7% 0 3%;
     display: grid;
-    grid-template-columns: 7% 25% 3% 3% 3% 1fr;
-    direction: rtl;
+    align-items: center;
     gap: 2%;
     height: 14vh;
     width: 100vw;
     box-sizing: border-box;
     z-index: 1000;
+    direction: rtl;
+    grid-template-columns: 7% 25% 3% 3% 3% 1fr;
+}
+
+.buttonLogin{
+   background: #5b3717 !important;
+   border-radius: 8%;
+   color: #ffffff !important;
+}
+
+.buttonSearch{
+   background: #E0CFBB !important;
+   border-radius: 28%;
+   color: #ffffff !important;
 }
 
 .itemBangs {
-    margin-top: 26%;
-    margin-bottom: 26%;
+    height: 46%;
     background-color: #ccc;
     text-align: center;
-    /*padding: 10px;*/
-    border: 1px solid #999;
+    align-items: center;
+    justify-content: center;
 }
+
 
 /*end of瀏海區****************************/
 
@@ -634,6 +619,7 @@ td {
     display: flex;
     gap: 0.5rem;
     z-index: 9999;
+    display: none;
 }
 
 #font-controls button {
@@ -656,11 +642,11 @@ td {
 
 /*上一頁下一頁導航區 (AI)*/
 .dev-toc-nav-buttons {
+    display: none;
     position: absolute;
-    /*bottom: 20px; 重要更動 24 07 24*/
     top: 90vw;
     left: 20px;
-    display: flex;
+    /*display: flex;*/
     gap: 10px;
     z-index: 1000;
 }
@@ -696,14 +682,14 @@ td {
         <script src="//s3-ap-northeast-1.amazonaws.com/justfont-user-script/jf-65691.js"></script>
         <script src="https://kit.fontawesome.com/65b47a30d3.js" crossorigin="anonymous"></script></head>
 
-<body lang="zh-TW" style="font-family:Calibri" class="oldFontSize-11.0Pt" data-aos="fade-up">
-  <div class="containerBangs">
-    <div class="itemBangs">7%</div>
-    <div class="itemBangs">25%</div>
-    <div class="itemBangs">3%</div>
-    <div class="itemBangs">3%</div>
-    <div class="itemBangs">3%</div>
-    <div class="itemBangs">彈性空間</div>
+<body lang="zh-TW" style="font-family:Calibri" class="oldFontSize-11.0Pt">
+  <div class="containerBangs newFontSizeRank-3">
+    <div class="itemBangs buttonLogin"><p>登入</p></div>
+    <div class="itemBangs buttonSearch"><p>搜尋</p></div>
+    <div class="itemBangs"><p>題目</p></div>
+    <div class="itemBangs"><p>主題</p></div>
+    <div class="itemBangs"><p>分科</p></div>
+    <div class="itemBangs"><p>彈性空間</p></div>
   </div>
   <div style="direction:ltr; margin-top:.2187in; margin-left:.0493in; width:7.9506in" class="outerSpace" data-aos="fade-up">
 
@@ -713,7 +699,7 @@ td {
   <ul type="circle" style="direction:ltr; unicode-bidi:embed; margin-top:0in; margin-bottom:0in" data-aos="fade-up">
    <li style="margin-top:0; margin-bottom:0; vertical-align:middle" data-aos="fade-up"><span style="font-family:微軟正黑體" class="oldFontSize-14.0Pt" data-aos="fade-up">體溫</span></li>
    <ul type="disc" style="direction:ltr; unicode-bidi:embed; margin-top:0in; margin-bottom:0in" data-aos="fade-up">
-    <li style="margin-top:0; margin-bottom:0; vertical-align:middle" data-aos="fade-up"><span style="font-family:微軟正黑體" lang="zh-TW" class="oldFontSize-11.0Pt" data-aos="fade-up">早上</span><span style="font-family:微軟正黑體" lang="zh-TW" class="oldFontSize-11.0Pt" data-aos="fade-up">:&gt;37.2</span><span style="font-family:微軟正黑體" lang="zh-TW" class="oldFontSize-11.0Pt" data-aos="fade-up">度<br>
+    <li style="margin-top:0; margin-bottom:0; vertical-align:middle" data-aos="fade-up"><span style="font-family:微軟正黑體" lang="zh-TW" class="oldFontSize-11.0Pt" data-aos="fade-up">早上</span><span style="font-family:微軟正黑體" lang="zh-TW" class="oldFontSize-11.0Pt" data-aos="fade-up">:&gt;37.2</span><span style="font-family:微軟正黑體" lang="zh-TW" class="oldFontSize-11.0Pt" data-aos="fade-up">度<br data-aos="fade-up">
                 晚上</span><span style="font-family:微軟正黑體" lang="zh-TW" class="oldFontSize-11.0Pt" data-aos="fade-up">:&gt;37.7</span><span style="font-family:微軟正黑體" lang="zh-TW" class="oldFontSize-11.0Pt" data-aos="fade-up">度</span></li>
    </ul>
    <li style="margin-top:0; margin-bottom:0; vertical-align:middle" data-aos="fade-up"><span style="font-family:微軟正黑體" lang="zh-TW" class="oldFontSize-14.0Pt" data-aos="fade-up">惡性高熱</span><span style="font-family:微軟正黑體" lang="zh-TW" class="oldFontSize-14.0Pt" data-aos="fade-up">Hyperpyrexia</span></li>
@@ -763,12 +749,12 @@ td {
  <div style="direction:ltr" data-aos="fade-up">
  <table border="1" cellpadding="0" cellspacing="0" valign="top" style="direction:ltr; border-collapse:collapse; border-style:solid; border-color:#A3A3A3; border-width:
   1pt; margin-left:1.4583in" title="" summary="" class="oldColor-a3a3a3" data-aos="fade-up">
-  <tbody><tr>
+  <tbody data-aos="fade-up"><tr data-aos="fade-up">
    <td style="border-style:solid; border-color:#A3A3A3; border-width:1pt; vertical-align:top; width:.8006in; padding:2.0pt 3.0pt 2.0pt 3.0pt" class="oldColor-a3a3a3" data-aos="fade-up">
    <p style="margin:0in; font-family:微軟正黑體" class="oldFontSize-11.0Pt" data-aos="fade-up">可能病因</p>
    </td>
    <td style="border-style:solid; border-color:#A3A3A3; border-width:1pt; vertical-align:top; width:1.7715in; padding:2.0pt 3.0pt 2.0pt 3.0pt" class="oldColor-a3a3a3" data-aos="fade-up">
-   <p style="margin:0in; font-family:微軟正黑體" class="oldFontSize-11.0Pt" data-aos="fade-up"><span lang="zh-TW">發燒</span><span lang="zh-TW">pattern</span></p>
+   <p style="margin:0in; font-family:微軟正黑體" class="oldFontSize-11.0Pt" data-aos="fade-up"><span lang="zh-TW" data-aos="fade-up">發燒</span><span lang="zh-TW" data-aos="fade-up">pattern</span></p>
    </td>
    <td style="border-style:solid; border-color:#A3A3A3; border-width:1pt; vertical-align:top; width:1.0493in; padding:2.0pt 3.0pt 2.0pt 3.0pt" class="oldColor-a3a3a3" data-aos="fade-up">
    <p style="margin:0in; font-family:微軟正黑體" class="oldFontSize-11.0Pt" data-aos="fade-up">病程</p>
@@ -780,10 +766,10 @@ td {
    <p style="margin:0in; font-family:微軟正黑體" class="oldFontSize-11.0Pt" data-aos="fade-up">身體檢查</p>
    </td>
    <td style="border-style:solid; border-color:#A3A3A3; border-width:1pt; vertical-align:top; width:.9756in; padding:2.0pt 3.0pt 2.0pt 3.0pt" class="oldColor-a3a3a3" data-aos="fade-up">
-   <p style="margin:0in; font-family:微軟正黑體" class="oldFontSize-11.0Pt" data-aos="fade-up"><span lang="zh-TW">檢查安排</span><span lang="zh-TW">/</span><span lang="zh-TW">治療</span></p>
+   <p style="margin:0in; font-family:微軟正黑體" class="oldFontSize-11.0Pt" data-aos="fade-up"><span lang="zh-TW" data-aos="fade-up">檢查安排</span><span lang="zh-TW" data-aos="fade-up">/</span><span lang="zh-TW" data-aos="fade-up">治療</span></p>
    </td>
   </tr>
-  <tr>
+  <tr data-aos="fade-up">
    <td style="border-style:solid; border-color:#A3A3A3; border-width:1pt; vertical-align:top; width:.8006in; padding:2.0pt 3.0pt 2.0pt 3.0pt" class="oldColor-a3a3a3" data-aos="fade-up">
    <p style="margin:0in; font-family:微軟正黑體" class="oldFontSize-11.0Pt" data-aos="fade-up">細菌、病毒感染</p>
    </td>
@@ -792,11 +778,11 @@ td {
    <p style="margin:0in; font-family:微軟正黑體" class="oldFontSize-11.0Pt" data-aos="fade-up">&nbsp;</p>
    <p style="margin:0in" data-aos="fade-up"><img src="發燒_asset_0.png" width="153" height="90" alt="機器產生的替代文字:
 
-"></p>
+" data-aos="fade-up"></p>
    <p style="margin:0in; font-family:微軟正黑體" class="oldFontSize-11.0Pt" data-aos="fade-up">&nbsp;</p>
    </td>
    <td style="border-style:solid; border-color:#A3A3A3; border-width:1pt; vertical-align:top; width:1.0493in; padding:2.0pt 3.0pt 2.0pt 3.0pt" class="oldColor-a3a3a3" data-aos="fade-up">
-   <p style="margin:0in; font-family:微軟正黑體" class="oldFontSize-11.0Pt" data-aos="fade-up"><span lang="zh-TW">持續高燒，但波動不超過</span><span lang="zh-TW"> 1°C</span><span lang="zh-TW">。</span></p>
+   <p style="margin:0in; font-family:微軟正黑體" class="oldFontSize-11.0Pt" data-aos="fade-up"><span lang="zh-TW" data-aos="fade-up">持續高燒，但波動不超過</span><span lang="zh-TW" data-aos="fade-up"> 1°C</span><span lang="zh-TW" data-aos="fade-up">。</span></p>
    </td>
    <td style="border-style:solid; border-color:#A3A3A3; border-width:1pt; vertical-align:top; width:1.0326in; padding:2.0pt 3.0pt 2.0pt 3.0pt" class="oldColor-a3a3a3" data-aos="fade-up">
    <p style="margin:0in; font-family:微軟正黑體" class="oldFontSize-11.0Pt" data-aos="fade-up">最近的症狀（咳嗽、喉嚨痛等），接觸史，疫苗接種情況。</p>
@@ -807,11 +793,11 @@ td {
    <p style="margin:0in; font-family:微軟正黑體" lang="zh-TW" class="oldFontSize-11.0Pt" data-aos="fade-up">&nbsp;</p>
    </td>
    <td style="border-style:solid; border-color:#A3A3A3; border-width:1pt; vertical-align:top; width:.959in; padding:2.0pt 3.0pt 2.0pt 3.0pt" class="oldColor-a3a3a3" data-aos="fade-up">
-   <p style="margin:0in; font-family:微軟正黑體" class="oldFontSize-11.0Pt" data-aos="fade-up"><span lang="zh-TW">血液檢查（</span><span lang="zh-TW">CBC</span><span lang="zh-TW">、</span><span lang="zh-TW">CRP</span><span lang="zh-TW">）、胸部</span><span lang="zh-TW">X</span><span lang="zh-TW">光。抗生素或抗病毒治療。</span></p>
+   <p style="margin:0in; font-family:微軟正黑體" class="oldFontSize-11.0Pt" data-aos="fade-up"><span lang="zh-TW" data-aos="fade-up">血液檢查（</span><span lang="zh-TW" data-aos="fade-up">CBC</span><span lang="zh-TW" data-aos="fade-up">、</span><span lang="zh-TW" data-aos="fade-up">CRP</span><span lang="zh-TW" data-aos="fade-up">）、胸部</span><span lang="zh-TW" data-aos="fade-up">X</span><span lang="zh-TW" data-aos="fade-up">光。抗生素或抗病毒治療。</span></p>
    <p style="margin:0in; font-family:微軟正黑體" lang="zh-TW" class="oldFontSize-11.0Pt" data-aos="fade-up">&nbsp;</p>
    </td>
   </tr>
-  <tr>
+  <tr data-aos="fade-up">
    <td style="border-style:solid; border-color:#A3A3A3; border-width:1pt; vertical-align:top; width:.8006in; padding:2.0pt 3.0pt 2.0pt 3.0pt" class="oldColor-a3a3a3" data-aos="fade-up">
    <p style="margin:0in; font-family:微軟正黑體" class="oldFontSize-11.0Pt" data-aos="fade-up">心內膜炎、病毒感染</p>
    </td>
@@ -821,11 +807,11 @@ td {
    <p style="margin:0in; font-family:微軟正黑體" class="oldFontSize-11.0Pt" data-aos="fade-up">&nbsp;</p>
    <p style="margin:0in" data-aos="fade-up"><img src="發燒_asset_1.png" width="144" height="90" alt="機器產生的替代文字:
 
-"></p>
+" data-aos="fade-up"></p>
    <p style="margin:0in; font-family:微軟正黑體" class="oldFontSize-11.0Pt" data-aos="fade-up">&nbsp;</p>
    </td>
    <td style="border-style:solid; border-color:#A3A3A3; border-width:1pt; vertical-align:top; width:1.0493in; padding:2.0pt 3.0pt 2.0pt 3.0pt" class="oldColor-a3a3a3" data-aos="fade-up">
-   <p style="margin:0in; font-family:微軟正黑體" class="oldFontSize-11.0Pt" data-aos="fade-up"><span lang="zh-TW">高燒，但體溫波動超過</span><span lang="zh-TW"> 1°C </span><span lang="zh-TW">且不恢復至正常體溫。</span></p>
+   <p style="margin:0in; font-family:微軟正黑體" class="oldFontSize-11.0Pt" data-aos="fade-up"><span lang="zh-TW" data-aos="fade-up">高燒，但體溫波動超過</span><span lang="zh-TW" data-aos="fade-up"> 1°C </span><span lang="zh-TW" data-aos="fade-up">且不恢復至正常體溫。</span></p>
    </td>
    <td style="border-style:solid; border-color:#A3A3A3; border-width:1pt; vertical-align:top; width:1.0326in; padding:2.0pt 3.0pt 2.0pt 3.0pt" class="oldColor-a3a3a3" data-aos="fade-up">
    <p style="margin:0in; font-family:微軟正黑體" class="oldFontSize-11.0Pt" data-aos="fade-up">發燒時間長短，出現症狀的頻率，心臟病史。</p>
@@ -840,9 +826,9 @@ td {
    <p style="margin:0in; font-family:微軟正黑體" lang="zh-TW" class="oldFontSize-11.0Pt" data-aos="fade-up">&nbsp;</p>
    </td>
   </tr>
-  <tr>
+  <tr data-aos="fade-up">
    <td style="border-style:solid; border-color:#A3A3A3; border-width:1pt; vertical-align:top; width:.7784in; padding:2.0pt 3.0pt 2.0pt 3.0pt" class="oldColor-a3a3a3" data-aos="fade-up">
-   <p style="margin:0in; font-family:微軟正黑體" class="oldFontSize-11.0Pt" data-aos="fade-up"><span lang="zh-TW">TB</span><span lang="zh-TW">、</span><span lang="zh-TW">JIA</span></p>
+   <p style="margin:0in; font-family:微軟正黑體" class="oldFontSize-11.0Pt" data-aos="fade-up"><span lang="zh-TW" data-aos="fade-up">TB</span><span lang="zh-TW" data-aos="fade-up">、</span><span lang="zh-TW" data-aos="fade-up">JIA</span></p>
    </td>
    <td style="border-style:solid; border-color:#A3A3A3; border-width:1pt; vertical-align:top; width:1.8118in; padding:2.0pt 3.0pt 2.0pt 3.0pt" class="oldColor-a3a3a3" data-aos="fade-up">
    <p style="margin:0in; font-family:微軟正黑體" class="oldFontSize-11.0Pt" data-aos="fade-up"><span style="font-weight:bold" lang="zh-TW" data-aos="fade-up">Intermittent (</span><span style="font-weight:bold" lang="zh-TW" data-aos="fade-up">間歇性發燒</span><span style="font-weight:
@@ -850,7 +836,7 @@ td {
    <p style="margin:0in; font-family:微軟正黑體" class="oldFontSize-11.0Pt" data-aos="fade-up">&nbsp;</p>
    <p style="margin:0in" data-aos="fade-up"><img src="發燒_asset_2.png" width="122" height="75" alt="機器產生的替代文字:
 
-"></p>
+" data-aos="fade-up"></p>
    <p style="margin:0in; font-family:微軟正黑體" class="oldFontSize-11.0Pt" data-aos="fade-up">&nbsp;</p>
    </td>
    <td style="border-style:solid; border-color:#A3A3A3; border-width:1pt; vertical-align:top; width:1.0493in; padding:2.0pt 3.0pt 2.0pt 3.0pt" class="oldColor-a3a3a3" data-aos="fade-up">
@@ -865,11 +851,11 @@ td {
    <p style="margin:0in; font-family:微軟正黑體" lang="zh-TW" class="oldFontSize-11.0Pt" data-aos="fade-up">&nbsp;</p>
    </td>
    <td style="border-style:solid; border-color:#A3A3A3; border-width:1pt; vertical-align:top; width:.9756in; padding:2.0pt 3.0pt 2.0pt 3.0pt" class="oldColor-a3a3a3" data-aos="fade-up">
-   <p style="margin:0in; font-family:微軟正黑體" class="oldFontSize-11.0Pt" data-aos="fade-up"><span lang="zh-TW">血液檢查、痰液檢查、</span><span lang="zh-TW">X</span><span lang="zh-TW">光或</span><span lang="zh-TW">CT</span><span lang="zh-TW">。抗生素或抗結核治療。</span></p>
+   <p style="margin:0in; font-family:微軟正黑體" class="oldFontSize-11.0Pt" data-aos="fade-up"><span lang="zh-TW" data-aos="fade-up">血液檢查、痰液檢查、</span><span lang="zh-TW" data-aos="fade-up">X</span><span lang="zh-TW" data-aos="fade-up">光或</span><span lang="zh-TW" data-aos="fade-up">CT</span><span lang="zh-TW" data-aos="fade-up">。抗生素或抗結核治療。</span></p>
    <p style="margin:0in; font-family:微軟正黑體" lang="zh-TW" class="oldFontSize-11.0Pt" data-aos="fade-up">&nbsp;</p>
    </td>
   </tr>
-  <tr>
+  <tr data-aos="fade-up">
    <td style="border-style:solid; border-color:#A3A3A3; border-width:1pt; vertical-align:top; width:.8006in; padding:2.0pt 3.0pt 2.0pt 3.0pt" class="oldColor-a3a3a3" data-aos="fade-up">
    <p style="margin:0in; font-family:微軟正黑體" class="oldFontSize-11.0Pt" data-aos="fade-up">布氏桿菌</p>
    </td>
@@ -879,7 +865,7 @@ td {
    <p style="margin:0in; font-family:微軟正黑體" class="oldFontSize-11.0Pt" data-aos="fade-up">&nbsp;</p>
    <p style="margin:0in" data-aos="fade-up"><img src="發燒_asset_3.png" width="126" height="73" alt="機器產生的替代文字:
 
-"></p>
+" data-aos="fade-up"></p>
    <p style="margin:0in; font-family:微軟正黑體" class="oldFontSize-11.0Pt" data-aos="fade-up">&nbsp;</p>
    </td>
    <td style="border-style:solid; border-color:#A3A3A3; border-width:1pt; vertical-align:top; width:1.0493in; padding:2.0pt 3.0pt 2.0pt 3.0pt" class="oldColor-a3a3a3" data-aos="fade-up">
@@ -898,7 +884,7 @@ td {
    <p style="margin:0in; font-family:微軟正黑體" lang="zh-TW" class="oldFontSize-11.0Pt" data-aos="fade-up">&nbsp;</p>
    </td>
   </tr>
-  <tr>
+  <tr data-aos="fade-up">
    <td style="border-style:solid; border-color:#A3A3A3; border-width:1pt; vertical-align:top; width:.7604in; padding:2.0pt 3.0pt 2.0pt 3.0pt" class="oldColor-a3a3a3" data-aos="fade-up">
    <p style="margin:0in; font-family:微軟正黑體" class="oldFontSize-11.0Pt" data-aos="fade-up">登革熱</p>
    </td>
@@ -908,7 +894,7 @@ td {
    <p style="margin:0in; font-family:微軟正黑體" class="oldFontSize-11.0Pt" data-aos="fade-up">&nbsp;</p>
    <p style="margin:0in" data-aos="fade-up"><img src="發燒_asset_4.png" width="105" height="61" alt="機器產生的替代文字:
 
-"></p>
+" data-aos="fade-up"></p>
    <p style="margin:0in; font-family:微軟正黑體" class="oldFontSize-11.0Pt" data-aos="fade-up">&nbsp;</p>
    </td>
    <td style="border-style:solid; border-color:#A3A3A3; border-width:1pt; vertical-align:top; width:1.0493in; padding:2.0pt 3.0pt 2.0pt 3.0pt" class="oldColor-a3a3a3" data-aos="fade-up">
@@ -923,11 +909,11 @@ td {
    <p style="margin:0in; font-family:微軟正黑體" lang="zh-TW" class="oldFontSize-11.0Pt" data-aos="fade-up">&nbsp;</p>
    </td>
    <td style="border-style:solid; border-color:#A3A3A3; border-width:1pt; vertical-align:top; width:.9451in; padding:2.0pt 3.0pt 2.0pt 3.0pt" class="oldColor-a3a3a3" data-aos="fade-up">
-   <p style="margin:0in; font-family:微軟正黑體" class="oldFontSize-11.0Pt" data-aos="fade-up"><span lang="zh-TW">血液檢查、</span><span lang="zh-TW">Dengue NS1</span><span lang="zh-TW">抗原檢測。支持性療法。</span></p>
+   <p style="margin:0in; font-family:微軟正黑體" class="oldFontSize-11.0Pt" data-aos="fade-up"><span lang="zh-TW" data-aos="fade-up">血液檢查、</span><span lang="zh-TW" data-aos="fade-up">Dengue NS1</span><span lang="zh-TW" data-aos="fade-up">抗原檢測。支持性療法。</span></p>
    <p style="margin:0in; font-family:微軟正黑體" lang="zh-TW" class="oldFontSize-11.0Pt" data-aos="fade-up">&nbsp;</p>
    </td>
   </tr>
-  <tr>
+  <tr data-aos="fade-up">
    <td style="border-style:solid; border-color:#A3A3A3; border-width:1pt; vertical-align:top; width:.8006in; padding:2.0pt 3.0pt 2.0pt 3.0pt" class="oldColor-a3a3a3" data-aos="fade-up">
    <p style="margin:0in; font-family:微軟正黑體" class="oldFontSize-11.0Pt" data-aos="fade-up">霍金氏淋巴瘤、蜱媒疾病</p>
    </td>
@@ -937,7 +923,7 @@ td {
    <p style="margin:0in; font-family:微軟正黑體" class="oldFontSize-11.0Pt" data-aos="fade-up">&nbsp;</p>
    <p style="margin:0in" data-aos="fade-up"><img src="發燒_asset_5.png" width="111" height="63" alt="機器產生的替代文字:
 
-"></p>
+" data-aos="fade-up"></p>
    <p style="margin:0in; font-family:微軟正黑體" class="oldFontSize-11.0Pt" data-aos="fade-up">&nbsp;</p>
    </td>
    <td style="border-style:solid; border-color:#A3A3A3; border-width:1pt; vertical-align:top; width:1.0493in; padding:2.0pt 3.0pt 2.0pt 3.0pt" class="oldColor-a3a3a3" data-aos="fade-up">
@@ -952,7 +938,7 @@ td {
    <p style="margin:0in; font-family:微軟正黑體" lang="zh-TW" class="oldFontSize-11.0Pt" data-aos="fade-up">&nbsp;</p>
    </td>
    <td style="border-style:solid; border-color:#A3A3A3; border-width:1pt; vertical-align:top; width:.9194in; padding:2.0pt 3.0pt 2.0pt 3.0pt" class="oldColor-a3a3a3" data-aos="fade-up">
-   <p style="margin:0in; font-family:微軟正黑體" class="oldFontSize-11.0Pt" data-aos="fade-up"><span lang="zh-TW">血液培養、影像檢查（</span><span lang="zh-TW">CT</span><span lang="zh-TW">、</span><span lang="zh-TW">PET</span><span lang="zh-TW">）。抗生素或化療。</span></p>
+   <p style="margin:0in; font-family:微軟正黑體" class="oldFontSize-11.0Pt" data-aos="fade-up"><span lang="zh-TW" data-aos="fade-up">血液培養、影像檢查（</span><span lang="zh-TW" data-aos="fade-up">CT</span><span lang="zh-TW" data-aos="fade-up">、</span><span lang="zh-TW" data-aos="fade-up">PET</span><span lang="zh-TW" data-aos="fade-up">）。抗生素或化療。</span></p>
    <p style="margin:0in; font-family:微軟正黑體" lang="zh-TW" class="oldFontSize-11.0Pt" data-aos="fade-up">&nbsp;</p>
    </td>
   </tr>
@@ -1021,7 +1007,7 @@ td {
  <ul type="disc" style="direction:ltr; unicode-bidi:embed; margin-top:0in; margin-bottom:0in" data-aos="fade-up">
   <li style="margin-top:0; margin-bottom:0; vertical-align:middle" lang="zh-TW" data-aos="fade-up"><span style="font-family:微軟正黑體" class="oldFontSize-11.0Pt" data-aos="fade-up">Harrison's</span></li>
   <li style="margin-top:0; margin-bottom:0; vertical-align:middle" data-aos="fade-up"><span style="font-family:微軟正黑體" class="oldFontSize-11.0Pt" data-aos="fade-up">內科住院醫師鐵則</span></li>
-  <li style="margin-top:0; margin-bottom:0; vertical-align:middle" lang="zh-TW" data-aos="fade-up"><span style="font-family:微軟正黑體" class="oldFontSize-11.0Pt" data-aos="fade-up"><span style="mso-spacerun:yes" data-aos="fade-up">&nbsp;</span></span><a href="https://www.researchgate.net/figure/268878020_fig4_Figure-4-Clinical-fever-patterns-Clinical-fever-patterns-and-examples-of-diseases-that"><span style="font-family:微軟正黑體" class="oldFontSize-11.0Pt" data-aos="fade-up">https://www.researchgate.net/figure/268878020_fig4_Figure-4-Clinical-fever-patterns-Clinical-fever-patterns-and-examples-of-diseases-that</span></a></li>
+  <li style="margin-top:0; margin-bottom:0; vertical-align:middle" lang="zh-TW" data-aos="fade-up"><span style="font-family:微軟正黑體" class="oldFontSize-11.0Pt" data-aos="fade-up"><span style="mso-spacerun:yes" data-aos="fade-up">&nbsp;</span></span><a href="https://www.researchgate.net/figure/268878020_fig4_Figure-4-Clinical-fever-patterns-Clinical-fever-patterns-and-examples-of-diseases-that" data-aos="fade-up"><span style="font-family:微軟正黑體" class="oldFontSize-11.0Pt" data-aos="fade-up">https://www.researchgate.net/figure/268878020_fig4_Figure-4-Clinical-fever-patterns-Clinical-fever-patterns-and-examples-of-diseases-that</span></a></li>
  </ul>
 </ul>
 
@@ -1053,7 +1039,7 @@ Calibri" data-aos="fade-up">2025</span><span style="font-family:&quot;Microsoft 
 
 </div>
 
-<div class="outerSpaceOld display-none">
+<div class="outerSpaceOld display-none" data-aos="fade-up">
 
 <p style="margin:0in" data-aos="fade-up">&nbsp;</p>
 
@@ -1067,7 +1053,7 @@ Calibri" data-aos="fade-up">2025</span><span style="font-family:&quot;Microsoft 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js" integrity="sha512-A7AYk1fGKX6S2SsHywmPkrnzTZHrgiVT7GcQkLGDe2ev0aWb8zejytzS8wjo7PGEXKqJOrjQ4oORtnimIRZBtw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" integrity="sha512-1cK78a1o+ht2JcaW6g8OXYwqpev9+6GqOkz9xmBN9iUUhIndKtxwILGWYOSibOKjLsEdjyjZvYDq/cZwNeak0w==" crossorigin="anonymous" referrerpolicy="no-referrer">
 <script>
-  AOS.init();
+    AOS.init();
 </script>
 <!--ENDOF AOS 區-->
 
@@ -1090,7 +1076,7 @@ https://cdn.jsdelivr.net/npm/sweetalert2@11.22.2/dist/sweetalert2.all.min.js
 <link href="
 https://cdn.jsdelivr.net/npm/sweetalert2@11.22.2/dist/sweetalert2.min.css
 " rel="stylesheet">
-<script>
+<!--script>
     function selFont() {
         const fonts = {
             "ChenYuluoyan Mono": [100],
@@ -1150,7 +1136,7 @@ https://cdn.jsdelivr.net/npm/sweetalert2@11.22.2/dist/sweetalert2.min.css
             }
         });
     }
-</script>
+</script-->
 <button class="float-button" onclick="selFont()">選擇字體</button>
 <!--ENDOF 字體選擇區 (生產環境請移除) -->
 <!--important 主字體大小選擇區 (生產環境請移除) 此段AI生成 (些微手動更動)-->
@@ -1195,61 +1181,61 @@ https://cdn.jsdelivr.net/npm/sweetalert2@11.22.2/dist/sweetalert2.min.css
 </div>
 
 <script>
-function initNavigation() {
-    // 解析 TOC 結構
-    const tocDiv = document.getElementById('toc-for-dev');
-    const pages = [];
-    
-    if (tocDiv) {
-        const links = tocDiv.querySelectorAll('a[href]');
-        links.forEach(link => {
-            pages.push({
-                url: link.getAttribute('href'),
-                title: link.textContent.trim()
-            });
-        });
-    }
-    
-    // 獲取當前頁面 URL
-    const currentUrl = window.location.pathname;
-    
-    // 找到當前頁面在 TOC 中的位置
-    const currentIndex = pages.findIndex(page => page.url === currentUrl);
-    
-    const prevButton = document.getElementById('prev-page');
-    const nextButton = document.getElementById('next-page');
-    
-    // 設置上一頁按鈕
-    if (currentIndex > 0) {
-        prevButton.disabled = false;
-        prevButton.onclick = () => {
-            window.location.href = pages[currentIndex - 1].url;
-        };
-        prevButton.title = `上一頁: ${pages[currentIndex - 1].title}`;
-    } else {
-        prevButton.disabled = true;
-    }
-    
-    // 設置下一頁按鈕
-    if (currentIndex >= 0 && currentIndex < pages.length - 1) {
-        nextButton.disabled = false;
-        nextButton.onclick = () => {
-            window.location.href = pages[currentIndex + 1].url;
-        };
-        nextButton.title = `下一頁: ${pages[currentIndex + 1].title}`;
-    } else {
-        nextButton.disabled = true;
-    }
-    
-    // 如果當前頁面不在 TOC 中，禁用所有按鈕
-    if (currentIndex === -1) {
-        prevButton.disabled = true;
-        nextButton.disabled = true;
-    }
-}
+    function initNavigation() {
+        // 解析 TOC 結構
+        const tocDiv = document.getElementById('toc-for-dev');
+        const pages = [];
 
-// 頁面載入完成後初始化導航
-document.addEventListener('DOMContentLoaded', initNavigation);
+        if (tocDiv) {
+            const links = tocDiv.querySelectorAll('a[href]');
+            links.forEach(link => {
+                pages.push({
+                    url: link.getAttribute('href'),
+                    title: link.textContent.trim()
+                });
+            });
+        }
+
+        // 獲取當前頁面 URL
+        const currentUrl = window.location.pathname;
+
+        // 找到當前頁面在 TOC 中的位置
+        const currentIndex = pages.findIndex(page => page.url === currentUrl);
+
+        const prevButton = document.getElementById('prev-page');
+        const nextButton = document.getElementById('next-page');
+
+        // 設置上一頁按鈕
+        if (currentIndex > 0) {
+            prevButton.disabled = false;
+            prevButton.onclick = () => {
+                window.location.href = pages[currentIndex - 1].url;
+            };
+            prevButton.title = `上一頁: ${pages[currentIndex - 1].title}`;
+        } else {
+            prevButton.disabled = true;
+        }
+
+        // 設置下一頁按鈕
+        if (currentIndex >= 0 && currentIndex < pages.length - 1) {
+            nextButton.disabled = false;
+            nextButton.onclick = () => {
+                window.location.href = pages[currentIndex + 1].url;
+            };
+            nextButton.title = `下一頁: ${pages[currentIndex + 1].title}`;
+        } else {
+            nextButton.disabled = true;
+        }
+
+        // 如果當前頁面不在 TOC 中，禁用所有按鈕
+        if (currentIndex === -1) {
+            prevButton.disabled = true;
+            nextButton.disabled = true;
+        }
+    }
+
+    // 頁面載入完成後初始化導航
+    document.addEventListener('DOMContentLoaded', initNavigation);
 </script>
 <!--ENDOF 上一頁下一頁導航區-->
 

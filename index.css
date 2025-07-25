@@ -63,50 +63,29 @@ li {
 
 ul {
     padding-inline-start: 2vw;
-    /* 更小的縮排 */
 }
 
 .outerSpace {
-    /*overflow-y: scroll !important; 重要更動 2025 07 24*/
-    position: static !important;
-    top: var(--outerSpace-top) !important;
-    left: var(--outerSpace-left) !important;
-    /* 元素的 width 和 height，會包含 padding 和 border。*/
     box-sizing: border-box ! important;
-    /* 100vh 減去上下 margin 各 1rem */
-    /*height: var(--outerSpace-height) !important; 重要更動 2025 07 24*/
     width: 100vw !important;
-    /*var(--outerSpace-width) !important;*/
-    height: fit-content !important;
-    /*margin: 1rem !important; 重要更動 2025 07 24*/
-    margin-top: 14vh !important;
+    margin-top: 0px !important;
     margin-bottom: 0px !important;
     margin-left: 0px !important;
     margin-right: 0px !important;
     padding-left: 1rem !important;
     padding-right: 1rem !important;
-    padding-top: 0px !important;
+    padding-top: 14vh !important;
     padding-bottom: 0px !important;
     border: 0px !important;
     background: #ffffffff !important;
 }
 
-/*html {
-    overflow-y: scroll;
-}*/
 
 body {
     margin-bottom: 0px;
     margin-top: 0px;
     margin-left: 0px;
     margin-right: 0px;
-    /*padding: 0px; 重要更動 2025 07 24*/
-    /*padding-top: 14vh; XXX*/
-    /*padding-bottom: 1rem;*/
-    /*overflow: hidden; 重要更動 2025 07 24*/
-    /*overflow-y: hidden;*/
-    height: max-content;
-    /*overflow-x: hidden;*/
     background: #f6e5c9 !important;
 }
 
@@ -141,10 +120,6 @@ canvas {
 }
 
 .outerSpace>ul>li>p>span:first-of-type {
-    /*
-    x-large 96*27 (1.5rem)
-    2rem:138*36
-    */
     font-size: var(--onenoteInterpreter-new-font-size-h1);
     color: var(--color-wakakusa-1) !important;
 }
@@ -176,11 +151,9 @@ canvas {
     border-bottom-width: 2px !important;
     border-bottom-style: groove !important;
     border-bottom-color: var(--color-akizakura-5) !important;
-    /*border-radius: 50% / 25% ! important;*/
 }
 
 .titleL2span {
-    /* 我原本是寫 larger(105.61*20) 但 larger 是 相對父層變大 large( 108*20 ) (1.12rem 107.53*20)比較合適 (1.1 rem = 105.61*20)*/
     font-size: var(--onenoteInterpreter-new-font-size-h2) !important;
     color: var(--color-akizakura-6) !important;
 }
@@ -233,28 +206,39 @@ td {
     position: fixed;
     top: 0px;
     left: 0px;
-    background-color: #f6e5c9;
-    padding-right: 7%;
-    padding-left: 3%;
+    background-color: #f6e5c9!important;
+    padding: 0 7% 0 3%;
     display: grid;
-    grid-template-columns: 7% 25% 3% 3% 3% 1fr;
-    direction: rtl;
+    align-items: center;
     gap: 2%;
     height: 14vh;
     width: 100vw;
     box-sizing: border-box;
     z-index: 1000;
+    direction: rtl;
+    grid-template-columns: 7% 25% 3% 3% 3% 1fr;
+}
+
+.buttonLogin{
+   background: #5b3717 !important;
+   border-radius: 8%;
+   color: #ffffff !important;
+}
+
+.buttonSearch{
+   background: #E0CFBB !important;
+   border-radius: 28%;
+   color: #ffffff !important;
 }
 
 .itemBangs {
-    height:
-    margin-top: 26%;
-    margin-bottom: 26%;
+    height: 46%;
     background-color: #ccc;
     text-align: center;
-    /*padding: 10px;*/
-    border: 1px solid #999;
+    align-items: center;
+    justify-content: center;
 }
+
 
 /*end of瀏海區****************************/
 
@@ -280,6 +264,7 @@ td {
     display: flex;
     gap: 0.5rem;
     z-index: 9999;
+    display: none;
 }
 
 #font-controls button {
@@ -302,11 +287,11 @@ td {
 
 /*上一頁下一頁導航區 (AI)*/
 .dev-toc-nav-buttons {
+    display: none;
     position: absolute;
-    /*bottom: 20px; 重要更動 24 07 24*/
     top: 90vw;
     left: 20px;
-    display: flex;
+    /*display: flex;*/
     gap: 10px;
     z-index: 1000;
 }

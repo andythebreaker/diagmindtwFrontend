@@ -418,50 +418,29 @@ li {
 
 ul {
     padding-inline-start: 2vw;
-    /* 更小的縮排 */
 }
 
 .outerSpace {
-    /*overflow-y: scroll !important; 重要更動 2025 07 24*/
-    position: static !important;
-    top: var(--outerSpace-top) !important;
-    left: var(--outerSpace-left) !important;
-    /* 元素的 width 和 height，會包含 padding 和 border。*/
     box-sizing: border-box ! important;
-    /* 100vh 減去上下 margin 各 1rem */
-    /*height: var(--outerSpace-height) !important; 重要更動 2025 07 24*/
     width: 100vw !important;
-    /*var(--outerSpace-width) !important;*/
-    height: fit-content !important;
-    /*margin: 1rem !important; 重要更動 2025 07 24*/
-    margin-top: 14vh !important;
+    margin-top: 0px !important;
     margin-bottom: 0px !important;
     margin-left: 0px !important;
     margin-right: 0px !important;
     padding-left: 1rem !important;
     padding-right: 1rem !important;
-    padding-top: 0px !important;
+    padding-top: 14vh !important;
     padding-bottom: 0px !important;
     border: 0px !important;
     background: #ffffffff !important;
 }
 
-/*html {
-    overflow-y: scroll;
-}*/
 
 body {
     margin-bottom: 0px;
     margin-top: 0px;
     margin-left: 0px;
     margin-right: 0px;
-    /*padding: 0px; 重要更動 2025 07 24*/
-    /*padding-top: 14vh; XXX*/
-    /*padding-bottom: 1rem;*/
-    /*overflow: hidden; 重要更動 2025 07 24*/
-    /*overflow-y: hidden;*/
-    height: max-content;
-    /*overflow-x: hidden;*/
     background: #f6e5c9 !important;
 }
 
@@ -496,10 +475,6 @@ canvas {
 }
 
 .outerSpace>ul>li>p>span:first-of-type {
-    /*
-    x-large 96*27 (1.5rem)
-    2rem:138*36
-    */
     font-size: var(--onenoteInterpreter-new-font-size-h1);
     color: var(--color-wakakusa-1) !important;
 }
@@ -531,11 +506,9 @@ canvas {
     border-bottom-width: 2px !important;
     border-bottom-style: groove !important;
     border-bottom-color: var(--color-akizakura-5) !important;
-    /*border-radius: 50% / 25% ! important;*/
 }
 
 .titleL2span {
-    /* 我原本是寫 larger(105.61*20) 但 larger 是 相對父層變大 large( 108*20 ) (1.12rem 107.53*20)比較合適 (1.1 rem = 105.61*20)*/
     font-size: var(--onenoteInterpreter-new-font-size-h2) !important;
     color: var(--color-akizakura-6) !important;
 }
@@ -588,27 +561,39 @@ td {
     position: fixed;
     top: 0px;
     left: 0px;
-    background-color: #f6e5c9;
-    padding-right: 7%;
-    padding-left: 3%;
+    background-color: #f6e5c9!important;
+    padding: 0 7% 0 3%;
     display: grid;
-    grid-template-columns: 7% 25% 3% 3% 3% 1fr;
-    direction: rtl;
+    align-items: center;
     gap: 2%;
     height: 14vh;
     width: 100vw;
     box-sizing: border-box;
     z-index: 1000;
+    direction: rtl;
+    grid-template-columns: 7% 25% 3% 3% 3% 1fr;
+}
+
+.buttonLogin{
+   background: #5b3717 !important;
+   border-radius: 8%;
+   color: #ffffff !important;
+}
+
+.buttonSearch{
+   background: #E0CFBB !important;
+   border-radius: 28%;
+   color: #ffffff !important;
 }
 
 .itemBangs {
-    margin-top: 26%;
-    margin-bottom: 26%;
+    height: 46%;
     background-color: #ccc;
     text-align: center;
-    /*padding: 10px;*/
-    border: 1px solid #999;
+    align-items: center;
+    justify-content: center;
 }
+
 
 /*end of瀏海區****************************/
 
@@ -634,6 +619,7 @@ td {
     display: flex;
     gap: 0.5rem;
     z-index: 9999;
+    display: none;
 }
 
 #font-controls button {
@@ -656,11 +642,11 @@ td {
 
 /*上一頁下一頁導航區 (AI)*/
 .dev-toc-nav-buttons {
+    display: none;
     position: absolute;
-    /*bottom: 20px; 重要更動 24 07 24*/
     top: 90vw;
     left: 20px;
-    display: flex;
+    /*display: flex;*/
     gap: 10px;
     z-index: 1000;
 }
@@ -697,14 +683,14 @@ artery disease</title><link href="https://fonts.googleapis.com/css2?family=Quick
         <script src="//s3-ap-northeast-1.amazonaws.com/justfont-user-script/jf-65691.js"></script>
         <script src="https://kit.fontawesome.com/65b47a30d3.js" crossorigin="anonymous"></script></head>
 
-<body lang="zh-TW" style="font-family:Calibri" class="oldFontSize-11.0Pt flagTooMuchFontSize" data-aos="fade-up">
-  <div class="containerBangs">
-    <div class="itemBangs">7%</div>
-    <div class="itemBangs">25%</div>
-    <div class="itemBangs">3%</div>
-    <div class="itemBangs">3%</div>
-    <div class="itemBangs">3%</div>
-    <div class="itemBangs">彈性空間</div>
+<body lang="zh-TW" style="font-family:Calibri" class="oldFontSize-11.0Pt flagTooMuchFontSize">
+  <div class="containerBangs newFontSizeRank-3">
+    <div class="itemBangs buttonLogin"><p>登入</p></div>
+    <div class="itemBangs buttonSearch"><p>搜尋</p></div>
+    <div class="itemBangs"><p>題目</p></div>
+    <div class="itemBangs"><p>主題</p></div>
+    <div class="itemBangs"><p>分科</p></div>
+    <div class="itemBangs"><p>彈性空間</p></div>
   </div>
   <div style="direction:ltr; margin-top:.4305in; margin-left:0in; width:6.9159in" class="outerSpace" data-aos="fade-up">
 
@@ -734,7 +720,7 @@ artery disease</title><link href="https://fonts.googleapis.com/css2?family=Quick
 不 穩 定 型 
 心 絞 痛 
 NSTEMI 
-STEMI "></p>
+STEMI " data-aos="fade-up"></p>
  <ul type="disc" style="direction:ltr; unicode-bidi:embed; margin-top:0in; margin-bottom:0in" data-aos="fade-up">
   <li style="margin-top:0; margin-bottom:0; vertical-align:middle; color:black" lang="zh-TW" data-aos="fade-up"><span style="font-family:&quot;Microsoft JhengHei&quot;" class="oldFontSize-16.0Pt" data-aos="fade-up">主要風險因子</span></li>
   <ul type="circle" style="direction:ltr; unicode-bidi:embed; margin-top:0in; margin-bottom:0in" data-aos="fade-up">
@@ -814,7 +800,7 @@ STEMI "></p>
  <div style="direction:ltr" data-aos="fade-up">
  <table border="1" cellpadding="0" cellspacing="0" valign="top" style="direction:ltr; border-collapse:collapse; border-style:solid; border-color:#A3A3A3; border-width:
   1pt; margin-left:.3333in" title="" summary="" class="oldColor-a3a3a3" data-aos="fade-up">
-  <tbody><tr>
+  <tbody data-aos="fade-up"><tr data-aos="fade-up">
    <td style="border-style:solid; border-color:#A3A3A3; border-width:1pt; vertical-align:top; width:.8388in; padding:2.0pt 3.0pt 2.0pt 3.0pt" class="oldColor-a3a3a3" data-aos="fade-up">
    <p style="margin:0in; font-family:&quot;Microsoft JhengHei&quot;; color:black; text-align:center" class="oldFontSize-11.0Pt" data-aos="fade-up">CCS 等級</p>
    </td>
@@ -822,7 +808,7 @@ STEMI "></p>
    <p style="margin:0in; font-family:&quot;Microsoft JhengHei&quot;; color:black; text-align:center" class="oldFontSize-11.0Pt" data-aos="fade-up">臨床特徵</p>
    </td>
   </tr>
-  <tr>
+  <tr data-aos="fade-up">
    <td style="border-style:solid; border-color:#A3A3A3; border-width:1pt; vertical-align:top; width:.8194in; padding:2.0pt 3.0pt 2.0pt 3.0pt" class="oldColor-a3a3a3" data-aos="fade-up">
    <p style="margin:0in; font-family:&quot;Microsoft JhengHei&quot;; color:black" class="oldFontSize-11.0Pt" data-aos="fade-up">I 級</p>
    </td>
@@ -830,7 +816,7 @@ STEMI "></p>
    <p style="margin:0in; font-family:&quot;Microsoft JhengHei&quot;; color:black" class="oldFontSize-11.0Pt" data-aos="fade-up">劇烈運動（如跑步或快走）才會誘發心絞痛，日常活動不受影響。</p>
    </td>
   </tr>
-  <tr>
+  <tr data-aos="fade-up">
    <td style="border-style:solid; border-color:#A3A3A3; border-width:1pt; vertical-align:top; width:.8194in; padding:2.0pt 3.0pt 2.0pt 3.0pt" class="oldColor-a3a3a3" data-aos="fade-up">
    <p style="margin:0in; font-family:&quot;Microsoft JhengHei&quot;; color:black" class="oldFontSize-11.0Pt" data-aos="fade-up">II 級</p>
    </td>
@@ -838,7 +824,7 @@ STEMI "></p>
    <p style="margin:0in; font-family:&quot;Microsoft JhengHei&quot;; color:black" class="oldFontSize-11.0Pt" data-aos="fade-up">一般日常活動（如爬樓梯 &gt;1層、快走 &gt;200 公尺）可誘發，但較輕度。</p>
    </td>
   </tr>
-  <tr>
+  <tr data-aos="fade-up">
    <td style="border-style:solid; border-color:#A3A3A3; border-width:1pt; vertical-align:top; width:.8194in; padding:2.0pt 3.0pt 2.0pt 3.0pt" class="oldColor-a3a3a3" data-aos="fade-up">
    <p style="margin:0in; font-family:&quot;Microsoft JhengHei&quot;; color:black" class="oldFontSize-11.0Pt" data-aos="fade-up">III 級</p>
    </td>
@@ -846,7 +832,7 @@ STEMI "></p>
    <p style="margin:0in; font-family:&quot;Microsoft JhengHei&quot;; color:black" class="oldFontSize-11.0Pt" data-aos="fade-up">輕度活動（如走 100~200 公尺、爬 1 層樓梯）即可誘發，顯著影響日常生活。</p>
    </td>
   </tr>
-  <tr>
+  <tr data-aos="fade-up">
    <td style="border-style:solid; border-color:#A3A3A3; border-width:1pt; vertical-align:top; width:.8194in; padding:2.0pt 3.0pt 2.0pt 3.0pt" class="oldColor-a3a3a3" data-aos="fade-up">
    <p style="margin:0in; font-family:&quot;Microsoft JhengHei&quot;; color:black" class="oldFontSize-11.0Pt" data-aos="fade-up">IV 級</p>
    </td>
@@ -902,7 +888,7 @@ STEMI "></p>
   <li style="margin-top:0; margin-bottom:0; vertical-align:middle; color:black" lang="zh-TW" data-aos="fade-up"><span style="font-family:&quot;Microsoft JhengHei&quot;" class="oldFontSize-16.0Pt" data-aos="fade-up">診斷流程表</span></li>
  </ul>
  <p style="margin:0in; margin-left:.375in; font-family:Helvetica; color:#141413" lang="zh-TW" class="oldFontSize-6.0Pt oldColor-141413" data-aos="fade-up">&nbsp;</p>
- <p style="margin:0in; margin-left:.375in" data-aos="fade-up"><img src="Coronary artery disease_asset_1.png" width="597" height="532"></p>
+ <p style="margin:0in; margin-left:.375in" data-aos="fade-up"><img src="Coronary artery disease_asset_1.png" width="597" height="532" data-aos="fade-up"></p>
  <p style="margin:0in; margin-left:.375in; font-family:&quot;Microsoft JhengHei&quot;; color:black" lang="zh-TW" class="oldFontSize-11.0Pt" data-aos="fade-up">&nbsp;</p>
  <ul type="disc" style="direction:ltr; unicode-bidi:embed; margin-top:0in; margin-bottom:0in" data-aos="fade-up">
   <li style="margin-top:0; margin-bottom:0; vertical-align:middle; color:black" lang="zh-TW" data-aos="fade-up"><span style="font-family:&quot;Microsoft JhengHei&quot;" class="oldFontSize-16.0Pt" data-aos="fade-up">Stress
@@ -962,7 +948,7 @@ connected
 to a machine 
 Patient 
 walking 
-on treadmill "></p>
+on treadmill " data-aos="fade-up"></p>
  <p style="margin:0in; font-family:Calibri" class="oldFontSize-11.0Pt" data-aos="fade-up">&nbsp;</p>
  <ul type="disc" style="direction:ltr; unicode-bidi:embed; margin-top:0in; margin-bottom:0in" data-aos="fade-up">
   <li style="margin-top:0; margin-bottom:0; vertical-align:middle" lang="zh-TW" data-aos="fade-up"><span style="font-family:&quot;Microsoft JhengHei&quot;; color:black" class="oldFontSize-16.0Pt" data-aos="fade-up">心肌核醫檢查</span></li>
@@ -974,7 +960,7 @@ on treadmill "></p>
  </ul>
  <p style="margin:0in; margin-left:.375in" data-aos="fade-up"><img src="Coronary artery disease_asset_3.png" width="257" height="322" alt="機器產生的替代文字:
 
-"></p>
+" data-aos="fade-up"></p>
  <p style="margin:0in; margin-left:.375in; font-family:Helvetica; color:#141413" lang="zh-TW" class="oldFontSize-6.0Pt oldColor-141413" data-aos="fade-up">&nbsp;</p>
  <p style="margin:0in; margin-left:.375in; font-family:Helvetica; color:#141413" lang="zh-TW" class="oldFontSize-6.0Pt oldColor-141413" data-aos="fade-up">HARRISON Principles of Internal Medicine 20th
  Edition, Page 1856, FIGURE 267-3 </p>
@@ -999,7 +985,7 @@ on treadmill "></p>
  <div style="direction:ltr" data-aos="fade-up">
  <table border="1" cellpadding="0" cellspacing="0" valign="top" style="direction:ltr; border-collapse:collapse; border-style:solid; border-color:#A3A3A3; border-width:
   1pt; margin-left:.3333in" title="" summary="" class="oldColor-a3a3a3" data-aos="fade-up">
-  <tbody><tr>
+  <tbody data-aos="fade-up"><tr data-aos="fade-up">
    <td style="border-style:solid; border-color:#A3A3A3; border-width:1pt; vertical-align:top; width:.8479in; padding:2.0pt 3.0pt 2.0pt 3.0pt" class="oldColor-a3a3a3" data-aos="fade-up">
    <p style="margin:0in; font-family:&quot;Microsoft JhengHei&quot;; color:black; text-align:center" class="oldFontSize-11.0Pt" data-aos="fade-up">特性</p>
    </td>
@@ -1010,7 +996,7 @@ on treadmill "></p>
    <p style="margin:0in; text-align:center" class="oldFontSize-11.0Pt" data-aos="fade-up"><span style="font-family:&quot;Microsoft JhengHei&quot;; color:black" data-aos="fade-up">Technetium-99m </span><span style="font-family:Calibri" data-aos="fade-up">(Tc-99m, </span><span style="font-family:&quot;Microsoft JhengHei&quot;" data-aos="fade-up">如</span><span style="font-family:Calibri" data-aos="fade-up"> Sestamibi </span><span style="font-family:&quot;Microsoft JhengHei&quot;" data-aos="fade-up">或</span><span style="font-family:Calibri" data-aos="fade-up"> Tetrofosmin)</span></p>
    </td>
   </tr>
-  <tr>
+  <tr data-aos="fade-up">
    <td style="border-style:solid; border-color:#A3A3A3; border-width:1pt; vertical-align:top; width:.8479in; padding:2.0pt 3.0pt 2.0pt 3.0pt" class="oldColor-a3a3a3" data-aos="fade-up">
    <p style="margin:0in; font-family:&quot;Microsoft JhengHei&quot;; color:black" class="oldFontSize-11.0Pt" data-aos="fade-up">半衰期</p>
    </td>
@@ -1021,7 +1007,7 @@ on treadmill "></p>
    <p style="margin:0in; font-family:&quot;Microsoft JhengHei&quot;; color:black" class="oldFontSize-11.0Pt" data-aos="fade-up">6 小時（較短）</p>
    </td>
   </tr>
-  <tr>
+  <tr data-aos="fade-up">
    <td style="border-style:solid; border-color:#A3A3A3; border-width:1pt; vertical-align:top; width:.85in; padding:2.0pt 3.0pt 2.0pt 3.0pt" class="oldColor-a3a3a3" data-aos="fade-up">
    <p style="margin:0in; font-family:&quot;Microsoft JhengHei&quot;; color:black" class="oldFontSize-11.0Pt" data-aos="fade-up">輻射劑量</p>
    </td>
@@ -1032,7 +1018,7 @@ on treadmill "></p>
    <p style="margin:0in; font-family:&quot;Microsoft JhengHei&quot;; color:black" class="oldFontSize-11.0Pt" data-aos="fade-up">較低</p>
    </td>
   </tr>
-  <tr>
+  <tr data-aos="fade-up">
    <td style="border-style:solid; border-color:#A3A3A3; border-width:1pt; vertical-align:top; width:.85in; padding:2.0pt 3.0pt 2.0pt 3.0pt" class="oldColor-a3a3a3" data-aos="fade-up">
    <p style="margin:0in; font-family:&quot;Microsoft JhengHei&quot;; color:black" class="oldFontSize-11.0Pt" data-aos="fade-up">攝取機制</p>
    </td>
@@ -1043,7 +1029,7 @@ on treadmill "></p>
    <p style="margin:0in; font-family:&quot;Microsoft JhengHei&quot;; color:black" class="oldFontSize-11.0Pt" data-aos="fade-up">被心肌細胞的粒線體攝取</p>
    </td>
   </tr>
-  <tr>
+  <tr data-aos="fade-up">
    <td style="border-style:solid; border-color:#A3A3A3; border-width:1pt; vertical-align:top; width:.85in; padding:2.0pt 3.0pt 2.0pt 3.0pt" class="oldColor-a3a3a3" data-aos="fade-up">
    <p style="margin:0in; font-family:&quot;Microsoft JhengHei&quot;; color:black" class="oldFontSize-11.0Pt" data-aos="fade-up">影像對比</p>
    </td>
@@ -1054,7 +1040,7 @@ on treadmill "></p>
    <p style="margin:0in; font-family:&quot;Microsoft JhengHei&quot;; color:black" class="oldFontSize-11.0Pt" data-aos="fade-up">較佳（γ 射線能量較高，約 140 keV，穿透性較好）</p>
    </td>
   </tr>
-  <tr>
+  <tr data-aos="fade-up">
    <td style="border-style:solid; border-color:#A3A3A3; border-width:1pt; vertical-align:top; width:.85in; padding:2.0pt 3.0pt 2.0pt 3.0pt" class="oldColor-a3a3a3" data-aos="fade-up">
    <p style="margin:0in; font-family:&quot;Microsoft JhengHei&quot;; color:black" class="oldFontSize-11.0Pt" data-aos="fade-up">再分布特性</p>
    </td>
@@ -1065,7 +1051,7 @@ on treadmill "></p>
    <p style="margin:0in; font-family:&quot;Microsoft JhengHei&quot;; color:black" class="oldFontSize-11.0Pt" data-aos="fade-up">無（只顯示血流灌注）</p>
    </td>
   </tr>
-  <tr>
+  <tr data-aos="fade-up">
    <td style="border-style:solid; border-color:#A3A3A3; border-width:1pt; vertical-align:top; width:.8479in; padding:2.0pt 3.0pt 2.0pt 3.0pt" class="oldColor-a3a3a3" data-aos="fade-up">
    <p style="margin:0in; font-family:&quot;Microsoft JhengHei&quot;; color:black" class="oldFontSize-11.0Pt" data-aos="fade-up">適用於</p>
    </td>
@@ -1275,9 +1261,9 @@ on treadmill "></p>
   <li value="2" style="margin-top:0; margin-bottom:0; vertical-align:middle" lang="zh-TW" data-aos="fade-up"><span style="font-family:Calibri; font-weight:
       normal; font-style:normal; font-family:Calibri" class="oldFontSize-11.0Pt" data-aos="fade-up">Boards
       &amp; Beyonds</span><span style="font-family:&quot;Microsoft JhengHei&quot;; font-weight:normal; font-style:normal; font-family:&quot;Microsoft JhengHei&quot;" class="oldFontSize-11.0Pt" data-aos="fade-up">：</span><span style="font-family:Calibri; font-weight:normal; font-style:normal; font-family:Calibri" class="oldFontSize-11.0Pt" data-aos="fade-up">Coronary artery disease</span></li>
-  <li style="margin-top:0; margin-bottom:0; vertical-align:middle" data-aos="fade-up"><a href="https://www.ahajournals.org/doi/10.1161/CIR.0000000000001168"><span style="font-family:Calibri" lang="zh-TW" class="oldFontSize-11.0Pt" data-aos="fade-up">https://www.ahajournals.org/doi/10.1161/CIR.0000000000001168</span></a></li>
-  <li style="margin-top:0; margin-bottom:0; vertical-align:middle" data-aos="fade-up"><a href="https://www.tsoc.org.tw/upload/files/acs-39-004-1(1).pdf"><span style="font-family:Calibri" lang="zh-TW" class="oldFontSize-11.0Pt" data-aos="fade-up">https://www.tsoc.org.tw/upload/files/acs-39-004-1(1).pdf</span></a></li>
-  <li style="margin-top:0; margin-bottom:0; vertical-align:middle" data-aos="fade-up"><a href="https://commons.wikimedia.org/wiki/File:Stress_test_NIH.jpg"><span style="font-family:Calibri" class="oldFontSize-11.0Pt" data-aos="fade-up">https://commons.wikimedia.org/wiki/File:Stress_test_NIH.jpg</span></a></li>
+  <li style="margin-top:0; margin-bottom:0; vertical-align:middle" data-aos="fade-up"><a href="https://www.ahajournals.org/doi/10.1161/CIR.0000000000001168" data-aos="fade-up"><span style="font-family:Calibri" lang="zh-TW" class="oldFontSize-11.0Pt" data-aos="fade-up">https://www.ahajournals.org/doi/10.1161/CIR.0000000000001168</span></a></li>
+  <li style="margin-top:0; margin-bottom:0; vertical-align:middle" data-aos="fade-up"><a href="https://www.tsoc.org.tw/upload/files/acs-39-004-1(1).pdf" data-aos="fade-up"><span style="font-family:Calibri" lang="zh-TW" class="oldFontSize-11.0Pt" data-aos="fade-up">https://www.tsoc.org.tw/upload/files/acs-39-004-1(1).pdf</span></a></li>
+  <li style="margin-top:0; margin-bottom:0; vertical-align:middle" data-aos="fade-up"><a href="https://commons.wikimedia.org/wiki/File:Stress_test_NIH.jpg" data-aos="fade-up"><span style="font-family:Calibri" class="oldFontSize-11.0Pt" data-aos="fade-up">https://commons.wikimedia.org/wiki/File:Stress_test_NIH.jpg</span></a></li>
  </ol>
  <p style="margin:0in; font-family:Calibri" class="oldFontSize-11.0Pt" data-aos="fade-up">&nbsp;</p>
  <p style="margin:0in; font-family:&quot;Microsoft JhengHei&quot;; color:#C00000" class="oldFontSize-16.0Pt oldColor-c00000" data-aos="fade-up"><span style="font-weight:bold" data-aos="fade-up">這篇需要仔細的書寫喔-內容有寫太過簡單了</span></p>
@@ -1303,7 +1289,7 @@ on treadmill "></p>
  <div style="direction:ltr" data-aos="fade-up">
  <table border="1" cellpadding="0" cellspacing="0" valign="top" style="direction:ltr; border-collapse:collapse; border-style:solid; border-color:#A3A3A3; border-width:
   1pt" title="" summary="" class="oldColor-a3a3a3" data-aos="fade-up">
-  <tbody><tr>
+  <tbody data-aos="fade-up"><tr data-aos="fade-up">
    <td style="border-style:solid; border-color:#A3A3A3; border-width:1pt; vertical-align:top; width:2.2305in; padding:2.0pt 3.0pt 2.0pt 3.0pt" class="oldColor-a3a3a3" data-aos="fade-up">
    <p style="margin:0in; font-family:&quot;Microsoft JhengHei&quot;; text-align:center" class="oldFontSize-11.0Pt" data-aos="fade-up"><span style="font-weight:bold" data-aos="fade-up">患者狀況</span></p>
    </td>
@@ -1311,7 +1297,7 @@ on treadmill "></p>
    <p style="margin:0in; font-family:&quot;Microsoft JhengHei&quot;; text-align:center" class="oldFontSize-11.0Pt" data-aos="fade-up"><span style="font-weight:bold" data-aos="fade-up">優先選擇檢查</span></p>
    </td>
   </tr>
-  <tr>
+  <tr data-aos="fade-up">
    <td style="border-style:solid; border-color:#A3A3A3; border-width:1pt; vertical-align:top; width:2.25in; padding:2.0pt 3.0pt 2.0pt 3.0pt" class="oldColor-a3a3a3" data-aos="fade-up">
    <p style="margin:0in; font-family:&quot;Microsoft JhengHei&quot;" class="oldFontSize-11.0Pt" data-aos="fade-up">能運動，無
    LBBB、無心律不整</p>
@@ -1320,7 +1306,7 @@ on treadmill "></p>
    <p style="margin:0in; font-family:Calibri" class="oldFontSize-11.0Pt" data-aos="fade-up">Treadmill EKG</p>
    </td>
   </tr>
-  <tr>
+  <tr data-aos="fade-up">
    <td style="border-style:solid; border-color:#A3A3A3; border-width:1pt; vertical-align:top; width:2.2305in; padding:2.0pt 3.0pt 2.0pt 3.0pt" class="oldColor-a3a3a3" data-aos="fade-up">
    <p style="margin:0in; font-family:&quot;Microsoft JhengHei&quot;" class="oldFontSize-11.0Pt" data-aos="fade-up">無法運動，但能接受釋放劑</p>
    </td>
@@ -1329,7 +1315,7 @@ on treadmill "></p>
    Dipyridamole）+ MPI</p>
    </td>
   </tr>
-  <tr>
+  <tr data-aos="fade-up">
    <td style="border-style:solid; border-color:#A3A3A3; border-width:1pt; vertical-align:top; width:2.2305in; padding:2.0pt 3.0pt 2.0pt 3.0pt" class="oldColor-a3a3a3" data-aos="fade-up">
    <p style="margin:0in; font-family:Calibri" class="oldFontSize-11.0Pt" data-aos="fade-up">COPD/氣喘患者</p>
    </td>
@@ -1346,7 +1332,7 @@ on treadmill "></p>
  <p style="margin-top:5pt; margin-bottom:5pt; font-family:&quot;Microsoft JhengHei&quot;; color:black" class="oldFontSize-11.0Pt" data-aos="fade-up">目前放在整體治療尾段，閱讀不易，建議用：</p>
  <p style="margin-top:5pt; margin-bottom:5pt; font-family:Calibri; color:black" class="oldFontSize-11.0Pt" data-aos="fade-up"><span style="mso-spacerun:yes" data-aos="fade-up">&nbsp;</span><span style="font-weight:
  bold" data-aos="fade-up">變異型心絞痛（Prinzmetal's angina）專節</span></p>
- <p style="margin-top:5pt; margin-bottom:5pt; font-family:&quot;Microsoft JhengHei&quot;" class="oldFontSize-11.0Pt" data-aos="fade-up"><span style="color:black" data-aos="fade-up">包含定義 → 臨床表現 → 診斷 → 誘發試驗 → 治療邏輯<br>
+ <p style="margin-top:5pt; margin-bottom:5pt; font-family:&quot;Microsoft JhengHei&quot;" class="oldFontSize-11.0Pt" data-aos="fade-up"><span style="color:black" data-aos="fade-up">包含定義 → 臨床表現 → 診斷 → 誘發試驗 → 治療邏輯<br data-aos="fade-up">
   並補一句「經診斷確立後的臨床處理也很重要」</span></p>
  <p style="margin:0in; font-family:Calibri; color:black" class="oldFontSize-11.0Pt" data-aos="fade-up">&nbsp;</p>
  <p style="margin:0in; font-family:Calibri" class="oldFontSize-11.0Pt" data-aos="fade-up"><span style="mso-spacerun:yes" data-aos="fade-up">&nbsp;</span></p>
@@ -1354,7 +1340,7 @@ on treadmill "></p>
  <div style="direction:ltr" data-aos="fade-up">
  <table border="1" cellpadding="0" cellspacing="0" valign="top" style="direction:ltr; border-collapse:collapse; border-style:solid; border-color:#A3A3A3; border-width:
   1pt" title="" summary="" class="oldColor-a3a3a3" data-aos="fade-up">
-  <tbody><tr>
+  <tbody data-aos="fade-up"><tr data-aos="fade-up">
    <td style="border-style:solid; border-color:#A3A3A3; border-width:1pt; vertical-align:top; width:1.1986in; padding:2.0pt 3.0pt 2.0pt 3.0pt" class="oldColor-a3a3a3" data-aos="fade-up">
    <p style="margin:0in; font-family:&quot;Microsoft JhengHei&quot;; color:black; text-align:center" class="oldFontSize-11.0Pt" data-aos="fade-up"><span style="font-weight:bold" data-aos="fade-up">類別</span></p>
    </td>
@@ -1371,7 +1357,7 @@ on treadmill "></p>
    <p style="margin:0in; font-family:&quot;Microsoft JhengHei&quot;; color:black; text-align:center" class="oldFontSize-11.0Pt" data-aos="fade-up"><span style="font-weight:bold" data-aos="fade-up">心肌酶變化</span></p>
    </td>
   </tr>
-  <tr>
+  <tr data-aos="fade-up">
    <td style="border-style:solid; border-color:#A3A3A3; border-width:1pt; vertical-align:top; width:1.1986in; padding:2.0pt 3.0pt 2.0pt 3.0pt" class="oldColor-a3a3a3" data-aos="fade-up">
    <p style="margin:0in; font-family:&quot;Microsoft JhengHei&quot;; color:black" class="oldFontSize-11.0Pt" data-aos="fade-up">穩定型心絞痛</p>
    </td>
@@ -1388,7 +1374,7 @@ on treadmill "></p>
    <p style="margin:0in; font-family:&quot;Microsoft JhengHei&quot;; color:black" class="oldFontSize-11.0Pt" data-aos="fade-up">正常</p>
    </td>
   </tr>
-  <tr>
+  <tr data-aos="fade-up">
    <td style="border-style:solid; border-color:#A3A3A3; border-width:1pt; vertical-align:top; width:1.1986in; padding:2.0pt 3.0pt 2.0pt 3.0pt" class="oldColor-a3a3a3" data-aos="fade-up">
    <p style="margin:0in; font-family:&quot;Microsoft JhengHei&quot;; color:black" class="oldFontSize-11.0Pt" data-aos="fade-up">不穩定型心絞痛</p>
    </td>
@@ -1406,7 +1392,7 @@ on treadmill "></p>
    <p style="margin:0in; font-family:&quot;Microsoft JhengHei&quot;; color:black" class="oldFontSize-11.0Pt" data-aos="fade-up">正常</p>
    </td>
   </tr>
-  <tr>
+  <tr data-aos="fade-up">
    <td style="border-style:solid; border-color:#A3A3A3; border-width:1pt; vertical-align:top; width:1.1986in; padding:2.0pt 3.0pt 2.0pt 3.0pt" class="oldColor-a3a3a3" data-aos="fade-up">
    <p style="margin:0in; font-family:Calibri; color:black" class="oldFontSize-11.0Pt" data-aos="fade-up">NSTEMI</p>
    </td>
@@ -1424,7 +1410,7 @@ on treadmill "></p>
    <p style="margin:0in; font-family:&quot;Microsoft JhengHei&quot;; color:#C00000" class="oldFontSize-11.0Pt oldColor-c00000" data-aos="fade-up">上升</p>
    </td>
   </tr>
-  <tr>
+  <tr data-aos="fade-up">
    <td style="border-style:solid; border-color:#A3A3A3; border-width:1pt; vertical-align:top; width:1.1986in; padding:2.0pt 3.0pt 2.0pt 3.0pt" class="oldColor-a3a3a3" data-aos="fade-up">
    <p style="margin:0in; font-family:Calibri; color:black" class="oldFontSize-11.0Pt" data-aos="fade-up">STEMI</p>
    </td>
@@ -1443,7 +1429,7 @@ on treadmill "></p>
   </tr>
  </tbody></table>
  </div>
- <p style="margin:0in; font-family:Calibri" class="oldFontSize-11.0Pt" data-aos="fade-up"><br>
+ <p style="margin:0in; font-family:Calibri" class="oldFontSize-11.0Pt" data-aos="fade-up"><br data-aos="fade-up">
   &nbsp;</p>
  <h4 style="margin:0in; font-family:&quot;Microsoft JhengHei&quot;; color:black" class="oldFontSize-12.0Pt" data-aos="fade-up"><span style="font-style:italic" data-aos="fade-up">診斷流程與Stress Test選擇邏輯</span></h4>
  <p style="margin-top:5pt; margin-bottom:5pt; font-family:Calibri; color:black" class="oldFontSize-11.0Pt" data-aos="fade-up"><span style="font-weight:bold" data-aos="fade-up">A. 初步檢查</span>：</p>
@@ -1456,7 +1442,7 @@ on treadmill "></p>
  <div style="direction:ltr" data-aos="fade-up">
  <table border="1" cellpadding="0" cellspacing="0" valign="top" style="direction:ltr; border-collapse:collapse; border-style:solid; border-color:#A3A3A3; border-width:
   1pt" title="" summary="" class="oldColor-a3a3a3" data-aos="fade-up">
-  <tbody><tr>
+  <tbody data-aos="fade-up"><tr data-aos="fade-up">
    <td style="border-style:solid; border-color:#A3A3A3; border-width:1pt; vertical-align:top; width:1.7298in; padding:2.0pt 3.0pt 2.0pt 3.0pt" class="oldColor-a3a3a3" data-aos="fade-up">
    <p style="margin:0in; font-family:&quot;Microsoft JhengHei&quot;; color:black" class="oldFontSize-11.0Pt" data-aos="fade-up">條件</p>
    </td>
@@ -1464,7 +1450,7 @@ on treadmill "></p>
    <p style="margin:0in; font-family:&quot;Microsoft JhengHei&quot;; color:black" class="oldFontSize-11.0Pt" data-aos="fade-up">優先測試</p>
    </td>
   </tr>
-  <tr>
+  <tr data-aos="fade-up">
    <td style="border-style:solid; border-color:#A3A3A3; border-width:1pt; vertical-align:top; width:1.7493in; padding:2.0pt 3.0pt 2.0pt 3.0pt" class="oldColor-a3a3a3" data-aos="fade-up">
    <p style="margin:0in; font-family:&quot;Microsoft JhengHei&quot;; color:black" class="oldFontSize-11.0Pt" data-aos="fade-up">可運動、心電圖無干擾</p>
    </td>
@@ -1473,7 +1459,7 @@ on treadmill "></p>
    ECG</p>
    </td>
   </tr>
-  <tr>
+  <tr data-aos="fade-up">
    <td style="border-style:solid; border-color:#A3A3A3; border-width:1pt; vertical-align:top; width:1.7298in; padding:2.0pt 3.0pt 2.0pt 3.0pt" class="oldColor-a3a3a3" data-aos="fade-up">
    <p style="margin:0in; font-family:&quot;Microsoft JhengHei&quot;; color:black" class="oldFontSize-11.0Pt" data-aos="fade-up">無法運動、無氣喘</p>
    </td>
@@ -1481,7 +1467,7 @@ on treadmill "></p>
    <p style="margin:0in; font-family:&quot;Microsoft JhengHei&quot;; color:black" class="oldFontSize-11.0Pt" data-aos="fade-up">核醫 stress test（Adenosine, Dipyridamole）+ MPI</p>
    </td>
   </tr>
-  <tr>
+  <tr data-aos="fade-up">
    <td style="border-style:solid; border-color:#A3A3A3; border-width:1pt; vertical-align:top; width:1.7298in; padding:2.0pt 3.0pt 2.0pt 3.0pt" class="oldColor-a3a3a3" data-aos="fade-up">
    <p style="margin:0in; font-family:Calibri; color:black" class="oldFontSize-11.0Pt" data-aos="fade-up">COPD/氣喘</p>
    </td>
@@ -1490,7 +1476,7 @@ on treadmill "></p>
    Stress Echo</p>
    </td>
   </tr>
-  <tr>
+  <tr data-aos="fade-up">
    <td style="border-style:solid; border-color:#A3A3A3; border-width:1pt; vertical-align:top; width:1.7298in; padding:2.0pt 3.0pt 2.0pt 3.0pt" class="oldColor-a3a3a3" data-aos="fade-up">
    <p style="margin:0in; font-family:&quot;Microsoft JhengHei&quot;; color:black" class="oldFontSize-11.0Pt" data-aos="fade-up">高風險需更精確診斷</p>
    </td>
@@ -1505,14 +1491,14 @@ on treadmill "></p>
  <ul type="disc" style="direction:ltr; unicode-bidi:embed; margin-top:0in; margin-bottom:0in" data-aos="fade-up">
   <li style="margin-top:0; margin-bottom:0; vertical-align:middle; color:#C00000" class="oldColor-c00000" data-aos="fade-up"><span style="font-family:Calibri" class="oldFontSize-11.0Pt" data-aos="fade-up">ST </span><span style="font-family:&quot;Microsoft JhengHei&quot;" class="oldFontSize-11.0Pt" data-aos="fade-up">壓低</span><span style="font-family:Calibri" class="oldFontSize-11.0Pt" data-aos="fade-up"> ≥ 1 mm</span><span style="font-family:&quot;Microsoft JhengHei&quot;" class="oldFontSize-11.0Pt" data-aos="fade-up">（水平或下降型）持續</span><span style="font-family:Calibri" class="oldFontSize-11.0Pt" data-aos="fade-up"> ≥0.08 </span><span style="font-family:&quot;Microsoft JhengHei&quot;" class="oldFontSize-11.0Pt" data-aos="fade-up">秒</span></li>
  </ul>
- <p style="margin:0in; font-family:Calibri" class="oldFontSize-11.0Pt" data-aos="fade-up"><br>
+ <p style="margin:0in; font-family:Calibri" class="oldFontSize-11.0Pt" data-aos="fade-up"><br data-aos="fade-up">
   &nbsp;</p>
  <h4 style="margin:0in; font-family:&quot;Microsoft JhengHei&quot;; color:black" class="oldFontSize-12.0Pt" data-aos="fade-up"><span style="font-style:italic" data-aos="fade-up">【6】CAD 治療策略</span></h4>
  <p style="margin-top:5pt; margin-bottom:5pt; font-family:Calibri; color:black" class="oldFontSize-11.0Pt" data-aos="fade-up"><span style="font-weight:bold" data-aos="fade-up">A. 穩定型心絞痛藥物（控制缺血 + 預防事件）</span></p>
  <div style="direction:ltr" data-aos="fade-up">
  <table border="1" cellpadding="0" cellspacing="0" valign="top" style="direction:ltr; border-collapse:collapse; border-style:solid; border-color:#A3A3A3; border-width:
   1pt" title="" summary="" class="oldColor-a3a3a3" data-aos="fade-up">
-  <tbody><tr>
+  <tbody data-aos="fade-up"><tr data-aos="fade-up">
    <td style="border-style:solid; border-color:#A3A3A3; border-width:1pt; vertical-align:top; width:2.043in; padding:2.0pt 3.0pt 2.0pt 3.0pt" class="oldColor-a3a3a3" data-aos="fade-up">
    <p style="margin:0in; font-family:&quot;Microsoft JhengHei&quot;; color:black" class="oldFontSize-11.0Pt" data-aos="fade-up">藥物</p>
    </td>
@@ -1523,7 +1509,7 @@ on treadmill "></p>
    <p style="margin:0in; font-family:&quot;Microsoft JhengHei&quot;; color:black" class="oldFontSize-11.0Pt" data-aos="fade-up">備註</p>
    </td>
   </tr>
-  <tr>
+  <tr data-aos="fade-up">
    <td style="border-style:solid; border-color:#A3A3A3; border-width:1pt; vertical-align:top; width:2.043in; padding:2.0pt 3.0pt 2.0pt 3.0pt" class="oldColor-a3a3a3" data-aos="fade-up">
    <p style="margin:0in; font-family:Calibri; color:black" class="oldFontSize-11.0Pt" data-aos="fade-up">β-blockers</p>
    </td>
@@ -1534,7 +1520,7 @@ on treadmill "></p>
    <p style="margin:0in; font-family:&quot;Microsoft JhengHei&quot;; color:black" class="oldFontSize-11.0Pt" data-aos="fade-up">穩定型首選</p>
    </td>
   </tr>
-  <tr>
+  <tr data-aos="fade-up">
    <td style="border-style:solid; border-color:#A3A3A3; border-width:1pt; vertical-align:top; width:2.0625in; padding:2.0pt 3.0pt 2.0pt 3.0pt" class="oldColor-a3a3a3" data-aos="fade-up">
    <p style="margin:0in; font-family:Calibri; color:black" class="oldFontSize-11.0Pt" data-aos="fade-up">CCB（Verapamil,
    Diltiazem）</p>
@@ -1546,7 +1532,7 @@ on treadmill "></p>
    <p style="margin:0in; font-family:&quot;Microsoft JhengHei&quot;; color:black" class="oldFontSize-11.0Pt" data-aos="fade-up">若喘或有氣喘病史</p>
    </td>
   </tr>
-  <tr>
+  <tr data-aos="fade-up">
    <td style="border-style:solid; border-color:#A3A3A3; border-width:1pt; vertical-align:top; width:2.043in; padding:2.0pt 3.0pt 2.0pt 3.0pt" class="oldColor-a3a3a3" data-aos="fade-up">
    <p style="margin:0in; font-family:&quot;Microsoft JhengHei&quot;; color:black" class="oldFontSize-11.0Pt" data-aos="fade-up">硝酸鹽（Nitroglycerin）</p>
    </td>
@@ -1557,7 +1543,7 @@ on treadmill "></p>
    <p style="margin:0in; font-family:&quot;Microsoft JhengHei&quot;; color:black" class="oldFontSize-11.0Pt" data-aos="fade-up">與 PDE5 inhibitors 交互作用須注意</p>
    </td>
   </tr>
-  <tr>
+  <tr data-aos="fade-up">
    <td style="border-style:solid; border-color:#A3A3A3; border-width:1pt; vertical-align:top; width:2.043in; padding:2.0pt 3.0pt 2.0pt 3.0pt" class="oldColor-a3a3a3" data-aos="fade-up">
    <p style="margin:0in; font-family:Calibri; color:black" class="oldFontSize-11.0Pt" data-aos="fade-up">Ranolazine</p>
    </td>
@@ -1568,7 +1554,7 @@ on treadmill "></p>
    <p style="margin:0in; font-family:&quot;Microsoft JhengHei&quot;; color:black" class="oldFontSize-11.0Pt" data-aos="fade-up">心率與血壓影響小</p>
    </td>
   </tr>
-  <tr>
+  <tr data-aos="fade-up">
    <td style="border-style:solid; border-color:#A3A3A3; border-width:1pt; vertical-align:top; width:2.043in; padding:2.0pt 3.0pt 2.0pt 3.0pt" class="oldColor-a3a3a3" data-aos="fade-up">
    <p style="margin:0in; font-family:Calibri; color:black" class="oldFontSize-11.0Pt" data-aos="fade-up">Statins</p>
    </td>
@@ -1579,7 +1565,7 @@ on treadmill "></p>
    <p style="margin:0in; font-family:&quot;Microsoft JhengHei&quot;; color:black" class="oldFontSize-11.0Pt" data-aos="fade-up">所有 CAD 患者皆適用</p>
    </td>
   </tr>
-  <tr>
+  <tr data-aos="fade-up">
    <td style="border-style:solid; border-color:#A3A3A3; border-width:1pt; vertical-align:top; width:2.043in; padding:2.0pt 3.0pt 2.0pt 3.0pt" class="oldColor-a3a3a3" data-aos="fade-up">
    <p style="margin:0in; font-family:&quot;Microsoft JhengHei&quot;; color:black" class="oldFontSize-11.0Pt" data-aos="fade-up">抗血小板劑</p>
    </td>
@@ -1598,7 +1584,7 @@ on treadmill "></p>
  <div style="direction:ltr" data-aos="fade-up">
  <table border="1" cellpadding="0" cellspacing="0" valign="top" style="direction:ltr; border-collapse:collapse; border-style:solid; border-color:#A3A3A3; border-width:
   1pt" title="" summary="" class="oldColor-a3a3a3" data-aos="fade-up">
-  <tbody><tr>
+  <tbody data-aos="fade-up"><tr data-aos="fade-up">
    <td style="border-style:solid; border-color:#A3A3A3; border-width:1pt; vertical-align:top; width:2.1791in; padding:2.0pt 3.0pt 2.0pt 3.0pt" class="oldColor-a3a3a3" data-aos="fade-up">
    <p style="margin:0in; font-family:&quot;Microsoft JhengHei&quot;; color:black" class="oldFontSize-11.0Pt" data-aos="fade-up">血管解剖</p>
    </td>
@@ -1606,7 +1592,7 @@ on treadmill "></p>
    <p style="margin:0in; font-family:&quot;Microsoft JhengHei&quot;; color:black" class="oldFontSize-11.0Pt" data-aos="fade-up">治療建議</p>
    </td>
   </tr>
-  <tr>
+  <tr data-aos="fade-up">
    <td style="border-style:solid; border-color:#A3A3A3; border-width:1pt; vertical-align:top; width:2.1791in; padding:2.0pt 3.0pt 2.0pt 3.0pt" class="oldColor-a3a3a3" data-aos="fade-up">
    <p style="margin:0in; font-family:Calibri; color:black" class="oldFontSize-11.0Pt" data-aos="fade-up">LMA ≥
    50%、3 vessel + DM</p>
@@ -1615,7 +1601,7 @@ on treadmill "></p>
    <p style="margin:0in; font-family:Calibri; color:black" class="oldFontSize-11.0Pt" data-aos="fade-up">CABG</p>
    </td>
   </tr>
-  <tr>
+  <tr data-aos="fade-up">
    <td style="border-style:solid; border-color:#A3A3A3; border-width:1pt; vertical-align:top; width:2.1986in; padding:2.0pt 3.0pt 2.0pt 3.0pt" class="oldColor-a3a3a3" data-aos="fade-up">
    <p style="margin:0in; font-family:&quot;Microsoft JhengHei&quot;; color:black" class="oldFontSize-11.0Pt" data-aos="fade-up">單/雙 vessel、無 DM、EF 正常</p>
    </td>
@@ -1623,7 +1609,7 @@ on treadmill "></p>
    <p style="margin:0in; font-family:Calibri; color:black" class="oldFontSize-11.0Pt" data-aos="fade-up">PCI</p>
    </td>
   </tr>
-  <tr>
+  <tr data-aos="fade-up">
    <td style="border-style:solid; border-color:#A3A3A3; border-width:1pt; vertical-align:top; width:2.1791in; padding:2.0pt 3.0pt 2.0pt 3.0pt" class="oldColor-a3a3a3" data-aos="fade-up">
    <p style="margin:0in; font-family:&quot;Microsoft JhengHei&quot;; color:black" class="oldFontSize-11.0Pt" data-aos="fade-up">多處嚴重狹窄 + EF 差</p>
    </td>
@@ -1633,7 +1619,7 @@ on treadmill "></p>
   </tr>
  </tbody></table>
  </div>
- <p style="margin:0in; font-family:Calibri" class="oldFontSize-11.0Pt" data-aos="fade-up"><br>
+ <p style="margin:0in; font-family:Calibri" class="oldFontSize-11.0Pt" data-aos="fade-up"><br data-aos="fade-up">
   &nbsp;</p>
  <h4 style="margin:0in; font-family:&quot;Microsoft JhengHei&quot;; color:black" class="oldFontSize-12.0Pt" data-aos="fade-up"><span style="font-style:italic" data-aos="fade-up">特殊型態：變異型心絞痛（Prinzmetal angina）</span></h4>
  <ul type="disc" style="direction:ltr; unicode-bidi:embed; margin-top:0in; margin-bottom:0in" data-aos="fade-up">
@@ -1651,11 +1637,11 @@ on treadmill "></p>
  </ul>
  <p style="margin:0in; font-family:Calibri" class="oldFontSize-11.0Pt" data-aos="fade-up">&nbsp;</p>
  <p style="margin:0in; font-family:Calibri" class="oldFontSize-11.0Pt" data-aos="fade-up">&nbsp;</p>
- <h3 style="margin:0in; font-family:Calibri" class="oldFontSize-12.0Pt" data-aos="fade-up"><span style="font-weight:bold; color:#1F3763" class="oldColor-1f3763" data-aos="fade-up">USMLE的擴展知識點 （請再核實）</span><span style="color:#1F3763" class="oldColor-1f3763" data-aos="fade-up"><br class="there-were-several-br"></span><span style="color:black" data-aos="fade-up">CAD 的臨床分類與特徵</span></h3>
+ <h3 style="margin:0in; font-family:Calibri" class="oldFontSize-12.0Pt" data-aos="fade-up"><span style="font-weight:bold; color:#1F3763" class="oldColor-1f3763" data-aos="fade-up">USMLE的擴展知識點 （請再核實）</span><span style="color:#1F3763" class="oldColor-1f3763" data-aos="fade-up"><br class="there-were-several-br" data-aos="fade-up"></span><span style="color:black" data-aos="fade-up">CAD 的臨床分類與特徵</span></h3>
  <div style="direction:ltr" data-aos="fade-up">
  <table border="1" cellpadding="0" cellspacing="0" valign="top" style="direction:ltr; border-collapse:collapse; border-style:solid; border-color:#A3A3A3; border-width:
   1pt" title="" summary="" class="oldColor-a3a3a3" data-aos="fade-up">
-  <tbody><tr>
+  <tbody data-aos="fade-up"><tr data-aos="fade-up">
    <td style="border-style:solid; border-color:#A3A3A3; border-width:1pt; vertical-align:top; width:1.0097in; padding:2.0pt 3.0pt 2.0pt 3.0pt" class="oldColor-a3a3a3" data-aos="fade-up">
    <p style="margin:0in; font-family:&quot;Microsoft JhengHei&quot;; text-align:center" class="oldFontSize-11.0Pt" data-aos="fade-up"><span style="font-weight:bold" data-aos="fade-up">類型</span></p>
    </td>
@@ -1672,7 +1658,7 @@ on treadmill "></p>
    <p style="margin:0in; font-family:&quot;Microsoft JhengHei&quot;; color:#C00000; text-align:center" class="oldFontSize-11.0Pt oldColor-c00000" data-aos="fade-up"><span style="font-weight:bold" data-aos="fade-up">疼痛特徵與持續時間</span></p>
    </td>
   </tr>
-  <tr>
+  <tr data-aos="fade-up">
    <td style="border-style:solid; border-color:#A3A3A3; border-width:1pt; vertical-align:top; width:1.0097in; padding:2.0pt 3.0pt 2.0pt 3.0pt" class="oldColor-a3a3a3" data-aos="fade-up">
    <p style="margin:0in; font-family:Calibri" class="oldFontSize-11.0Pt" data-aos="fade-up"><span style="font-weight:bold" data-aos="fade-up">Stable Angina</span></p>
    </td>
@@ -1691,7 +1677,7 @@ on treadmill "></p>
    分鐘、運動誘發、休息緩解</p>
    </td>
   </tr>
-  <tr>
+  <tr data-aos="fade-up">
    <td style="border-style:solid; border-color:#A3A3A3; border-width:1pt; vertical-align:top; width:1.0097in; padding:2.0pt 3.0pt 2.0pt 3.0pt" class="oldColor-a3a3a3" data-aos="fade-up">
    <p style="margin:0in; font-family:Calibri" class="oldFontSize-11.0Pt" data-aos="fade-up"><span style="font-weight:bold" data-aos="fade-up">Unstable Angina</span></p>
    </td>
@@ -1710,7 +1696,7 @@ on treadmill "></p>
    分鐘、休息也會痛</p>
    </td>
   </tr>
-  <tr>
+  <tr data-aos="fade-up">
    <td style="border-style:solid; border-color:#A3A3A3; border-width:1pt; vertical-align:top; width:1.0097in; padding:2.0pt 3.0pt 2.0pt 3.0pt" class="oldColor-a3a3a3" data-aos="fade-up">
    <p style="margin:0in; font-family:Calibri" class="oldFontSize-11.0Pt" data-aos="fade-up"><span style="font-weight:bold" data-aos="fade-up">NSTEMI</span></p>
    </td>
@@ -1727,7 +1713,7 @@ on treadmill "></p>
    <p style="margin:0in; font-family:&quot;Microsoft JhengHei&quot;; color:#C00000" class="oldFontSize-11.0Pt oldColor-c00000" data-aos="fade-up">持續性胸痛</p>
    </td>
   </tr>
-  <tr>
+  <tr data-aos="fade-up">
    <td style="border-style:solid; border-color:#A3A3A3; border-width:1pt; vertical-align:top; width:1.0097in; padding:2.0pt 3.0pt 2.0pt 3.0pt" class="oldColor-a3a3a3" data-aos="fade-up">
    <p style="margin:0in; font-family:Calibri" class="oldFontSize-11.0Pt" data-aos="fade-up"><span style="font-weight:bold" data-aos="fade-up">STEMI</span></p>
    </td>
@@ -1755,7 +1741,7 @@ on treadmill "></p>
  <div style="direction:ltr" data-aos="fade-up">
  <table border="1" cellpadding="0" cellspacing="0" valign="top" style="direction:ltr; border-collapse:collapse; border-style:solid; border-color:#A3A3A3; border-width:
   1pt" title="" summary="" class="oldColor-a3a3a3" data-aos="fade-up">
-  <tbody><tr>
+  <tbody data-aos="fade-up"><tr data-aos="fade-up">
    <td style="border-style:solid; border-color:#A3A3A3; border-width:1pt; vertical-align:top; width:3.0895in; padding:2.0pt 3.0pt 2.0pt 3.0pt" class="oldColor-a3a3a3" data-aos="fade-up">
    <p style="margin:0in; font-family:&quot;Microsoft JhengHei&quot;; text-align:center" class="oldFontSize-11.0Pt" data-aos="fade-up"><span style="font-weight:bold" data-aos="fade-up">步驟</span></p>
    </td>
@@ -1763,7 +1749,7 @@ on treadmill "></p>
    <p style="margin:0in; font-family:&quot;Microsoft JhengHei&quot;; text-align:center" class="oldFontSize-11.0Pt" data-aos="fade-up"><span style="font-weight:bold" data-aos="fade-up">工具或指標</span></p>
    </td>
   </tr>
-  <tr>
+  <tr data-aos="fade-up">
    <td style="border-style:solid; border-color:#A3A3A3; border-width:1pt; vertical-align:top; width:3.0895in; padding:2.0pt 3.0pt 2.0pt 3.0pt" class="oldColor-a3a3a3" data-aos="fade-up">
    <p style="margin:0in; font-family:&quot;Microsoft JhengHei&quot;" class="oldFontSize-11.0Pt" data-aos="fade-up">初步評估</p>
    </td>
@@ -1772,7 +1758,7 @@ on treadmill "></p>
    風險因子</p>
    </td>
   </tr>
-  <tr>
+  <tr data-aos="fade-up">
    <td style="border-style:solid; border-color:#A3A3A3; border-width:1pt; vertical-align:top; width:3.0895in; padding:2.0pt 3.0pt 2.0pt 3.0pt" class="oldColor-a3a3a3" data-aos="fade-up">
    <p style="margin:0in; font-family:&quot;Microsoft JhengHei&quot;" class="oldFontSize-11.0Pt" data-aos="fade-up">靜息心電圖</p>
    </td>
@@ -1780,7 +1766,7 @@ on treadmill "></p>
    <p style="margin:0in; font-family:Calibri" class="oldFontSize-11.0Pt" data-aos="fade-up">ST/T 變化</p>
    </td>
   </tr>
-  <tr>
+  <tr data-aos="fade-up">
    <td style="border-style:solid; border-color:#A3A3A3; border-width:1pt; vertical-align:top; width:3.0895in; padding:2.0pt 3.0pt 2.0pt 3.0pt" class="oldColor-a3a3a3" data-aos="fade-up">
    <p style="margin:0in; font-family:&quot;Microsoft JhengHei&quot;" class="oldFontSize-11.0Pt" data-aos="fade-up">運動心電圖（treadmill）</p>
    </td>
@@ -1789,7 +1775,7 @@ on treadmill "></p>
    interpretable</p>
    </td>
   </tr>
-  <tr>
+  <tr data-aos="fade-up">
    <td style="border-style:solid; border-color:#A3A3A3; border-width:1pt; vertical-align:top; width:3.0895in; padding:2.0pt 3.0pt 2.0pt 3.0pt" class="oldColor-a3a3a3" data-aos="fade-up">
    <p style="margin:0in; font-family:&quot;Microsoft JhengHei&quot;" class="oldFontSize-11.0Pt" data-aos="fade-up">核醫
    MPI / Echo / MRI</p>
@@ -1798,7 +1784,7 @@ on treadmill "></p>
    <p style="margin:0in; font-family:&quot;Microsoft JhengHei&quot;; color:#C00000" class="oldFontSize-11.0Pt oldColor-c00000" data-aos="fade-up">若無法運動或心電圖無法判讀</p>
    </td>
   </tr>
-  <tr>
+  <tr data-aos="fade-up">
    <td style="border-style:solid; border-color:#A3A3A3; border-width:1pt; vertical-align:top; width:3.0895in; padding:2.0pt 3.0pt 2.0pt 3.0pt" class="oldColor-a3a3a3" data-aos="fade-up">
    <p style="margin:0in; font-family:Calibri" class="oldFontSize-11.0Pt" data-aos="fade-up">CTCA 或冠狀動脈攝影</p>
    </td>
@@ -1814,7 +1800,7 @@ on treadmill "></p>
  <div style="direction:ltr" data-aos="fade-up">
  <table border="1" cellpadding="0" cellspacing="0" valign="top" style="direction:ltr; border-collapse:collapse; border-style:solid; border-color:#A3A3A3; border-width:
   1pt" title="" summary="" class="oldColor-a3a3a3" data-aos="fade-up">
-  <tbody><tr>
+  <tbody data-aos="fade-up"><tr data-aos="fade-up">
    <td style="border-style:solid; border-color:#A3A3A3; border-width:1pt; vertical-align:top; width:.8131in; padding:2.0pt 3.0pt 2.0pt 3.0pt" class="oldColor-a3a3a3" data-aos="fade-up">
    <p style="margin:0in; font-family:&quot;Microsoft JhengHei&quot;; text-align:center" class="oldFontSize-11.0Pt" data-aos="fade-up"><span style="font-weight:bold" data-aos="fade-up">項目</span></p>
    </td>
@@ -1822,7 +1808,7 @@ on treadmill "></p>
    <p style="margin:0in; font-family:&quot;Microsoft JhengHei&quot;; text-align:center" class="oldFontSize-11.0Pt" data-aos="fade-up"><span style="font-weight:bold" data-aos="fade-up">工具</span></p>
    </td>
   </tr>
-  <tr>
+  <tr data-aos="fade-up">
    <td style="border-style:solid; border-color:#A3A3A3; border-width:1pt; vertical-align:top; width:.8326in; padding:2.0pt 3.0pt 2.0pt 3.0pt" class="oldColor-a3a3a3" data-aos="fade-up">
    <p style="margin:0in; font-family:&quot;Microsoft JhengHei&quot;" class="oldFontSize-11.0Pt" data-aos="fade-up">血清酵素</p>
    </td>
@@ -1831,7 +1817,7 @@ on treadmill "></p>
    I/T、CK-MB</p>
    </td>
   </tr>
-  <tr>
+  <tr data-aos="fade-up">
    <td style="border-style:solid; border-color:#A3A3A3; border-width:1pt; vertical-align:top; width:.8131in; padding:2.0pt 3.0pt 2.0pt 3.0pt" class="oldColor-a3a3a3" data-aos="fade-up">
    <p style="margin:0in; font-family:Calibri" class="oldFontSize-11.0Pt" data-aos="fade-up">ECG</p>
    </td>
@@ -1840,7 +1826,7 @@ on treadmill "></p>
    分鐘重複一次，找 ST elevation</p>
    </td>
   </tr>
-  <tr>
+  <tr data-aos="fade-up">
    <td style="border-style:solid; border-color:#A3A3A3; border-width:1pt; vertical-align:top; width:.8131in; padding:2.0pt 3.0pt 2.0pt 3.0pt" class="oldColor-a3a3a3" data-aos="fade-up">
    <p style="margin:0in; font-family:Calibri" class="oldFontSize-11.0Pt" data-aos="fade-up">CXR</p>
    </td>
@@ -1849,7 +1835,7 @@ on treadmill "></p>
    Ao dissection）</p>
    </td>
   </tr>
-  <tr>
+  <tr data-aos="fade-up">
    <td style="border-style:solid; border-color:#A3A3A3; border-width:1pt; vertical-align:top; width:.8131in; padding:2.0pt 3.0pt 2.0pt 3.0pt" class="oldColor-a3a3a3" data-aos="fade-up">
    <p style="margin:0in; font-family:Calibri" class="oldFontSize-11.0Pt" data-aos="fade-up">Echo</p>
    </td>
@@ -1859,7 +1845,7 @@ on treadmill "></p>
   </tr>
  </tbody></table>
  </div>
- <p style="margin:0in; font-family:Calibri" class="oldFontSize-11.0Pt" data-aos="fade-up"><br>
+ <p style="margin:0in; font-family:Calibri" class="oldFontSize-11.0Pt" data-aos="fade-up"><br data-aos="fade-up">
   &nbsp;</p>
  <h3 style="margin:0in; font-family:Calibri" class="oldFontSize-12.0Pt" data-aos="fade-up"><span style="color:black" data-aos="fade-up"><span style="mso-spacerun:yes" data-aos="fade-up">&nbsp;</span></span><span style="font-weight:bold; color:#C00000" class="oldColor-c00000" data-aos="fade-up">三、治療（以病型分）</span></h3>
  <h4 style="margin:0in; font-family:Calibri; color:black" class="oldFontSize-12.0Pt" data-aos="fade-up"><span style="font-style:italic" data-aos="fade-up">Stable Angina</span></h4>
@@ -1895,12 +1881,12 @@ on treadmill "></p>
   <li style="margin-top:0; margin-bottom:0; vertical-align:middle" data-aos="fade-up"><span style="font-family:Calibri; color:black" class="oldFontSize-11.0Pt" data-aos="fade-up">± GPIIb/IIIa
       inhibitor</span><span style="font-family:&quot;Microsoft JhengHei&quot;; color:black" class="oldFontSize-11.0Pt" data-aos="fade-up">（重度高風險病人）</span></li>
  </ul>
- <p style="margin:0in; font-family:Calibri" class="oldFontSize-11.0Pt" data-aos="fade-up"><br class="there-were-several-br">&nbsp;</p>
+ <p style="margin:0in; font-family:Calibri" class="oldFontSize-11.0Pt" data-aos="fade-up"><br class="there-were-several-br" data-aos="fade-up">&nbsp;</p>
  <h3 style="margin:0in; font-family:&quot;Segoe UI Emoji&quot;; color:black" class="oldFontSize-12.0Pt" data-aos="fade-up">🚨 五、Stress Test 選擇邏輯（快速表）</h3>
  <div style="direction:ltr" data-aos="fade-up">
  <table border="1" cellpadding="0" cellspacing="0" valign="top" style="direction:ltr; border-collapse:collapse; border-style:solid; border-color:#A3A3A3; border-width:
   1pt" title="" summary="" class="oldColor-a3a3a3" data-aos="fade-up">
-  <tbody><tr>
+  <tbody data-aos="fade-up"><tr data-aos="fade-up">
    <td style="border-style:solid; border-color:#A3A3A3; border-width:1pt; vertical-align:top; width:2.2305in; padding:2.0pt 3.0pt 2.0pt 3.0pt" class="oldColor-a3a3a3" data-aos="fade-up">
    <p style="margin:0in; font-family:&quot;Microsoft JhengHei&quot;; text-align:center" class="oldFontSize-11.0Pt" data-aos="fade-up"><span style="font-weight:bold" data-aos="fade-up">條件</span></p>
    </td>
@@ -1908,7 +1894,7 @@ on treadmill "></p>
    <p style="margin:0in; font-family:&quot;Microsoft JhengHei&quot;; text-align:center" class="oldFontSize-11.0Pt" data-aos="fade-up"><span style="font-weight:bold" data-aos="fade-up">首選測試</span></p>
    </td>
   </tr>
-  <tr>
+  <tr data-aos="fade-up">
    <td style="border-style:solid; border-color:#A3A3A3; border-width:1pt; vertical-align:top; width:2.2305in; padding:2.0pt 3.0pt 2.0pt 3.0pt" class="oldColor-a3a3a3" data-aos="fade-up">
    <p style="margin:0in; font-family:&quot;Microsoft JhengHei&quot;" class="oldFontSize-11.0Pt" data-aos="fade-up">能運動
    + ECG interpretable</p>
@@ -1917,7 +1903,7 @@ on treadmill "></p>
    <p style="margin:0in; font-family:Calibri" class="oldFontSize-11.0Pt" data-aos="fade-up">Treadmill ECG</p>
    </td>
   </tr>
-  <tr>
+  <tr data-aos="fade-up">
    <td style="border-style:solid; border-color:#A3A3A3; border-width:1pt; vertical-align:top; width:2.2305in; padding:2.0pt 3.0pt 2.0pt 3.0pt" class="oldColor-a3a3a3" data-aos="fade-up">
    <p style="margin:0in; font-family:&quot;Microsoft JhengHei&quot;" class="oldFontSize-11.0Pt" data-aos="fade-up">不能運動</p>
    </td>
@@ -1926,7 +1912,7 @@ on treadmill "></p>
    stress（Adenosine）</p>
    </td>
   </tr>
-  <tr>
+  <tr data-aos="fade-up">
    <td style="border-style:solid; border-color:#A3A3A3; border-width:1pt; vertical-align:top; width:2.2305in; padding:2.0pt 3.0pt 2.0pt 3.0pt" class="oldColor-a3a3a3" data-aos="fade-up">
    <p style="margin:0in; font-family:Calibri" class="oldFontSize-11.0Pt" data-aos="fade-up">COPD / 氣喘</p>
    </td>
@@ -1935,7 +1921,7 @@ on treadmill "></p>
    Echo</p>
    </td>
   </tr>
-  <tr>
+  <tr data-aos="fade-up">
    <td style="border-style:solid; border-color:#A3A3A3; border-width:1pt; vertical-align:top; width:2.25in; padding:2.0pt 3.0pt 2.0pt 3.0pt" class="oldColor-a3a3a3" data-aos="fade-up">
    <p style="margin:0in; font-family:Calibri" class="oldFontSize-11.0Pt" data-aos="fade-up">LBBB / 起搏器 /
    baseline ST異常</p>
@@ -1947,7 +1933,7 @@ on treadmill "></p>
   </tr>
  </tbody></table>
  </div>
- <p style="margin:0in; font-family:Calibri" class="oldFontSize-11.0Pt" data-aos="fade-up"><br>
+ <p style="margin:0in; font-family:Calibri" class="oldFontSize-11.0Pt" data-aos="fade-up"><br data-aos="fade-up">
   &nbsp;</p>
 </ul>
 
@@ -1978,7 +1964,7 @@ artery disease</p>
 
 </div>
 
-<div class="outerSpaceOld display-none">
+<div class="outerSpaceOld display-none" data-aos="fade-up">
 
 <p style="margin:0in" data-aos="fade-up">&nbsp;</p>
 
@@ -1992,7 +1978,7 @@ artery disease</p>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js" integrity="sha512-A7AYk1fGKX6S2SsHywmPkrnzTZHrgiVT7GcQkLGDe2ev0aWb8zejytzS8wjo7PGEXKqJOrjQ4oORtnimIRZBtw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" integrity="sha512-1cK78a1o+ht2JcaW6g8OXYwqpev9+6GqOkz9xmBN9iUUhIndKtxwILGWYOSibOKjLsEdjyjZvYDq/cZwNeak0w==" crossorigin="anonymous" referrerpolicy="no-referrer">
 <script>
-  AOS.init();
+    AOS.init();
 </script>
 <!--ENDOF AOS 區-->
 
@@ -2015,7 +2001,7 @@ https://cdn.jsdelivr.net/npm/sweetalert2@11.22.2/dist/sweetalert2.all.min.js
 <link href="
 https://cdn.jsdelivr.net/npm/sweetalert2@11.22.2/dist/sweetalert2.min.css
 " rel="stylesheet">
-<script>
+<!--script>
     function selFont() {
         const fonts = {
             "ChenYuluoyan Mono": [100],
@@ -2075,7 +2061,7 @@ https://cdn.jsdelivr.net/npm/sweetalert2@11.22.2/dist/sweetalert2.min.css
             }
         });
     }
-</script>
+</script-->
 <button class="float-button" onclick="selFont()">選擇字體</button>
 <!--ENDOF 字體選擇區 (生產環境請移除) -->
 <!--important 主字體大小選擇區 (生產環境請移除) 此段AI生成 (些微手動更動)-->
@@ -2120,61 +2106,61 @@ https://cdn.jsdelivr.net/npm/sweetalert2@11.22.2/dist/sweetalert2.min.css
 </div>
 
 <script>
-function initNavigation() {
-    // 解析 TOC 結構
-    const tocDiv = document.getElementById('toc-for-dev');
-    const pages = [];
-    
-    if (tocDiv) {
-        const links = tocDiv.querySelectorAll('a[href]');
-        links.forEach(link => {
-            pages.push({
-                url: link.getAttribute('href'),
-                title: link.textContent.trim()
-            });
-        });
-    }
-    
-    // 獲取當前頁面 URL
-    const currentUrl = window.location.pathname;
-    
-    // 找到當前頁面在 TOC 中的位置
-    const currentIndex = pages.findIndex(page => page.url === currentUrl);
-    
-    const prevButton = document.getElementById('prev-page');
-    const nextButton = document.getElementById('next-page');
-    
-    // 設置上一頁按鈕
-    if (currentIndex > 0) {
-        prevButton.disabled = false;
-        prevButton.onclick = () => {
-            window.location.href = pages[currentIndex - 1].url;
-        };
-        prevButton.title = `上一頁: ${pages[currentIndex - 1].title}`;
-    } else {
-        prevButton.disabled = true;
-    }
-    
-    // 設置下一頁按鈕
-    if (currentIndex >= 0 && currentIndex < pages.length - 1) {
-        nextButton.disabled = false;
-        nextButton.onclick = () => {
-            window.location.href = pages[currentIndex + 1].url;
-        };
-        nextButton.title = `下一頁: ${pages[currentIndex + 1].title}`;
-    } else {
-        nextButton.disabled = true;
-    }
-    
-    // 如果當前頁面不在 TOC 中，禁用所有按鈕
-    if (currentIndex === -1) {
-        prevButton.disabled = true;
-        nextButton.disabled = true;
-    }
-}
+    function initNavigation() {
+        // 解析 TOC 結構
+        const tocDiv = document.getElementById('toc-for-dev');
+        const pages = [];
 
-// 頁面載入完成後初始化導航
-document.addEventListener('DOMContentLoaded', initNavigation);
+        if (tocDiv) {
+            const links = tocDiv.querySelectorAll('a[href]');
+            links.forEach(link => {
+                pages.push({
+                    url: link.getAttribute('href'),
+                    title: link.textContent.trim()
+                });
+            });
+        }
+
+        // 獲取當前頁面 URL
+        const currentUrl = window.location.pathname;
+
+        // 找到當前頁面在 TOC 中的位置
+        const currentIndex = pages.findIndex(page => page.url === currentUrl);
+
+        const prevButton = document.getElementById('prev-page');
+        const nextButton = document.getElementById('next-page');
+
+        // 設置上一頁按鈕
+        if (currentIndex > 0) {
+            prevButton.disabled = false;
+            prevButton.onclick = () => {
+                window.location.href = pages[currentIndex - 1].url;
+            };
+            prevButton.title = `上一頁: ${pages[currentIndex - 1].title}`;
+        } else {
+            prevButton.disabled = true;
+        }
+
+        // 設置下一頁按鈕
+        if (currentIndex >= 0 && currentIndex < pages.length - 1) {
+            nextButton.disabled = false;
+            nextButton.onclick = () => {
+                window.location.href = pages[currentIndex + 1].url;
+            };
+            nextButton.title = `下一頁: ${pages[currentIndex + 1].title}`;
+        } else {
+            nextButton.disabled = true;
+        }
+
+        // 如果當前頁面不在 TOC 中，禁用所有按鈕
+        if (currentIndex === -1) {
+            prevButton.disabled = true;
+            nextButton.disabled = true;
+        }
+    }
+
+    // 頁面載入完成後初始化導航
+    document.addEventListener('DOMContentLoaded', initNavigation);
 </script>
 <!--ENDOF 上一頁下一頁導航區-->
 

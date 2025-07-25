@@ -418,50 +418,29 @@ li {
 
 ul {
     padding-inline-start: 2vw;
-    /* 更小的縮排 */
 }
 
 .outerSpace {
-    /*overflow-y: scroll !important; 重要更動 2025 07 24*/
-    position: static !important;
-    top: var(--outerSpace-top) !important;
-    left: var(--outerSpace-left) !important;
-    /* 元素的 width 和 height，會包含 padding 和 border。*/
     box-sizing: border-box ! important;
-    /* 100vh 減去上下 margin 各 1rem */
-    /*height: var(--outerSpace-height) !important; 重要更動 2025 07 24*/
     width: 100vw !important;
-    /*var(--outerSpace-width) !important;*/
-    height: fit-content !important;
-    /*margin: 1rem !important; 重要更動 2025 07 24*/
-    margin-top: 14vh !important;
+    margin-top: 0px !important;
     margin-bottom: 0px !important;
     margin-left: 0px !important;
     margin-right: 0px !important;
     padding-left: 1rem !important;
     padding-right: 1rem !important;
-    padding-top: 0px !important;
+    padding-top: 14vh !important;
     padding-bottom: 0px !important;
     border: 0px !important;
     background: #ffffffff !important;
 }
 
-/*html {
-    overflow-y: scroll;
-}*/
 
 body {
     margin-bottom: 0px;
     margin-top: 0px;
     margin-left: 0px;
     margin-right: 0px;
-    /*padding: 0px; 重要更動 2025 07 24*/
-    /*padding-top: 14vh; XXX*/
-    /*padding-bottom: 1rem;*/
-    /*overflow: hidden; 重要更動 2025 07 24*/
-    /*overflow-y: hidden;*/
-    height: max-content;
-    /*overflow-x: hidden;*/
     background: #f6e5c9 !important;
 }
 
@@ -496,10 +475,6 @@ canvas {
 }
 
 .outerSpace>ul>li>p>span:first-of-type {
-    /*
-    x-large 96*27 (1.5rem)
-    2rem:138*36
-    */
     font-size: var(--onenoteInterpreter-new-font-size-h1);
     color: var(--color-wakakusa-1) !important;
 }
@@ -531,11 +506,9 @@ canvas {
     border-bottom-width: 2px !important;
     border-bottom-style: groove !important;
     border-bottom-color: var(--color-akizakura-5) !important;
-    /*border-radius: 50% / 25% ! important;*/
 }
 
 .titleL2span {
-    /* 我原本是寫 larger(105.61*20) 但 larger 是 相對父層變大 large( 108*20 ) (1.12rem 107.53*20)比較合適 (1.1 rem = 105.61*20)*/
     font-size: var(--onenoteInterpreter-new-font-size-h2) !important;
     color: var(--color-akizakura-6) !important;
 }
@@ -588,27 +561,39 @@ td {
     position: fixed;
     top: 0px;
     left: 0px;
-    background-color: #f6e5c9;
-    padding-right: 7%;
-    padding-left: 3%;
+    background-color: #f6e5c9!important;
+    padding: 0 7% 0 3%;
     display: grid;
-    grid-template-columns: 7% 25% 3% 3% 3% 1fr;
-    direction: rtl;
+    align-items: center;
     gap: 2%;
     height: 14vh;
     width: 100vw;
     box-sizing: border-box;
     z-index: 1000;
+    direction: rtl;
+    grid-template-columns: 7% 25% 3% 3% 3% 1fr;
+}
+
+.buttonLogin{
+   background: #5b3717 !important;
+   border-radius: 8%;
+   color: #ffffff !important;
+}
+
+.buttonSearch{
+   background: #E0CFBB !important;
+   border-radius: 28%;
+   color: #ffffff !important;
 }
 
 .itemBangs {
-    margin-top: 26%;
-    margin-bottom: 26%;
+    height: 46%;
     background-color: #ccc;
     text-align: center;
-    /*padding: 10px;*/
-    border: 1px solid #999;
+    align-items: center;
+    justify-content: center;
 }
+
 
 /*end of瀏海區****************************/
 
@@ -634,6 +619,7 @@ td {
     display: flex;
     gap: 0.5rem;
     z-index: 9999;
+    display: none;
 }
 
 #font-controls button {
@@ -656,11 +642,11 @@ td {
 
 /*上一頁下一頁導航區 (AI)*/
 .dev-toc-nav-buttons {
+    display: none;
     position: absolute;
-    /*bottom: 20px; 重要更動 24 07 24*/
     top: 90vw;
     left: 20px;
-    display: flex;
+    /*display: flex;*/
     gap: 10px;
     z-index: 1000;
 }
@@ -696,19 +682,19 @@ td {
         <script src="//s3-ap-northeast-1.amazonaws.com/justfont-user-script/jf-65691.js"></script>
         <script src="https://kit.fontawesome.com/65b47a30d3.js" crossorigin="anonymous"></script></head>
 
-<body lang="zh-TW" style="font-family:Calibri" class="oldFontSize-11.0Pt" data-aos="fade-up">
-  <div class="containerBangs">
-    <div class="itemBangs">7%</div>
-    <div class="itemBangs">25%</div>
-    <div class="itemBangs">3%</div>
-    <div class="itemBangs">3%</div>
-    <div class="itemBangs">3%</div>
-    <div class="itemBangs">彈性空間</div>
+<body lang="zh-TW" style="font-family:Calibri" class="oldFontSize-11.0Pt">
+  <div class="containerBangs newFontSizeRank-3">
+    <div class="itemBangs buttonLogin"><p>登入</p></div>
+    <div class="itemBangs buttonSearch"><p>搜尋</p></div>
+    <div class="itemBangs"><p>題目</p></div>
+    <div class="itemBangs"><p>主題</p></div>
+    <div class="itemBangs"><p>分科</p></div>
+    <div class="itemBangs"><p>彈性空間</p></div>
   </div>
   <div style="direction:ltr; margin-top:.2187in; margin-left:.0493in; width:7.5548in" class="outerSpace" data-aos="fade-up">
 
 <ul style="direction:ltr; unicode-bidi:embed; margin-top:0in; margin-bottom:0in" data-aos="fade-up">
- <h1 style="color:#000000; margin:0in; margin-left:.75in; text-indent:-.1666in; font-family:微軟正黑體" class="oldFontSize-16.0Pt oldColor-000000" data-aos="fade-up"><img src="乾癬_asset_0.png" width="16" height="16" alt="相關條目" class="display-none">&nbsp;<span style="color:black" data-aos="fade-up">相關條目：</span><a href="onenote:Rheuma.one#總論|關節炎總論&amp;section-id={2467CC7A-8F2B-4F25-B7A3-313D199800C1}&amp;page-id={F6FBFCC2-66AB-4E98-8391-5F1D0D576BF7}&amp;object-id={4453FD4F-D476-0256-364A-8FFB7BCB988A}&amp;26&amp;base-path=https://d.docs.live.net/56ce32fba64785ca/臨床筆記"><span style="color:#1E4E79" class="oldColor-1e4e79" data-aos="fade-up">關節炎</span></a></h1>
+ <h1 style="color:#000000; margin:0in; margin-left:.75in; text-indent:-.1666in; font-family:微軟正黑體" class="oldFontSize-16.0Pt oldColor-000000" data-aos="fade-up"><img src="乾癬_asset_0.png" width="16" height="16" alt="相關條目" data-aos="fade-up" class="display-none">&nbsp;<span style="color:black" data-aos="fade-up">相關條目：</span><a href="onenote:Rheuma.one#總論|關節炎總論&amp;section-id={2467CC7A-8F2B-4F25-B7A3-313D199800C1}&amp;page-id={F6FBFCC2-66AB-4E98-8391-5F1D0D576BF7}&amp;object-id={4453FD4F-D476-0256-364A-8FFB7BCB988A}&amp;26&amp;base-path=https://d.docs.live.net/56ce32fba64785ca/臨床筆記" data-aos="fade-up"><span style="color:#1E4E79" class="oldColor-1e4e79" data-aos="fade-up">關節炎</span></a></h1>
  <p style="margin:0in; margin-left:.75in; font-family:Calibri" class="oldFontSize-11.0Pt" data-aos="fade-up">&nbsp;</p>
  <ul type="disc" style="direction:ltr; unicode-bidi:embed; margin-top:0in; margin-bottom:0in" data-aos="fade-up">
   <li style="margin-top:0; margin-bottom:0; vertical-align:middle; color:#1E4E79" class="oldColor-1e4e79" data-aos="fade-up"><span style="font-family:微軟正黑體" class="oldFontSize-16.0Pt" data-aos="fade-up">機轉：慢性反覆發作之皮膚病</span></li>
@@ -765,7 +751,7 @@ Beta-blockers
 Corticosteroid:外用是氵台療,但是囗服藥可能有reboundrelapse
 Depression藥物::主要是Lithium
 Gemfibrozil(降血脂藥物,可以降LDL丶TG,也可以升高HDL)
-Imiquimod、INF-a"></p>
+Imiquimod、INF-a" data-aos="fade-up"></p>
  <ul type="circle" style="direction:ltr; unicode-bidi:embed; margin-top:0in; margin-bottom:0in" data-aos="fade-up">
   <li style="margin-top:0; margin-bottom:0; vertical-align:middle" data-aos="fade-up"><span style="font-family:微軟正黑體" lang="zh-TW" class="oldFontSize-11.0Pt" data-aos="fade-up">環境、壓力</span><span style="font-family:微軟正黑體" lang="zh-TW" class="oldFontSize-11.0Pt" data-aos="fade-up">(Environment</span><span style="font-family:微軟正黑體" lang="zh-TW" class="oldFontSize-11.0Pt" data-aos="fade-up">、</span><span style="font-family:微軟正黑體" lang="zh-TW" class="oldFontSize-11.0Pt" data-aos="fade-up">Emotion)</span><span style="font-family:微軟正黑體" lang="zh-TW" class="oldFontSize-11.0Pt" data-aos="fade-up">：約</span><span style="font-family:微軟正黑體" lang="zh-TW" class="oldFontSize-11.0Pt" data-aos="fade-up">40%</span><span style="font-family:微軟正黑體" lang="zh-TW" class="oldFontSize-11.0Pt" data-aos="fade-up">的病患會因壓力使乾癬惡化，小孩更高達</span><span style="font-family:微軟正黑體" lang="zh-TW" class="oldFontSize-11.0Pt" data-aos="fade-up">90%</span></li>
   <li style="margin-top:0; margin-bottom:0; vertical-align:middle" data-aos="fade-up"><span style="font-family:微軟正黑體" lang="zh-TW" class="oldFontSize-11.0Pt" data-aos="fade-up">光照</span><span style="font-family:微軟正黑體" lang="zh-TW" class="oldFontSize-11.0Pt" data-aos="fade-up">(Sunlight)</span><span style="font-family:微軟正黑體" lang="zh-TW" class="oldFontSize-11.0Pt" data-aos="fade-up">：照光治療</span><span style="font-family:微軟正黑體" lang="zh-TW" class="oldFontSize-11.0Pt" data-aos="fade-up">(UVB)</span><span style="font-family:微軟正黑體" lang="zh-TW" class="oldFontSize-11.0Pt" data-aos="fade-up">為治療之一、但過度日曬反而會加劇乾癬</span></li>
@@ -814,7 +800,7 @@ Imiquimod、INF-a"></p>
   </ul>
   <li style="margin-top:0; margin-bottom:0; vertical-align:middle; color:#1E4E79" class="oldColor-1e4e79" data-aos="fade-up"><span style="font-family:微軟正黑體" class="oldFontSize-16.0Pt" data-aos="fade-up">診斷：</span></li>
  </ul>
- <p style="margin:0in; margin-left:.375in" data-aos="fade-up"><img src="乾癬_asset_2.png" width="384" height="497"></p>
+ <p style="margin:0in; margin-left:.375in" data-aos="fade-up"><img src="乾癬_asset_2.png" width="384" height="497" data-aos="fade-up"></p>
  <ul type="disc" style="direction:ltr; unicode-bidi:embed; margin-top:0in; margin-bottom:0in" data-aos="fade-up">
   <li style="margin-top:0; margin-bottom:0; vertical-align:middle; color:#1E4E79" class="oldColor-1e4e79" data-aos="fade-up"><span style="font-family:微軟正黑體" class="oldFontSize-16.0Pt" data-aos="fade-up">臨床亞型：</span></li>
   <ul type="circle" style="direction:ltr; unicode-bidi:embed; margin-top:0in; margin-bottom:0in" data-aos="fade-up">
@@ -873,7 +859,7 @@ Imiquimod、INF-a"></p>
    </ul>
   </ul>
  </ul>
- <p style="margin:0in; margin-left:.375in" data-aos="fade-up"><img src="乾癬_asset_3.png" width="539" height="348"></p>
+ <p style="margin:0in; margin-left:.375in" data-aos="fade-up"><img src="乾癬_asset_3.png" width="539" height="348" data-aos="fade-up"></p>
  <ul type="disc" style="direction:ltr; unicode-bidi:embed; margin-top:0in; margin-bottom:0in" data-aos="fade-up">
   <li style="margin-top:0; margin-bottom:0; vertical-align:middle; color:#1E4E79" class="oldColor-1e4e79" data-aos="fade-up"><span style="font-family:微軟正黑體" class="oldFontSize-16.0Pt" data-aos="fade-up">處置：</span></li>
   <ul type="circle" style="direction:ltr; unicode-bidi:embed; margin-top:0in; margin-bottom:0in" data-aos="fade-up">
@@ -890,8 +876,8 @@ Imiquimod、INF-a"></p>
    </ul>
   </ul>
  </ul>
- <p style="color:#000000; margin:0in; margin-left:1.5in; text-indent:-.1666in" class="oldFontSize-11.0Pt oldColor-000000" data-aos="fade-up"><img src="乾癬_asset_4.png" width="16" height="16" alt="重要" class="display-none">&nbsp;<span style="font-weight:bold; font-family:微軟正黑體; color:#C00000; background:yellow; mso-highlight:yellow" lang="zh-TW" class="oldColor-c00000" data-aos="fade-up">勿使用</span><span style="font-weight:bold; font-family:微軟正黑體; color:#C00000; background:yellow; mso-highlight:yellow" lang="zh-TW" class="oldColor-c00000" data-aos="fade-up">PO </span><span style="font-weight:bold; font-family:微軟正黑體; color:#C00000; background:yellow; mso-highlight:yellow" lang="zh-TW" class="oldColor-c00000" data-aos="fade-up">類固醇</span><span style="font-family:微軟正黑體; color:black" lang="zh-TW" data-aos="fade-up">：因使用一段時間後</span><span style="font-weight:bold; font-family:微軟正黑體; color:#0070C0" lang="zh-TW" class="oldColor-0070c0" data-aos="fade-up">停藥會</span><span style="font-weight:bold; font-family:微軟正黑體; color:#0070C0" lang="zh-TW" class="oldColor-0070c0" data-aos="fade-up">rebound
- phenomenon</span><span style="font-family:微軟正黑體; color:black" lang="zh-TW" data-aos="fade-up">，造成</span><a href="onenote:#🩺|乾癬(Psoriasis)&amp;section-id={8EAEF31F-3C85-4A44-8C94-1B976A1DCB9C}&amp;page-id={9BBF2830-B8BE-439A-A824-34453AE874DF}&amp;object-id={0F3F1EA0-5C51-09FE-3B73-6B900578EE7F}&amp;AA&amp;base-path=https://d.docs.live.net/56ce32fba64785ca/臨床筆記/Derma.one"><span style="font-weight:bold; font-family:微軟正黑體" lang="zh-TW" data-aos="fade-up">全身性膿疱型乾癬</span></a></p>
+ <p style="color:#000000; margin:0in; margin-left:1.5in; text-indent:-.1666in" class="oldFontSize-11.0Pt oldColor-000000" data-aos="fade-up"><img src="乾癬_asset_4.png" width="16" height="16" alt="重要" data-aos="fade-up" class="display-none">&nbsp;<span style="font-weight:bold; font-family:微軟正黑體; color:#C00000; background:yellow; mso-highlight:yellow" lang="zh-TW" class="oldColor-c00000" data-aos="fade-up">勿使用</span><span style="font-weight:bold; font-family:微軟正黑體; color:#C00000; background:yellow; mso-highlight:yellow" lang="zh-TW" class="oldColor-c00000" data-aos="fade-up">PO </span><span style="font-weight:bold; font-family:微軟正黑體; color:#C00000; background:yellow; mso-highlight:yellow" lang="zh-TW" class="oldColor-c00000" data-aos="fade-up">類固醇</span><span style="font-family:微軟正黑體; color:black" lang="zh-TW" data-aos="fade-up">：因使用一段時間後</span><span style="font-weight:bold; font-family:微軟正黑體; color:#0070C0" lang="zh-TW" class="oldColor-0070c0" data-aos="fade-up">停藥會</span><span style="font-weight:bold; font-family:微軟正黑體; color:#0070C0" lang="zh-TW" class="oldColor-0070c0" data-aos="fade-up">rebound
+ phenomenon</span><span style="font-family:微軟正黑體; color:black" lang="zh-TW" data-aos="fade-up">，造成</span><a href="onenote:#🩺|乾癬(Psoriasis)&amp;section-id={8EAEF31F-3C85-4A44-8C94-1B976A1DCB9C}&amp;page-id={9BBF2830-B8BE-439A-A824-34453AE874DF}&amp;object-id={0F3F1EA0-5C51-09FE-3B73-6B900578EE7F}&amp;AA&amp;base-path=https://d.docs.live.net/56ce32fba64785ca/臨床筆記/Derma.one" data-aos="fade-up"><span style="font-weight:bold; font-family:微軟正黑體" lang="zh-TW" data-aos="fade-up">全身性膿疱型乾癬</span></a></p>
  <ul type="disc" style="direction:ltr; unicode-bidi:embed; margin-top:0in; margin-bottom:0in" data-aos="fade-up">
   <li style="margin-top:0; margin-bottom:0; vertical-align:middle; color:black" data-aos="fade-up"><span style="font-weight:bold; font-family:微軟正黑體; color:#70AD47" lang="zh-TW" class="oldFontSize-11.0Pt oldColor-70ad47" data-aos="fade-up">Anthralin</span><span style="font-family:微軟正黑體; color:black" lang="zh-TW" class="oldFontSize-11.0Pt" data-aos="fade-up">：目前國內停產，效果好且治癒後維持較久，無任何長期副作用，但皮膚刺激性較強</span></li>
  </ul>
@@ -981,7 +967,7 @@ Calibri" data-aos="fade-up">2025</span><span style="font-family:&quot;Microsoft 
 
 </div>
 
-<div class="outerSpaceOld display-none">
+<div class="outerSpaceOld display-none" data-aos="fade-up">
 
 <p style="margin:0in" data-aos="fade-up">&nbsp;</p>
 
@@ -995,7 +981,7 @@ Calibri" data-aos="fade-up">2025</span><span style="font-family:&quot;Microsoft 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js" integrity="sha512-A7AYk1fGKX6S2SsHywmPkrnzTZHrgiVT7GcQkLGDe2ev0aWb8zejytzS8wjo7PGEXKqJOrjQ4oORtnimIRZBtw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" integrity="sha512-1cK78a1o+ht2JcaW6g8OXYwqpev9+6GqOkz9xmBN9iUUhIndKtxwILGWYOSibOKjLsEdjyjZvYDq/cZwNeak0w==" crossorigin="anonymous" referrerpolicy="no-referrer">
 <script>
-  AOS.init();
+    AOS.init();
 </script>
 <!--ENDOF AOS 區-->
 
@@ -1018,7 +1004,7 @@ https://cdn.jsdelivr.net/npm/sweetalert2@11.22.2/dist/sweetalert2.all.min.js
 <link href="
 https://cdn.jsdelivr.net/npm/sweetalert2@11.22.2/dist/sweetalert2.min.css
 " rel="stylesheet">
-<script>
+<!--script>
     function selFont() {
         const fonts = {
             "ChenYuluoyan Mono": [100],
@@ -1078,7 +1064,7 @@ https://cdn.jsdelivr.net/npm/sweetalert2@11.22.2/dist/sweetalert2.min.css
             }
         });
     }
-</script>
+</script-->
 <button class="float-button" onclick="selFont()">選擇字體</button>
 <!--ENDOF 字體選擇區 (生產環境請移除) -->
 <!--important 主字體大小選擇區 (生產環境請移除) 此段AI生成 (些微手動更動)-->
@@ -1123,61 +1109,61 @@ https://cdn.jsdelivr.net/npm/sweetalert2@11.22.2/dist/sweetalert2.min.css
 </div>
 
 <script>
-function initNavigation() {
-    // 解析 TOC 結構
-    const tocDiv = document.getElementById('toc-for-dev');
-    const pages = [];
-    
-    if (tocDiv) {
-        const links = tocDiv.querySelectorAll('a[href]');
-        links.forEach(link => {
-            pages.push({
-                url: link.getAttribute('href'),
-                title: link.textContent.trim()
-            });
-        });
-    }
-    
-    // 獲取當前頁面 URL
-    const currentUrl = window.location.pathname;
-    
-    // 找到當前頁面在 TOC 中的位置
-    const currentIndex = pages.findIndex(page => page.url === currentUrl);
-    
-    const prevButton = document.getElementById('prev-page');
-    const nextButton = document.getElementById('next-page');
-    
-    // 設置上一頁按鈕
-    if (currentIndex > 0) {
-        prevButton.disabled = false;
-        prevButton.onclick = () => {
-            window.location.href = pages[currentIndex - 1].url;
-        };
-        prevButton.title = `上一頁: ${pages[currentIndex - 1].title}`;
-    } else {
-        prevButton.disabled = true;
-    }
-    
-    // 設置下一頁按鈕
-    if (currentIndex >= 0 && currentIndex < pages.length - 1) {
-        nextButton.disabled = false;
-        nextButton.onclick = () => {
-            window.location.href = pages[currentIndex + 1].url;
-        };
-        nextButton.title = `下一頁: ${pages[currentIndex + 1].title}`;
-    } else {
-        nextButton.disabled = true;
-    }
-    
-    // 如果當前頁面不在 TOC 中，禁用所有按鈕
-    if (currentIndex === -1) {
-        prevButton.disabled = true;
-        nextButton.disabled = true;
-    }
-}
+    function initNavigation() {
+        // 解析 TOC 結構
+        const tocDiv = document.getElementById('toc-for-dev');
+        const pages = [];
 
-// 頁面載入完成後初始化導航
-document.addEventListener('DOMContentLoaded', initNavigation);
+        if (tocDiv) {
+            const links = tocDiv.querySelectorAll('a[href]');
+            links.forEach(link => {
+                pages.push({
+                    url: link.getAttribute('href'),
+                    title: link.textContent.trim()
+                });
+            });
+        }
+
+        // 獲取當前頁面 URL
+        const currentUrl = window.location.pathname;
+
+        // 找到當前頁面在 TOC 中的位置
+        const currentIndex = pages.findIndex(page => page.url === currentUrl);
+
+        const prevButton = document.getElementById('prev-page');
+        const nextButton = document.getElementById('next-page');
+
+        // 設置上一頁按鈕
+        if (currentIndex > 0) {
+            prevButton.disabled = false;
+            prevButton.onclick = () => {
+                window.location.href = pages[currentIndex - 1].url;
+            };
+            prevButton.title = `上一頁: ${pages[currentIndex - 1].title}`;
+        } else {
+            prevButton.disabled = true;
+        }
+
+        // 設置下一頁按鈕
+        if (currentIndex >= 0 && currentIndex < pages.length - 1) {
+            nextButton.disabled = false;
+            nextButton.onclick = () => {
+                window.location.href = pages[currentIndex + 1].url;
+            };
+            nextButton.title = `下一頁: ${pages[currentIndex + 1].title}`;
+        } else {
+            nextButton.disabled = true;
+        }
+
+        // 如果當前頁面不在 TOC 中，禁用所有按鈕
+        if (currentIndex === -1) {
+            prevButton.disabled = true;
+            nextButton.disabled = true;
+        }
+    }
+
+    // 頁面載入完成後初始化導航
+    document.addEventListener('DOMContentLoaded', initNavigation);
 </script>
 <!--ENDOF 上一頁下一頁導航區-->
 

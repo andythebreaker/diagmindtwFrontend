@@ -413,50 +413,29 @@ li {
 
 ul {
     padding-inline-start: 2vw;
-    /* 更小的縮排 */
 }
 
 .outerSpace {
-    /*overflow-y: scroll !important; 重要更動 2025 07 24*/
-    position: static !important;
-    top: var(--outerSpace-top) !important;
-    left: var(--outerSpace-left) !important;
-    /* 元素的 width 和 height，會包含 padding 和 border。*/
     box-sizing: border-box ! important;
-    /* 100vh 減去上下 margin 各 1rem */
-    /*height: var(--outerSpace-height) !important; 重要更動 2025 07 24*/
     width: 100vw !important;
-    /*var(--outerSpace-width) !important;*/
-    height: fit-content !important;
-    /*margin: 1rem !important; 重要更動 2025 07 24*/
-    margin-top: 14vh !important;
+    margin-top: 0px !important;
     margin-bottom: 0px !important;
     margin-left: 0px !important;
     margin-right: 0px !important;
     padding-left: 1rem !important;
     padding-right: 1rem !important;
-    padding-top: 0px !important;
+    padding-top: 14vh !important;
     padding-bottom: 0px !important;
     border: 0px !important;
     background: #ffffffff !important;
 }
 
-/*html {
-    overflow-y: scroll;
-}*/
 
 body {
     margin-bottom: 0px;
     margin-top: 0px;
     margin-left: 0px;
     margin-right: 0px;
-    /*padding: 0px; 重要更動 2025 07 24*/
-    /*padding-top: 14vh; XXX*/
-    /*padding-bottom: 1rem;*/
-    /*overflow: hidden; 重要更動 2025 07 24*/
-    /*overflow-y: hidden;*/
-    height: max-content;
-    /*overflow-x: hidden;*/
     background: #f6e5c9 !important;
 }
 
@@ -491,10 +470,6 @@ canvas {
 }
 
 .outerSpace>ul>li>p>span:first-of-type {
-    /*
-    x-large 96*27 (1.5rem)
-    2rem:138*36
-    */
     font-size: var(--onenoteInterpreter-new-font-size-h1);
     color: var(--color-wakakusa-1) !important;
 }
@@ -526,11 +501,9 @@ canvas {
     border-bottom-width: 2px !important;
     border-bottom-style: groove !important;
     border-bottom-color: var(--color-akizakura-5) !important;
-    /*border-radius: 50% / 25% ! important;*/
 }
 
 .titleL2span {
-    /* 我原本是寫 larger(105.61*20) 但 larger 是 相對父層變大 large( 108*20 ) (1.12rem 107.53*20)比較合適 (1.1 rem = 105.61*20)*/
     font-size: var(--onenoteInterpreter-new-font-size-h2) !important;
     color: var(--color-akizakura-6) !important;
 }
@@ -583,27 +556,39 @@ td {
     position: fixed;
     top: 0px;
     left: 0px;
-    background-color: #f6e5c9;
-    padding-right: 7%;
-    padding-left: 3%;
+    background-color: #f6e5c9!important;
+    padding: 0 7% 0 3%;
     display: grid;
-    grid-template-columns: 7% 25% 3% 3% 3% 1fr;
-    direction: rtl;
+    align-items: center;
     gap: 2%;
     height: 14vh;
     width: 100vw;
     box-sizing: border-box;
     z-index: 1000;
+    direction: rtl;
+    grid-template-columns: 7% 25% 3% 3% 3% 1fr;
+}
+
+.buttonLogin{
+   background: #5b3717 !important;
+   border-radius: 8%;
+   color: #ffffff !important;
+}
+
+.buttonSearch{
+   background: #E0CFBB !important;
+   border-radius: 28%;
+   color: #ffffff !important;
 }
 
 .itemBangs {
-    margin-top: 26%;
-    margin-bottom: 26%;
+    height: 46%;
     background-color: #ccc;
     text-align: center;
-    /*padding: 10px;*/
-    border: 1px solid #999;
+    align-items: center;
+    justify-content: center;
 }
+
 
 /*end of瀏海區****************************/
 
@@ -629,6 +614,7 @@ td {
     display: flex;
     gap: 0.5rem;
     z-index: 9999;
+    display: none;
 }
 
 #font-controls button {
@@ -651,11 +637,11 @@ td {
 
 /*上一頁下一頁導航區 (AI)*/
 .dev-toc-nav-buttons {
+    display: none;
     position: absolute;
-    /*bottom: 20px; 重要更動 24 07 24*/
     top: 90vw;
     left: 20px;
-    display: flex;
+    /*display: flex;*/
     gap: 10px;
     z-index: 1000;
 }
@@ -691,14 +677,14 @@ td {
         <script src="//s3-ap-northeast-1.amazonaws.com/justfont-user-script/jf-65691.js"></script>
         <script src="https://kit.fontawesome.com/65b47a30d3.js" crossorigin="anonymous"></script></head>
 
-<body lang="zh-TW" style="font-family:Calibri" class="oldFontSize-11.0Pt flagTooMuchFontSize" data-aos="fade-up">
-  <div class="containerBangs">
-    <div class="itemBangs">7%</div>
-    <div class="itemBangs">25%</div>
-    <div class="itemBangs">3%</div>
-    <div class="itemBangs">3%</div>
-    <div class="itemBangs">3%</div>
-    <div class="itemBangs">彈性空間</div>
+<body lang="zh-TW" style="font-family:Calibri" class="oldFontSize-11.0Pt flagTooMuchFontSize">
+  <div class="containerBangs newFontSizeRank-3">
+    <div class="itemBangs buttonLogin"><p>登入</p></div>
+    <div class="itemBangs buttonSearch"><p>搜尋</p></div>
+    <div class="itemBangs"><p>題目</p></div>
+    <div class="itemBangs"><p>主題</p></div>
+    <div class="itemBangs"><p>分科</p></div>
+    <div class="itemBangs"><p>彈性空間</p></div>
   </div>
   <div style="direction:ltr; margin-top:0in; margin-left:0in; width:6.8784in" class="outerSpaceWithTopic" data-aos="fade-up">
 
@@ -719,7 +705,7 @@ td {
 <table border="0" cellpadding="0" cellspacing="0" cols="3" valign="top" style="direction:
  ltr; border-collapse:collapse; border-width:0pt; margin-top:.4in; margin-left:
  .0361in; width:6.8423in" data-aos="fade-up">
- <tbody><tr>
+ <tbody data-aos="fade-up"><tr data-aos="fade-up">
   <td valign="top" style="vertical-align:top; margin:0in; padding:0pt; width:1px; height:1px" class="oldFontSize-1Pt newFontSizeRank-7" data-aos="fade-up">
   <p class="oldFontSize-1Pt newFontSizeRank-7" data-aos="fade-up">&nbsp;</p>
   </td>
@@ -733,7 +719,7 @@ td {
   <p class="oldFontSize-1Pt newFontSizeRank-7" data-aos="fade-up"></p>
   </td>
  </tr>
- <tr>
+ <tr data-aos="fade-up">
   <td valign="top" style="vertical-align:top; margin:0in; padding:0pt; width:1px; height:139.8201in" class="oldFontSize-1Pt newFontSizeRank-7" data-aos="fade-up">
   <p class="oldFontSize-1Pt newFontSizeRank-7" data-aos="fade-up">&nbsp;</p>
   </td>
@@ -860,7 +846,7 @@ td {
    <div style="direction:ltr" data-aos="fade-up">
    <table border="1" cellpadding="0" cellspacing="0" valign="top" style="direction:
     ltr; border-collapse:collapse; border-style:solid; border-color:#A3A3A3; border-width:1pt; margin-left:.3333in" title="" summary="" class="oldColor-a3a3a3" data-aos="fade-up">
-    <tbody><tr>
+    <tbody data-aos="fade-up"><tr data-aos="fade-up">
      <td style="border-style:solid; border-color:#A3A3A3; border-width:1pt; vertical-align:top; width:1.4583in; padding:2.0pt 3.0pt 2.0pt 3.0pt" class="oldColor-a3a3a3" data-aos="fade-up">
      <p style="margin:0in; font-family:微軟正黑體; color:black; text-align:center" class="oldFontSize-11.0Pt" data-aos="fade-up">心音/雜音</p>
      </td>
@@ -871,7 +857,7 @@ td {
      <p style="margin:0in; font-family:微軟正黑體; color:black; text-align:center" class="oldFontSize-11.0Pt" data-aos="fade-up">聽診區域</p>
      </td>
     </tr>
-    <tr>
+    <tr data-aos="fade-up">
      <td style="border-style:solid; border-color:#A3A3A3; border-width:1pt; vertical-align:top; width:1.4583in; padding:2.0pt 3.0pt 2.0pt 3.0pt" class="oldColor-a3a3a3" data-aos="fade-up">
      <p style="margin:0in; font-family:微軟正黑體; color:black" class="oldFontSize-11.0Pt" data-aos="fade-up">Opening
      Snap</p>
@@ -884,7 +870,7 @@ td {
      <p style="margin:0in; font-family:微軟正黑體; color:black" class="oldFontSize-11.0Pt" data-aos="fade-up">心尖區</p>
      </td>
     </tr>
-    <tr>
+    <tr data-aos="fade-up">
      <td style="border-style:solid; border-color:#A3A3A3; border-width:1pt; vertical-align:top; width:1.4583in; padding:2.0pt 3.0pt 2.0pt 3.0pt" class="oldColor-a3a3a3" data-aos="fade-up">
      <p style="margin:0in; font-family:微軟正黑體; color:black" class="oldFontSize-11.0Pt" data-aos="fade-up">Ejection
      Click</p>
@@ -896,7 +882,7 @@ td {
      <p style="margin:0in; font-family:微軟正黑體; color:black" class="oldFontSize-11.0Pt" data-aos="fade-up">胸骨上緣</p>
      </td>
     </tr>
-    <tr>
+    <tr data-aos="fade-up">
      <td style="border-style:solid; border-color:#A3A3A3; border-width:1pt; vertical-align:top; width:1.477in; padding:2.0pt 3.0pt 2.0pt 3.0pt" class="oldColor-a3a3a3" data-aos="fade-up">
      <p style="margin:0in; font-family:微軟正黑體; color:black" class="oldFontSize-11.0Pt" data-aos="fade-up">Mid-systolic
      Click</p>
@@ -909,7 +895,7 @@ td {
      <p style="margin:0in; font-family:微軟正黑體; color:black" class="oldFontSize-11.0Pt" data-aos="fade-up">心尖區</p>
      </td>
     </tr>
-    <tr>
+    <tr data-aos="fade-up">
      <td style="border-style:solid; border-color:#A3A3A3; border-width:1pt; vertical-align:top; width:1.4694in; padding:2.0pt 3.0pt 2.0pt 3.0pt" class="oldColor-a3a3a3" data-aos="fade-up">
      <p style="margin:0in; font-family:微軟正黑體; color:black" class="oldFontSize-11.0Pt" data-aos="fade-up">Pericardial
      Knock</p>
@@ -922,7 +908,7 @@ td {
      <p style="margin:0in; font-family:微軟正黑體; color:black" class="oldFontSize-11.0Pt" data-aos="fade-up">胸骨左緣</p>
      </td>
     </tr>
-    <tr>
+    <tr data-aos="fade-up">
      <td style="border-style:solid; border-color:#A3A3A3; border-width:1pt; vertical-align:top; width:1.4583in; padding:2.0pt 3.0pt 2.0pt 3.0pt" class="oldColor-a3a3a3" data-aos="fade-up">
      <p style="margin:0in; font-family:微軟正黑體; color:black" class="oldFontSize-11.0Pt" data-aos="fade-up">Friction
      Rub</p>
@@ -954,7 +940,7 @@ td {
    <div style="direction:ltr" data-aos="fade-up">
    <table border="1" cellpadding="0" cellspacing="0" valign="top" style="direction:
     ltr; border-collapse:collapse; border-style:solid; border-color:#A3A3A3; border-width:1pt; margin-left:.3333in" title="" summary="" class="oldColor-a3a3a3" data-aos="fade-up">
-    <tbody><tr>
+    <tbody data-aos="fade-up"><tr data-aos="fade-up">
      <td style="border-style:solid; border-color:#A3A3A3; border-width:1pt; vertical-align:top; width:.8256in; padding:2.0pt 3.0pt 2.0pt 3.0pt" class="oldColor-a3a3a3" data-aos="fade-up">
      <p style="margin:0in; font-family:微軟正黑體; color:black; text-align:center" class="oldFontSize-11.0Pt" data-aos="fade-up">等級</p>
      </td>
@@ -962,7 +948,7 @@ td {
      <p style="margin:0in; font-family:微軟正黑體; color:black; text-align:center" class="oldFontSize-11.0Pt" data-aos="fade-up">特徵</p>
      </td>
     </tr>
-    <tr>
+    <tr data-aos="fade-up">
      <td style="border-style:solid; border-color:#A3A3A3; border-width:1pt; vertical-align:top; width:.8256in; padding:2.0pt 3.0pt 2.0pt 3.0pt" class="oldColor-a3a3a3" data-aos="fade-up">
      <p style="margin:0in; font-family:微軟正黑體; color:black" class="oldFontSize-11.0Pt" data-aos="fade-up">Grade
      I</p>
@@ -971,7 +957,7 @@ td {
      <p style="margin:0in; font-family:微軟正黑體; color:black" class="oldFontSize-11.0Pt" data-aos="fade-up">非常微弱，需專心聽診才聽得見</p>
      </td>
     </tr>
-    <tr>
+    <tr data-aos="fade-up">
      <td style="border-style:solid; border-color:#A3A3A3; border-width:1pt; vertical-align:top; width:.8256in; padding:2.0pt 3.0pt 2.0pt 3.0pt" class="oldColor-a3a3a3" data-aos="fade-up">
      <p style="margin:0in; font-family:微軟正黑體; color:black" class="oldFontSize-11.0Pt" data-aos="fade-up">Grade
      II</p>
@@ -980,7 +966,7 @@ td {
      <p style="margin:0in; font-family:微軟正黑體; color:black" class="oldFontSize-11.0Pt" data-aos="fade-up">較清楚但仍屬輕度，容易聽到</p>
      </td>
     </tr>
-    <tr>
+    <tr data-aos="fade-up">
      <td style="border-style:solid; border-color:#A3A3A3; border-width:1pt; vertical-align:top; width:.8437in; padding:2.0pt 3.0pt 2.0pt 3.0pt" class="oldColor-a3a3a3" data-aos="fade-up">
      <p style="margin:0in; font-family:微軟正黑體; color:black" class="oldFontSize-11.0Pt" data-aos="fade-up">Grade
      III</p>
@@ -989,7 +975,7 @@ td {
      <p style="margin:0in; font-family:微軟正黑體; color:black" class="oldFontSize-11.0Pt" data-aos="fade-up">中等強度，無震顫</p>
      </td>
     </tr>
-    <tr>
+    <tr data-aos="fade-up">
      <td style="border-style:solid; border-color:#A3A3A3; border-width:1pt; vertical-align:top; width:.8451in; padding:2.0pt 3.0pt 2.0pt 3.0pt" class="oldColor-a3a3a3" data-aos="fade-up">
      <p style="margin:0in; font-family:微軟正黑體; color:black" class="oldFontSize-11.0Pt" data-aos="fade-up">Grade
      IV</p>
@@ -998,7 +984,7 @@ td {
      <p style="margin:0in; font-family:微軟正黑體; color:black" class="oldFontSize-11.0Pt" data-aos="fade-up">強烈，伴隨可觸摸的震顫（Thrill）</p>
      </td>
     </tr>
-    <tr>
+    <tr data-aos="fade-up">
      <td style="border-style:solid; border-color:#A3A3A3; border-width:1pt; vertical-align:top; width:.8256in; padding:2.0pt 3.0pt 2.0pt 3.0pt" class="oldColor-a3a3a3" data-aos="fade-up">
      <p style="margin:0in; font-family:微軟正黑體; color:black" class="oldFontSize-11.0Pt" data-aos="fade-up">Grade
      V</p>
@@ -1007,7 +993,7 @@ td {
      <p style="margin:0in; font-family:微軟正黑體; color:black" class="oldFontSize-11.0Pt" data-aos="fade-up">震顫明顯，輕放聽診器即可聽見</p>
      </td>
     </tr>
-    <tr>
+    <tr data-aos="fade-up">
      <td style="border-style:solid; border-color:#A3A3A3; border-width:1pt; vertical-align:top; width:.8451in; padding:2.0pt 3.0pt 2.0pt 3.0pt" class="oldColor-a3a3a3" data-aos="fade-up">
      <p style="margin:0in; font-family:微軟正黑體; color:black" class="oldFontSize-11.0Pt" data-aos="fade-up">Grade
      VI</p>
@@ -1025,7 +1011,7 @@ td {
    <div style="direction:ltr" data-aos="fade-up">
    <table border="1" cellpadding="0" cellspacing="0" valign="top" style="direction:
     ltr; border-collapse:collapse; border-style:solid; border-color:#A3A3A3; border-width:1pt; margin-left:.3333in" title="" summary="" class="oldColor-a3a3a3" data-aos="fade-up">
-    <tbody><tr>
+    <tbody data-aos="fade-up"><tr data-aos="fade-up">
      <td style="border-style:solid; border-color:#A3A3A3; border-width:1pt; vertical-align:top; width:2.2923in; padding:2.0pt 3.0pt 2.0pt 3.0pt" class="oldColor-a3a3a3" data-aos="fade-up">
      <p style="margin:0in; font-family:微軟正黑體; color:black; text-align:center" class="oldFontSize-11.0Pt" data-aos="fade-up">類型</p>
      </td>
@@ -1036,7 +1022,7 @@ td {
      <p style="margin:0in; font-family:微軟正黑體; color:black; text-align:center" class="oldFontSize-11.0Pt" data-aos="fade-up">可能原因</p>
      </td>
     </tr>
-    <tr>
+    <tr data-aos="fade-up">
      <td style="border-style:solid; border-color:#A3A3A3; border-width:1pt; vertical-align:top; width:2.2923in; padding:2.0pt 3.0pt 2.0pt 3.0pt" class="oldColor-a3a3a3" data-aos="fade-up">
      <p style="margin:0in; font-family:微軟正黑體; color:black" class="oldFontSize-11.0Pt" data-aos="fade-up">Systolic
      Murmur（收縮期雜音）</p>
@@ -1049,7 +1035,7 @@ td {
      <p style="margin:0in; font-family:微軟正黑體; color:black" class="oldFontSize-11.0Pt" data-aos="fade-up">瓣膜狹窄、閉鎖不全等</p>
      </td>
     </tr>
-    <tr>
+    <tr data-aos="fade-up">
      <td style="border-style:solid; border-color:#A3A3A3; border-width:1pt; vertical-align:top; width:2.2923in; padding:2.0pt 3.0pt 2.0pt 3.0pt" class="oldColor-a3a3a3" data-aos="fade-up">
      <p style="margin:0in; font-family:微軟正黑體; color:black" class="oldFontSize-11.0Pt" data-aos="fade-up">Diastolic
      Murmur（舒張期雜音）</p>
@@ -1062,7 +1048,7 @@ td {
      <p style="margin:0in; font-family:微軟正黑體; color:black" class="oldFontSize-11.0Pt" data-aos="fade-up">瓣膜狹窄或閉鎖不全（通常病理性）</p>
      </td>
     </tr>
-    <tr>
+    <tr data-aos="fade-up">
      <td style="border-style:solid; border-color:#A3A3A3; border-width:1pt; vertical-align:top; width:2.3083in; padding:2.0pt 3.0pt 2.0pt 3.0pt" class="oldColor-a3a3a3" data-aos="fade-up">
      <p style="margin:0in; font-family:微軟正黑體; color:black" class="oldFontSize-11.0Pt" data-aos="fade-up">Continuous
      Murmur（連續性雜音）</p>
@@ -1091,7 +1077,7 @@ td {
    <div style="direction:ltr" data-aos="fade-up">
    <table border="1" cellpadding="0" cellspacing="0" valign="top" style="direction:
     ltr; border-collapse:collapse; border-style:solid; border-color:#A3A3A3; border-width:1pt; margin-left:.3333in" title="" summary="" class="oldColor-a3a3a3" data-aos="fade-up">
-    <tbody><tr>
+    <tbody data-aos="fade-up"><tr data-aos="fade-up">
      <td style="border-style:solid; border-color:#A3A3A3; border-width:1pt; vertical-align:top; width:1.643in; padding:2.0pt 3.0pt 2.0pt 3.0pt" class="oldColor-a3a3a3" data-aos="fade-up">
      <p style="margin:0in; font-family:微軟正黑體; color:black; text-align:center" class="oldFontSize-11.0Pt" data-aos="fade-up">疾病</p>
      </td>
@@ -1105,7 +1091,7 @@ td {
      <p style="margin:0in; font-family:微軟正黑體; color:black; text-align:center" class="oldFontSize-11.0Pt" data-aos="fade-up">輻射方向</p>
      </td>
     </tr>
-    <tr>
+    <tr data-aos="fade-up">
      <td style="border-style:solid; border-color:#A3A3A3; border-width:1pt; vertical-align:top; width:1.643in; padding:2.0pt 3.0pt 2.0pt 3.0pt" class="oldColor-a3a3a3" data-aos="fade-up">
      <p style="margin:0in; font-family:微軟正黑體; color:black" class="oldFontSize-11.0Pt" data-aos="fade-up">Aortic
      Stenosis (AS)</p>
@@ -1121,7 +1107,7 @@ td {
      <p style="margin:0in; font-family:微軟正黑體; color:black" class="oldFontSize-11.0Pt" data-aos="fade-up">頸部、頸動脈</p>
      </td>
     </tr>
-    <tr>
+    <tr data-aos="fade-up">
      <td style="border-style:solid; border-color:#A3A3A3; border-width:1pt; vertical-align:top; width:1.6493in; padding:2.0pt 3.0pt 2.0pt 3.0pt" class="oldColor-a3a3a3" data-aos="fade-up">
      <p style="margin:0in; font-family:微軟正黑體; color:black" class="oldFontSize-11.0Pt" data-aos="fade-up">Pulmonary
      Stenosis (PS)</p>
@@ -1137,7 +1123,7 @@ td {
      <p style="margin:0in; font-family:微軟正黑體; color:black" class="oldFontSize-11.0Pt" data-aos="fade-up">左肩</p>
      </td>
     </tr>
-    <tr>
+    <tr data-aos="fade-up">
      <td style="border-style:solid; border-color:#A3A3A3; border-width:1pt; vertical-align:top; width:1.6625in; padding:2.0pt 3.0pt 2.0pt 3.0pt" class="oldColor-a3a3a3" data-aos="fade-up">
      <p style="margin:0in; font-family:微軟正黑體; color:black" class="oldFontSize-11.0Pt" data-aos="fade-up">Mitral
      Regurgitation (MR)</p>
@@ -1152,7 +1138,7 @@ td {
      <p style="margin:0in; font-family:微軟正黑體; color:black" class="oldFontSize-11.0Pt" data-aos="fade-up">左腋下</p>
      </td>
     </tr>
-    <tr>
+    <tr data-aos="fade-up">
      <td style="border-style:solid; border-color:#A3A3A3; border-width:1pt; vertical-align:top; width:1.643in; padding:2.0pt 3.0pt 2.0pt 3.0pt" class="oldColor-a3a3a3" data-aos="fade-up">
      <p style="margin:0in; font-family:微軟正黑體; color:black" class="oldFontSize-11.0Pt" data-aos="fade-up">Tricuspid
      Regurgitation (TR)</p>
@@ -1168,7 +1154,7 @@ td {
      <p style="margin:0in; font-family:微軟正黑體; color:black" class="oldFontSize-11.0Pt" data-aos="fade-up">右胸部或劍突</p>
      </td>
     </tr>
-    <tr>
+    <tr data-aos="fade-up">
      <td style="border-style:solid; border-color:#A3A3A3; border-width:1pt; vertical-align:top; width:1.643in; padding:2.0pt 3.0pt 2.0pt 3.0pt" class="oldColor-a3a3a3" data-aos="fade-up">
      <p style="margin:0in; font-family:微軟正黑體; color:black" class="oldFontSize-11.0Pt" data-aos="fade-up">Mitral
      Valve Prolapse (MVP)</p>
@@ -1184,7 +1170,7 @@ td {
      <p style="margin:0in; font-family:微軟正黑體; color:black" class="oldFontSize-11.0Pt" data-aos="fade-up">無特定輻射</p>
      </td>
     </tr>
-    <tr>
+    <tr data-aos="fade-up">
      <td style="border-style:solid; border-color:#A3A3A3; border-width:1pt; vertical-align:top; width:1.643in; padding:2.0pt 3.0pt 2.0pt 3.0pt" class="oldColor-a3a3a3" data-aos="fade-up">
      <p style="margin:0in; font-family:微軟正黑體; color:black" class="oldFontSize-11.0Pt" data-aos="fade-up">Ventricular
      Septal Defect (VSD)</p>
@@ -1202,7 +1188,7 @@ td {
     </tr>
    </tbody></table>
    </div>
-   <p style="margin:0in; margin-left:.375in; font-family:Calibri" class="oldFontSize-11.0Pt" data-aos="fade-up"><br>
+   <p style="margin:0in; margin-left:.375in; font-family:Calibri" class="oldFontSize-11.0Pt" data-aos="fade-up"><br data-aos="fade-up">
       &nbsp;</p>
    <ul type="circle" style="direction:ltr; unicode-bidi:embed; margin-top:0in; margin-bottom:0in" data-aos="fade-up">
     <li style="margin-top:0; margin-bottom:0; vertical-align:middle; color:black" data-aos="fade-up"><span style="font-family:微軟正黑體; color:black" class="oldFontSize-11.0Pt" data-aos="fade-up"><span style="mso-spacerun:yes" data-aos="fade-up">&nbsp;</span></span><span style="font-family:微軟正黑體; color:#2E75B5" class="oldFontSize-14.0Pt oldColor-2e75b5" data-aos="fade-up">舒張期雜音（Diastolic Murmur）</span></li>
@@ -1215,7 +1201,7 @@ td {
    <div style="direction:ltr" data-aos="fade-up">
    <table border="1" cellpadding="0" cellspacing="0" valign="top" style="direction:
     ltr; border-collapse:collapse; border-style:solid; border-color:#A3A3A3; border-width:1pt; margin-left:.3333in" title="" summary="" class="oldColor-a3a3a3" data-aos="fade-up">
-    <tbody><tr>
+    <tbody data-aos="fade-up"><tr data-aos="fade-up">
      <td style="border-style:solid; border-color:#A3A3A3; border-width:1pt; vertical-align:top; width:1.3555in; padding:2.0pt 3.0pt 2.0pt 3.0pt" class="oldColor-a3a3a3" data-aos="fade-up">
      <p style="margin:0in; font-family:微軟正黑體; color:black; text-align:center" class="oldFontSize-11.0Pt" data-aos="fade-up">疾病</p>
      </td>
@@ -1229,7 +1215,7 @@ td {
      <p style="margin:0in; font-family:微軟正黑體; color:black; text-align:center" class="oldFontSize-11.0Pt" data-aos="fade-up">輻射方向</p>
      </td>
     </tr>
-    <tr>
+    <tr data-aos="fade-up">
      <td style="border-style:solid; border-color:#A3A3A3; border-width:1pt; vertical-align:top; width:1.3555in; padding:2.0pt 3.0pt 2.0pt 3.0pt" class="oldColor-a3a3a3" data-aos="fade-up">
      <p style="margin:0in; font-family:微軟正黑體; color:black" class="oldFontSize-11.0Pt" data-aos="fade-up">Aortic
      Regurgitation (AR)</p>
@@ -1247,7 +1233,7 @@ td {
      Flint murmur）</p>
      </td>
     </tr>
-    <tr>
+    <tr data-aos="fade-up">
      <td style="border-style:solid; border-color:#A3A3A3; border-width:1pt; vertical-align:top; width:1.3555in; padding:2.0pt 3.0pt 2.0pt 3.0pt" class="oldColor-a3a3a3" data-aos="fade-up">
      <p style="margin:0in; font-family:微軟正黑體; color:black" class="oldFontSize-11.0Pt" data-aos="fade-up">Pulmonary
      Regurgitation (PR)</p>
@@ -1263,7 +1249,7 @@ td {
      <p style="margin:0in; font-family:微軟正黑體; color:black" class="oldFontSize-11.0Pt" data-aos="fade-up">無特定輻射</p>
      </td>
     </tr>
-    <tr>
+    <tr data-aos="fade-up">
      <td style="border-style:solid; border-color:#A3A3A3; border-width:1pt; vertical-align:top; width:1.3555in; padding:2.0pt 3.0pt 2.0pt 3.0pt" class="oldColor-a3a3a3" data-aos="fade-up">
      <p style="margin:0in; font-family:微軟正黑體; color:black" class="oldFontSize-11.0Pt" data-aos="fade-up">Mitral
      Stenosis (MS)</p>
@@ -1279,7 +1265,7 @@ td {
      <p style="margin:0in; font-family:微軟正黑體; color:black" class="oldFontSize-11.0Pt" data-aos="fade-up">無特定輻射</p>
      </td>
     </tr>
-    <tr>
+    <tr data-aos="fade-up">
      <td style="border-style:solid; border-color:#A3A3A3; border-width:1pt; vertical-align:top; width:1.3555in; padding:2.0pt 3.0pt 2.0pt 3.0pt" class="oldColor-a3a3a3" data-aos="fade-up">
      <p style="margin:0in; font-family:微軟正黑體; color:black" class="oldFontSize-11.0Pt" data-aos="fade-up">Tricuspid
      Stenosis (TS)</p>
@@ -1297,7 +1283,7 @@ td {
     </tr>
    </tbody></table>
    </div>
-   <p style="margin:0in; margin-left:.375in; font-family:微軟正黑體" class="oldFontSize-11.0Pt" data-aos="fade-up"><br>
+   <p style="margin:0in; margin-left:.375in; font-family:微軟正黑體" class="oldFontSize-11.0Pt" data-aos="fade-up"><br data-aos="fade-up">
       &nbsp;</p>
    <ul type="circle" style="direction:ltr; unicode-bidi:embed; margin-top:0in; margin-bottom:0in" data-aos="fade-up">
     <li style="margin-top:0; margin-bottom:0; vertical-align:middle; color:black" data-aos="fade-up"><span style="font-family:微軟正黑體; color:#2E75B5" class="oldFontSize-14.0Pt oldColor-2e75b5" data-aos="fade-up">連續性雜音（Continuous
@@ -1309,7 +1295,7 @@ td {
    <div style="direction:ltr" data-aos="fade-up">
    <table border="1" cellpadding="0" cellspacing="0" valign="top" style="direction:
     ltr; border-collapse:collapse; border-style:solid; border-color:#A3A3A3; border-width:1pt; margin-left:.3333in" title="" summary="" class="oldColor-a3a3a3" data-aos="fade-up">
-    <tbody><tr>
+    <tbody data-aos="fade-up"><tr data-aos="fade-up">
      <td style="border-style:solid; border-color:#A3A3A3; border-width:1pt; vertical-align:top; width:2.0055in; padding:2.0pt 3.0pt 2.0pt 3.0pt" class="oldColor-a3a3a3" data-aos="fade-up">
      <p style="margin:0in; font-family:微軟正黑體; color:black; text-align:center" class="oldFontSize-11.0Pt" data-aos="fade-up">疾病</p>
      </td>
@@ -1320,7 +1306,7 @@ td {
      <p style="margin:0in; font-family:微軟正黑體; color:black; text-align:center" class="oldFontSize-11.0Pt" data-aos="fade-up">聽診位置</p>
      </td>
     </tr>
-    <tr>
+    <tr data-aos="fade-up">
      <td style="border-style:solid; border-color:#A3A3A3; border-width:1pt; vertical-align:top; width:2.0125in; padding:2.0pt 3.0pt 2.0pt 3.0pt" class="oldColor-a3a3a3" data-aos="fade-up">
      <p style="margin:0in; font-family:微軟正黑體; color:black" class="oldFontSize-11.0Pt" data-aos="fade-up">Patent
      Ductus Arteriosus (PDA)</p>
@@ -1334,7 +1320,7 @@ td {
      2 肋間</p>
      </td>
     </tr>
-    <tr>
+    <tr data-aos="fade-up">
      <td style="border-style:solid; border-color:#A3A3A3; border-width:1pt; vertical-align:top; width:2.0055in; padding:2.0pt 3.0pt 2.0pt 3.0pt" class="oldColor-a3a3a3" data-aos="fade-up">
      <p style="margin:0in; font-family:微軟正黑體; color:black" class="oldFontSize-11.0Pt" data-aos="fade-up">Arteriovenous
      Fistula</p>
@@ -1346,7 +1332,7 @@ td {
      <p style="margin:0in; font-family:微軟正黑體; color:black" class="oldFontSize-11.0Pt" data-aos="fade-up">依位置不同</p>
      </td>
     </tr>
-    <tr>
+    <tr data-aos="fade-up">
      <td style="border-style:solid; border-color:#A3A3A3; border-width:1pt; vertical-align:top; width:2.0055in; padding:2.0pt 3.0pt 2.0pt 3.0pt" class="oldColor-a3a3a3" data-aos="fade-up">
      <p style="margin:0in; font-family:微軟正黑體; color:black" class="oldFontSize-11.0Pt" data-aos="fade-up">Coarctation
      of the Aorta</p>
@@ -1423,7 +1409,7 @@ td {
    <div style="direction:ltr" data-aos="fade-up">
    <table border="1" cellpadding="0" cellspacing="0" valign="top" style="direction:
     ltr; border-collapse:collapse; border-style:solid; border-color:#A3A3A3; border-width:1pt; margin-left:.3333in" title="" summary="" class="oldColor-a3a3a3" data-aos="fade-up">
-    <tbody><tr>
+    <tbody data-aos="fade-up"><tr data-aos="fade-up">
      <td style="border-style:solid; border-color:#A3A3A3; border-width:1pt; vertical-align:top; width:1.7152in; padding:2.0pt 3.0pt 2.0pt 3.0pt" class="oldColor-a3a3a3" data-aos="fade-up">
      <p style="margin:0in; font-family:微軟正黑體; color:black; text-align:center" class="oldFontSize-11.0Pt" data-aos="fade-up">情境</p>
      </td>
@@ -1434,7 +1420,7 @@ td {
      <p style="margin:0in; font-family:微軟正黑體; color:black; text-align:center" class="oldFontSize-11.0Pt" data-aos="fade-up">影響的雜音</p>
      </td>
     </tr>
-    <tr>
+    <tr data-aos="fade-up">
      <td style="border-style:solid; border-color:#A3A3A3; border-width:1pt; vertical-align:top; width:1.7152in; padding:2.0pt 3.0pt 2.0pt 3.0pt" class="oldColor-a3a3a3" data-aos="fade-up">
      <p style="margin:0in; font-family:微軟正黑體; color:black" class="oldFontSize-11.0Pt" data-aos="fade-up">吸氣（Inspiration）</p>
      </td>
@@ -1447,7 +1433,7 @@ td {
      TR、PS、ASD）</span></p>
      </td>
     </tr>
-    <tr>
+    <tr data-aos="fade-up">
      <td style="border-style:solid; border-color:#A3A3A3; border-width:1pt; vertical-align:top; width:1.7152in; padding:2.0pt 3.0pt 2.0pt 3.0pt" class="oldColor-a3a3a3" data-aos="fade-up">
      <p style="margin:0in; font-family:微軟正黑體; color:black" class="oldFontSize-11.0Pt" data-aos="fade-up">吐氣（Expiration）</p>
      </td>
@@ -1460,7 +1446,7 @@ td {
      MR、MS、AS、AR）</span></p>
      </td>
     </tr>
-    <tr>
+    <tr data-aos="fade-up">
      <td style="border-style:solid; border-color:#A3A3A3; border-width:1pt; vertical-align:top; width:1.7152in; padding:2.0pt 3.0pt 2.0pt 3.0pt" class="oldColor-a3a3a3" data-aos="fade-up">
      <p style="margin:0in; font-family:微軟正黑體; color:black" class="oldFontSize-11.0Pt" data-aos="fade-up">Valsalva
      maneuver</p>
@@ -1473,7 +1459,7 @@ td {
      <p style="margin:0in; font-family:微軟正黑體; color:#C00000" class="oldFontSize-11.0Pt oldColor-c00000" data-aos="fade-up">大部分雜音變小聲；但HCM、MVP雜音變大聲</p>
      </td>
     </tr>
-    <tr>
+    <tr data-aos="fade-up">
      <td style="border-style:solid; border-color:#A3A3A3; border-width:1pt; vertical-align:top; width:1.7152in; padding:2.0pt 3.0pt 2.0pt 3.0pt" class="oldColor-a3a3a3" data-aos="fade-up">
      <p style="margin:0in; font-family:微軟正黑體; color:black" class="oldFontSize-11.0Pt" data-aos="fade-up">站立（Standing）</p>
      </td>
@@ -1485,7 +1471,7 @@ td {
      <p style="margin:0in; font-family:微軟正黑體; color:#C00000" class="oldFontSize-11.0Pt oldColor-c00000" data-aos="fade-up">大部分雜音變小聲；但HCM、MVP雜音變大聲</p>
      </td>
     </tr>
-    <tr>
+    <tr data-aos="fade-up">
      <td style="border-style:solid; border-color:#A3A3A3; border-width:1pt; vertical-align:top; width:1.7152in; padding:2.0pt 3.0pt 2.0pt 3.0pt" class="oldColor-a3a3a3" data-aos="fade-up">
      <p style="margin:0in; font-family:微軟正黑體; color:black" class="oldFontSize-11.0Pt" data-aos="fade-up">蹲下/抬腳（Squatting/Leg
      raise）</p>
@@ -1498,7 +1484,7 @@ td {
      <p style="margin:0in; font-family:微軟正黑體; color:#C00000" class="oldFontSize-11.0Pt oldColor-c00000" data-aos="fade-up">大部分雜音變大聲；但HCM、MVP雜音變小聲</p>
      </td>
     </tr>
-    <tr>
+    <tr data-aos="fade-up">
      <td style="border-style:solid; border-color:#A3A3A3; border-width:1pt; vertical-align:top; width:1.7152in; padding:2.0pt 3.0pt 2.0pt 3.0pt" class="oldColor-a3a3a3" data-aos="fade-up">
      <p style="margin:0in; font-family:微軟正黑體; color:black" class="oldFontSize-11.0Pt" data-aos="fade-up">握拳運動（Handgrip
      exercise）</p>
@@ -1517,7 +1503,7 @@ td {
    <div style="direction:ltr" data-aos="fade-up">
    <table border="1" cellpadding="0" cellspacing="0" valign="top" style="direction:
     ltr; border-collapse:collapse; border-style:solid; border-color:#A3A3A3; border-width:1pt; margin-left:.3333in" title="" summary="" class="oldColor-a3a3a3" data-aos="fade-up">
-    <tbody><tr>
+    <tbody data-aos="fade-up"><tr data-aos="fade-up">
      <td style="border-style:solid; border-color:#A3A3A3; border-width:1pt; vertical-align:top; width:1.802in; padding:2.0pt 3.0pt 2.0pt 3.0pt" class="oldColor-a3a3a3" data-aos="fade-up">
      <p style="margin:0in; font-family:微軟正黑體; color:black; text-align:center" class="oldFontSize-11.0Pt" data-aos="fade-up">操作</p>
      </td>
@@ -1531,7 +1517,7 @@ td {
      <p style="margin:0in; font-family:微軟正黑體; color:black; text-align:center" class="oldFontSize-11.0Pt" data-aos="fade-up">MVP 雜音</p>
      </td>
     </tr>
-    <tr>
+    <tr data-aos="fade-up">
      <td style="border-style:solid; border-color:#A3A3A3; border-width:1pt; vertical-align:top; width:1.802in; padding:2.0pt 3.0pt 2.0pt 3.0pt" class="oldColor-a3a3a3" data-aos="fade-up">
      <p style="margin:0in; font-family:微軟正黑體; color:black" class="oldFontSize-11.0Pt" data-aos="fade-up">吸氣</p>
      </td>
@@ -1545,7 +1531,7 @@ td {
      <p style="margin:0in; font-family:微軟正黑體; color:black" class="oldFontSize-11.0Pt" data-aos="fade-up">-</p>
      </td>
     </tr>
-    <tr>
+    <tr data-aos="fade-up">
      <td style="border-style:solid; border-color:#A3A3A3; border-width:1pt; vertical-align:top; width:1.802in; padding:2.0pt 3.0pt 2.0pt 3.0pt" class="oldColor-a3a3a3" data-aos="fade-up">
      <p style="margin:0in; font-family:微軟正黑體; color:black" class="oldFontSize-11.0Pt" data-aos="fade-up">吐氣</p>
      </td>
@@ -1559,7 +1545,7 @@ td {
      <p style="margin:0in; font-family:微軟正黑體; color:black" class="oldFontSize-11.0Pt" data-aos="fade-up">-</p>
      </td>
     </tr>
-    <tr>
+    <tr data-aos="fade-up">
      <td style="border-style:solid; border-color:#A3A3A3; border-width:1pt; vertical-align:top; width:1.802in; padding:2.0pt 3.0pt 2.0pt 3.0pt" class="oldColor-a3a3a3" data-aos="fade-up">
      <p style="margin:0in; font-family:微軟正黑體; color:black" class="oldFontSize-11.0Pt" data-aos="fade-up">Valsalva</p>
      </td>
@@ -1573,7 +1559,7 @@ td {
      <p style="margin:0in; font-family:微軟正黑體; color:black" class="oldFontSize-11.0Pt" data-aos="fade-up">↑</p>
      </td>
     </tr>
-    <tr>
+    <tr data-aos="fade-up">
      <td style="border-style:solid; border-color:#A3A3A3; border-width:1pt; vertical-align:top; width:1.802in; padding:2.0pt 3.0pt 2.0pt 3.0pt" class="oldColor-a3a3a3" data-aos="fade-up">
      <p style="margin:0in; font-family:微軟正黑體; color:black" class="oldFontSize-11.0Pt" data-aos="fade-up">站立</p>
      </td>
@@ -1587,7 +1573,7 @@ td {
      <p style="margin:0in; font-family:微軟正黑體; color:black" class="oldFontSize-11.0Pt" data-aos="fade-up">↑</p>
      </td>
     </tr>
-    <tr>
+    <tr data-aos="fade-up">
      <td style="border-style:solid; border-color:#A3A3A3; border-width:1pt; vertical-align:top; width:1.802in; padding:2.0pt 3.0pt 2.0pt 3.0pt" class="oldColor-a3a3a3" data-aos="fade-up">
      <p style="margin:0in; font-family:微軟正黑體; color:black" class="oldFontSize-11.0Pt" data-aos="fade-up">蹲下/抬腳</p>
      </td>
@@ -1601,7 +1587,7 @@ td {
      <p style="margin:0in; font-family:微軟正黑體; color:black" class="oldFontSize-11.0Pt" data-aos="fade-up">↓</p>
      </td>
     </tr>
-    <tr>
+    <tr data-aos="fade-up">
      <td style="border-style:solid; border-color:#A3A3A3; border-width:1pt; vertical-align:top; width:1.8215in; padding:2.0pt 3.0pt 2.0pt 3.0pt" class="oldColor-a3a3a3" data-aos="fade-up">
      <p style="margin:0in; font-family:微軟正黑體; color:black" class="oldFontSize-11.0Pt" data-aos="fade-up">握拳運動（Handgrip）</p>
      </td>
@@ -1630,7 +1616,7 @@ td {
    <div style="direction:ltr" data-aos="fade-up">
    <table border="1" cellpadding="0" cellspacing="0" valign="top" style="direction:
     ltr; border-collapse:collapse; border-style:solid; border-color:#A3A3A3; border-width:1pt; margin-left:.3333in" title="" summary="" class="oldColor-a3a3a3" data-aos="fade-up">
-    <tbody><tr>
+    <tbody data-aos="fade-up"><tr data-aos="fade-up">
      <td style="border-style:solid; border-color:#A3A3A3; border-width:1pt; vertical-align:top; width:1.0375in; padding:2.0pt 3.0pt 2.0pt 3.0pt" class="oldColor-a3a3a3" data-aos="fade-up">
      <p style="margin:0in; font-family:微軟正黑體; color:black; text-align:center" class="oldFontSize-11.0Pt" data-aos="fade-up">脈搏名稱</p>
      </td>
@@ -1644,7 +1630,7 @@ td {
      <p style="margin:0in; font-family:微軟正黑體; color:black; text-align:center" class="oldFontSize-11.0Pt" data-aos="fade-up">代表疾病</p>
      </td>
     </tr>
-    <tr>
+    <tr data-aos="fade-up">
      <td style="border-style:solid; border-color:#A3A3A3; border-width:1pt; vertical-align:top; width:1.0375in; padding:2.0pt 3.0pt 2.0pt 3.0pt" class="oldColor-a3a3a3" data-aos="fade-up">
      <p style="margin:0in; font-family:微軟正黑體; color:black" class="oldFontSize-11.0Pt" data-aos="fade-up">Normal
      Pulse</p>
@@ -1661,7 +1647,7 @@ td {
      <p style="margin:0in; font-family:微軟正黑體; color:black" class="oldFontSize-11.0Pt" data-aos="fade-up">&nbsp;</p>
      </td>
     </tr>
-    <tr>
+    <tr data-aos="fade-up">
      <td style="border-style:solid; border-color:#A3A3A3; border-width:1pt; vertical-align:top; width:1.0375in; padding:2.0pt 3.0pt 2.0pt 3.0pt" class="oldColor-a3a3a3" data-aos="fade-up">
      <p style="margin:0in; font-family:微軟正黑體; color:black" class="oldFontSize-11.0Pt" data-aos="fade-up">Pulsus
      Tardus</p>
@@ -1678,7 +1664,7 @@ td {
      Stenosis（AS）</p>
      </td>
     </tr>
-    <tr>
+    <tr data-aos="fade-up">
      <td style="border-style:solid; border-color:#A3A3A3; border-width:1pt; vertical-align:top; width:1.0375in; padding:2.0pt 3.0pt 2.0pt 3.0pt" class="oldColor-a3a3a3" data-aos="fade-up">
      <p style="margin:0in; font-family:微軟正黑體; color:black" class="oldFontSize-11.0Pt" data-aos="fade-up">Pulsus
      Parvus</p>
@@ -1694,7 +1680,7 @@ td {
      Stenosis（AS）</p>
      </td>
     </tr>
-    <tr>
+    <tr data-aos="fade-up">
      <td style="border-style:solid; border-color:#A3A3A3; border-width:1pt; vertical-align:top; width:1.0375in; padding:2.0pt 3.0pt 2.0pt 3.0pt" class="oldColor-a3a3a3" data-aos="fade-up">
      <p style="margin:0in; font-family:微軟正黑體; color:black" class="oldFontSize-11.0Pt" data-aos="fade-up">Pulsus
      Parvus et Tardus</p>
@@ -1711,7 +1697,7 @@ td {
      AS</p>
      </td>
     </tr>
-    <tr>
+    <tr data-aos="fade-up">
      <td style="border-style:solid; border-color:#A3A3A3; border-width:1pt; vertical-align:top; width:1.0375in; padding:2.0pt 3.0pt 2.0pt 3.0pt" class="oldColor-a3a3a3" data-aos="fade-up">
      <p style="margin:0in; font-family:微軟正黑體; color:black" class="oldFontSize-11.0Pt" data-aos="fade-up">Pulsus
      Bisferiens</p>
@@ -1727,7 +1713,7 @@ td {
      Regurgitation（AR）、Hypertrophic Cardiomyopathy（HCM）</p>
      </td>
     </tr>
-    <tr>
+    <tr data-aos="fade-up">
      <td style="border-style:solid; border-color:#A3A3A3; border-width:1pt; vertical-align:top; width:1.0375in; padding:2.0pt 3.0pt 2.0pt 3.0pt" class="oldColor-a3a3a3" data-aos="fade-up">
      <p style="margin:0in; font-family:微軟正黑體; color:black" class="oldFontSize-11.0Pt" data-aos="fade-up">Bounding
      Pulse</p>
@@ -1744,7 +1730,7 @@ td {
      Regurgitation（AR）、Patent Ductus Arteriosus（PDA）</p>
      </td>
     </tr>
-    <tr>
+    <tr data-aos="fade-up">
      <td style="border-style:solid; border-color:#A3A3A3; border-width:1pt; vertical-align:top; width:1.0375in; padding:2.0pt 3.0pt 2.0pt 3.0pt" class="oldColor-a3a3a3" data-aos="fade-up">
      <p style="margin:0in; font-family:微軟正黑體; color:black" class="oldFontSize-11.0Pt" data-aos="fade-up">Water-Hammer
      Pulse/</p>
@@ -1763,7 +1749,7 @@ td {
      Regurgitation（AR）</p>
      </td>
     </tr>
-    <tr>
+    <tr data-aos="fade-up">
      <td style="border-style:solid; border-color:#A3A3A3; border-width:1pt; vertical-align:top; width:1.0375in; padding:2.0pt 3.0pt 2.0pt 3.0pt" class="oldColor-a3a3a3" data-aos="fade-up">
      <p style="margin:0in; font-family:微軟正黑體; color:black" class="oldFontSize-11.0Pt" data-aos="fade-up">Pulsus
      Paradoxus</p>
@@ -1786,7 +1772,7 @@ td {
      </ul>
      </td>
     </tr>
-    <tr>
+    <tr data-aos="fade-up">
      <td style="border-style:solid; border-color:#A3A3A3; border-width:1pt; vertical-align:top; width:1.0375in; padding:2.0pt 3.0pt 2.0pt 3.0pt" class="oldColor-a3a3a3" data-aos="fade-up">
      <p style="margin:0in; font-family:微軟正黑體; color:black" class="oldFontSize-11.0Pt" data-aos="fade-up">Pulsus
      Alternans</p>
@@ -1803,7 +1789,7 @@ td {
      Heart Failure（心衰竭）</p>
      </td>
     </tr>
-    <tr>
+    <tr data-aos="fade-up">
      <td style="border-style:solid; border-color:#A3A3A3; border-width:1pt; vertical-align:top; width:1.0375in; padding:2.0pt 3.0pt 2.0pt 3.0pt" class="oldColor-a3a3a3" data-aos="fade-up">
      <p style="margin:0in; font-family:微軟正黑體; color:black" class="oldFontSize-11.0Pt" data-aos="fade-up">Dicrotic
      Pulse</p>
@@ -1819,7 +1805,7 @@ td {
      Heart Failure</p>
      </td>
     </tr>
-    <tr>
+    <tr data-aos="fade-up">
      <td style="border-style:solid; border-color:#A3A3A3; border-width:1pt; vertical-align:top; width:1.0375in; padding:2.0pt 3.0pt 2.0pt 3.0pt" class="oldColor-a3a3a3" data-aos="fade-up">
      <p style="margin:0in; font-family:微軟正黑體; color:black" class="oldFontSize-11.0Pt" data-aos="fade-up">Anacrotic
      Pulse</p>
@@ -1835,7 +1821,7 @@ td {
      Aortic Stenosis</p>
      </td>
     </tr>
-    <tr>
+    <tr data-aos="fade-up">
      <td style="border-style:solid; border-color:#A3A3A3; border-width:1pt; vertical-align:top; width:1.0375in; padding:2.0pt 3.0pt 2.0pt 3.0pt" class="oldColor-a3a3a3" data-aos="fade-up">
      <p style="margin:0in; font-family:微軟正黑體; color:black" class="oldFontSize-11.0Pt" data-aos="fade-up">Collapsing
      Pulse</p>
@@ -1879,12 +1865,12 @@ opens
 iastole 
 s 
 ystole 
-Diastole "></p>
+Diastole " data-aos="fade-up"></p>
    <p style="margin:0in; margin-left:.375in; font-family:微軟正黑體; color:black" lang="zh-TW" class="oldFontSize-11.0Pt" data-aos="fade-up">&nbsp;</p>
    <div style="direction:ltr" data-aos="fade-up">
    <table border="1" cellpadding="0" cellspacing="0" valign="top" style="direction:
     ltr; border-collapse:collapse; border-style:solid; border-color:#A3A3A3; border-width:1pt; margin-left:.3333in" title="" summary="" class="oldColor-a3a3a3" data-aos="fade-up">
-    <tbody><tr>
+    <tbody data-aos="fade-up"><tr data-aos="fade-up">
      <td style="border-style:solid; border-color:#A3A3A3; border-width:1pt; vertical-align:top; width:.8812in; padding:2.0pt 3.0pt 2.0pt 3.0pt" class="oldColor-a3a3a3" data-aos="fade-up">
      <p style="margin:0in; font-family:微軟正黑體; color:black" class="oldFontSize-11.0Pt" data-aos="fade-up">Wave/</p>
      <p style="margin:0in; font-family:微軟正黑體; color:black" class="oldFontSize-11.0Pt" data-aos="fade-up">Des</p>
@@ -1900,7 +1886,7 @@ Diastole "></p>
      <p style="margin:0in; font-family:微軟正黑體; color:black; text-align:center" class="oldFontSize-11.0Pt" data-aos="fade-up">臨床意義</p>
      </td>
     </tr>
-    <tr>
+    <tr data-aos="fade-up">
      <td style="border-style:solid; border-color:#A3A3A3; border-width:1pt; vertical-align:top; width:.8812in; padding:2.0pt 3.0pt 2.0pt 3.0pt" class="oldColor-a3a3a3" data-aos="fade-up">
      <p style="margin:0in; font-family:微軟正黑體; color:black" class="oldFontSize-11.0Pt" data-aos="fade-up">a
      wave</p>
@@ -1913,14 +1899,14 @@ Diastole "></p>
      (Atrial systole)</p>
      </td>
      <td style="border-style:solid; border-color:#A3A3A3; border-width:1pt; vertical-align:top; width:1.8923in; padding:2.0pt 3.0pt 2.0pt 3.0pt" class="oldColor-a3a3a3" data-aos="fade-up">
-     <p style="margin:0in; font-family:微軟正黑體" class="oldFontSize-11.0Pt" data-aos="fade-up"><span style="color:black" lang="zh-TW" data-aos="fade-up">- 增大：肺高壓、三尖瓣狹窄（TS）、右心室肥厚 <br>
+     <p style="margin:0in; font-family:微軟正黑體" class="oldFontSize-11.0Pt" data-aos="fade-up"><span style="color:black" lang="zh-TW" data-aos="fade-up">- 增大：肺高壓、三尖瓣狹窄（TS）、右心室肥厚 <br data-aos="fade-up">
           - 消失：心房顫動（</span><span style="color:black" lang="zh-TW" data-aos="fade-up">Atrial
      Fibrillation，</span><span style="color:black" lang="zh-TW" data-aos="fade-up">Af）</span></p>
      </td>
     </tr>
-    <tr>
+    <tr data-aos="fade-up">
      <td style="border-style:solid; border-color:#A3A3A3; border-width:1pt; vertical-align:top; width:.8812in; padding:2.0pt 3.0pt 2.0pt 3.0pt" class="oldColor-a3a3a3" data-aos="fade-up">
-     <p style="margin:0in; font-family:微軟正黑體; color:black" class="oldFontSize-11.0Pt" data-aos="fade-up"><span lang="zh-TW">c </span><span lang="zh-TW">wave</span></p>
+     <p style="margin:0in; font-family:微軟正黑體; color:black" class="oldFontSize-11.0Pt" data-aos="fade-up"><span lang="zh-TW" data-aos="fade-up">c </span><span lang="zh-TW" data-aos="fade-up">wave</span></p>
      </td>
      <td style="border-style:solid; border-color:#A3A3A3; border-width:1pt; vertical-align:top; width:1.6138in; padding:2.0pt 3.0pt 2.0pt 3.0pt" class="oldColor-a3a3a3" data-aos="fade-up">
      <p style="margin:0in; font-family:微軟正黑體" class="oldFontSize-11.0Pt" data-aos="fade-up"><span style="color:#C00000" class="oldColor-c00000" data-aos="fade-up">三尖瓣隆起</span><span style="color:black" data-aos="fade-up">（因右心室等容收縮）</span></p>
@@ -1934,7 +1920,7 @@ Diastole "></p>
      輕微波動，部分受頸動脈搏動干擾</p>
      </td>
     </tr>
-    <tr>
+    <tr data-aos="fade-up">
      <td style="border-style:solid; border-color:#A3A3A3; border-width:1pt; vertical-align:top; width:.9006in; padding:2.0pt 3.0pt 2.0pt 3.0pt" class="oldColor-a3a3a3" data-aos="fade-up">
      <p style="margin:0in; font-family:微軟正黑體; color:black" class="oldFontSize-11.0Pt" data-aos="fade-up">x
      descent</p>
@@ -1947,13 +1933,13 @@ Diastole "></p>
      (Ventricular systole)</p>
      </td>
      <td style="border-style:solid; border-color:#A3A3A3; border-width:1pt; vertical-align:top; width:1.7881in; padding:2.0pt 3.0pt 2.0pt 3.0pt" class="oldColor-a3a3a3" data-aos="fade-up">
-     <p style="margin:0in; font-family:微軟正黑體" class="oldFontSize-11.0Pt" data-aos="fade-up"><span style="color:black" data-aos="fade-up">- 加深：心包填塞時變淺 <br>
+     <p style="margin:0in; font-family:微軟正黑體" class="oldFontSize-11.0Pt" data-aos="fade-up"><span style="color:black" data-aos="fade-up">- 加深：心包填塞時變淺 <br data-aos="fade-up">
           - 正常情況下為深谷</span></p>
      </td>
     </tr>
-    <tr>
+    <tr data-aos="fade-up">
      <td style="border-style:solid; border-color:#A3A3A3; border-width:1pt; vertical-align:top; width:.8812in; padding:2.0pt 3.0pt 2.0pt 3.0pt" class="oldColor-a3a3a3" data-aos="fade-up">
-     <p style="margin:0in; font-family:微軟正黑體; color:black" class="oldFontSize-11.0Pt" data-aos="fade-up"><span lang="zh-TW">v </span><span lang="zh-TW">wave</span></p>
+     <p style="margin:0in; font-family:微軟正黑體; color:black" class="oldFontSize-11.0Pt" data-aos="fade-up"><span lang="zh-TW" data-aos="fade-up">v </span><span lang="zh-TW" data-aos="fade-up">wave</span></p>
      </td>
      <td style="border-style:solid; border-color:#A3A3A3; border-width:1pt; vertical-align:top; width:1.6138in; padding:2.0pt 3.0pt 2.0pt 3.0pt" class="oldColor-a3a3a3" data-aos="fade-up">
      <p style="margin:0in; font-family:微軟正黑體; color:#C00000" class="oldFontSize-11.0Pt oldColor-c00000" data-aos="fade-up">三尖瓣關閉時，靜脈血液回流累積於右心房</p>
@@ -1967,7 +1953,7 @@ Diastole "></p>
      增大：三尖瓣閉鎖不全（TR）</p>
      </td>
     </tr>
-    <tr>
+    <tr data-aos="fade-up">
      <td style="border-style:solid; border-color:#A3A3A3; border-width:1pt; vertical-align:top; width:.9006in; padding:2.0pt 3.0pt 2.0pt 3.0pt" class="oldColor-a3a3a3" data-aos="fade-up">
      <p style="margin:0in; font-family:微軟正黑體; color:black" class="oldFontSize-11.0Pt" data-aos="fade-up">y
      descent</p>
@@ -1981,7 +1967,7 @@ Diastole "></p>
      (Early diastole)</p>
      </td>
      <td style="border-style:solid; border-color:#A3A3A3; border-width:1pt; vertical-align:top; width:1.8923in; padding:2.0pt 3.0pt 2.0pt 3.0pt" class="oldColor-a3a3a3" data-aos="fade-up">
-     <p style="margin:0in; font-family:微軟正黑體" class="oldFontSize-11.0Pt" data-aos="fade-up"><span style="color:black" data-aos="fade-up">- 快速下降：縮窄性心包炎（Constrictive Pericarditis） <br>
+     <p style="margin:0in; font-family:微軟正黑體" class="oldFontSize-11.0Pt" data-aos="fade-up"><span style="color:black" data-aos="fade-up">- 快速下降：縮窄性心包炎（Constrictive Pericarditis） <br data-aos="fade-up">
           - 緩慢下降：心包填塞（Cardiac Tamponade）</span></p>
      </td>
     </tr>
@@ -2027,7 +2013,7 @@ Diastole "></p>
    <div style="direction:ltr" data-aos="fade-up">
    <table border="1" cellpadding="0" cellspacing="0" valign="top" style="direction:
     ltr; border-collapse:collapse; border-style:solid; border-color:#A3A3A3; border-width:1pt; margin-left:1.4583in" title="" summary="" class="oldColor-a3a3a3" data-aos="fade-up">
-    <tbody><tr>
+    <tbody data-aos="fade-up"><tr data-aos="fade-up">
      <td style="border-style:solid; border-color:#A3A3A3; border-width:1pt; vertical-align:top; width:.6673in; padding:2.0pt 3.0pt 2.0pt 3.0pt" class="oldColor-a3a3a3" data-aos="fade-up">
      <p style="margin:0in; font-family:&quot;Microsoft JhengHei&quot;; text-align:center" class="oldFontSize-11.0Pt" data-aos="fade-up"><span style="font-weight:bold" data-aos="fade-up">症狀</span></p>
      </td>
@@ -2035,7 +2021,7 @@ Diastole "></p>
      <p style="margin:0in; font-family:&quot;Microsoft JhengHei&quot;; text-align:center" class="oldFontSize-11.0Pt" data-aos="fade-up"><span style="font-weight:bold" data-aos="fade-up">原因</span></p>
      </td>
     </tr>
-    <tr>
+    <tr data-aos="fade-up">
      <td style="border-style:solid; border-color:#A3A3A3; border-width:1pt; vertical-align:top; width:.6868in; padding:2.0pt 3.0pt 2.0pt 3.0pt" class="oldColor-a3a3a3" data-aos="fade-up">
      <p style="margin:0in; font-family:&quot;Microsoft JhengHei&quot;" class="oldFontSize-11.0Pt" data-aos="fade-up">心絞痛</p>
      </td>
@@ -2044,7 +2030,7 @@ Diastole "></p>
      但供血受限</p>
      </td>
     </tr>
-    <tr>
+    <tr data-aos="fade-up">
      <td style="border-style:solid; border-color:#A3A3A3; border-width:1pt; vertical-align:top; width:.6673in; padding:2.0pt 3.0pt 2.0pt 3.0pt" class="oldColor-a3a3a3" data-aos="fade-up">
      <p style="margin:0in; font-family:&quot;Microsoft JhengHei&quot;" class="oldFontSize-11.0Pt" data-aos="fade-up">昏厥</p>
      </td>
@@ -2053,7 +2039,7 @@ Diastole "></p>
      → 腦灌流↓</p>
      </td>
     </tr>
-    <tr>
+    <tr data-aos="fade-up">
      <td style="border-style:solid; border-color:#A3A3A3; border-width:1pt; vertical-align:top; width:.6868in; padding:2.0pt 3.0pt 2.0pt 3.0pt" class="oldColor-a3a3a3" data-aos="fade-up">
      <p style="margin:0in; font-family:&quot;Microsoft JhengHei&quot;" class="oldFontSize-11.0Pt" data-aos="fade-up">心衰竭</p>
      </td>
@@ -2138,7 +2124,7 @@ Diastole "></p>
      </ul>
     </ul>
    </ul>
-   <p style="margin:0in; margin-left:.375in; font-family:微軟正黑體" class="oldFontSize-11.0Pt" data-aos="fade-up"><br>
+   <p style="margin:0in; margin-left:.375in; font-family:微軟正黑體" class="oldFontSize-11.0Pt" data-aos="fade-up"><br data-aos="fade-up">
       &nbsp;</p>
    <ul type="disc" style="direction:ltr; unicode-bidi:embed; margin-top:0in; margin-bottom:0in" data-aos="fade-up">
     <li style="margin-top:0; margin-bottom:0; vertical-align:middle; color:black" data-aos="fade-up"><span style="font-family:微軟正黑體" lang="zh-TW" class="oldFontSize-16.0Pt" data-aos="fade-up">Mitral Valve
@@ -2207,7 +2193,7 @@ Diastole "></p>
      </ul>
     </ul>
    </ul>
-   <p style="margin:0in; margin-left:.75in; font-family:微軟正黑體" class="oldFontSize-11.0Pt" data-aos="fade-up"><br>
+   <p style="margin:0in; margin-left:.75in; font-family:微軟正黑體" class="oldFontSize-11.0Pt" data-aos="fade-up"><br data-aos="fade-up">
       &nbsp;</p>
    <ul type="disc" style="direction:ltr; unicode-bidi:embed; margin-top:0in; margin-bottom:0in" data-aos="fade-up">
     <li style="margin-top:0; margin-bottom:0; vertical-align:middle; color:black" data-aos="fade-up"><span style="font-family:微軟正黑體" class="oldFontSize-16.0Pt" data-aos="fade-up">Tricuspid Valve
@@ -2306,7 +2292,7 @@ Diastole "></p>
    <div style="direction:ltr" data-aos="fade-up">
    <table border="1" cellpadding="0" cellspacing="0" valign="top" style="direction:
     ltr; border-collapse:collapse; border-style:solid; border-color:#A3A3A3; border-width:1pt; margin-left:.3333in" title="" summary="" class="oldColor-a3a3a3" data-aos="fade-up">
-    <tbody><tr>
+    <tbody data-aos="fade-up"><tr data-aos="fade-up">
      <td style="border-style:solid; border-color:#A3A3A3; border-width:1pt; vertical-align:top; width:1.2486in; padding:2.0pt 3.0pt 2.0pt 3.0pt" class="oldColor-a3a3a3" data-aos="fade-up">
      <p style="margin:0in; font-family:微軟正黑體; color:black; text-align:center" class="oldFontSize-11.0Pt" data-aos="fade-up"><span style="font-weight:bold" data-aos="fade-up">疾病</span></p>
      </td>
@@ -2320,7 +2306,7 @@ Diastole "></p>
      <p style="margin:0in; font-family:微軟正黑體; color:black; text-align:center" class="oldFontSize-11.0Pt" data-aos="fade-up"><span style="font-weight:bold" data-aos="fade-up">治療方式</span></p>
      </td>
     </tr>
-    <tr>
+    <tr data-aos="fade-up">
      <td style="border-style:solid; border-color:#A3A3A3; border-width:1pt; vertical-align:top; width:1.268in; padding:2.0pt 3.0pt 2.0pt 3.0pt" class="oldColor-a3a3a3" data-aos="fade-up">
      <p style="margin:0in; font-family:微軟正黑體; color:black" class="oldFontSize-11.0Pt" data-aos="fade-up">Aortic
      Stenosis</p>
@@ -2336,7 +2322,7 @@ Diastole "></p>
      <p style="margin:0in; font-family:微軟正黑體; color:black" class="oldFontSize-11.0Pt" data-aos="fade-up">TAVR/SAVR</p>
      </td>
     </tr>
-    <tr>
+    <tr data-aos="fade-up">
      <td style="border-style:solid; border-color:#A3A3A3; border-width:1pt; vertical-align:top; width:1.2486in; padding:2.0pt 3.0pt 2.0pt 3.0pt" class="oldColor-a3a3a3" data-aos="fade-up">
      <p style="margin:0in; font-family:微軟正黑體; color:black" class="oldFontSize-11.0Pt" data-aos="fade-up">Aortic
      Regurgitation</p>
@@ -2351,7 +2337,7 @@ Diastole "></p>
      <p style="margin:0in; font-family:微軟正黑體; color:black" class="oldFontSize-11.0Pt" data-aos="fade-up">血管擴張劑、瓣膜置換</p>
      </td>
     </tr>
-    <tr>
+    <tr data-aos="fade-up">
      <td style="border-style:solid; border-color:#A3A3A3; border-width:1pt; vertical-align:top; width:1.268in; padding:2.0pt 3.0pt 2.0pt 3.0pt" class="oldColor-a3a3a3" data-aos="fade-up">
      <p style="margin:0in; font-family:微軟正黑體; color:black" class="oldFontSize-11.0Pt" data-aos="fade-up">Mitral
      Stenosis</p>
@@ -2367,7 +2353,7 @@ Diastole "></p>
      <p style="margin:0in; font-family:微軟正黑體; color:black" class="oldFontSize-11.0Pt" data-aos="fade-up">PBMV/瓣膜置換</p>
      </td>
     </tr>
-    <tr>
+    <tr data-aos="fade-up">
      <td style="border-style:solid; border-color:#A3A3A3; border-width:1pt; vertical-align:top; width:1.2486in; padding:2.0pt 3.0pt 2.0pt 3.0pt" class="oldColor-a3a3a3" data-aos="fade-up">
      <p style="margin:0in; font-family:微軟正黑體; color:black" class="oldFontSize-11.0Pt" data-aos="fade-up">Mitral
      Regurgitation</p>
@@ -2393,7 +2379,7 @@ Diastole "></p>
    <p style="margin:0in; margin-left:.375in; font-family:微軟正黑體" lang="zh-TW" class="oldFontSize-11.0Pt" data-aos="fade-up">&nbsp;</p>
    <p style="margin:0in; margin-left:.375in" data-aos="fade-up"><img src="瓣膜性心臟病_asset_1.png" width="268" height="369" alt="first thoracic 
 First 
-lumbar "></p>
+lumbar " data-aos="fade-up"></p>
    <p style="margin:0in; margin-left:.375in; line-height:18pt; font-family:&quot;Microsoft JhengHei&quot;; color:black" lang="zh-TW" class="oldFontSize-11.0Pt" data-aos="fade-up">&nbsp;</p>
    <ul type="disc" style="direction:ltr; unicode-bidi:embed; margin-top:0in; margin-bottom:0in" data-aos="fade-up">
     <li style="margin-top:0; margin-bottom:0; vertical-align:middle; color:black" lang="zh-TW" data-aos="fade-up"><span style="font-family:微軟正黑體" class="oldFontSize-16.0Pt" data-aos="fade-up">人工心臟瓣膜（Prosthetic
@@ -2407,7 +2393,7 @@ lumbar "></p>
    <div style="direction:ltr" data-aos="fade-up">
    <table border="1" cellpadding="0" cellspacing="0" valign="top" style="direction:
     ltr; border-collapse:collapse; border-style:solid; border-color:#A3A3A3; border-width:1pt; margin-left:.3333in" title="" summary="" class="oldColor-a3a3a3" data-aos="fade-up">
-    <tbody><tr>
+    <tbody data-aos="fade-up"><tr data-aos="fade-up">
      <td style="border-style:solid; border-color:#A3A3A3; border-width:1pt; vertical-align:top; width:.9104in; padding:2.0pt 3.0pt 2.0pt 3.0pt" class="oldColor-a3a3a3" data-aos="fade-up">
      <p style="margin:0in; font-family:微軟正黑體; color:black; text-align:center" class="oldFontSize-11.0Pt" data-aos="fade-up">特性</p>
      </td>
@@ -2418,7 +2404,7 @@ lumbar "></p>
      <p style="margin:0in; font-family:微軟正黑體; color:black; text-align:center" class="oldFontSize-11.0Pt" data-aos="fade-up">生物瓣膜</p>
      </td>
     </tr>
-    <tr>
+    <tr data-aos="fade-up">
      <td style="border-style:solid; border-color:#A3A3A3; border-width:1pt; vertical-align:top; width:.9104in; padding:2.0pt 3.0pt 2.0pt 3.0pt" class="oldColor-a3a3a3" data-aos="fade-up">
      <p style="margin:0in; font-family:微軟正黑體; color:black" class="oldFontSize-11.0Pt" data-aos="fade-up">耐用性</p>
      </td>
@@ -2431,7 +2417,7 @@ lumbar "></p>
      年</p>
      </td>
     </tr>
-    <tr>
+    <tr data-aos="fade-up">
      <td style="border-style:solid; border-color:#A3A3A3; border-width:1pt; vertical-align:top; width:.9104in; padding:2.0pt 3.0pt 2.0pt 3.0pt" class="oldColor-a3a3a3" data-aos="fade-up">
      <p style="margin:0in; font-family:微軟正黑體; color:black" class="oldFontSize-11.0Pt" data-aos="fade-up">血栓風險</p>
      </td>
@@ -2442,19 +2428,19 @@ lumbar "></p>
      <p style="margin:0in; font-family:微軟正黑體; color:black" class="oldFontSize-11.0Pt" data-aos="fade-up">低（大多不需長期抗凝）</p>
      </td>
     </tr>
-    <tr>
+    <tr data-aos="fade-up">
      <td style="border-style:solid; border-color:#A3A3A3; border-width:1pt; vertical-align:top; width:.9104in; padding:2.0pt 3.0pt 2.0pt 3.0pt" class="oldColor-a3a3a3" data-aos="fade-up">
      <p style="margin:0in; font-family:微軟正黑體; color:black" class="oldFontSize-11.0Pt" data-aos="fade-up">抗凝治療</p>
      </td>
      <td style="border-style:solid; border-color:#A3A3A3; border-width:1pt; vertical-align:top; width:2.8812in; padding:2.0pt 3.0pt 2.0pt 3.0pt" class="oldColor-a3a3a3" data-aos="fade-up">
-     <p style="margin:0in; font-family:微軟正黑體; color:black" class="oldFontSize-11.0Pt" data-aos="fade-up"><span lang="zh-TW">終生需使用</span><span lang="zh-TW">Warfarin（INR 2.0–3.5）</span></p>
+     <p style="margin:0in; font-family:微軟正黑體; color:black" class="oldFontSize-11.0Pt" data-aos="fade-up"><span lang="zh-TW" data-aos="fade-up">終生需使用</span><span lang="zh-TW" data-aos="fade-up">Warfarin（INR 2.0–3.5）</span></p>
      </td>
      <td style="border-style:solid; border-color:#A3A3A3; border-width:1pt; vertical-align:top; width:1.9444in; padding:2.0pt 3.0pt 2.0pt 3.0pt" class="oldColor-a3a3a3" data-aos="fade-up">
      <p style="margin:0in; font-family:微軟正黑體; color:black" class="oldFontSize-11.0Pt" data-aos="fade-up">3–6
      個月 Warfarin，之後 Aspirin</p>
      </td>
     </tr>
-    <tr>
+    <tr data-aos="fade-up">
      <td style="border-style:solid; border-color:#A3A3A3; border-width:1pt; vertical-align:top; width:.9104in; padding:2.0pt 3.0pt 2.0pt 3.0pt" class="oldColor-a3a3a3" data-aos="fade-up">
      <p style="margin:0in; font-family:微軟正黑體; color:black" class="oldFontSize-11.0Pt" data-aos="fade-up">適用族群</p>
      </td>
@@ -2467,7 +2453,7 @@ lumbar "></p>
      歲，無法長期使用抗凝者</p>
      </td>
     </tr>
-    <tr>
+    <tr data-aos="fade-up">
      <td style="border-style:solid; border-color:#A3A3A3; border-width:1pt; vertical-align:top; width:.9104in; padding:2.0pt 3.0pt 2.0pt 3.0pt" class="oldColor-a3a3a3" data-aos="fade-up">
      <p style="margin:0in; font-family:微軟正黑體; color:black" class="oldFontSize-11.0Pt" data-aos="fade-up">再手術風險</p>
      </td>
@@ -2492,10 +2478,10 @@ lumbar "></p>
         normal; font-style:normal; font-family:微軟正黑體" class="oldFontSize-11.0Pt" data-aos="fade-up">Boards
         &amp; Beyonds：Heart sounds，heart murmur，valvular heart disease</span></li>
     <li style="margin-top:0; margin-bottom:0; vertical-align:middle" lang="zh-TW" data-aos="fade-up"><span style="font-family:微軟正黑體" class="oldFontSize-11.0Pt" data-aos="fade-up">First aid STEP 2 CK</span></li>
-    <li style="margin-top:0; margin-bottom:0; vertical-align:middle" lang="zh-TW" data-aos="fade-up"><a href="https://commons.wikimedia.org/wiki/File:Wiggers_diagram_with_jugular_venous_waveform.png"><span style="font-family:Calibri" class="oldFontSize-11.0Pt" data-aos="fade-up">https://commons.wikimedia.org/wiki/File:Wiggers_diagram_with_jugular_venous_waveform.png</span></a></li>
+    <li style="margin-top:0; margin-bottom:0; vertical-align:middle" lang="zh-TW" data-aos="fade-up"><a href="https://commons.wikimedia.org/wiki/File:Wiggers_diagram_with_jugular_venous_waveform.png" data-aos="fade-up"><span style="font-family:Calibri" class="oldFontSize-11.0Pt" data-aos="fade-up">https://commons.wikimedia.org/wiki/File:Wiggers_diagram_with_jugular_venous_waveform.png</span></a></li>
    </ol>
    <ol type="1" style="direction:ltr; unicode-bidi:embed; margin-top:0in; margin-bottom:0in; font-family:Calibri; font-weight:normal; font-style:normal" class="oldFontSize-11.0Pt" data-aos="fade-up">
-    <li value="5" style="margin-top:0; margin-bottom:0; vertical-align:middle" lang="zh-TW" data-aos="fade-up"><a href="https://commons.wikimedia.org/w/index.php?search=heart+murmur&amp;title=Special:MediaSearch&amp;type=image"><span style="font-family:Calibri; font-family:Calibri" class="oldFontSize-11.0Pt" data-aos="fade-up">https://commons.wikimedia.org/w/index.php?search=heart+murmur&amp;title=Special:MediaSearch&amp;type=image</span></a></li>
+    <li value="5" style="margin-top:0; margin-bottom:0; vertical-align:middle" lang="zh-TW" data-aos="fade-up"><a href="https://commons.wikimedia.org/w/index.php?search=heart+murmur&amp;title=Special:MediaSearch&amp;type=image" data-aos="fade-up"><span style="font-family:Calibri; font-family:Calibri" class="oldFontSize-11.0Pt" data-aos="fade-up">https://commons.wikimedia.org/w/index.php?search=heart+murmur&amp;title=Special:MediaSearch&amp;type=image</span></a></li>
    </ol>
   </ul>
   </td>
@@ -2506,7 +2492,7 @@ lumbar "></p>
   <p class="oldFontSize-1Pt newFontSizeRank-7" data-aos="fade-up"></p>
   </td>
  </tr>
- <tr>
+ <tr data-aos="fade-up">
   <td valign="top" style="vertical-align:top; margin:0in; padding:0pt; width:1px; height:.5701in" class="oldFontSize-1Pt newFontSizeRank-7" data-aos="fade-up">
   <p class="oldFontSize-1Pt newFontSizeRank-7" data-aos="fade-up">&nbsp;</p>
   </td>
@@ -2519,7 +2505,7 @@ lumbar "></p>
   <p style="margin:0in; font-family:Calibri" lang="zh-TW" class="oldFontSize-11.0Pt" data-aos="fade-up">&nbsp;</p>
   </td>
  </tr>
- <tr>
+ <tr data-aos="fade-up">
   <td valign="top" style="vertical-align:top; margin:0in; padding:0pt; width:1px; height:5.6256in" class="oldFontSize-1Pt newFontSizeRank-7" data-aos="fade-up">
   <p class="oldFontSize-1Pt newFontSizeRank-7" data-aos="fade-up">&nbsp;</p>
   </td>
@@ -2540,7 +2526,7 @@ lumbar "></p>
 
 </div>
 
-<div class="outerSpaceOld display-none">
+<div class="outerSpaceOld display-none" data-aos="fade-up">
 
 <p style="margin:0in" data-aos="fade-up">&nbsp;</p>
 
@@ -2554,7 +2540,7 @@ lumbar "></p>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js" integrity="sha512-A7AYk1fGKX6S2SsHywmPkrnzTZHrgiVT7GcQkLGDe2ev0aWb8zejytzS8wjo7PGEXKqJOrjQ4oORtnimIRZBtw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" integrity="sha512-1cK78a1o+ht2JcaW6g8OXYwqpev9+6GqOkz9xmBN9iUUhIndKtxwILGWYOSibOKjLsEdjyjZvYDq/cZwNeak0w==" crossorigin="anonymous" referrerpolicy="no-referrer">
 <script>
-  AOS.init();
+    AOS.init();
 </script>
 <!--ENDOF AOS 區-->
 
@@ -2577,7 +2563,7 @@ https://cdn.jsdelivr.net/npm/sweetalert2@11.22.2/dist/sweetalert2.all.min.js
 <link href="
 https://cdn.jsdelivr.net/npm/sweetalert2@11.22.2/dist/sweetalert2.min.css
 " rel="stylesheet">
-<script>
+<!--script>
     function selFont() {
         const fonts = {
             "ChenYuluoyan Mono": [100],
@@ -2637,7 +2623,7 @@ https://cdn.jsdelivr.net/npm/sweetalert2@11.22.2/dist/sweetalert2.min.css
             }
         });
     }
-</script>
+</script-->
 <button class="float-button" onclick="selFont()">選擇字體</button>
 <!--ENDOF 字體選擇區 (生產環境請移除) -->
 <!--important 主字體大小選擇區 (生產環境請移除) 此段AI生成 (些微手動更動)-->
@@ -2682,61 +2668,61 @@ https://cdn.jsdelivr.net/npm/sweetalert2@11.22.2/dist/sweetalert2.min.css
 </div>
 
 <script>
-function initNavigation() {
-    // 解析 TOC 結構
-    const tocDiv = document.getElementById('toc-for-dev');
-    const pages = [];
-    
-    if (tocDiv) {
-        const links = tocDiv.querySelectorAll('a[href]');
-        links.forEach(link => {
-            pages.push({
-                url: link.getAttribute('href'),
-                title: link.textContent.trim()
-            });
-        });
-    }
-    
-    // 獲取當前頁面 URL
-    const currentUrl = window.location.pathname;
-    
-    // 找到當前頁面在 TOC 中的位置
-    const currentIndex = pages.findIndex(page => page.url === currentUrl);
-    
-    const prevButton = document.getElementById('prev-page');
-    const nextButton = document.getElementById('next-page');
-    
-    // 設置上一頁按鈕
-    if (currentIndex > 0) {
-        prevButton.disabled = false;
-        prevButton.onclick = () => {
-            window.location.href = pages[currentIndex - 1].url;
-        };
-        prevButton.title = `上一頁: ${pages[currentIndex - 1].title}`;
-    } else {
-        prevButton.disabled = true;
-    }
-    
-    // 設置下一頁按鈕
-    if (currentIndex >= 0 && currentIndex < pages.length - 1) {
-        nextButton.disabled = false;
-        nextButton.onclick = () => {
-            window.location.href = pages[currentIndex + 1].url;
-        };
-        nextButton.title = `下一頁: ${pages[currentIndex + 1].title}`;
-    } else {
-        nextButton.disabled = true;
-    }
-    
-    // 如果當前頁面不在 TOC 中，禁用所有按鈕
-    if (currentIndex === -1) {
-        prevButton.disabled = true;
-        nextButton.disabled = true;
-    }
-}
+    function initNavigation() {
+        // 解析 TOC 結構
+        const tocDiv = document.getElementById('toc-for-dev');
+        const pages = [];
 
-// 頁面載入完成後初始化導航
-document.addEventListener('DOMContentLoaded', initNavigation);
+        if (tocDiv) {
+            const links = tocDiv.querySelectorAll('a[href]');
+            links.forEach(link => {
+                pages.push({
+                    url: link.getAttribute('href'),
+                    title: link.textContent.trim()
+                });
+            });
+        }
+
+        // 獲取當前頁面 URL
+        const currentUrl = window.location.pathname;
+
+        // 找到當前頁面在 TOC 中的位置
+        const currentIndex = pages.findIndex(page => page.url === currentUrl);
+
+        const prevButton = document.getElementById('prev-page');
+        const nextButton = document.getElementById('next-page');
+
+        // 設置上一頁按鈕
+        if (currentIndex > 0) {
+            prevButton.disabled = false;
+            prevButton.onclick = () => {
+                window.location.href = pages[currentIndex - 1].url;
+            };
+            prevButton.title = `上一頁: ${pages[currentIndex - 1].title}`;
+        } else {
+            prevButton.disabled = true;
+        }
+
+        // 設置下一頁按鈕
+        if (currentIndex >= 0 && currentIndex < pages.length - 1) {
+            nextButton.disabled = false;
+            nextButton.onclick = () => {
+                window.location.href = pages[currentIndex + 1].url;
+            };
+            nextButton.title = `下一頁: ${pages[currentIndex + 1].title}`;
+        } else {
+            nextButton.disabled = true;
+        }
+
+        // 如果當前頁面不在 TOC 中，禁用所有按鈕
+        if (currentIndex === -1) {
+            prevButton.disabled = true;
+            nextButton.disabled = true;
+        }
+    }
+
+    // 頁面載入完成後初始化導航
+    document.addEventListener('DOMContentLoaded', initNavigation);
 </script>
 <!--ENDOF 上一頁下一頁導航區-->
 

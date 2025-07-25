@@ -413,50 +413,29 @@ li {
 
 ul {
     padding-inline-start: 2vw;
-    /* 更小的縮排 */
 }
 
 .outerSpace {
-    /*overflow-y: scroll !important; 重要更動 2025 07 24*/
-    position: static !important;
-    top: var(--outerSpace-top) !important;
-    left: var(--outerSpace-left) !important;
-    /* 元素的 width 和 height，會包含 padding 和 border。*/
     box-sizing: border-box ! important;
-    /* 100vh 減去上下 margin 各 1rem */
-    /*height: var(--outerSpace-height) !important; 重要更動 2025 07 24*/
     width: 100vw !important;
-    /*var(--outerSpace-width) !important;*/
-    height: fit-content !important;
-    /*margin: 1rem !important; 重要更動 2025 07 24*/
-    margin-top: 14vh !important;
+    margin-top: 0px !important;
     margin-bottom: 0px !important;
     margin-left: 0px !important;
     margin-right: 0px !important;
     padding-left: 1rem !important;
     padding-right: 1rem !important;
-    padding-top: 0px !important;
+    padding-top: 14vh !important;
     padding-bottom: 0px !important;
     border: 0px !important;
     background: #ffffffff !important;
 }
 
-/*html {
-    overflow-y: scroll;
-}*/
 
 body {
     margin-bottom: 0px;
     margin-top: 0px;
     margin-left: 0px;
     margin-right: 0px;
-    /*padding: 0px; 重要更動 2025 07 24*/
-    /*padding-top: 14vh; XXX*/
-    /*padding-bottom: 1rem;*/
-    /*overflow: hidden; 重要更動 2025 07 24*/
-    /*overflow-y: hidden;*/
-    height: max-content;
-    /*overflow-x: hidden;*/
     background: #f6e5c9 !important;
 }
 
@@ -491,10 +470,6 @@ canvas {
 }
 
 .outerSpace>ul>li>p>span:first-of-type {
-    /*
-    x-large 96*27 (1.5rem)
-    2rem:138*36
-    */
     font-size: var(--onenoteInterpreter-new-font-size-h1);
     color: var(--color-wakakusa-1) !important;
 }
@@ -526,11 +501,9 @@ canvas {
     border-bottom-width: 2px !important;
     border-bottom-style: groove !important;
     border-bottom-color: var(--color-akizakura-5) !important;
-    /*border-radius: 50% / 25% ! important;*/
 }
 
 .titleL2span {
-    /* 我原本是寫 larger(105.61*20) 但 larger 是 相對父層變大 large( 108*20 ) (1.12rem 107.53*20)比較合適 (1.1 rem = 105.61*20)*/
     font-size: var(--onenoteInterpreter-new-font-size-h2) !important;
     color: var(--color-akizakura-6) !important;
 }
@@ -583,27 +556,39 @@ td {
     position: fixed;
     top: 0px;
     left: 0px;
-    background-color: #f6e5c9;
-    padding-right: 7%;
-    padding-left: 3%;
+    background-color: #f6e5c9!important;
+    padding: 0 7% 0 3%;
     display: grid;
-    grid-template-columns: 7% 25% 3% 3% 3% 1fr;
-    direction: rtl;
+    align-items: center;
     gap: 2%;
     height: 14vh;
     width: 100vw;
     box-sizing: border-box;
     z-index: 1000;
+    direction: rtl;
+    grid-template-columns: 7% 25% 3% 3% 3% 1fr;
+}
+
+.buttonLogin{
+   background: #5b3717 !important;
+   border-radius: 8%;
+   color: #ffffff !important;
+}
+
+.buttonSearch{
+   background: #E0CFBB !important;
+   border-radius: 28%;
+   color: #ffffff !important;
 }
 
 .itemBangs {
-    margin-top: 26%;
-    margin-bottom: 26%;
+    height: 46%;
     background-color: #ccc;
     text-align: center;
-    /*padding: 10px;*/
-    border: 1px solid #999;
+    align-items: center;
+    justify-content: center;
 }
+
 
 /*end of瀏海區****************************/
 
@@ -629,6 +614,7 @@ td {
     display: flex;
     gap: 0.5rem;
     z-index: 9999;
+    display: none;
 }
 
 #font-controls button {
@@ -651,11 +637,11 @@ td {
 
 /*上一頁下一頁導航區 (AI)*/
 .dev-toc-nav-buttons {
+    display: none;
     position: absolute;
-    /*bottom: 20px; 重要更動 24 07 24*/
     top: 90vw;
     left: 20px;
-    display: flex;
+    /*display: flex;*/
     gap: 10px;
     z-index: 1000;
 }
@@ -691,18 +677,18 @@ td {
         <script src="//s3-ap-northeast-1.amazonaws.com/justfont-user-script/jf-65691.js"></script>
         <script src="https://kit.fontawesome.com/65b47a30d3.js" crossorigin="anonymous"></script></head>
 
-<body lang="zh-TW" style="font-family:Calibri" class="oldFontSize-11.0Pt" data-aos="fade-up">
-  <div class="containerBangs">
-    <div class="itemBangs">7%</div>
-    <div class="itemBangs">25%</div>
-    <div class="itemBangs">3%</div>
-    <div class="itemBangs">3%</div>
-    <div class="itemBangs">3%</div>
-    <div class="itemBangs">彈性空間</div>
+<body lang="zh-TW" style="font-family:Calibri" class="oldFontSize-11.0Pt">
+  <div class="containerBangs newFontSizeRank-3">
+    <div class="itemBangs buttonLogin"><p>登入</p></div>
+    <div class="itemBangs buttonSearch"><p>搜尋</p></div>
+    <div class="itemBangs"><p>題目</p></div>
+    <div class="itemBangs"><p>主題</p></div>
+    <div class="itemBangs"><p>分科</p></div>
+    <div class="itemBangs"><p>彈性空間</p></div>
   </div>
   <div style="direction:ltr; margin-top:.2187in; margin-left:0in; width:7.6041in" class="outerSpace" data-aos="fade-up">
 
-<p style="color:#000000; margin:0in; margin-left:.375in; text-indent:-.1666in; font-family:微軟正黑體; color:black" class="oldFontSize-11.0Pt oldColor-000000" data-aos="fade-up"><img src="新生兒呼吸相關疾病_asset_0.png" width="16" height="16" alt="相關條目" class="display-none">&nbsp;相關條目：</p>
+<p style="color:#000000; margin:0in; margin-left:.375in; text-indent:-.1666in; font-family:微軟正黑體; color:black" class="oldFontSize-11.0Pt oldColor-000000" data-aos="fade-up"><img src="新生兒呼吸相關疾病_asset_0.png" width="16" height="16" alt="相關條目" data-aos="fade-up" class="display-none">&nbsp;相關條目：</p>
 
 <p style="margin:0in; font-family:微軟正黑體" class="oldFontSize-11.0Pt" data-aos="fade-up">&nbsp;</p>
 
@@ -711,10 +697,10 @@ td {
  <ul type="circle" style="direction:ltr; unicode-bidi:embed; margin-top:0in; margin-bottom:0in" data-aos="fade-up">
   <li style="margin-top:0; margin-bottom:0; vertical-align:middle; color:#2E75B5" class="oldColor-2e75b5" data-aos="fade-up"><span style="font-family:微軟正黑體" class="oldFontSize-14.0Pt" data-aos="fade-up">適應症：</span></li>
   <ul type="disc" style="direction:ltr; unicode-bidi:embed; margin-top:0in; margin-bottom:0in" data-aos="fade-up">
-   <li style="margin-top:0; margin-bottom:0; vertical-align:middle" data-aos="fade-up"><a href="onenote:#👼新生兒|呼吸疾病&amp;section-id={7F1F1CC4-6BFC-4569-AF12-D38F3AE381D1}&amp;page-id={57A1048E-6EE6-4FA6-A88B-17BE096F5F89}&amp;object-id={9A4DA577-4028-07F6-0E92-2BC4BD3DDA19}&amp;D&amp;base-path=https://d.docs.live.net/56ce32fba64785ca/臨床筆記/兒科.one"><span style="font-family:微軟正黑體" class="oldFontSize-11.0Pt" data-aos="fade-up">胎便吸入症候群</span></a></li>
-   <li style="margin-top:0; margin-bottom:0; vertical-align:middle" data-aos="fade-up"><a href="onenote:#👼新生兒|呼吸疾病&amp;section-id={7F1F1CC4-6BFC-4569-AF12-D38F3AE381D1}&amp;page-id={57A1048E-6EE6-4FA6-A88B-17BE096F5F89}&amp;object-id={FA82F1F2-2580-0CC5-0E3F-9C76007081D6}&amp;11&amp;base-path=https://d.docs.live.net/56ce32fba64785ca/臨床筆記/兒科.one"><span style="font-family:微軟正黑體" class="oldFontSize-11.0Pt" data-aos="fade-up">呼吸窘迫症候群(respiratory distress
+   <li style="margin-top:0; margin-bottom:0; vertical-align:middle" data-aos="fade-up"><a href="onenote:#👼新生兒|呼吸疾病&amp;section-id={7F1F1CC4-6BFC-4569-AF12-D38F3AE381D1}&amp;page-id={57A1048E-6EE6-4FA6-A88B-17BE096F5F89}&amp;object-id={9A4DA577-4028-07F6-0E92-2BC4BD3DDA19}&amp;D&amp;base-path=https://d.docs.live.net/56ce32fba64785ca/臨床筆記/兒科.one" data-aos="fade-up"><span style="font-family:微軟正黑體" class="oldFontSize-11.0Pt" data-aos="fade-up">胎便吸入症候群</span></a></li>
+   <li style="margin-top:0; margin-bottom:0; vertical-align:middle" data-aos="fade-up"><a href="onenote:#👼新生兒|呼吸疾病&amp;section-id={7F1F1CC4-6BFC-4569-AF12-D38F3AE381D1}&amp;page-id={57A1048E-6EE6-4FA6-A88B-17BE096F5F89}&amp;object-id={FA82F1F2-2580-0CC5-0E3F-9C76007081D6}&amp;11&amp;base-path=https://d.docs.live.net/56ce32fba64785ca/臨床筆記/兒科.one" data-aos="fade-up"><span style="font-family:微軟正黑體" class="oldFontSize-11.0Pt" data-aos="fade-up">呼吸窘迫症候群(respiratory distress
        syndrome)</span></a></li>
-   <li style="margin-top:0; margin-bottom:0; vertical-align:middle" data-aos="fade-up"><a href="onenote:#👼新生兒|呼吸疾病&amp;section-id={7F1F1CC4-6BFC-4569-AF12-D38F3AE381D1}&amp;page-id={57A1048E-6EE6-4FA6-A88B-17BE096F5F89}&amp;object-id={49C17E3D-7273-0259-365E-96955BEB32F0}&amp;E3&amp;base-path=https://d.docs.live.net/56ce32fba64785ca/臨床筆記/兒科.one"><span style="font-family:微軟正黑體" class="oldFontSize-11.0Pt" data-aos="fade-up">新生兒持續性肺動脈高壓(persistent
+   <li style="margin-top:0; margin-bottom:0; vertical-align:middle" data-aos="fade-up"><a href="onenote:#👼新生兒|呼吸疾病&amp;section-id={7F1F1CC4-6BFC-4569-AF12-D38F3AE381D1}&amp;page-id={57A1048E-6EE6-4FA6-A88B-17BE096F5F89}&amp;object-id={49C17E3D-7273-0259-365E-96955BEB32F0}&amp;E3&amp;base-path=https://d.docs.live.net/56ce32fba64785ca/臨床筆記/兒科.one" data-aos="fade-up"><span style="font-family:微軟正黑體" class="oldFontSize-11.0Pt" data-aos="fade-up">新生兒持續性肺動脈高壓(persistent
        pulmonary hypertension of newborn, PPHN)</span></a></li>
    <li style="margin-top:0; margin-bottom:0; vertical-align:middle" data-aos="fade-up"><span style="font-family:微軟正黑體" class="oldFontSize-11.0Pt" data-aos="fade-up">敗血症</span></li>
    <li style="margin-top:0; margin-bottom:0; vertical-align:middle" data-aos="fade-up"><span style="font-family:微軟正黑體" lang="zh-TW" class="oldFontSize-11.0Pt" data-aos="fade-up">先天性橫膈疝氣(congenital
@@ -748,12 +734,12 @@ td {
   <li style="margin-top:0; margin-bottom:0; vertical-align:middle; color:#2E75B5" class="oldColor-2e75b5" data-aos="fade-up"><span style="font-family:微軟正黑體" class="oldFontSize-14.0Pt" data-aos="fade-up">病因：</span></li>
   <ul type="disc" style="direction:ltr; unicode-bidi:embed; margin-top:0in; margin-bottom:0in" data-aos="fade-up">
    <li style="margin-top:0; margin-bottom:0; vertical-align:middle" data-aos="fade-up"><span style="font-family:微軟正黑體" class="oldFontSize-11.0Pt" data-aos="fade-up">通常為早產兒的原發疾病</span></li>
-   <li style="margin-top:0; margin-bottom:0; vertical-align:middle" data-aos="fade-up"><span style="font-family:微軟正黑體" class="oldFontSize-11.0Pt" data-aos="fade-up">次發性表面張力素的缺乏：</span><a href="onenote:#👼新生兒|呼吸疾病&amp;section-id={7F1F1CC4-6BFC-4569-AF12-D38F3AE381D1}&amp;page-id={57A1048E-6EE6-4FA6-A88B-17BE096F5F89}&amp;object-id={9A4DA577-4028-07F6-0E92-2BC4BD3DDA19}&amp;D&amp;base-path=https://d.docs.live.net/56ce32fba64785ca/臨床筆記/兒科.one"><span style="font-family:微軟正黑體" class="oldFontSize-11.0Pt" data-aos="fade-up">胎便吸入症候群</span></a><span style="font-family:微軟正黑體" class="oldFontSize-11.0Pt" data-aos="fade-up">、肺炎、肺出血、敗血症</span></li>
+   <li style="margin-top:0; margin-bottom:0; vertical-align:middle" data-aos="fade-up"><span style="font-family:微軟正黑體" class="oldFontSize-11.0Pt" data-aos="fade-up">次發性表面張力素的缺乏：</span><a href="onenote:#👼新生兒|呼吸疾病&amp;section-id={7F1F1CC4-6BFC-4569-AF12-D38F3AE381D1}&amp;page-id={57A1048E-6EE6-4FA6-A88B-17BE096F5F89}&amp;object-id={9A4DA577-4028-07F6-0E92-2BC4BD3DDA19}&amp;D&amp;base-path=https://d.docs.live.net/56ce32fba64785ca/臨床筆記/兒科.one" data-aos="fade-up"><span style="font-family:微軟正黑體" class="oldFontSize-11.0Pt" data-aos="fade-up">胎便吸入症候群</span></a><span style="font-family:微軟正黑體" class="oldFontSize-11.0Pt" data-aos="fade-up">、肺炎、肺出血、敗血症</span></li>
   </ul>
   <li style="margin-top:0; margin-bottom:0; vertical-align:middle; color:#2E75B5" class="oldColor-2e75b5" data-aos="fade-up"><span style="font-family:微軟正黑體" class="oldFontSize-14.0Pt" data-aos="fade-up">流行病學:</span></li>
   <ul type="disc" style="direction:ltr; unicode-bidi:embed; margin-top:0in; margin-bottom:0in" data-aos="fade-up">
    <li style="margin-top:0; margin-bottom:0; vertical-align:middle" data-aos="fade-up"><span style="font-family:微軟正黑體" lang="zh-TW" class="oldFontSize-11.0Pt" data-aos="fade-up">好發於早產兒，</span><span style="font-weight:bold; font-family:微軟正黑體; color:#C00000" lang="zh-TW" class="oldFontSize-11.0Pt oldColor-c00000" data-aos="fade-up">發生率與懷孕週數成反比</span><span style="font-weight:bold; font-family:
-       微軟正黑體; color:#C00000" lang="zh-TW" class="oldFontSize-11.0Pt oldColor-c00000" data-aos="fade-up">(</span><span style="font-weight:bold; font-family:微軟正黑體; color:#C00000" lang="zh-TW" class="oldFontSize-11.0Pt oldColor-c00000" data-aos="fade-up">同</span><a href="onenote:#👼新生兒|呼吸疾病&amp;section-id={7F1F1CC4-6BFC-4569-AF12-D38F3AE381D1}&amp;page-id={57A1048E-6EE6-4FA6-A88B-17BE096F5F89}&amp;object-id={129174CB-0351-03F1-144A-4D965DD39DD8}&amp;19&amp;base-path=https://d.docs.live.net/56CE32FBA64785CA/臨床筆記/兒科.one"><span style="font-weight:bold; font-family:微軟正黑體" lang="zh-TW" class="oldFontSize-11.0Pt" data-aos="fade-up">Apnea</span></a><span style="font-weight:bold; font-family:微軟正黑體; color:#C00000" lang="zh-TW" class="oldFontSize-11.0Pt oldColor-c00000" data-aos="fade-up">)</span></li>
+       微軟正黑體; color:#C00000" lang="zh-TW" class="oldFontSize-11.0Pt oldColor-c00000" data-aos="fade-up">(</span><span style="font-weight:bold; font-family:微軟正黑體; color:#C00000" lang="zh-TW" class="oldFontSize-11.0Pt oldColor-c00000" data-aos="fade-up">同</span><a href="onenote:#👼新生兒|呼吸疾病&amp;section-id={7F1F1CC4-6BFC-4569-AF12-D38F3AE381D1}&amp;page-id={57A1048E-6EE6-4FA6-A88B-17BE096F5F89}&amp;object-id={129174CB-0351-03F1-144A-4D965DD39DD8}&amp;19&amp;base-path=https://d.docs.live.net/56CE32FBA64785CA/臨床筆記/兒科.one" data-aos="fade-up"><span style="font-weight:bold; font-family:微軟正黑體" lang="zh-TW" class="oldFontSize-11.0Pt" data-aos="fade-up">Apnea</span></a><span style="font-weight:bold; font-family:微軟正黑體; color:#C00000" lang="zh-TW" class="oldFontSize-11.0Pt oldColor-c00000" data-aos="fade-up">)</span></li>
    <li style="margin-top:0; margin-bottom:0; vertical-align:middle" data-aos="fade-up"><span style="font-family:微軟正黑體" class="oldFontSize-11.0Pt" data-aos="fade-up">出生時懷孕週數低於30週：發生率60%</span></li>
    <li style="margin-top:0; margin-bottom:0; vertical-align:middle" data-aos="fade-up"><span style="font-family:微軟正黑體" lang="zh-TW" class="oldFontSize-11.0Pt" data-aos="fade-up">出生時懷孕週數為39週：發生率幾乎為</span><span style="font-family:微軟正黑體" lang="zh-TW" class="oldFontSize-11.0Pt" data-aos="fade-up">0%</span></li>
   </ul>
@@ -838,12 +824,12 @@ td {
     </ul>
     <li style="margin-top:0; margin-bottom:0; vertical-align:middle" data-aos="fade-up"><span style="font-family:微軟正黑體" lang="zh-TW" class="oldFontSize-11.0Pt" data-aos="fade-up">治療：控制</span><span style="font-family:微軟正黑體" lang="zh-TW" class="oldFontSize-11.0Pt" data-aos="fade-up">O2 supply</span><span style="font-family:微軟正黑體" lang="zh-TW" class="oldFontSize-11.0Pt" data-aos="fade-up">、利尿劑</span></li>
     <ul type="disc" style="direction:ltr; unicode-bidi:embed; margin-top:0in; margin-bottom:0in" data-aos="fade-up">
-     <li style="margin-top:0; margin-bottom:0; vertical-align:middle" class="oldFontSize-11.0Pt" data-aos="fade-up"><img src="新生兒呼吸相關疾病_asset_1.jpg" width="480" height="439"></li>
+     <li style="margin-top:0; margin-bottom:0; vertical-align:middle" class="oldFontSize-11.0Pt" data-aos="fade-up"><img src="新生兒呼吸相關疾病_asset_1.jpg" width="480" height="439" data-aos="fade-up"></li>
     </ul>
    </ul>
   </ul>
   <ul type="disc" style="direction:ltr; unicode-bidi:embed; margin-top:0in; margin-bottom:0in" data-aos="fade-up">
-   <li style="margin-top:0; margin-bottom:0; vertical-align:middle" data-aos="fade-up"><span style="font-family:微軟正黑體" class="oldFontSize-11.0Pt" data-aos="fade-up">O2治療的併發症：</span><a href="onenote:https://d.docs.live.net/56CE32FBA64785CA/臨床筆記/眼科.one#視網膜&amp;section-id={177E4EDB-E165-42B0-88D9-AC52B18BE5A2}&amp;page-id={997235BA-DEE9-4C46-854C-36FF4152AED8}&amp;object-id={7949FA0A-D1EC-45AB-951C-AF1D92696F62}&amp;E3"><span style="font-family:微軟正黑體" class="oldFontSize-11.0Pt" data-aos="fade-up">retinopathy of prematurity</span></a><span style="font-family:微軟正黑體" class="oldFontSize-11.0Pt" data-aos="fade-up">、bronchopulmonary
+   <li style="margin-top:0; margin-bottom:0; vertical-align:middle" data-aos="fade-up"><span style="font-family:微軟正黑體" class="oldFontSize-11.0Pt" data-aos="fade-up">O2治療的併發症：</span><a href="onenote:https://d.docs.live.net/56CE32FBA64785CA/臨床筆記/眼科.one#視網膜&amp;section-id={177E4EDB-E165-42B0-88D9-AC52B18BE5A2}&amp;page-id={997235BA-DEE9-4C46-854C-36FF4152AED8}&amp;object-id={7949FA0A-D1EC-45AB-951C-AF1D92696F62}&amp;E3" data-aos="fade-up"><span style="font-family:微軟正黑體" class="oldFontSize-11.0Pt" data-aos="fade-up">retinopathy of prematurity</span></a><span style="font-family:微軟正黑體" class="oldFontSize-11.0Pt" data-aos="fade-up">、bronchopulmonary
        dysplasia、intraventricular hemorrhage</span></li>
   </ul>
   <li style="margin-top:0; margin-bottom:0; vertical-align:middle; color:#2E75B5" class="oldColor-2e75b5" data-aos="fade-up"><span style="font-family:微軟正黑體" class="oldFontSize-14.0Pt" data-aos="fade-up">治療：</span></li>
@@ -869,7 +855,7 @@ td {
  <li style="margin-top:0; margin-bottom:0; vertical-align:middle; color:#1E4E79" class="oldColor-1e4e79" data-aos="fade-up"><span style="font-family:微軟正黑體" lang="zh-TW" class="oldFontSize-16.0Pt" data-aos="fade-up">新生兒暫時性呼吸急促(Transient</span><span style="font-family:微軟正黑體" lang="zh-TW" class="oldFontSize-16.0Pt" data-aos="fade-up"> </span><span style="font-family:微軟正黑體" lang="zh-TW" class="oldFontSize-16.0Pt" data-aos="fade-up">tachypnea</span><span style="font-family:微軟正黑體" lang="zh-TW" class="oldFontSize-16.0Pt" data-aos="fade-up"> </span><span style="font-family:微軟正黑體" lang="zh-TW" class="oldFontSize-16.0Pt" data-aos="fade-up">of</span><span style="font-family:微軟正黑體" lang="zh-TW" class="oldFontSize-16.0Pt" data-aos="fade-up"> </span><span style="font-family:微軟正黑體" lang="zh-TW" class="oldFontSize-16.0Pt" data-aos="fade-up">the</span><span style="font-family:微軟正黑體" lang="zh-TW" class="oldFontSize-16.0Pt" data-aos="fade-up"> </span><span style="font-family:微軟正黑體" lang="zh-TW" class="oldFontSize-16.0Pt" data-aos="fade-up">newborn,</span><span style="font-family:微軟正黑體" lang="zh-TW" class="oldFontSize-16.0Pt" data-aos="fade-up"> </span><span style="font-family:微軟正黑體" lang="zh-TW" class="oldFontSize-16.0Pt" data-aos="fade-up">TTNB)</span></li>
 </ul>
 
-<h1 style="margin:0in; margin-left:.375in; font-family:微軟正黑體; color:#1E4E79" class="oldFontSize-16.0Pt oldColor-1e4e79" data-aos="fade-up"><span lang="zh-TW">=</span><span lang="zh-TW">濕肺疾病(wet</span><span lang="zh-TW"> </span><span lang="zh-TW">lung</span><span lang="zh-TW"> </span><span lang="zh-TW">disease)</span><span lang="zh-TW">=</span><span lang="zh-TW">新生兒體液滯留症候群(newborn</span><span lang="zh-TW"> </span><span lang="zh-TW">retained</span><span lang="zh-TW"> </span><span lang="zh-TW">fluid</span><span lang="zh-TW"> </span><span lang="zh-TW">syndrome)</span></h1>
+<h1 style="margin:0in; margin-left:.375in; font-family:微軟正黑體; color:#1E4E79" class="oldFontSize-16.0Pt oldColor-1e4e79" data-aos="fade-up"><span lang="zh-TW" data-aos="fade-up">=</span><span lang="zh-TW" data-aos="fade-up">濕肺疾病(wet</span><span lang="zh-TW" data-aos="fade-up"> </span><span lang="zh-TW" data-aos="fade-up">lung</span><span lang="zh-TW" data-aos="fade-up"> </span><span lang="zh-TW" data-aos="fade-up">disease)</span><span lang="zh-TW" data-aos="fade-up">=</span><span lang="zh-TW" data-aos="fade-up">新生兒體液滯留症候群(newborn</span><span lang="zh-TW" data-aos="fade-up"> </span><span lang="zh-TW" data-aos="fade-up">retained</span><span lang="zh-TW" data-aos="fade-up"> </span><span lang="zh-TW" data-aos="fade-up">fluid</span><span lang="zh-TW" data-aos="fade-up"> </span><span lang="zh-TW" data-aos="fade-up">syndrome)</span></h1>
 
 <ul type="circle" style="direction:ltr; unicode-bidi:embed; margin-top:0in; margin-bottom:0in" data-aos="fade-up">
  <li style="margin-top:0; margin-bottom:0; vertical-align:middle; color:#2E75B5" class="oldColor-2e75b5" data-aos="fade-up"><span style="font-family:微軟正黑體" class="oldFontSize-14.0Pt" data-aos="fade-up">定義：</span></li>
@@ -922,7 +908,7 @@ td {
   <li style="margin-top:0; margin-bottom:0; vertical-align:middle; color:#2E75B5" class="oldColor-2e75b5" data-aos="fade-up"><span style="font-family:微軟正黑體" class="oldFontSize-14.0Pt" data-aos="fade-up">流行病學：</span></li>
   <ul type="disc" style="direction:ltr; unicode-bidi:embed; margin-top:0in; margin-bottom:0in" data-aos="fade-up">
    <li style="margin-top:0; margin-bottom:0; vertical-align:middle" data-aos="fade-up"><span style="font-family:微軟正黑體" lang="zh-TW" class="oldFontSize-11.0Pt" data-aos="fade-up">早產兒發生呼吸暫停機率通常與</span><span style="font-weight:bold; font-family:微軟正黑體; color:#C00000" lang="zh-TW" class="oldFontSize-11.0Pt oldColor-c00000" data-aos="fade-up">母親懷孕週數成反比</span><span style="font-weight:bold; font-family:
-       微軟正黑體; color:#C00000" lang="zh-TW" class="oldFontSize-11.0Pt oldColor-c00000" data-aos="fade-up">(</span><span style="font-weight:bold; font-family:微軟正黑體; color:#C00000" lang="zh-TW" class="oldFontSize-11.0Pt oldColor-c00000" data-aos="fade-up">同</span><a href="onenote:#👼新生兒|呼吸疾病&amp;section-id={7F1F1CC4-6BFC-4569-AF12-D38F3AE381D1}&amp;page-id={57A1048E-6EE6-4FA6-A88B-17BE096F5F89}&amp;object-id={FA82F1F2-2580-0CC5-0E3F-9C76007081D6}&amp;1B&amp;base-path=https://d.docs.live.net/56CE32FBA64785CA/臨床筆記/兒科.one"><span style="font-weight:bold; font-family:微軟正黑體" lang="zh-TW" class="oldFontSize-11.0Pt" data-aos="fade-up">RDS</span></a><span style="font-weight:bold; font-family:微軟正黑體; color:#C00000" lang="zh-TW" class="oldFontSize-11.0Pt oldColor-c00000" data-aos="fade-up">)</span></li>
+       微軟正黑體; color:#C00000" lang="zh-TW" class="oldFontSize-11.0Pt oldColor-c00000" data-aos="fade-up">(</span><span style="font-weight:bold; font-family:微軟正黑體; color:#C00000" lang="zh-TW" class="oldFontSize-11.0Pt oldColor-c00000" data-aos="fade-up">同</span><a href="onenote:#👼新生兒|呼吸疾病&amp;section-id={7F1F1CC4-6BFC-4569-AF12-D38F3AE381D1}&amp;page-id={57A1048E-6EE6-4FA6-A88B-17BE096F5F89}&amp;object-id={FA82F1F2-2580-0CC5-0E3F-9C76007081D6}&amp;1B&amp;base-path=https://d.docs.live.net/56CE32FBA64785CA/臨床筆記/兒科.one" data-aos="fade-up"><span style="font-weight:bold; font-family:微軟正黑體" lang="zh-TW" class="oldFontSize-11.0Pt" data-aos="fade-up">RDS</span></a><span style="font-weight:bold; font-family:微軟正黑體; color:#C00000" lang="zh-TW" class="oldFontSize-11.0Pt oldColor-c00000" data-aos="fade-up">)</span></li>
   </ul>
   <li style="margin-top:0; margin-bottom:0; vertical-align:middle; color:#2E75B5" class="oldColor-2e75b5" data-aos="fade-up"><span style="font-family:微軟正黑體" class="oldFontSize-14.0Pt" data-aos="fade-up">種類：可分為obstructive、central與mixed三種</span></li>
   <ul type="disc" style="direction:ltr; unicode-bidi:embed; margin-top:0in; margin-bottom:0in" data-aos="fade-up">
@@ -988,7 +974,7 @@ td {
    <li style="margin-top:0; margin-bottom:0; vertical-align:middle" data-aos="fade-up"><span style="font-family:微軟正黑體" class="oldFontSize-11.0Pt" data-aos="fade-up">低血糖</span></li>
    <li style="margin-top:0; margin-bottom:0; vertical-align:middle" data-aos="fade-up"><span style="font-family:微軟正黑體" class="oldFontSize-11.0Pt" data-aos="fade-up">紅血球增多症(polycythemia)</span></li>
    <li style="margin-top:0; margin-bottom:0; vertical-align:middle" data-aos="fade-up"><span style="font-family:微軟正黑體" class="oldFontSize-11.0Pt" data-aos="fade-up">母親在懷孕過程中使用NSAID造成動脈導管收縮</span></li>
-   <li style="margin-top:0; margin-bottom:0; vertical-align:middle" data-aos="fade-up"><a href="onenote:婦產科.one#🐣產科|妊娠併發症&amp;section-id={1CB61D80-9E36-4404-8278-F4D943F71329}&amp;page-id={4BD455BC-CCFB-4C87-AC74-2AF8F4DB056F}&amp;object-id={6329EB2A-86B6-4459-A684-73DF49A3E91C}&amp;B&amp;base-path=https://d.docs.live.net/56ce32fba64785ca/臨床筆記"><span style="font-family:微軟正黑體" lang="zh-TW" class="oldFontSize-11.0Pt" data-aos="fade-up">羊水過少</span></a><span style="font-family:微軟正黑體" lang="zh-TW" class="oldFontSize-11.0Pt" data-aos="fade-up">(</span><a href="onenote:婦產科.one#🐣產科|妊娠併發症&amp;section-id={1CB61D80-9E36-4404-8278-F4D943F71329}&amp;page-id={4BD455BC-CCFB-4C87-AC74-2AF8F4DB056F}&amp;object-id={0D5B2AD1-C7A9-45D4-9FBC-FB6C267DD78C}&amp;26&amp;base-path=https://d.docs.live.net/56ce32fba64785ca/臨床筆記"><span style="font-family:微軟正黑體" lang="zh-TW" class="oldFontSize-11.0Pt" data-aos="fade-up">Potter</span><span style="font-family:微軟正黑體" lang="zh-TW" class="oldFontSize-11.0Pt" data-aos="fade-up"> syndrome</span></a><span style="font-family:微軟正黑體" lang="zh-TW" class="oldFontSize-11.0Pt" data-aos="fade-up">)</span></li>
+   <li style="margin-top:0; margin-bottom:0; vertical-align:middle" data-aos="fade-up"><a href="onenote:婦產科.one#🐣產科|妊娠併發症&amp;section-id={1CB61D80-9E36-4404-8278-F4D943F71329}&amp;page-id={4BD455BC-CCFB-4C87-AC74-2AF8F4DB056F}&amp;object-id={6329EB2A-86B6-4459-A684-73DF49A3E91C}&amp;B&amp;base-path=https://d.docs.live.net/56ce32fba64785ca/臨床筆記" data-aos="fade-up"><span style="font-family:微軟正黑體" lang="zh-TW" class="oldFontSize-11.0Pt" data-aos="fade-up">羊水過少</span></a><span style="font-family:微軟正黑體" lang="zh-TW" class="oldFontSize-11.0Pt" data-aos="fade-up">(</span><a href="onenote:婦產科.one#🐣產科|妊娠併發症&amp;section-id={1CB61D80-9E36-4404-8278-F4D943F71329}&amp;page-id={4BD455BC-CCFB-4C87-AC74-2AF8F4DB056F}&amp;object-id={0D5B2AD1-C7A9-45D4-9FBC-FB6C267DD78C}&amp;26&amp;base-path=https://d.docs.live.net/56ce32fba64785ca/臨床筆記" data-aos="fade-up"><span style="font-family:微軟正黑體" lang="zh-TW" class="oldFontSize-11.0Pt" data-aos="fade-up">Potter</span><span style="font-family:微軟正黑體" lang="zh-TW" class="oldFontSize-11.0Pt" data-aos="fade-up"> syndrome</span></a><span style="font-family:微軟正黑體" lang="zh-TW" class="oldFontSize-11.0Pt" data-aos="fade-up">)</span></li>
    <li style="margin-top:0; margin-bottom:0; vertical-align:middle" data-aos="fade-up"><span style="font-family:微軟正黑體" class="oldFontSize-11.0Pt" data-aos="fade-up">母親有糖尿病、先天性橫膈疝氣造成肺部發育不良等</span></li>
   </ul>
   <li style="margin-top:0; margin-bottom:0; vertical-align:middle; color:#2E75B5" class="oldColor-2e75b5" data-aos="fade-up"><span style="font-family:微軟正黑體" class="oldFontSize-14.0Pt" data-aos="fade-up">病生理：胎兒時期肺血管阻力提高、從肺到全身的血液分流(卵圓孔或動脈導管)產生的低血氧造成</span></li>
@@ -1030,7 +1016,7 @@ td {
  </ul>
  <li style="margin-top:0; margin-bottom:0; vertical-align:middle; color:#1E4E79" class="oldColor-1e4e79" data-aos="fade-up"><span style="font-family:微軟正黑體" lang="zh-TW" class="oldFontSize-16.0Pt" data-aos="fade-up">胎便吸入症候群(meconium</span><span style="font-family:微軟正黑體" lang="zh-TW" class="oldFontSize-16.0Pt" data-aos="fade-up"> </span><span style="font-family:微軟正黑體" lang="zh-TW" class="oldFontSize-16.0Pt" data-aos="fade-up">aspiration</span><span style="font-family:微軟正黑體" lang="zh-TW" class="oldFontSize-16.0Pt" data-aos="fade-up"> </span><span style="font-family:微軟正黑體" lang="zh-TW" class="oldFontSize-16.0Pt" data-aos="fade-up">syndrome, MAS)</span></li>
  <ul type="circle" style="direction:ltr; unicode-bidi:embed; margin-top:0in; margin-bottom:0in" data-aos="fade-up">
-  <li style="margin-top:0; margin-bottom:0; vertical-align:middle" data-aos="fade-up"><span style="font-family:微軟正黑體" lang="zh-TW" class="oldFontSize-11.0Pt" data-aos="fade-up">其他</span><a href="onenote:#🔪兒外|腸胃道\腹壁&amp;section-id={7F1F1CC4-6BFC-4569-AF12-D38F3AE381D1}&amp;page-id={F3E40AAF-2D8D-4A69-AFA4-77DD3BD87C9E}&amp;object-id={4FA6A799-90A2-0B7D-2C74-653E2789079D}&amp;8E&amp;base-path=https://d.docs.live.net/56ce32fba64785ca/臨床筆記/兒科.one"><span style="font-family:微軟正黑體" lang="zh-TW" class="oldFontSize-11.0Pt" data-aos="fade-up">胎便症候群</span><span style="font-family:微軟正黑體" lang="zh-TW" class="oldFontSize-11.0Pt" data-aos="fade-up">(meconium syndrome)</span></a></li>
+  <li style="margin-top:0; margin-bottom:0; vertical-align:middle" data-aos="fade-up"><span style="font-family:微軟正黑體" lang="zh-TW" class="oldFontSize-11.0Pt" data-aos="fade-up">其他</span><a href="onenote:#🔪兒外|腸胃道\腹壁&amp;section-id={7F1F1CC4-6BFC-4569-AF12-D38F3AE381D1}&amp;page-id={F3E40AAF-2D8D-4A69-AFA4-77DD3BD87C9E}&amp;object-id={4FA6A799-90A2-0B7D-2C74-653E2789079D}&amp;8E&amp;base-path=https://d.docs.live.net/56ce32fba64785ca/臨床筆記/兒科.one" data-aos="fade-up"><span style="font-family:微軟正黑體" lang="zh-TW" class="oldFontSize-11.0Pt" data-aos="fade-up">胎便症候群</span><span style="font-family:微軟正黑體" lang="zh-TW" class="oldFontSize-11.0Pt" data-aos="fade-up">(meconium syndrome)</span></a></li>
  </ul>
  <ul type="circle" style="direction:ltr; unicode-bidi:embed; margin-top:0in; margin-bottom:0in" data-aos="fade-up">
   <li style="margin-top:0; margin-bottom:0; vertical-align:middle; color:#2E75B5" class="oldColor-2e75b5" data-aos="fade-up"><span style="font-family:微軟正黑體" class="oldFontSize-14.0Pt" data-aos="fade-up">流行病學：</span></li>
@@ -1045,7 +1031,7 @@ td {
   <li style="margin-top:0; margin-bottom:0; vertical-align:middle; color:#2E75B5" class="oldColor-2e75b5" data-aos="fade-up"><span style="font-family:&quot;Microsoft JhengHei&quot;" class="oldFontSize-14.0Pt" data-aos="fade-up">病生理：</span></li>
   <ul type="circle" style="direction:ltr; unicode-bidi:embed; margin-top:0in; margin-bottom:0in" data-aos="fade-up">
    <li style="margin-top:0; margin-bottom:0; vertical-align:middle" data-aos="fade-up"><span style="font-family:微軟正黑體" lang="zh-TW" class="oldFontSize-11.0Pt" data-aos="fade-up">胎便通常於懷孕</span><span style="font-family:微軟正黑體" lang="zh-TW" class="oldFontSize-11.0Pt" data-aos="fade-up">34</span><span style="font-family:微軟正黑體" lang="zh-TW" class="oldFontSize-11.0Pt" data-aos="fade-up">週後排出</span></li>
-   <li style="margin-top:0; margin-bottom:0; vertical-align:middle" data-aos="fade-up"><span style="font-family:微軟正黑體" lang="zh-TW" class="oldFontSize-11.0Pt" data-aos="fade-up">子宮內環境變差、產生</span><span style="font-family:微軟正黑體" lang="zh-TW" class="oldFontSize-11.0Pt" data-aos="fade-up">fetal distress</span><span style="font-family:微軟正黑體" lang="zh-TW" class="oldFontSize-11.0Pt" data-aos="fade-up">、妊娠時間過久，便可能排出濃稠的胎便在羊水→在子宮內、生產過程吸入肺內→呼吸道阻塞、發炎→</span><span style="font-family:微軟正黑體" lang="zh-TW" class="oldFontSize-11.0Pt" data-aos="fade-up">V/Q mismatch</span><span style="font-family:微軟正黑體" lang="zh-TW" class="oldFontSize-11.0Pt" data-aos="fade-up">、呼吸窘迫、肺內壓力上升→</span><a href="onenote:#👼新生兒|呼吸疾病&amp;section-id={7F1F1CC4-6BFC-4569-AF12-D38F3AE381D1}&amp;page-id={57A1048E-6EE6-4FA6-A88B-17BE096F5F89}&amp;object-id={49C17E3D-7273-0259-365E-96955BEB32F0}&amp;E3&amp;base-path=https://d.docs.live.net/56ce32fba64785ca/臨床筆記/兒科.one"><span style="font-family:微軟正黑體" lang="zh-TW" class="oldFontSize-11.0Pt" data-aos="fade-up">新生兒持續性肺高壓</span><span style="font-family:微軟正黑體" lang="zh-TW" class="oldFontSize-11.0Pt" data-aos="fade-up">(PPTN)</span></a></li>
+   <li style="margin-top:0; margin-bottom:0; vertical-align:middle" data-aos="fade-up"><span style="font-family:微軟正黑體" lang="zh-TW" class="oldFontSize-11.0Pt" data-aos="fade-up">子宮內環境變差、產生</span><span style="font-family:微軟正黑體" lang="zh-TW" class="oldFontSize-11.0Pt" data-aos="fade-up">fetal distress</span><span style="font-family:微軟正黑體" lang="zh-TW" class="oldFontSize-11.0Pt" data-aos="fade-up">、妊娠時間過久，便可能排出濃稠的胎便在羊水→在子宮內、生產過程吸入肺內→呼吸道阻塞、發炎→</span><span style="font-family:微軟正黑體" lang="zh-TW" class="oldFontSize-11.0Pt" data-aos="fade-up">V/Q mismatch</span><span style="font-family:微軟正黑體" lang="zh-TW" class="oldFontSize-11.0Pt" data-aos="fade-up">、呼吸窘迫、肺內壓力上升→</span><a href="onenote:#👼新生兒|呼吸疾病&amp;section-id={7F1F1CC4-6BFC-4569-AF12-D38F3AE381D1}&amp;page-id={57A1048E-6EE6-4FA6-A88B-17BE096F5F89}&amp;object-id={49C17E3D-7273-0259-365E-96955BEB32F0}&amp;E3&amp;base-path=https://d.docs.live.net/56ce32fba64785ca/臨床筆記/兒科.one" data-aos="fade-up"><span style="font-family:微軟正黑體" lang="zh-TW" class="oldFontSize-11.0Pt" data-aos="fade-up">新生兒持續性肺高壓</span><span style="font-family:微軟正黑體" lang="zh-TW" class="oldFontSize-11.0Pt" data-aos="fade-up">(PPTN)</span></a></li>
   </ul>
   <li style="margin-top:0; margin-bottom:0; vertical-align:middle; color:#2E75B5" class="oldColor-2e75b5" data-aos="fade-up"><span style="font-family:微軟正黑體" class="oldFontSize-14.0Pt" data-aos="fade-up">臨床表現：</span></li>
   <ul type="circle" style="direction:ltr; unicode-bidi:embed; margin-top:0in; margin-bottom:0in" data-aos="fade-up">
@@ -1062,7 +1048,7 @@ td {
     <li style="margin-top:0; margin-bottom:0; vertical-align:middle; color:#C00000" class="oldColor-c00000" data-aos="fade-up"><span style="font-weight:bold; font-family:微軟正黑體" lang="zh-TW" class="oldFontSize-11.0Pt" data-aos="fade-up">1hr</span><span style="font-weight:bold; font-family:微軟正黑體" lang="zh-TW" class="oldFontSize-11.0Pt" data-aos="fade-up">內呼吸窘迫、呼吸快、發紺</span></li>
     <li style="margin-top:0; margin-bottom:0; vertical-align:middle; color:#C00000" class="oldColor-c00000" data-aos="fade-up"><span style="font-weight:bold; font-family:微軟正黑體" lang="zh-TW" class="oldFontSize-11.0Pt" data-aos="fade-up">30%</span><span style="font-weight:bold; font-family:微軟正黑體" lang="zh-TW" class="oldFontSize-11.0Pt" data-aos="fade-up">需要呼吸器、</span><span style="font-weight:bold; font-family:微軟正黑體" lang="zh-TW" class="oldFontSize-11.0Pt" data-aos="fade-up">ECMO</span><span style="font-weight:bold; font-family:微軟正黑體" lang="zh-TW" class="oldFontSize-11.0Pt" data-aos="fade-up">，死亡率約</span><span style="font-weight:bold; font-family:微軟正黑體" lang="zh-TW" class="oldFontSize-11.0Pt" data-aos="fade-up">3-5%</span></li>
    </ul>
-   <li style="margin-top:0; margin-bottom:0; vertical-align:middle" data-aos="fade-up"><span style="font-family:微軟正黑體" lang="zh-TW" class="oldFontSize-11.0Pt" data-aos="fade-up">一般在72小時內症狀會逐漸改善，但也可能併發氣胸或</span><a href="onenote:#👼新生兒|呼吸疾病&amp;section-id={7F1F1CC4-6BFC-4569-AF12-D38F3AE381D1}&amp;page-id={57A1048E-6EE6-4FA6-A88B-17BE096F5F89}&amp;object-id={49C17E3D-7273-0259-365E-96955BEB32F0}&amp;E3&amp;base-path=https://d.docs.live.net/56ce32fba64785ca/臨床筆記/兒科.one"><span style="font-family:微軟正黑體" lang="zh-TW" class="oldFontSize-11.0Pt" data-aos="fade-up">新生兒持續性肺高壓</span><span style="font-family:微軟正黑體" lang="zh-TW" class="oldFontSize-11.0Pt" data-aos="fade-up">(PPTN)</span></a></li>
+   <li style="margin-top:0; margin-bottom:0; vertical-align:middle" data-aos="fade-up"><span style="font-family:微軟正黑體" lang="zh-TW" class="oldFontSize-11.0Pt" data-aos="fade-up">一般在72小時內症狀會逐漸改善，但也可能併發氣胸或</span><a href="onenote:#👼新生兒|呼吸疾病&amp;section-id={7F1F1CC4-6BFC-4569-AF12-D38F3AE381D1}&amp;page-id={57A1048E-6EE6-4FA6-A88B-17BE096F5F89}&amp;object-id={49C17E3D-7273-0259-365E-96955BEB32F0}&amp;E3&amp;base-path=https://d.docs.live.net/56ce32fba64785ca/臨床筆記/兒科.one" data-aos="fade-up"><span style="font-family:微軟正黑體" lang="zh-TW" class="oldFontSize-11.0Pt" data-aos="fade-up">新生兒持續性肺高壓</span><span style="font-family:微軟正黑體" lang="zh-TW" class="oldFontSize-11.0Pt" data-aos="fade-up">(PPTN)</span></a></li>
   </ul>
   <li style="margin-top:0; margin-bottom:0; vertical-align:middle; color:#2E75B5" class="oldColor-2e75b5" data-aos="fade-up"><span style="font-family:微軟正黑體" lang="zh-TW" class="oldFontSize-14.0Pt" data-aos="fade-up">CXR</span><span style="font-family:微軟正黑體" lang="zh-TW" class="oldFontSize-14.0Pt" data-aos="fade-up">：典型變化</span></li>
   <ul type="circle" style="direction:ltr; unicode-bidi:embed; margin-top:0in; margin-bottom:0in" data-aos="fade-up">
@@ -1105,7 +1091,7 @@ Calibri" data-aos="fade-up">2025</span><span style="font-family:&quot;Microsoft 
 
 </div>
 
-<div class="outerSpaceOld display-none">
+<div class="outerSpaceOld display-none" data-aos="fade-up">
 
 <p style="margin:0in" data-aos="fade-up">&nbsp;</p>
 
@@ -1119,7 +1105,7 @@ Calibri" data-aos="fade-up">2025</span><span style="font-family:&quot;Microsoft 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js" integrity="sha512-A7AYk1fGKX6S2SsHywmPkrnzTZHrgiVT7GcQkLGDe2ev0aWb8zejytzS8wjo7PGEXKqJOrjQ4oORtnimIRZBtw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" integrity="sha512-1cK78a1o+ht2JcaW6g8OXYwqpev9+6GqOkz9xmBN9iUUhIndKtxwILGWYOSibOKjLsEdjyjZvYDq/cZwNeak0w==" crossorigin="anonymous" referrerpolicy="no-referrer">
 <script>
-  AOS.init();
+    AOS.init();
 </script>
 <!--ENDOF AOS 區-->
 
@@ -1142,7 +1128,7 @@ https://cdn.jsdelivr.net/npm/sweetalert2@11.22.2/dist/sweetalert2.all.min.js
 <link href="
 https://cdn.jsdelivr.net/npm/sweetalert2@11.22.2/dist/sweetalert2.min.css
 " rel="stylesheet">
-<script>
+<!--script>
     function selFont() {
         const fonts = {
             "ChenYuluoyan Mono": [100],
@@ -1202,7 +1188,7 @@ https://cdn.jsdelivr.net/npm/sweetalert2@11.22.2/dist/sweetalert2.min.css
             }
         });
     }
-</script>
+</script-->
 <button class="float-button" onclick="selFont()">選擇字體</button>
 <!--ENDOF 字體選擇區 (生產環境請移除) -->
 <!--important 主字體大小選擇區 (生產環境請移除) 此段AI生成 (些微手動更動)-->
@@ -1247,61 +1233,61 @@ https://cdn.jsdelivr.net/npm/sweetalert2@11.22.2/dist/sweetalert2.min.css
 </div>
 
 <script>
-function initNavigation() {
-    // 解析 TOC 結構
-    const tocDiv = document.getElementById('toc-for-dev');
-    const pages = [];
-    
-    if (tocDiv) {
-        const links = tocDiv.querySelectorAll('a[href]');
-        links.forEach(link => {
-            pages.push({
-                url: link.getAttribute('href'),
-                title: link.textContent.trim()
-            });
-        });
-    }
-    
-    // 獲取當前頁面 URL
-    const currentUrl = window.location.pathname;
-    
-    // 找到當前頁面在 TOC 中的位置
-    const currentIndex = pages.findIndex(page => page.url === currentUrl);
-    
-    const prevButton = document.getElementById('prev-page');
-    const nextButton = document.getElementById('next-page');
-    
-    // 設置上一頁按鈕
-    if (currentIndex > 0) {
-        prevButton.disabled = false;
-        prevButton.onclick = () => {
-            window.location.href = pages[currentIndex - 1].url;
-        };
-        prevButton.title = `上一頁: ${pages[currentIndex - 1].title}`;
-    } else {
-        prevButton.disabled = true;
-    }
-    
-    // 設置下一頁按鈕
-    if (currentIndex >= 0 && currentIndex < pages.length - 1) {
-        nextButton.disabled = false;
-        nextButton.onclick = () => {
-            window.location.href = pages[currentIndex + 1].url;
-        };
-        nextButton.title = `下一頁: ${pages[currentIndex + 1].title}`;
-    } else {
-        nextButton.disabled = true;
-    }
-    
-    // 如果當前頁面不在 TOC 中，禁用所有按鈕
-    if (currentIndex === -1) {
-        prevButton.disabled = true;
-        nextButton.disabled = true;
-    }
-}
+    function initNavigation() {
+        // 解析 TOC 結構
+        const tocDiv = document.getElementById('toc-for-dev');
+        const pages = [];
 
-// 頁面載入完成後初始化導航
-document.addEventListener('DOMContentLoaded', initNavigation);
+        if (tocDiv) {
+            const links = tocDiv.querySelectorAll('a[href]');
+            links.forEach(link => {
+                pages.push({
+                    url: link.getAttribute('href'),
+                    title: link.textContent.trim()
+                });
+            });
+        }
+
+        // 獲取當前頁面 URL
+        const currentUrl = window.location.pathname;
+
+        // 找到當前頁面在 TOC 中的位置
+        const currentIndex = pages.findIndex(page => page.url === currentUrl);
+
+        const prevButton = document.getElementById('prev-page');
+        const nextButton = document.getElementById('next-page');
+
+        // 設置上一頁按鈕
+        if (currentIndex > 0) {
+            prevButton.disabled = false;
+            prevButton.onclick = () => {
+                window.location.href = pages[currentIndex - 1].url;
+            };
+            prevButton.title = `上一頁: ${pages[currentIndex - 1].title}`;
+        } else {
+            prevButton.disabled = true;
+        }
+
+        // 設置下一頁按鈕
+        if (currentIndex >= 0 && currentIndex < pages.length - 1) {
+            nextButton.disabled = false;
+            nextButton.onclick = () => {
+                window.location.href = pages[currentIndex + 1].url;
+            };
+            nextButton.title = `下一頁: ${pages[currentIndex + 1].title}`;
+        } else {
+            nextButton.disabled = true;
+        }
+
+        // 如果當前頁面不在 TOC 中，禁用所有按鈕
+        if (currentIndex === -1) {
+            prevButton.disabled = true;
+            nextButton.disabled = true;
+        }
+    }
+
+    // 頁面載入完成後初始化導航
+    document.addEventListener('DOMContentLoaded', initNavigation);
 </script>
 <!--ENDOF 上一頁下一頁導航區-->
 

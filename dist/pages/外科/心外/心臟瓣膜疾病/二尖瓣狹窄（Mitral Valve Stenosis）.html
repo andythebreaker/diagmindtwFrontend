@@ -413,50 +413,29 @@ li {
 
 ul {
     padding-inline-start: 2vw;
-    /* 更小的縮排 */
 }
 
 .outerSpace {
-    /*overflow-y: scroll !important; 重要更動 2025 07 24*/
-    position: static !important;
-    top: var(--outerSpace-top) !important;
-    left: var(--outerSpace-left) !important;
-    /* 元素的 width 和 height，會包含 padding 和 border。*/
     box-sizing: border-box ! important;
-    /* 100vh 減去上下 margin 各 1rem */
-    /*height: var(--outerSpace-height) !important; 重要更動 2025 07 24*/
     width: 100vw !important;
-    /*var(--outerSpace-width) !important;*/
-    height: fit-content !important;
-    /*margin: 1rem !important; 重要更動 2025 07 24*/
-    margin-top: 14vh !important;
+    margin-top: 0px !important;
     margin-bottom: 0px !important;
     margin-left: 0px !important;
     margin-right: 0px !important;
     padding-left: 1rem !important;
     padding-right: 1rem !important;
-    padding-top: 0px !important;
+    padding-top: 14vh !important;
     padding-bottom: 0px !important;
     border: 0px !important;
     background: #ffffffff !important;
 }
 
-/*html {
-    overflow-y: scroll;
-}*/
 
 body {
     margin-bottom: 0px;
     margin-top: 0px;
     margin-left: 0px;
     margin-right: 0px;
-    /*padding: 0px; 重要更動 2025 07 24*/
-    /*padding-top: 14vh; XXX*/
-    /*padding-bottom: 1rem;*/
-    /*overflow: hidden; 重要更動 2025 07 24*/
-    /*overflow-y: hidden;*/
-    height: max-content;
-    /*overflow-x: hidden;*/
     background: #f6e5c9 !important;
 }
 
@@ -491,10 +470,6 @@ canvas {
 }
 
 .outerSpace>ul>li>p>span:first-of-type {
-    /*
-    x-large 96*27 (1.5rem)
-    2rem:138*36
-    */
     font-size: var(--onenoteInterpreter-new-font-size-h1);
     color: var(--color-wakakusa-1) !important;
 }
@@ -526,11 +501,9 @@ canvas {
     border-bottom-width: 2px !important;
     border-bottom-style: groove !important;
     border-bottom-color: var(--color-akizakura-5) !important;
-    /*border-radius: 50% / 25% ! important;*/
 }
 
 .titleL2span {
-    /* 我原本是寫 larger(105.61*20) 但 larger 是 相對父層變大 large( 108*20 ) (1.12rem 107.53*20)比較合適 (1.1 rem = 105.61*20)*/
     font-size: var(--onenoteInterpreter-new-font-size-h2) !important;
     color: var(--color-akizakura-6) !important;
 }
@@ -583,27 +556,39 @@ td {
     position: fixed;
     top: 0px;
     left: 0px;
-    background-color: #f6e5c9;
-    padding-right: 7%;
-    padding-left: 3%;
+    background-color: #f6e5c9!important;
+    padding: 0 7% 0 3%;
     display: grid;
-    grid-template-columns: 7% 25% 3% 3% 3% 1fr;
-    direction: rtl;
+    align-items: center;
     gap: 2%;
     height: 14vh;
     width: 100vw;
     box-sizing: border-box;
     z-index: 1000;
+    direction: rtl;
+    grid-template-columns: 7% 25% 3% 3% 3% 1fr;
+}
+
+.buttonLogin{
+   background: #5b3717 !important;
+   border-radius: 8%;
+   color: #ffffff !important;
+}
+
+.buttonSearch{
+   background: #E0CFBB !important;
+   border-radius: 28%;
+   color: #ffffff !important;
 }
 
 .itemBangs {
-    margin-top: 26%;
-    margin-bottom: 26%;
+    height: 46%;
     background-color: #ccc;
     text-align: center;
-    /*padding: 10px;*/
-    border: 1px solid #999;
+    align-items: center;
+    justify-content: center;
 }
+
 
 /*end of瀏海區****************************/
 
@@ -629,6 +614,7 @@ td {
     display: flex;
     gap: 0.5rem;
     z-index: 9999;
+    display: none;
 }
 
 #font-controls button {
@@ -651,11 +637,11 @@ td {
 
 /*上一頁下一頁導航區 (AI)*/
 .dev-toc-nav-buttons {
+    display: none;
     position: absolute;
-    /*bottom: 20px; 重要更動 24 07 24*/
     top: 90vw;
     left: 20px;
-    display: flex;
+    /*display: flex;*/
     gap: 10px;
     z-index: 1000;
 }
@@ -691,14 +677,14 @@ td {
         <script src="//s3-ap-northeast-1.amazonaws.com/justfont-user-script/jf-65691.js"></script>
         <script src="https://kit.fontawesome.com/65b47a30d3.js" crossorigin="anonymous"></script></head>
 
-<body lang="zh-TW" style="font-family:Calibri" class="oldFontSize-11.0Pt flagTooMuchFontSize" data-aos="fade-up">
-  <div class="containerBangs">
-    <div class="itemBangs">7%</div>
-    <div class="itemBangs">25%</div>
-    <div class="itemBangs">3%</div>
-    <div class="itemBangs">3%</div>
-    <div class="itemBangs">3%</div>
-    <div class="itemBangs">彈性空間</div>
+<body lang="zh-TW" style="font-family:Calibri" class="oldFontSize-11.0Pt flagTooMuchFontSize">
+  <div class="containerBangs newFontSizeRank-3">
+    <div class="itemBangs buttonLogin"><p>登入</p></div>
+    <div class="itemBangs buttonSearch"><p>搜尋</p></div>
+    <div class="itemBangs"><p>題目</p></div>
+    <div class="itemBangs"><p>主題</p></div>
+    <div class="itemBangs"><p>分科</p></div>
+    <div class="itemBangs"><p>彈性空間</p></div>
   </div>
   <div style="direction:ltr; margin-top:.3965in; margin-left:0in; width:7.9409in" class="outerSpace" data-aos="fade-up">
 
@@ -759,7 +745,7 @@ td {
  <div style="direction:ltr" data-aos="fade-up">
  <table border="1" cellpadding="0" cellspacing="0" valign="top" style="direction:ltr; border-collapse:collapse; border-style:solid; border-color:#A3A3A3; border-width:
   1pt; margin-left:.7083in" title="" summary="" class="oldColor-a3a3a3" data-aos="fade-up">
-  <tbody><tr>
+  <tbody data-aos="fade-up"><tr data-aos="fade-up">
    <td style="border-style:solid; border-color:#A3A3A3; border-width:1pt; background-color:#A5A5A5; vertical-align:top; width:.6673in; padding:2.0pt 3.0pt 2.0pt 3.0pt" class="oldColor-a3a3a3" data-aos="fade-up">
    <p style="margin:0in; font-family:&quot;Microsoft JhengHei&quot;; text-align:center" class="oldFontSize-11.0Pt" data-aos="fade-up"><span style="font-weight:bold" data-aos="fade-up">階段</span></p>
    </td>
@@ -776,7 +762,7 @@ td {
    <p style="margin:0in; font-family:&quot;Microsoft JhengHei&quot;; text-align:center" class="oldFontSize-11.0Pt" data-aos="fade-up"><span style="font-weight:bold" data-aos="fade-up">相關發現</span></p>
    </td>
   </tr>
-  <tr>
+  <tr data-aos="fade-up">
    <td style="border-style:solid; border-color:#A3A3A3; border-width:1pt; background-color:#EBF1DD; vertical-align:top; width:.6673in; padding:2.0pt 3.0pt 2.0pt 3.0pt" class="oldColor-a3a3a3" data-aos="fade-up">
    <p style="margin:0in; font-family:Calibri; text-align:center" class="oldFontSize-11.0Pt" data-aos="fade-up"><span style="font-weight:bold" data-aos="fade-up">A</span></p>
    </td>
@@ -793,7 +779,7 @@ td {
    <p style="margin:0in; font-family:&quot;Microsoft JhengHei&quot;" class="oldFontSize-11.0Pt" data-aos="fade-up">無</p>
    </td>
   </tr>
-  <tr>
+  <tr data-aos="fade-up">
    <td style="border-style:solid; border-color:#A3A3A3; border-width:1pt; background-color:#FDEADA; vertical-align:top; width:.6673in; padding:2.0pt 3.0pt 2.0pt 3.0pt" class="oldColor-a3a3a3" data-aos="fade-up">
    <p style="margin:0in; font-family:Calibri; text-align:center" class="oldFontSize-11.0Pt" data-aos="fade-up"><span style="font-weight:bold" data-aos="fade-up">B</span></p>
    </td>
@@ -811,7 +797,7 @@ td {
    <p style="margin:0in; font-family:Calibri; color:#F79646" class="oldFontSize-11.0Pt oldColor-f79646" data-aos="fade-up"><span style="font-weight:bold" data-aos="fade-up">PASP正常</span></p>
    </td>
   </tr>
-  <tr>
+  <tr data-aos="fade-up">
    <td style="border-style:solid; border-color:#A3A3A3; border-width:1pt; background-color:#F2DCDB; vertical-align:top; width:.6673in; padding:2.0pt 3.0pt 2.0pt 3.0pt" class="oldColor-a3a3a3" data-aos="fade-up">
    <p style="margin:0in; font-family:Calibri; text-align:center" class="oldFontSize-11.0Pt" data-aos="fade-up"><span style="font-weight:bold" data-aos="fade-up">C</span></p>
    </td>
@@ -829,7 +815,7 @@ td {
    <p style="margin:0in; font-family:Calibri; color:#C00000" class="oldFontSize-11.0Pt oldColor-c00000" data-aos="fade-up"><span style="font-weight:bold" data-aos="fade-up">PASP &gt;50 mmHg</span></p>
    </td>
   </tr>
-  <tr>
+  <tr data-aos="fade-up">
    <td style="border-style:solid; border-color:#A3A3A3; border-width:1pt; background-color:#E5B9B7; vertical-align:top; width:.6673in; padding:2.0pt 3.0pt 2.0pt 3.0pt" class="oldColor-a3a3a3" data-aos="fade-up">
    <p style="margin:0in; font-family:Calibri; text-align:center" class="oldFontSize-11.0Pt" data-aos="fade-up"><span style="font-weight:bold" data-aos="fade-up">D</span></p>
    </td>
@@ -851,7 +837,7 @@ td {
  </div>
  <p style="margin:0in; margin-left:.75in; font-family:Calibri" lang="zh-TW" class="oldFontSize-11.0Pt" data-aos="fade-up"><span style="color:#C00000" class="oldColor-c00000" data-aos="fade-up">*</span>PASP = 肺動脈收縮壓 Pulmonary artery
  systolic pressure</p>
- <p style="margin:0in; margin-left:.75in" data-aos="fade-up"><img src="二尖瓣狹窄（Mitral Valve Stenosis）_asset_0.png" width="544" height="393"></p>
+ <p style="margin:0in; margin-left:.75in" data-aos="fade-up"><img src="二尖瓣狹窄（Mitral Valve Stenosis）_asset_0.png" width="544" height="393" data-aos="fade-up"></p>
  <p style="margin:0in; margin-left:.75in; line-height:41pt; font-family:&quot;Microsoft JhengHei&quot;" lang="zh-TW" class="oldFontSize-9.0Pt" data-aos="fade-up">（圖說：ACC/AHA二尖辦狹窄分類）</p>
  <p style="margin:0in; margin-left:.75in; line-height:41pt; font-family:&quot;Microsoft JhengHei&quot;" lang="zh-TW" class="oldFontSize-9.0Pt" data-aos="fade-up">（Reference：Table 16. Stages of MS, Otto CM,
  Nishimura RA, Bonow RO, Carabello BA, Erwin JP 3rd, Gentile F, Jneid H,
@@ -872,7 +858,7 @@ td {
  <div style="direction:ltr" data-aos="fade-up">
  <table border="1" cellpadding="0" cellspacing="0" valign="top" style="direction:ltr; border-collapse:collapse; border-style:solid; border-color:#A3A3A3; border-width:
   1pt; margin-left:.3333in" title="" summary="" class="oldColor-a3a3a3" data-aos="fade-up">
-  <tbody><tr>
+  <tbody data-aos="fade-up"><tr data-aos="fade-up">
    <td style="border-style:solid; border-color:#A3A3A3; border-width:1pt; background-color:#D8D8D8; vertical-align:top; width:.6673in; padding:2.0pt 3.0pt 2.0pt 3.0pt" class="oldColor-a3a3a3" data-aos="fade-up">
    <p style="margin:0in; font-family:&quot;Microsoft JhengHei&quot;; text-align:center" class="oldFontSize-11.0Pt" data-aos="fade-up"><span style="font-weight:bold" data-aos="fade-up">分級</span></p>
    </td>
@@ -883,7 +869,7 @@ td {
    <p style="margin:0in; font-family:&quot;Microsoft JhengHei&quot;; text-align:center" class="oldFontSize-11.0Pt" data-aos="fade-up"><span style="font-weight:bold" data-aos="fade-up">說明</span></p>
    </td>
   </tr>
-  <tr>
+  <tr data-aos="fade-up">
    <td style="border-style:solid; border-color:#A3A3A3; border-width:1pt; background-color:#D8D8D8; vertical-align:top; width:.6673in; padding:2.0pt 3.0pt 2.0pt 3.0pt" class="oldColor-a3a3a3" data-aos="fade-up">
    <p style="margin:0in; font-family:Calibri" class="oldFontSize-11.0Pt" data-aos="fade-up">0/4</p>
    </td>
@@ -894,7 +880,7 @@ td {
    <p style="margin:0in; font-family:&quot;Microsoft JhengHei&quot;" class="oldFontSize-11.0Pt" data-aos="fade-up">沒有發現二尖瓣逆流</p>
    </td>
   </tr>
-  <tr>
+  <tr data-aos="fade-up">
    <td style="border-style:solid; border-color:#A3A3A3; border-width:1pt; background-color:#D8D8D8; vertical-align:top; width:.6673in; padding:2.0pt 3.0pt 2.0pt 3.0pt" class="oldColor-a3a3a3" data-aos="fade-up">
    <p style="margin:0in; font-family:Calibri" class="oldFontSize-11.0Pt" data-aos="fade-up">1/4</p>
    </td>
@@ -905,7 +891,7 @@ td {
    <p style="margin:0in; font-family:&quot;Microsoft JhengHei&quot;" class="oldFontSize-11.0Pt" data-aos="fade-up">少量逆流，通常無症狀</p>
    </td>
   </tr>
-  <tr>
+  <tr data-aos="fade-up">
    <td style="border-style:solid; border-color:#A3A3A3; border-width:1pt; background-color:#D8D8D8; vertical-align:top; width:.6673in; padding:2.0pt 3.0pt 2.0pt 3.0pt" class="oldColor-a3a3a3" data-aos="fade-up">
    <p style="margin:0in; font-family:Calibri" class="oldFontSize-11.0Pt" data-aos="fade-up">2/4</p>
    </td>
@@ -916,7 +902,7 @@ td {
    <p style="margin:0in; font-family:&quot;Microsoft JhengHei&quot;" class="oldFontSize-11.0Pt" data-aos="fade-up">有明顯逆流，但未必有症狀</p>
    </td>
   </tr>
-  <tr>
+  <tr data-aos="fade-up">
    <td style="border-style:solid; border-color:#A3A3A3; border-width:1pt; background-color:#D8D8D8; vertical-align:top; width:.6673in; padding:2.0pt 3.0pt 2.0pt 3.0pt" class="oldColor-a3a3a3" data-aos="fade-up">
    <p style="margin:0in; font-family:Calibri" class="oldFontSize-11.0Pt" data-aos="fade-up">3/4</p>
    </td>
@@ -927,7 +913,7 @@ td {
    <p style="margin:0in; font-family:&quot;Microsoft JhengHei&quot;" class="oldFontSize-11.0Pt" data-aos="fade-up">逆流量大，可能造成心室負荷</p>
    </td>
   </tr>
-  <tr>
+  <tr data-aos="fade-up">
    <td style="border-style:solid; border-color:#A3A3A3; border-width:1pt; background-color:#D8D8D8; vertical-align:top; width:.6673in; padding:2.0pt 3.0pt 2.0pt 3.0pt" class="oldColor-a3a3a3" data-aos="fade-up">
    <p style="margin:0in; font-family:Calibri" class="oldFontSize-11.0Pt" data-aos="fade-up">4/4</p>
    </td>
@@ -1041,15 +1027,15 @@ td {
    <ul type="circle" style="direction:ltr; unicode-bidi:embed; margin-top:0in; margin-bottom:0in" data-aos="fade-up">
     <li style="margin-top:0; margin-bottom:0; vertical-align:middle; line-height:
         41pt; color:#C00000" lang="zh-TW" class="oldColor-c00000" data-aos="fade-up"><span style="font-family:&quot;Microsoft JhengHei&quot;; color:black" class="oldFontSize-11.0Pt" data-aos="fade-up">二尖瓣狹窄</span><span style="font-family:
-        Calibri; color:black" class="oldFontSize-11.0Pt" data-aos="fade-up"> <br>
-                → </span><span style="font-weight:bold; font-family:&quot;Microsoft JhengHei&quot;; color:#F79646" class="oldFontSize-11.0Pt oldColor-f79646" data-aos="fade-up">阻礙血液流入左心室（</span><span style="font-weight:bold; font-family:Calibri; color:#F79646" class="oldFontSize-11.0Pt oldColor-f79646" data-aos="fade-up">LV</span><span style="font-weight:bold; font-family:&quot;Microsoft JhengHei&quot;; color:#F79646" class="oldFontSize-11.0Pt oldColor-f79646" data-aos="fade-up">）</span><span style="font-weight:bold; font-family:Calibri; color:#F79646" class="oldFontSize-11.0Pt oldColor-f79646" data-aos="fade-up"><br>
+        Calibri; color:black" class="oldFontSize-11.0Pt" data-aos="fade-up"> <br data-aos="fade-up">
+                → </span><span style="font-weight:bold; font-family:&quot;Microsoft JhengHei&quot;; color:#F79646" class="oldFontSize-11.0Pt oldColor-f79646" data-aos="fade-up">阻礙血液流入左心室（</span><span style="font-weight:bold; font-family:Calibri; color:#F79646" class="oldFontSize-11.0Pt oldColor-f79646" data-aos="fade-up">LV</span><span style="font-weight:bold; font-family:&quot;Microsoft JhengHei&quot;; color:#F79646" class="oldFontSize-11.0Pt oldColor-f79646" data-aos="fade-up">）</span><span style="font-weight:bold; font-family:Calibri; color:#F79646" class="oldFontSize-11.0Pt oldColor-f79646" data-aos="fade-up"><br data-aos="fade-up">
                 </span><span style="font-family:Calibri; color:black" class="oldFontSize-11.0Pt" data-aos="fade-up">→ </span><span style="font-family:&quot;Microsoft JhengHei&quot;; color:#F79646" class="oldFontSize-11.0Pt oldColor-f79646" data-aos="fade-up">左心室舒張末期容量減少</span><span style="font-family:&quot;Microsoft JhengHei&quot;; color:black" class="oldFontSize-11.0Pt" data-aos="fade-up">（</span><span style="font-family:Calibri; color:black" class="oldFontSize-11.0Pt" data-aos="fade-up">↓ LV
-        end-diastolic volume</span><span style="font-family:&quot;Microsoft JhengHei&quot;; color:black" class="oldFontSize-11.0Pt" data-aos="fade-up">）</span><span style="font-family:Calibri; color:black" class="oldFontSize-11.0Pt" data-aos="fade-up"><br>
+        end-diastolic volume</span><span style="font-family:&quot;Microsoft JhengHei&quot;; color:black" class="oldFontSize-11.0Pt" data-aos="fade-up">）</span><span style="font-family:Calibri; color:black" class="oldFontSize-11.0Pt" data-aos="fade-up"><br data-aos="fade-up">
                 → </span><span style="font-weight:bold; font-family:&quot;Microsoft JhengHei&quot;; color:#F79646" class="oldFontSize-11.0Pt oldColor-f79646" data-aos="fade-up">心搏量減少（</span><span style="font-weight:
         bold; font-family:Calibri; color:#F79646" class="oldFontSize-11.0Pt oldColor-f79646" data-aos="fade-up">↓ stroke
         volume</span><span style="font-weight:bold; font-family:&quot;Microsoft JhengHei&quot;; color:#F79646" class="oldFontSize-11.0Pt oldColor-f79646" data-aos="fade-up">）、心輸出下降（</span><span style="font-weight:
         bold; font-family:Calibri; color:#F79646" class="oldFontSize-11.0Pt oldColor-f79646" data-aos="fade-up">↓ cardiac
-        output</span><span style="font-weight:bold; font-family:&quot;Microsoft JhengHei&quot;; color:#F79646" class="oldFontSize-11.0Pt oldColor-f79646" data-aos="fade-up">）</span><span style="font-family:Calibri; color:black" class="oldFontSize-11.0Pt" data-aos="fade-up"><br>
+        output</span><span style="font-weight:bold; font-family:&quot;Microsoft JhengHei&quot;; color:#F79646" class="oldFontSize-11.0Pt oldColor-f79646" data-aos="fade-up">）</span><span style="font-family:Calibri; color:black" class="oldFontSize-11.0Pt" data-aos="fade-up"><br data-aos="fade-up">
                 → </span><span style="font-family:&quot;Microsoft JhengHei&quot;; color:black" class="oldFontSize-11.0Pt" data-aos="fade-up">造成前向心衰竭（</span><span style="font-family:
         Calibri; color:black" class="oldFontSize-11.0Pt" data-aos="fade-up">forward heart failure</span><span style="font-family:&quot;Microsoft JhengHei&quot;; color:black" class="oldFontSize-11.0Pt" data-aos="fade-up">）</span></li>
    </ul>
@@ -1061,14 +1047,14 @@ td {
    <ul type="circle" style="direction:ltr; unicode-bidi:embed; margin-top:0in; margin-bottom:0in" data-aos="fade-up">
     <li style="margin-top:0; margin-bottom:0; vertical-align:middle; line-height:
         41pt; color:#C00000" lang="zh-TW" class="oldColor-c00000" data-aos="fade-up"><span style="font-family:&quot;Microsoft JhengHei&quot;; color:black" class="oldFontSize-11.0Pt" data-aos="fade-up">二尖瓣狹窄</span><span style="font-family:
-        Calibri; color:black" class="oldFontSize-11.0Pt" data-aos="fade-up"> <br>
+        Calibri; color:black" class="oldFontSize-11.0Pt" data-aos="fade-up"> <br data-aos="fade-up">
                 → </span><span style="font-weight:bold; font-family:&quot;Microsoft JhengHei&quot;; color:#F79646" class="oldFontSize-11.0Pt oldColor-f79646" data-aos="fade-up">左心房壓力上升</span><span style="font-weight:
-        bold; font-family:Calibri; color:#F79646" class="oldFontSize-11.0Pt oldColor-f79646" data-aos="fade-up"> </span><span style="font-family:Calibri; color:black" class="oldFontSize-11.0Pt" data-aos="fade-up"><br>
+        bold; font-family:Calibri; color:#F79646" class="oldFontSize-11.0Pt oldColor-f79646" data-aos="fade-up"> </span><span style="font-family:Calibri; color:black" class="oldFontSize-11.0Pt" data-aos="fade-up"><br data-aos="fade-up">
                 → </span><span style="font-weight:bold; font-family:&quot;Microsoft JhengHei&quot;; color:#F79646" class="oldFontSize-11.0Pt oldColor-f79646" data-aos="fade-up">血液回流至肺部</span><span style="font-family:
-        &quot;Microsoft JhengHei&quot;; color:black" class="oldFontSize-11.0Pt" data-aos="fade-up">，導致</span><span style="font-weight:bold; font-family:&quot;Microsoft JhengHei&quot;; color:#F79646" class="oldFontSize-11.0Pt oldColor-f79646" data-aos="fade-up">肺部微血管壓上升</span><span style="font-weight:bold; font-family:Calibri; color:#F79646" class="oldFontSize-11.0Pt oldColor-f79646" data-aos="fade-up"> </span><span style="font-weight:bold; font-family:Calibri; color:black" class="oldFontSize-11.0Pt" data-aos="fade-up"><br>
+        &quot;Microsoft JhengHei&quot;; color:black" class="oldFontSize-11.0Pt" data-aos="fade-up">，導致</span><span style="font-weight:bold; font-family:&quot;Microsoft JhengHei&quot;; color:#F79646" class="oldFontSize-11.0Pt oldColor-f79646" data-aos="fade-up">肺部微血管壓上升</span><span style="font-weight:bold; font-family:Calibri; color:#F79646" class="oldFontSize-11.0Pt oldColor-f79646" data-aos="fade-up"> </span><span style="font-weight:bold; font-family:Calibri; color:black" class="oldFontSize-11.0Pt" data-aos="fade-up"><br data-aos="fade-up">
                 </span><span style="font-family:Calibri; color:black" class="oldFontSize-11.0Pt" data-aos="fade-up">→ </span><span style="font-family:&quot;Microsoft JhengHei&quot;; color:#C00000" class="oldFontSize-11.0Pt oldColor-c00000" data-aos="fade-up">心源性肺水腫（</span><span style="font-family:
-        Calibri; color:#C00000" class="oldFontSize-11.0Pt oldColor-c00000" data-aos="fade-up">cardiogenic pulmonary edema</span><span style="font-family:&quot;Microsoft JhengHei&quot;; color:#C00000" class="oldFontSize-11.0Pt oldColor-c00000" data-aos="fade-up">）</span><span style="font-family:Calibri; color:#C00000" class="oldFontSize-11.0Pt oldColor-c00000" data-aos="fade-up"><br>
-                </span><span style="font-family:Calibri; color:black" class="oldFontSize-11.0Pt" data-aos="fade-up">→ </span><span style="font-family:&quot;Microsoft JhengHei&quot;; color:#C00000" class="oldFontSize-11.0Pt oldColor-c00000" data-aos="fade-up">肺靜脈順應性下降，加重肺動脈高壓</span><span style="font-family:Calibri; color:#C00000" class="oldFontSize-11.0Pt oldColor-c00000" data-aos="fade-up"> </span><span style="font-family:Calibri; color:black" class="oldFontSize-11.0Pt" data-aos="fade-up"><br>
+        Calibri; color:#C00000" class="oldFontSize-11.0Pt oldColor-c00000" data-aos="fade-up">cardiogenic pulmonary edema</span><span style="font-family:&quot;Microsoft JhengHei&quot;; color:#C00000" class="oldFontSize-11.0Pt oldColor-c00000" data-aos="fade-up">）</span><span style="font-family:Calibri; color:#C00000" class="oldFontSize-11.0Pt oldColor-c00000" data-aos="fade-up"><br data-aos="fade-up">
+                </span><span style="font-family:Calibri; color:black" class="oldFontSize-11.0Pt" data-aos="fade-up">→ </span><span style="font-family:&quot;Microsoft JhengHei&quot;; color:#C00000" class="oldFontSize-11.0Pt oldColor-c00000" data-aos="fade-up">肺靜脈順應性下降，加重肺動脈高壓</span><span style="font-family:Calibri; color:#C00000" class="oldFontSize-11.0Pt oldColor-c00000" data-aos="fade-up"> </span><span style="font-family:Calibri; color:black" class="oldFontSize-11.0Pt" data-aos="fade-up"><br data-aos="fade-up">
                 → </span><span style="font-family:&quot;Microsoft JhengHei&quot;; color:#C00000" class="oldFontSize-11.0Pt oldColor-c00000" data-aos="fade-up">右心室肥厚（</span><span style="font-family:
         Calibri; color:#C00000" class="oldFontSize-11.0Pt oldColor-c00000" data-aos="fade-up">RV hypertrophy</span><span style="font-family:&quot;Microsoft JhengHei&quot;; color:#C00000" class="oldFontSize-11.0Pt oldColor-c00000" data-aos="fade-up">）</span></li>
    </ul>
@@ -1426,7 +1412,7 @@ td {
  <div style="direction:ltr" data-aos="fade-up">
  <table border="1" cellpadding="0" cellspacing="0" valign="top" style="direction:ltr; border-collapse:collapse; border-style:solid; border-color:#A3A3A3; border-width:
   1pt; margin-left:.7083in" title="" summary="" class="oldColor-a3a3a3" data-aos="fade-up">
-  <tbody><tr>
+  <tbody data-aos="fade-up"><tr data-aos="fade-up">
    <td style="border-style:solid; border-color:#A3A3A3; border-width:1pt; background-color:#A5A5A5; vertical-align:top; width:.7458in; padding:2.0pt 3.0pt 2.0pt 3.0pt" class="oldColor-a3a3a3" data-aos="fade-up">
    <p style="margin:0in; font-family:&quot;Microsoft JhengHei&quot;; text-align:center" class="oldFontSize-11.0Pt" data-aos="fade-up"><span style="font-weight:bold" data-aos="fade-up">症狀</span></p>
    </td>
@@ -1434,7 +1420,7 @@ td {
    <p style="margin:0in; font-family:&quot;Microsoft JhengHei&quot;; text-align:center" class="oldFontSize-11.0Pt" data-aos="fade-up"><span style="font-weight:bold" data-aos="fade-up">適應症</span></p>
    </td>
   </tr>
-  <tr>
+  <tr data-aos="fade-up">
    <td style="border-style:solid; border-color:#A3A3A3; border-width:1pt; background-color:#FDEADA; vertical-align:top; width:.7458in; padding:2.0pt 3.0pt 2.0pt 3.0pt" class="oldColor-a3a3a3" data-aos="fade-up">
    <p style="margin:0in; font-family:&quot;Microsoft JhengHei&quot;; text-align:center" class="oldFontSize-11.0Pt" data-aos="fade-up"><span style="font-weight:bold" data-aos="fade-up">無</span></p>
    </td>
@@ -1446,7 +1432,7 @@ td {
    </ul>
    </td>
   </tr>
-  <tr>
+  <tr data-aos="fade-up">
    <td style="border-style:solid; border-color:#A3A3A3; border-width:1pt; background-color:#F2DCDB; vertical-align:top; width:.7458in; padding:2.0pt 3.0pt 2.0pt 3.0pt" class="oldColor-a3a3a3" data-aos="fade-up">
    <p style="margin:0in; font-family:&quot;Microsoft JhengHei&quot;; text-align:center" class="oldFontSize-11.0Pt" data-aos="fade-up"><span style="font-weight:bold" data-aos="fade-up">有</span></p>
    </td>
@@ -1476,7 +1462,7 @@ td {
  <div style="direction:ltr" data-aos="fade-up">
  <table border="1" cellpadding="0" cellspacing="0" valign="top" style="direction:ltr; border-collapse:collapse; border-style:solid; border-color:#A3A3A3; border-width:
   1pt; margin-left:.7083in" title="" summary="" class="oldColor-a3a3a3" data-aos="fade-up">
-  <tbody><tr>
+  <tbody data-aos="fade-up"><tr data-aos="fade-up">
    <td style="border-style:solid; border-color:#A3A3A3; border-width:1pt; background-color:#D8D8D8; vertical-align:top; width:3.1416in; padding:2.0pt 3.0pt 2.0pt 3.0pt" class="oldColor-a3a3a3" data-aos="fade-up">
    <p style="margin:0in; font-family:&quot;Microsoft JhengHei&quot;; text-align:center" class="oldFontSize-11.0Pt" data-aos="fade-up"><span style="font-weight:bold" data-aos="fade-up">項目</span></p>
    </td>
@@ -1487,7 +1473,7 @@ td {
    <p style="margin:0in; font-family:&quot;Microsoft JhengHei&quot;; text-align:center" class="oldFontSize-11.0Pt" data-aos="fade-up"><span style="font-weight:bold" data-aos="fade-up">評估內容</span></p>
    </td>
   </tr>
-  <tr>
+  <tr data-aos="fade-up">
    <td style="border-style:solid; border-color:#A3A3A3; border-width:1pt; vertical-align:top; width:3.1416in; padding:2.0pt 3.0pt 2.0pt 3.0pt" class="oldColor-a3a3a3" data-aos="fade-up">
    <p style="margin:0in; font-family:&quot;Microsoft JhengHei&quot;" class="oldFontSize-11.0Pt" data-aos="fade-up"><span style="font-weight:bold" data-aos="fade-up">瓣膜增厚（Leaflet thickening）</span></p>
    </td>
@@ -1498,7 +1484,7 @@ td {
    <p style="margin:0in; font-family:&quot;Microsoft JhengHei&quot;" class="oldFontSize-11.0Pt" data-aos="fade-up">越厚分數越高</p>
    </td>
   </tr>
-  <tr>
+  <tr data-aos="fade-up">
    <td style="border-style:solid; border-color:#A3A3A3; border-width:1pt; vertical-align:top; width:3.1416in; padding:2.0pt 3.0pt 2.0pt 3.0pt" class="oldColor-a3a3a3" data-aos="fade-up">
    <p style="margin:0in; font-family:&quot;Microsoft JhengHei&quot;" class="oldFontSize-11.0Pt" data-aos="fade-up"><span style="font-weight:bold" data-aos="fade-up">瓣膜活動度（Leaflet mobility）</span></p>
    </td>
@@ -1509,7 +1495,7 @@ td {
    <p style="margin:0in; font-family:&quot;Microsoft JhengHei&quot;" class="oldFontSize-11.0Pt" data-aos="fade-up">受限程度越高，分數越高</p>
    </td>
   </tr>
-  <tr>
+  <tr data-aos="fade-up">
    <td style="border-style:solid; border-color:#A3A3A3; border-width:1pt; vertical-align:top; width:3.1416in; padding:2.0pt 3.0pt 2.0pt 3.0pt" class="oldColor-a3a3a3" data-aos="fade-up">
    <p style="margin:0in; font-family:&quot;Microsoft JhengHei&quot;" class="oldFontSize-11.0Pt" data-aos="fade-up"><span style="font-weight:bold" data-aos="fade-up">瓣膜鈣化程度（Leaflet calcification）</span></p>
    </td>
@@ -1520,7 +1506,7 @@ td {
    <p style="margin:0in; font-family:&quot;Microsoft JhengHei&quot;" class="oldFontSize-11.0Pt" data-aos="fade-up">鈣化越明顯，分數越高</p>
    </td>
   </tr>
-  <tr>
+  <tr data-aos="fade-up">
    <td style="border-style:solid; border-color:#A3A3A3; border-width:1pt; vertical-align:top; width:3.1416in; padding:2.0pt 3.0pt 2.0pt 3.0pt" class="oldColor-a3a3a3" data-aos="fade-up">
    <p style="margin:0in; font-family:&quot;Microsoft JhengHei&quot;" class="oldFontSize-11.0Pt" data-aos="fade-up"><span style="font-weight:bold" data-aos="fade-up">瓣下結構變化（Subvalvular apparatus）</span></p>
    </td>
@@ -1536,7 +1522,7 @@ td {
  <div style="direction:ltr" data-aos="fade-up">
  <table border="1" cellpadding="0" cellspacing="0" valign="top" style="direction:ltr; border-collapse:collapse; border-style:solid; border-color:#A3A3A3; border-width:
   1pt; margin-left:.7083in" title="" summary="" class="oldColor-a3a3a3" data-aos="fade-up">
-  <tbody><tr>
+  <tbody data-aos="fade-up"><tr data-aos="fade-up">
    <td style="border-style:solid; border-color:#A3A3A3; border-width:1pt; background-color:#D8D8D8; vertical-align:top; width:1.0791in; padding:2.0pt 3.0pt 2.0pt 3.0pt" class="oldColor-a3a3a3" data-aos="fade-up">
    <p style="margin:0in; font-family:&quot;Microsoft JhengHei&quot;; text-align:center" class="oldFontSize-11.0Pt" data-aos="fade-up"><span style="font-weight:bold" data-aos="fade-up">總分</span></p>
    </td>
@@ -1547,7 +1533,7 @@ td {
    <p style="margin:0in; font-family:Calibri; text-align:center" class="oldFontSize-11.0Pt" data-aos="fade-up"><span style="font-weight:bold" data-aos="fade-up">PMBC 適應性</span></p>
    </td>
   </tr>
-  <tr>
+  <tr data-aos="fade-up">
    <td style="border-style:solid; border-color:#A3A3A3; border-width:1pt; background-color:#EBF1DD; vertical-align:top; width:1.0791in; padding:2.0pt 3.0pt 2.0pt 3.0pt" class="oldColor-a3a3a3" data-aos="fade-up">
    <p style="margin:0in; font-family:Calibri; text-align:center" class="oldFontSize-11.0Pt" data-aos="fade-up"><span style="font-weight:bold" data-aos="fade-up">0–8 分</span></p>
    </td>
@@ -1558,7 +1544,7 @@ td {
    <p style="margin:0in; font-family:&quot;Microsoft JhengHei&quot;" class="oldFontSize-11.0Pt" data-aos="fade-up"><span style="font-weight:bold" data-aos="fade-up">預後佳，適合進行 PMBC</span></p>
    </td>
   </tr>
-  <tr>
+  <tr data-aos="fade-up">
    <td style="border-style:solid; border-color:#A3A3A3; border-width:1pt; background-color:#F2DCDB; vertical-align:top; width:1.0791in; padding:2.0pt 3.0pt 2.0pt 3.0pt" class="oldColor-a3a3a3" data-aos="fade-up">
    <p style="margin:0in; font-family:Calibri; text-align:center" class="oldFontSize-11.0Pt" data-aos="fade-up"><span style="font-weight:bold" data-aos="fade-up">&gt; 8 分</span></p>
    </td>
@@ -1788,7 +1774,7 @@ td {
 
 </div>
 
-<div class="outerSpaceOld display-none">
+<div class="outerSpaceOld display-none" data-aos="fade-up">
 
 <p style="margin:0in" data-aos="fade-up">&nbsp;</p>
 
@@ -1802,7 +1788,7 @@ td {
 <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js" integrity="sha512-A7AYk1fGKX6S2SsHywmPkrnzTZHrgiVT7GcQkLGDe2ev0aWb8zejytzS8wjo7PGEXKqJOrjQ4oORtnimIRZBtw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" integrity="sha512-1cK78a1o+ht2JcaW6g8OXYwqpev9+6GqOkz9xmBN9iUUhIndKtxwILGWYOSibOKjLsEdjyjZvYDq/cZwNeak0w==" crossorigin="anonymous" referrerpolicy="no-referrer">
 <script>
-  AOS.init();
+    AOS.init();
 </script>
 <!--ENDOF AOS 區-->
 
@@ -1825,7 +1811,7 @@ https://cdn.jsdelivr.net/npm/sweetalert2@11.22.2/dist/sweetalert2.all.min.js
 <link href="
 https://cdn.jsdelivr.net/npm/sweetalert2@11.22.2/dist/sweetalert2.min.css
 " rel="stylesheet">
-<script>
+<!--script>
     function selFont() {
         const fonts = {
             "ChenYuluoyan Mono": [100],
@@ -1885,7 +1871,7 @@ https://cdn.jsdelivr.net/npm/sweetalert2@11.22.2/dist/sweetalert2.min.css
             }
         });
     }
-</script>
+</script-->
 <button class="float-button" onclick="selFont()">選擇字體</button>
 <!--ENDOF 字體選擇區 (生產環境請移除) -->
 <!--important 主字體大小選擇區 (生產環境請移除) 此段AI生成 (些微手動更動)-->
@@ -1930,61 +1916,61 @@ https://cdn.jsdelivr.net/npm/sweetalert2@11.22.2/dist/sweetalert2.min.css
 </div>
 
 <script>
-function initNavigation() {
-    // 解析 TOC 結構
-    const tocDiv = document.getElementById('toc-for-dev');
-    const pages = [];
-    
-    if (tocDiv) {
-        const links = tocDiv.querySelectorAll('a[href]');
-        links.forEach(link => {
-            pages.push({
-                url: link.getAttribute('href'),
-                title: link.textContent.trim()
-            });
-        });
-    }
-    
-    // 獲取當前頁面 URL
-    const currentUrl = window.location.pathname;
-    
-    // 找到當前頁面在 TOC 中的位置
-    const currentIndex = pages.findIndex(page => page.url === currentUrl);
-    
-    const prevButton = document.getElementById('prev-page');
-    const nextButton = document.getElementById('next-page');
-    
-    // 設置上一頁按鈕
-    if (currentIndex > 0) {
-        prevButton.disabled = false;
-        prevButton.onclick = () => {
-            window.location.href = pages[currentIndex - 1].url;
-        };
-        prevButton.title = `上一頁: ${pages[currentIndex - 1].title}`;
-    } else {
-        prevButton.disabled = true;
-    }
-    
-    // 設置下一頁按鈕
-    if (currentIndex >= 0 && currentIndex < pages.length - 1) {
-        nextButton.disabled = false;
-        nextButton.onclick = () => {
-            window.location.href = pages[currentIndex + 1].url;
-        };
-        nextButton.title = `下一頁: ${pages[currentIndex + 1].title}`;
-    } else {
-        nextButton.disabled = true;
-    }
-    
-    // 如果當前頁面不在 TOC 中，禁用所有按鈕
-    if (currentIndex === -1) {
-        prevButton.disabled = true;
-        nextButton.disabled = true;
-    }
-}
+    function initNavigation() {
+        // 解析 TOC 結構
+        const tocDiv = document.getElementById('toc-for-dev');
+        const pages = [];
 
-// 頁面載入完成後初始化導航
-document.addEventListener('DOMContentLoaded', initNavigation);
+        if (tocDiv) {
+            const links = tocDiv.querySelectorAll('a[href]');
+            links.forEach(link => {
+                pages.push({
+                    url: link.getAttribute('href'),
+                    title: link.textContent.trim()
+                });
+            });
+        }
+
+        // 獲取當前頁面 URL
+        const currentUrl = window.location.pathname;
+
+        // 找到當前頁面在 TOC 中的位置
+        const currentIndex = pages.findIndex(page => page.url === currentUrl);
+
+        const prevButton = document.getElementById('prev-page');
+        const nextButton = document.getElementById('next-page');
+
+        // 設置上一頁按鈕
+        if (currentIndex > 0) {
+            prevButton.disabled = false;
+            prevButton.onclick = () => {
+                window.location.href = pages[currentIndex - 1].url;
+            };
+            prevButton.title = `上一頁: ${pages[currentIndex - 1].title}`;
+        } else {
+            prevButton.disabled = true;
+        }
+
+        // 設置下一頁按鈕
+        if (currentIndex >= 0 && currentIndex < pages.length - 1) {
+            nextButton.disabled = false;
+            nextButton.onclick = () => {
+                window.location.href = pages[currentIndex + 1].url;
+            };
+            nextButton.title = `下一頁: ${pages[currentIndex + 1].title}`;
+        } else {
+            nextButton.disabled = true;
+        }
+
+        // 如果當前頁面不在 TOC 中，禁用所有按鈕
+        if (currentIndex === -1) {
+            prevButton.disabled = true;
+            nextButton.disabled = true;
+        }
+    }
+
+    // 頁面載入完成後初始化導航
+    document.addEventListener('DOMContentLoaded', initNavigation);
 </script>
 <!--ENDOF 上一頁下一頁導航區-->
 

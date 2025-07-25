@@ -125,9 +125,11 @@ function processHtml(html) {
       $el.addClass(`oldColor-${hex.replace('#', '')}`);
     }
 
-    // 加上 data-aos="fade-up"
-    $el.attr('data-aos', 'fade-up');
+  });
 
+  $('body *').each((_, el) => {
+    const $el = $(el);
+    $el.attr('data-aos', 'fade-up');
   });
 
   const fontSizes = Array.from(fontSizeSetPage).map(Number).sort((a, b) => b - a);
@@ -287,13 +289,13 @@ function processHtml(html) {
   dateTimeProcessor($);
 
   $('body').prepend(`
-  <div class="containerBangs">
-    <div class="itemBangs">7%</div>
-    <div class="itemBangs">25%</div>
-    <div class="itemBangs">3%</div>
-    <div class="itemBangs">3%</div>
-    <div class="itemBangs">3%</div>
-    <div class="itemBangs">彈性空間</div>
+  <div class="containerBangs newFontSizeRank-3">
+    <div class="itemBangs buttonLogin"><p>登入</p></div>
+    <div class="itemBangs buttonSearch"><p>搜尋</p></div>
+    <div class="itemBangs"><p>題目</p></div>
+    <div class="itemBangs"><p>主題</p></div>
+    <div class="itemBangs"><p>分科</p></div>
+    <div class="itemBangs"><p>彈性空間</p></div>
   </div>
   `);
 

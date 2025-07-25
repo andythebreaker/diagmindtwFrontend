@@ -413,50 +413,29 @@ li {
 
 ul {
     padding-inline-start: 2vw;
-    /* 更小的縮排 */
 }
 
 .outerSpace {
-    /*overflow-y: scroll !important; 重要更動 2025 07 24*/
-    position: static !important;
-    top: var(--outerSpace-top) !important;
-    left: var(--outerSpace-left) !important;
-    /* 元素的 width 和 height，會包含 padding 和 border。*/
     box-sizing: border-box ! important;
-    /* 100vh 減去上下 margin 各 1rem */
-    /*height: var(--outerSpace-height) !important; 重要更動 2025 07 24*/
     width: 100vw !important;
-    /*var(--outerSpace-width) !important;*/
-    height: fit-content !important;
-    /*margin: 1rem !important; 重要更動 2025 07 24*/
-    margin-top: 14vh !important;
+    margin-top: 0px !important;
     margin-bottom: 0px !important;
     margin-left: 0px !important;
     margin-right: 0px !important;
     padding-left: 1rem !important;
     padding-right: 1rem !important;
-    padding-top: 0px !important;
+    padding-top: 14vh !important;
     padding-bottom: 0px !important;
     border: 0px !important;
     background: #ffffffff !important;
 }
 
-/*html {
-    overflow-y: scroll;
-}*/
 
 body {
     margin-bottom: 0px;
     margin-top: 0px;
     margin-left: 0px;
     margin-right: 0px;
-    /*padding: 0px; 重要更動 2025 07 24*/
-    /*padding-top: 14vh; XXX*/
-    /*padding-bottom: 1rem;*/
-    /*overflow: hidden; 重要更動 2025 07 24*/
-    /*overflow-y: hidden;*/
-    height: max-content;
-    /*overflow-x: hidden;*/
     background: #f6e5c9 !important;
 }
 
@@ -491,10 +470,6 @@ canvas {
 }
 
 .outerSpace>ul>li>p>span:first-of-type {
-    /*
-    x-large 96*27 (1.5rem)
-    2rem:138*36
-    */
     font-size: var(--onenoteInterpreter-new-font-size-h1);
     color: var(--color-wakakusa-1) !important;
 }
@@ -526,11 +501,9 @@ canvas {
     border-bottom-width: 2px !important;
     border-bottom-style: groove !important;
     border-bottom-color: var(--color-akizakura-5) !important;
-    /*border-radius: 50% / 25% ! important;*/
 }
 
 .titleL2span {
-    /* 我原本是寫 larger(105.61*20) 但 larger 是 相對父層變大 large( 108*20 ) (1.12rem 107.53*20)比較合適 (1.1 rem = 105.61*20)*/
     font-size: var(--onenoteInterpreter-new-font-size-h2) !important;
     color: var(--color-akizakura-6) !important;
 }
@@ -583,27 +556,39 @@ td {
     position: fixed;
     top: 0px;
     left: 0px;
-    background-color: #f6e5c9;
-    padding-right: 7%;
-    padding-left: 3%;
+    background-color: #f6e5c9!important;
+    padding: 0 7% 0 3%;
     display: grid;
-    grid-template-columns: 7% 25% 3% 3% 3% 1fr;
-    direction: rtl;
+    align-items: center;
     gap: 2%;
     height: 14vh;
     width: 100vw;
     box-sizing: border-box;
     z-index: 1000;
+    direction: rtl;
+    grid-template-columns: 7% 25% 3% 3% 3% 1fr;
+}
+
+.buttonLogin{
+   background: #5b3717 !important;
+   border-radius: 8%;
+   color: #ffffff !important;
+}
+
+.buttonSearch{
+   background: #E0CFBB !important;
+   border-radius: 28%;
+   color: #ffffff !important;
 }
 
 .itemBangs {
-    margin-top: 26%;
-    margin-bottom: 26%;
+    height: 46%;
     background-color: #ccc;
     text-align: center;
-    /*padding: 10px;*/
-    border: 1px solid #999;
+    align-items: center;
+    justify-content: center;
 }
+
 
 /*end of瀏海區****************************/
 
@@ -629,6 +614,7 @@ td {
     display: flex;
     gap: 0.5rem;
     z-index: 9999;
+    display: none;
 }
 
 #font-controls button {
@@ -651,11 +637,11 @@ td {
 
 /*上一頁下一頁導航區 (AI)*/
 .dev-toc-nav-buttons {
+    display: none;
     position: absolute;
-    /*bottom: 20px; 重要更動 24 07 24*/
     top: 90vw;
     left: 20px;
-    display: flex;
+    /*display: flex;*/
     gap: 10px;
     z-index: 1000;
 }
@@ -691,14 +677,14 @@ td {
         <script src="//s3-ap-northeast-1.amazonaws.com/justfont-user-script/jf-65691.js"></script>
         <script src="https://kit.fontawesome.com/65b47a30d3.js" crossorigin="anonymous"></script></head>
 
-<body lang="zh-TW" style="font-family:Calibri" class="oldFontSize-11.0Pt" data-aos="fade-up">
-  <div class="containerBangs">
-    <div class="itemBangs">7%</div>
-    <div class="itemBangs">25%</div>
-    <div class="itemBangs">3%</div>
-    <div class="itemBangs">3%</div>
-    <div class="itemBangs">3%</div>
-    <div class="itemBangs">彈性空間</div>
+<body lang="zh-TW" style="font-family:Calibri" class="oldFontSize-11.0Pt">
+  <div class="containerBangs newFontSizeRank-3">
+    <div class="itemBangs buttonLogin"><p>登入</p></div>
+    <div class="itemBangs buttonSearch"><p>搜尋</p></div>
+    <div class="itemBangs"><p>題目</p></div>
+    <div class="itemBangs"><p>主題</p></div>
+    <div class="itemBangs"><p>分科</p></div>
+    <div class="itemBangs"><p>彈性空間</p></div>
   </div>
   <div style="direction:ltr; margin-top:.4305in; margin-left:0in; width:6.1722in" class="outerSpace" data-aos="fade-up">
 
@@ -763,7 +749,7 @@ td {
 
 <table border="1" cellpadding="0" cellspacing="0" valign="top" style="direction:ltr; border-collapse:collapse; border-style:solid; border-color:#A3A3A3; border-width:
  1pt; margin-left:.3333in" title="" summary="" class="oldColor-a3a3a3" data-aos="fade-up">
- <tbody><tr>
+ <tbody data-aos="fade-up"><tr data-aos="fade-up">
   <td style="border-style:solid; border-color:#A3A3A3; border-width:1pt; vertical-align:top; width:1.0312in; padding:2.0pt 3.0pt 2.0pt 3.0pt" class="oldColor-a3a3a3" data-aos="fade-up">
   <p style="margin:0in; line-height:15pt; font-family:&quot;Microsoft JhengHei&quot;" class="oldFontSize-11.0Pt" data-aos="fade-up">&nbsp;</p>
   </td>
@@ -771,7 +757,7 @@ td {
   <p style="margin:0in; line-height:15pt; font-family:&quot;Microsoft JhengHei&quot;" class="oldFontSize-11.0Pt" data-aos="fade-up">說明</p>
   </td>
  </tr>
- <tr>
+ <tr data-aos="fade-up">
   <td style="border-style:solid; border-color:#A3A3A3; border-width:1pt; vertical-align:top; width:.9534in; padding:2.0pt 3.0pt 2.0pt 3.0pt" class="oldColor-a3a3a3" data-aos="fade-up">
   <p style="margin:0in; line-height:15pt; font-family:&quot;Microsoft JhengHei&quot;" class="oldFontSize-11.0Pt" data-aos="fade-up">Type 1 TRALI</p>
   </td>
@@ -795,7 +781,7 @@ td {
   </ul>
   </td>
  </tr>
- <tr>
+ <tr data-aos="fade-up">
   <td style="border-style:solid; border-color:#A3A3A3; border-width:1pt; vertical-align:top; width:.9534in; padding:2.0pt 3.0pt 2.0pt 3.0pt" class="oldColor-a3a3a3" data-aos="fade-up">
   <p style="margin:0in; line-height:15pt; font-family:&quot;Microsoft JhengHei&quot;" lang="zh-TW" class="oldFontSize-11.0Pt" data-aos="fade-up">Type 2 </p>
   <p style="margin:0in; line-height:15pt; font-family:&quot;Microsoft JhengHei&quot;" lang="zh-TW" class="oldFontSize-11.0Pt" data-aos="fade-up">TRALI</p>
@@ -863,7 +849,7 @@ td {
 
 <table border="1" cellpadding="0" cellspacing="0" valign="top" style="direction:ltr; border-collapse:collapse; border-style:solid; border-color:#A3A3A3; border-width:
  1pt; margin-left:.3333in" title="" summary="" class="oldColor-a3a3a3" data-aos="fade-up">
- <tbody><tr>
+ <tbody data-aos="fade-up"><tr data-aos="fade-up">
   <td style="border-style:solid; border-color:#A3A3A3; border-width:1pt; vertical-align:top; width:1.9027in; padding:2.0pt 3.0pt 2.0pt 3.0pt" class="oldColor-a3a3a3" data-aos="fade-up">
   <p style="margin:0in; line-height:17pt; font-family:&quot;Microsoft JhengHei&quot;; color:#262626; text-align:center" class="oldFontSize-11.0Pt oldColor-262626" data-aos="fade-up"><span style="font-weight:
   bold" data-aos="fade-up">特徵</span></p>
@@ -877,38 +863,38 @@ td {
   bold" data-aos="fade-up">TACO</span></p>
   </td>
  </tr>
- <tr>
+ <tr data-aos="fade-up">
   <td style="border-style:solid; border-color:#A3A3A3; border-width:1pt; vertical-align:top; width:1.9027in; padding:2.0pt 3.0pt 2.0pt 3.0pt" class="oldColor-a3a3a3" data-aos="fade-up">
   <p style="margin:0in; line-height:17pt; font-family:&quot;Microsoft JhengHei&quot;; color:#262626" class="oldFontSize-11.0Pt oldColor-262626" data-aos="fade-up">病理機制</p>
   </td>
   <td style="border-style:solid; border-color:#A3A3A3; border-width:1pt; vertical-align:top; width:2.3166in; padding:2.0pt 3.0pt 2.0pt 3.0pt" class="oldColor-a3a3a3" data-aos="fade-up">
-  <p style="margin:0in; line-height:17pt; font-family:&quot;Microsoft JhengHei&quot;" class="oldFontSize-11.0Pt" data-aos="fade-up"><span style="color:#C00000" class="oldColor-c00000" data-aos="fade-up">• 非心源性肺水腫<br>
-    </span><span style="color:#262626" class="oldColor-262626" data-aos="fade-up">• 抗體或非抗體介導的發炎反應<br>
+  <p style="margin:0in; line-height:17pt; font-family:&quot;Microsoft JhengHei&quot;" class="oldFontSize-11.0Pt" data-aos="fade-up"><span style="color:#C00000" class="oldColor-c00000" data-aos="fade-up">• 非心源性肺水腫<br data-aos="fade-up">
+    </span><span style="color:#262626" class="oldColor-262626" data-aos="fade-up">• 抗體或非抗體介導的發炎反應<br data-aos="fade-up">
     • 肺部微血管通透性增加</span></p>
   </td>
   <td style="border-style:solid; border-color:#A3A3A3; border-width:1pt; vertical-align:top; width:1.4013in; padding:2.0pt 3.0pt 2.0pt 3.0pt" class="oldColor-a3a3a3" data-aos="fade-up">
-  <p style="margin:0in; line-height:17pt; font-family:&quot;Microsoft JhengHei&quot;" class="oldFontSize-11.0Pt" data-aos="fade-up"><span style="color:#C00000" class="oldColor-c00000" data-aos="fade-up">• 心源性肺水腫<br>
-    </span><span style="color:#262626" class="oldColor-262626" data-aos="fade-up">• 體液過量<br>
+  <p style="margin:0in; line-height:17pt; font-family:&quot;Microsoft JhengHei&quot;" class="oldFontSize-11.0Pt" data-aos="fade-up"><span style="color:#C00000" class="oldColor-c00000" data-aos="fade-up">• 心源性肺水腫<br data-aos="fade-up">
+    </span><span style="color:#262626" class="oldColor-262626" data-aos="fade-up">• 體液過量<br data-aos="fade-up">
     • 左心房壓力升高</span></p>
   </td>
  </tr>
- <tr>
+ <tr data-aos="fade-up">
   <td style="border-style:solid; border-color:#A3A3A3; border-width:1pt; vertical-align:top; width:1.9027in; padding:2.0pt 3.0pt 2.0pt 3.0pt" class="oldColor-a3a3a3" data-aos="fade-up">
   <p style="margin:0in; line-height:17pt; font-family:&quot;Microsoft JhengHei&quot;; color:#262626" class="oldFontSize-11.0Pt oldColor-262626" data-aos="fade-up">臨床表現</p>
   </td>
   <td style="border-style:solid; border-color:#A3A3A3; border-width:1pt; vertical-align:top; width:2.2972in; padding:2.0pt 3.0pt 2.0pt 3.0pt" class="oldColor-a3a3a3" data-aos="fade-up">
-  <p style="margin:0in; line-height:17pt; font-family:&quot;Microsoft JhengHei&quot;; color:#262626" class="oldFontSize-11.0Pt oldColor-262626" data-aos="fade-up">• 輸血後6小時內發生<br>
-    • 雙側肺浸潤<br>
-    • 無左心房高壓證據<br>
+  <p style="margin:0in; line-height:17pt; font-family:&quot;Microsoft JhengHei&quot;; color:#262626" class="oldFontSize-11.0Pt oldColor-262626" data-aos="fade-up">• 輸血後6小時內發生<br data-aos="fade-up">
+    • 雙側肺浸潤<br data-aos="fade-up">
+    • 無左心房高壓證據<br data-aos="fade-up">
     • 可能出現發燒</p>
   </td>
   <td style="border-style:solid; border-color:#A3A3A3; border-width:1pt; vertical-align:top; width:1.4833in; padding:2.0pt 3.0pt 2.0pt 3.0pt" class="oldColor-a3a3a3" data-aos="fade-up">
-  <p style="margin:0in; line-height:17pt; font-family:&quot;Microsoft JhengHei&quot;; color:#262626" class="oldFontSize-11.0Pt oldColor-262626" data-aos="fade-up">• 循環負荷過重表現<br>
-    • 左心衰竭表現<br>
+  <p style="margin:0in; line-height:17pt; font-family:&quot;Microsoft JhengHei&quot;; color:#262626" class="oldFontSize-11.0Pt oldColor-262626" data-aos="fade-up">• 循環負荷過重表現<br data-aos="fade-up">
+    • 左心衰竭表現<br data-aos="fade-up">
     • 血壓可能升高</p>
   </td>
  </tr>
- <tr>
+ <tr data-aos="fade-up">
   <td style="border-style:solid; border-color:#A3A3A3; border-width:1pt; vertical-align:top; width:1.9222in; padding:2.0pt 3.0pt 2.0pt 3.0pt" class="oldColor-a3a3a3" data-aos="fade-up">
   <p style="margin:0in; line-height:17pt; font-family:&quot;Microsoft JhengHei&quot;; color:#262626" class="oldFontSize-11.0Pt oldColor-262626" data-aos="fade-up">CXR特徵(其實就是</p>
   <p style="margin:0in; line-height:17pt; font-family:&quot;Microsoft JhengHei&quot;; color:#262626" class="oldFontSize-11.0Pt oldColor-262626" data-aos="fade-up">non-cardiogenic vs </p>
@@ -916,69 +902,69 @@ td {
   <p style="margin:0in; line-height:17pt; font-family:&quot;Microsoft JhengHei&quot;; color:#262626" class="oldFontSize-11.0Pt oldColor-262626" data-aos="fade-up">edema)</p>
   </td>
   <td style="border-style:solid; border-color:#A3A3A3; border-width:1pt; vertical-align:top; width:2.2972in; padding:2.0pt 3.0pt 2.0pt 3.0pt" class="oldColor-a3a3a3" data-aos="fade-up">
-  <p style="margin:0in; line-height:17pt; font-family:&quot;Microsoft JhengHei&quot;; color:#262626" class="oldFontSize-11.0Pt oldColor-262626" data-aos="fade-up">• 雙側對稱性浸潤<br>
-    • 正常心臟大小<br>
-    • 無肺門充血<br>
+  <p style="margin:0in; line-height:17pt; font-family:&quot;Microsoft JhengHei&quot;; color:#262626" class="oldFontSize-11.0Pt oldColor-262626" data-aos="fade-up">• 雙側對稱性浸潤<br data-aos="fade-up">
+    • 正常心臟大小<br data-aos="fade-up">
+    • 無肺門充血<br data-aos="fade-up">
     • 無胸腔積液</p>
   </td>
   <td style="border-style:solid; border-color:#A3A3A3; border-width:1pt; vertical-align:top; width:1.4013in; padding:2.0pt 3.0pt 2.0pt 3.0pt" class="oldColor-a3a3a3" data-aos="fade-up">
-  <p style="margin:0in; line-height:17pt; font-family:&quot;Microsoft JhengHei&quot;; color:#262626" class="oldFontSize-11.0Pt oldColor-262626" data-aos="fade-up">• 雙側浸潤<br>
-    • 心臟擴大<br>
-    • 肺門充血<br>
-    • 可見胸腔積液<br>
+  <p style="margin:0in; line-height:17pt; font-family:&quot;Microsoft JhengHei&quot;; color:#262626" class="oldFontSize-11.0Pt oldColor-262626" data-aos="fade-up">• 雙側浸潤<br data-aos="fade-up">
+    • 心臟擴大<br data-aos="fade-up">
+    • 肺門充血<br data-aos="fade-up">
+    • 可見胸腔積液<br data-aos="fade-up">
     • Kerley B線</p>
   </td>
  </tr>
- <tr>
+ <tr data-aos="fade-up">
   <td style="border-style:solid; border-color:#A3A3A3; border-width:1pt; vertical-align:top; width:1.9027in; padding:2.0pt 3.0pt 2.0pt 3.0pt" class="oldColor-a3a3a3" data-aos="fade-up">
   <p style="margin:0in; line-height:17pt; font-family:&quot;Microsoft JhengHei&quot;; color:#262626" class="oldFontSize-11.0Pt oldColor-262626" data-aos="fade-up">治療方式</p>
   </td>
   <td style="border-style:solid; border-color:#A3A3A3; border-width:1pt; vertical-align:top; width:2.2972in; padding:2.0pt 3.0pt 2.0pt 3.0pt" class="oldColor-a3a3a3" data-aos="fade-up">
-  <p style="margin:0in; line-height:17pt; font-family:&quot;Microsoft JhengHei&quot;; color:#262626" class="oldFontSize-11.0Pt oldColor-262626" data-aos="fade-up">• 支持性治療為主<br>
-    • 維持氧氣供應<br>
+  <p style="margin:0in; line-height:17pt; font-family:&quot;Microsoft JhengHei&quot;; color:#262626" class="oldFontSize-11.0Pt oldColor-262626" data-aos="fade-up">• 支持性治療為主<br data-aos="fade-up">
+    • 維持氧氣供應<br data-aos="fade-up">
     • 利尿劑無效</p>
   </td>
   <td style="border-style:solid; border-color:#A3A3A3; border-width:1pt; vertical-align:top; width:1.4013in; padding:2.0pt 3.0pt 2.0pt 3.0pt" class="oldColor-a3a3a3" data-aos="fade-up">
-  <p style="margin:0in; line-height:17pt; font-family:&quot;Microsoft JhengHei&quot;; color:#262626" class="oldFontSize-11.0Pt oldColor-262626" data-aos="fade-up">• 停止輸血<br>
-    • 使用利尿劑<br>
+  <p style="margin:0in; line-height:17pt; font-family:&quot;Microsoft JhengHei&quot;; color:#262626" class="oldFontSize-11.0Pt oldColor-262626" data-aos="fade-up">• 停止輸血<br data-aos="fade-up">
+    • 使用利尿劑<br data-aos="fade-up">
     • 降低前負荷</p>
   </td>
  </tr>
- <tr>
+ <tr data-aos="fade-up">
   <td style="border-style:solid; border-color:#A3A3A3; border-width:1pt; vertical-align:top; width:1.9027in; padding:2.0pt 3.0pt 2.0pt 3.0pt" class="oldColor-a3a3a3" data-aos="fade-up">
   <p style="margin:0in; line-height:17pt; font-family:&quot;Microsoft JhengHei&quot;; color:#262626" class="oldFontSize-11.0Pt oldColor-262626" data-aos="fade-up">預防策略</p>
   </td>
   <td style="border-style:solid; border-color:#A3A3A3; border-width:1pt; vertical-align:top; width:2.2972in; padding:2.0pt 3.0pt 2.0pt 3.0pt" class="oldColor-a3a3a3" data-aos="fade-up">
-  <p style="margin:0in; line-height:17pt; font-family:&quot;Microsoft JhengHei&quot;; color:#262626" class="oldFontSize-11.0Pt oldColor-262626" data-aos="fade-up">• 篩查高風險供血者<br>
-    • 優先使用男性供血者血漿<br>
+  <p style="margin:0in; line-height:17pt; font-family:&quot;Microsoft JhengHei&quot;; color:#262626" class="oldFontSize-11.0Pt oldColor-262626" data-aos="fade-up">• 篩查高風險供血者<br data-aos="fade-up">
+    • 優先使用男性供血者血漿<br data-aos="fade-up">
     • 避免多次妊娠女性血製品</p>
   </td>
   <td style="border-style:solid; border-color:#A3A3A3; border-width:1pt; vertical-align:top; width:1.4013in; padding:2.0pt 3.0pt 2.0pt 3.0pt" class="oldColor-a3a3a3" data-aos="fade-up">
-  <p style="margin:0in; line-height:17pt; font-family:&quot;Microsoft JhengHei&quot;; color:#262626" class="oldFontSize-11.0Pt oldColor-262626" data-aos="fade-up">• 控制輸血速度<br>
-    • 監測輸血量<br>
+  <p style="margin:0in; line-height:17pt; font-family:&quot;Microsoft JhengHei&quot;; color:#262626" class="oldFontSize-11.0Pt oldColor-262626" data-aos="fade-up">• 控制輸血速度<br data-aos="fade-up">
+    • 監測輸血量<br data-aos="fade-up">
     • 評估心功能狀態</p>
   </td>
  </tr>
- <tr>
+ <tr data-aos="fade-up">
   <td style="border-style:solid; border-color:#A3A3A3; border-width:1pt; vertical-align:top; width:1.9027in; padding:2.0pt 3.0pt 2.0pt 3.0pt" class="oldColor-a3a3a3" data-aos="fade-up">
   <p style="margin:0in; line-height:17pt; font-family:&quot;Microsoft JhengHei&quot;; color:#262626" class="oldFontSize-11.0Pt oldColor-262626" data-aos="fade-up">預後</p>
   </td>
   <td style="border-style:solid; border-color:#A3A3A3; border-width:1pt; vertical-align:top; width:2.2972in; padding:2.0pt 3.0pt 2.0pt 3.0pt" class="oldColor-a3a3a3" data-aos="fade-up">
-  <p style="margin:0in; line-height:17pt; font-family:&quot;Microsoft JhengHei&quot;; color:#262626" class="oldFontSize-11.0Pt oldColor-262626" data-aos="fade-up">• 24-48小時內可能改善<br>
-    • 重症患者存活率約53%<br>
+  <p style="margin:0in; line-height:17pt; font-family:&quot;Microsoft JhengHei&quot;; color:#262626" class="oldFontSize-11.0Pt oldColor-262626" data-aos="fade-up">• 24-48小時內可能改善<br data-aos="fade-up">
+    • 重症患者存活率約53%<br data-aos="fade-up">
     • 通常為自限性</p>
   </td>
   <td style="border-style:solid; border-color:#A3A3A3; border-width:1pt; vertical-align:top; width:1.4833in; padding:2.0pt 3.0pt 2.0pt 3.0pt" class="oldColor-a3a3a3" data-aos="fade-up">
-  <p style="margin:0in; line-height:17pt; font-family:&quot;Microsoft JhengHei&quot;" class="oldFontSize-11.0Pt" data-aos="fade-up"><span style="color:#262626" lang="zh-TW" class="oldColor-262626" data-aos="fade-up">• 對治療反應較好<br>
-    • 及時處理預後良好<br>
-    • 取決於基礎心功能</span><span lang="zh-TW"> </span></p>
+  <p style="margin:0in; line-height:17pt; font-family:&quot;Microsoft JhengHei&quot;" class="oldFontSize-11.0Pt" data-aos="fade-up"><span style="color:#262626" lang="zh-TW" class="oldColor-262626" data-aos="fade-up">• 對治療反應較好<br data-aos="fade-up">
+    • 及時處理預後良好<br data-aos="fade-up">
+    • 取決於基礎心功能</span><span lang="zh-TW" data-aos="fade-up"> </span></p>
   </td>
  </tr>
 </tbody></table>
 
 </div>
 
-<p style="margin:0in; margin-left:.375in" data-aos="fade-up"><img src="TRALI_asset_0.jpg" width="480" height="320"></p>
+<p style="margin:0in; margin-left:.375in" data-aos="fade-up"><img src="TRALI_asset_0.jpg" width="480" height="320" data-aos="fade-up"></p>
 
 <ul type="disc" style="direction:ltr; unicode-bidi:embed; margin-top:0in; margin-bottom:0in" data-aos="fade-up">
  <li style="margin-top:0; margin-bottom:0; vertical-align:middle; margin-top:6pt; margin-bottom:6pt" data-aos="fade-up"><span style="font-family:Calibri" lang="zh-TW" class="oldFontSize-11.0Pt" data-aos="fade-up"><span style="mso-spacerun:yes" data-aos="fade-up">&nbsp;</span></span><span style="font-weight:bold; font-family:&quot;Microsoft JhengHei Light&quot;" lang="zh-TW" class="oldFontSize-16.0Pt" data-aos="fade-up">參考資料</span></li>
@@ -1027,7 +1013,7 @@ td {
 
 </div>
 
-<div class="outerSpaceOld display-none">
+<div class="outerSpaceOld display-none" data-aos="fade-up">
 
 <p style="margin:0in" data-aos="fade-up">&nbsp;</p>
 
@@ -1041,7 +1027,7 @@ td {
 <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js" integrity="sha512-A7AYk1fGKX6S2SsHywmPkrnzTZHrgiVT7GcQkLGDe2ev0aWb8zejytzS8wjo7PGEXKqJOrjQ4oORtnimIRZBtw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" integrity="sha512-1cK78a1o+ht2JcaW6g8OXYwqpev9+6GqOkz9xmBN9iUUhIndKtxwILGWYOSibOKjLsEdjyjZvYDq/cZwNeak0w==" crossorigin="anonymous" referrerpolicy="no-referrer">
 <script>
-  AOS.init();
+    AOS.init();
 </script>
 <!--ENDOF AOS 區-->
 
@@ -1064,7 +1050,7 @@ https://cdn.jsdelivr.net/npm/sweetalert2@11.22.2/dist/sweetalert2.all.min.js
 <link href="
 https://cdn.jsdelivr.net/npm/sweetalert2@11.22.2/dist/sweetalert2.min.css
 " rel="stylesheet">
-<script>
+<!--script>
     function selFont() {
         const fonts = {
             "ChenYuluoyan Mono": [100],
@@ -1124,7 +1110,7 @@ https://cdn.jsdelivr.net/npm/sweetalert2@11.22.2/dist/sweetalert2.min.css
             }
         });
     }
-</script>
+</script-->
 <button class="float-button" onclick="selFont()">選擇字體</button>
 <!--ENDOF 字體選擇區 (生產環境請移除) -->
 <!--important 主字體大小選擇區 (生產環境請移除) 此段AI生成 (些微手動更動)-->
@@ -1169,61 +1155,61 @@ https://cdn.jsdelivr.net/npm/sweetalert2@11.22.2/dist/sweetalert2.min.css
 </div>
 
 <script>
-function initNavigation() {
-    // 解析 TOC 結構
-    const tocDiv = document.getElementById('toc-for-dev');
-    const pages = [];
-    
-    if (tocDiv) {
-        const links = tocDiv.querySelectorAll('a[href]');
-        links.forEach(link => {
-            pages.push({
-                url: link.getAttribute('href'),
-                title: link.textContent.trim()
-            });
-        });
-    }
-    
-    // 獲取當前頁面 URL
-    const currentUrl = window.location.pathname;
-    
-    // 找到當前頁面在 TOC 中的位置
-    const currentIndex = pages.findIndex(page => page.url === currentUrl);
-    
-    const prevButton = document.getElementById('prev-page');
-    const nextButton = document.getElementById('next-page');
-    
-    // 設置上一頁按鈕
-    if (currentIndex > 0) {
-        prevButton.disabled = false;
-        prevButton.onclick = () => {
-            window.location.href = pages[currentIndex - 1].url;
-        };
-        prevButton.title = `上一頁: ${pages[currentIndex - 1].title}`;
-    } else {
-        prevButton.disabled = true;
-    }
-    
-    // 設置下一頁按鈕
-    if (currentIndex >= 0 && currentIndex < pages.length - 1) {
-        nextButton.disabled = false;
-        nextButton.onclick = () => {
-            window.location.href = pages[currentIndex + 1].url;
-        };
-        nextButton.title = `下一頁: ${pages[currentIndex + 1].title}`;
-    } else {
-        nextButton.disabled = true;
-    }
-    
-    // 如果當前頁面不在 TOC 中，禁用所有按鈕
-    if (currentIndex === -1) {
-        prevButton.disabled = true;
-        nextButton.disabled = true;
-    }
-}
+    function initNavigation() {
+        // 解析 TOC 結構
+        const tocDiv = document.getElementById('toc-for-dev');
+        const pages = [];
 
-// 頁面載入完成後初始化導航
-document.addEventListener('DOMContentLoaded', initNavigation);
+        if (tocDiv) {
+            const links = tocDiv.querySelectorAll('a[href]');
+            links.forEach(link => {
+                pages.push({
+                    url: link.getAttribute('href'),
+                    title: link.textContent.trim()
+                });
+            });
+        }
+
+        // 獲取當前頁面 URL
+        const currentUrl = window.location.pathname;
+
+        // 找到當前頁面在 TOC 中的位置
+        const currentIndex = pages.findIndex(page => page.url === currentUrl);
+
+        const prevButton = document.getElementById('prev-page');
+        const nextButton = document.getElementById('next-page');
+
+        // 設置上一頁按鈕
+        if (currentIndex > 0) {
+            prevButton.disabled = false;
+            prevButton.onclick = () => {
+                window.location.href = pages[currentIndex - 1].url;
+            };
+            prevButton.title = `上一頁: ${pages[currentIndex - 1].title}`;
+        } else {
+            prevButton.disabled = true;
+        }
+
+        // 設置下一頁按鈕
+        if (currentIndex >= 0 && currentIndex < pages.length - 1) {
+            nextButton.disabled = false;
+            nextButton.onclick = () => {
+                window.location.href = pages[currentIndex + 1].url;
+            };
+            nextButton.title = `下一頁: ${pages[currentIndex + 1].title}`;
+        } else {
+            nextButton.disabled = true;
+        }
+
+        // 如果當前頁面不在 TOC 中，禁用所有按鈕
+        if (currentIndex === -1) {
+            prevButton.disabled = true;
+            nextButton.disabled = true;
+        }
+    }
+
+    // 頁面載入完成後初始化導航
+    document.addEventListener('DOMContentLoaded', initNavigation);
 </script>
 <!--ENDOF 上一頁下一頁導航區-->
 

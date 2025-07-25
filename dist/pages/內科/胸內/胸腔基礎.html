@@ -413,50 +413,29 @@ li {
 
 ul {
     padding-inline-start: 2vw;
-    /* 更小的縮排 */
 }
 
 .outerSpace {
-    /*overflow-y: scroll !important; 重要更動 2025 07 24*/
-    position: static !important;
-    top: var(--outerSpace-top) !important;
-    left: var(--outerSpace-left) !important;
-    /* 元素的 width 和 height，會包含 padding 和 border。*/
     box-sizing: border-box ! important;
-    /* 100vh 減去上下 margin 各 1rem */
-    /*height: var(--outerSpace-height) !important; 重要更動 2025 07 24*/
     width: 100vw !important;
-    /*var(--outerSpace-width) !important;*/
-    height: fit-content !important;
-    /*margin: 1rem !important; 重要更動 2025 07 24*/
-    margin-top: 14vh !important;
+    margin-top: 0px !important;
     margin-bottom: 0px !important;
     margin-left: 0px !important;
     margin-right: 0px !important;
     padding-left: 1rem !important;
     padding-right: 1rem !important;
-    padding-top: 0px !important;
+    padding-top: 14vh !important;
     padding-bottom: 0px !important;
     border: 0px !important;
     background: #ffffffff !important;
 }
 
-/*html {
-    overflow-y: scroll;
-}*/
 
 body {
     margin-bottom: 0px;
     margin-top: 0px;
     margin-left: 0px;
     margin-right: 0px;
-    /*padding: 0px; 重要更動 2025 07 24*/
-    /*padding-top: 14vh; XXX*/
-    /*padding-bottom: 1rem;*/
-    /*overflow: hidden; 重要更動 2025 07 24*/
-    /*overflow-y: hidden;*/
-    height: max-content;
-    /*overflow-x: hidden;*/
     background: #f6e5c9 !important;
 }
 
@@ -491,10 +470,6 @@ canvas {
 }
 
 .outerSpace>ul>li>p>span:first-of-type {
-    /*
-    x-large 96*27 (1.5rem)
-    2rem:138*36
-    */
     font-size: var(--onenoteInterpreter-new-font-size-h1);
     color: var(--color-wakakusa-1) !important;
 }
@@ -526,11 +501,9 @@ canvas {
     border-bottom-width: 2px !important;
     border-bottom-style: groove !important;
     border-bottom-color: var(--color-akizakura-5) !important;
-    /*border-radius: 50% / 25% ! important;*/
 }
 
 .titleL2span {
-    /* 我原本是寫 larger(105.61*20) 但 larger 是 相對父層變大 large( 108*20 ) (1.12rem 107.53*20)比較合適 (1.1 rem = 105.61*20)*/
     font-size: var(--onenoteInterpreter-new-font-size-h2) !important;
     color: var(--color-akizakura-6) !important;
 }
@@ -583,27 +556,39 @@ td {
     position: fixed;
     top: 0px;
     left: 0px;
-    background-color: #f6e5c9;
-    padding-right: 7%;
-    padding-left: 3%;
+    background-color: #f6e5c9!important;
+    padding: 0 7% 0 3%;
     display: grid;
-    grid-template-columns: 7% 25% 3% 3% 3% 1fr;
-    direction: rtl;
+    align-items: center;
     gap: 2%;
     height: 14vh;
     width: 100vw;
     box-sizing: border-box;
     z-index: 1000;
+    direction: rtl;
+    grid-template-columns: 7% 25% 3% 3% 3% 1fr;
+}
+
+.buttonLogin{
+   background: #5b3717 !important;
+   border-radius: 8%;
+   color: #ffffff !important;
+}
+
+.buttonSearch{
+   background: #E0CFBB !important;
+   border-radius: 28%;
+   color: #ffffff !important;
 }
 
 .itemBangs {
-    margin-top: 26%;
-    margin-bottom: 26%;
+    height: 46%;
     background-color: #ccc;
     text-align: center;
-    /*padding: 10px;*/
-    border: 1px solid #999;
+    align-items: center;
+    justify-content: center;
 }
+
 
 /*end of瀏海區****************************/
 
@@ -629,6 +614,7 @@ td {
     display: flex;
     gap: 0.5rem;
     z-index: 9999;
+    display: none;
 }
 
 #font-controls button {
@@ -651,11 +637,11 @@ td {
 
 /*上一頁下一頁導航區 (AI)*/
 .dev-toc-nav-buttons {
+    display: none;
     position: absolute;
-    /*bottom: 20px; 重要更動 24 07 24*/
     top: 90vw;
     left: 20px;
-    display: flex;
+    /*display: flex;*/
     gap: 10px;
     z-index: 1000;
 }
@@ -691,14 +677,14 @@ td {
         <script src="//s3-ap-northeast-1.amazonaws.com/justfont-user-script/jf-65691.js"></script>
         <script src="https://kit.fontawesome.com/65b47a30d3.js" crossorigin="anonymous"></script></head>
 
-<body lang="zh-TW" style="font-family:Calibri" class="oldFontSize-11.0Pt flagTooMuchFontSize" data-aos="fade-up">
-  <div class="containerBangs">
-    <div class="itemBangs">7%</div>
-    <div class="itemBangs">25%</div>
-    <div class="itemBangs">3%</div>
-    <div class="itemBangs">3%</div>
-    <div class="itemBangs">3%</div>
-    <div class="itemBangs">彈性空間</div>
+<body lang="zh-TW" style="font-family:Calibri" class="oldFontSize-11.0Pt flagTooMuchFontSize">
+  <div class="containerBangs newFontSizeRank-3">
+    <div class="itemBangs buttonLogin"><p>登入</p></div>
+    <div class="itemBangs buttonSearch"><p>搜尋</p></div>
+    <div class="itemBangs"><p>題目</p></div>
+    <div class="itemBangs"><p>主題</p></div>
+    <div class="itemBangs"><p>分科</p></div>
+    <div class="itemBangs"><p>彈性空間</p></div>
   </div>
   <div style="direction:ltr; margin-top:.4in; margin-left:.0493in; width:6.3729in" class="outerSpace" data-aos="fade-up">
 
@@ -756,7 +742,7 @@ td {
  <div style="direction:ltr" data-aos="fade-up">
  <table border="1" cellpadding="0" cellspacing="0" valign="top" style="direction:ltr; border-collapse:collapse; border-style:solid; border-color:#A3A3A3; border-width:
   1pt; margin-left:.3333in" title="" summary="" class="oldColor-a3a3a3" data-aos="fade-up">
-  <tbody><tr>
+  <tbody data-aos="fade-up"><tr data-aos="fade-up">
    <td style="border-style:solid; border-color:#A3A3A3; border-width:1pt; vertical-align:top; width:2.0263in; padding:2.0pt 3.0pt 2.0pt 3.0pt" class="oldColor-a3a3a3" data-aos="fade-up">
    <p style="margin:0in; font-family:&quot;Microsoft JhengHei&quot;" lang="zh-TW" class="oldFontSize-11.0Pt" data-aos="fade-up"><span style="font-weight:bold" data-aos="fade-up">聽診音調</span></p>
    </td>
@@ -764,7 +750,7 @@ td {
    <p style="margin:0in; font-family:&quot;Microsoft JhengHei&quot;" lang="zh-TW" class="oldFontSize-11.0Pt" data-aos="fade-up"><span style="font-weight:bold" data-aos="fade-up">意義</span></p>
    </td>
   </tr>
-  <tr>
+  <tr data-aos="fade-up">
    <td style="border-style:solid; border-color:#A3A3A3; border-width:1pt; vertical-align:top; width:2.0458in; padding:2.0pt 3.0pt 2.0pt 3.0pt" class="oldColor-a3a3a3" data-aos="fade-up">
    <p style="margin:0in; font-family:&quot;Microsoft JhengHei&quot;" lang="zh-TW" class="oldFontSize-11.0Pt" data-aos="fade-up"><span style="font-weight:bold" data-aos="fade-up">鼓音（Hyperresonance）</span></p>
    </td>
@@ -772,7 +758,7 @@ td {
    <p style="margin:0in; font-family:&quot;Microsoft JhengHei&quot;" lang="zh-TW" class="oldFontSize-11.0Pt" data-aos="fade-up">氣胸、肺氣腫</p>
    </td>
   </tr>
-  <tr>
+  <tr data-aos="fade-up">
    <td style="border-style:solid; border-color:#A3A3A3; border-width:1pt; vertical-align:top; width:2.0263in; padding:2.0pt 3.0pt 2.0pt 3.0pt" class="oldColor-a3a3a3" data-aos="fade-up">
    <p style="margin:0in; font-family:&quot;Microsoft JhengHei&quot;" lang="zh-TW" class="oldFontSize-11.0Pt" data-aos="fade-up"><span style="font-weight:bold" data-aos="fade-up">濁音（Dullness）</span></p>
    </td>
@@ -780,7 +766,7 @@ td {
    <p style="margin:0in; font-family:&quot;Microsoft JhengHei&quot;" lang="zh-TW" class="oldFontSize-11.0Pt" data-aos="fade-up">胸水、肺實變</p>
    </td>
   </tr>
-  <tr>
+  <tr data-aos="fade-up">
    <td style="border-style:solid; border-color:#A3A3A3; border-width:1pt; vertical-align:top; width:2.0263in; padding:2.0pt 3.0pt 2.0pt 3.0pt" class="oldColor-a3a3a3" data-aos="fade-up">
    <p style="margin:0in; font-family:&quot;Microsoft JhengHei&quot;" lang="zh-TW" class="oldFontSize-11.0Pt" data-aos="fade-up"><span style="font-weight:bold" data-aos="fade-up">叩診減弱但音調正常</span></p>
    </td>
@@ -796,7 +782,7 @@ td {
  <div style="direction:ltr" data-aos="fade-up">
  <table border="1" cellpadding="0" cellspacing="0" valign="top" style="direction:ltr; border-collapse:collapse; border-style:solid; border-color:#A3A3A3; border-width:
   1pt; margin-left:.3333in" title="" summary="" class="oldColor-a3a3a3" data-aos="fade-up">
-  <tbody><tr>
+  <tbody data-aos="fade-up"><tr data-aos="fade-up">
    <td style="border-style:solid; border-color:#A3A3A3; border-width:1pt; vertical-align:top; width:1.8388in; padding:2.0pt 3.0pt 2.0pt 3.0pt" class="oldColor-a3a3a3" data-aos="fade-up">
    <p style="margin:0in; font-family:&quot;Microsoft JhengHei&quot;" lang="zh-TW" class="oldFontSize-11.0Pt" data-aos="fade-up"><span style="font-weight:bold" data-aos="fade-up">聽診音</span></p>
    </td>
@@ -807,7 +793,7 @@ td {
    <p style="margin:0in; font-family:&quot;Microsoft JhengHei&quot;" lang="zh-TW" class="oldFontSize-11.0Pt" data-aos="fade-up"><span style="font-weight:bold" data-aos="fade-up">常見疾病</span></p>
    </td>
   </tr>
-  <tr>
+  <tr data-aos="fade-up">
    <td style="border-style:solid; border-color:#A3A3A3; border-width:1pt; vertical-align:top; width:1.8388in; padding:2.0pt 3.0pt 2.0pt 3.0pt" class="oldColor-a3a3a3" data-aos="fade-up">
    <p style="margin:0in; font-family:&quot;Microsoft JhengHei&quot;" lang="zh-TW" class="oldFontSize-11.0Pt" data-aos="fade-up"><span style="font-weight:bold" data-aos="fade-up">Wheezing（喘鳴）</span></p>
    </td>
@@ -818,7 +804,7 @@ td {
    <p style="margin:0in; font-family:&quot;Microsoft JhengHei&quot;" lang="zh-TW" class="oldFontSize-11.0Pt" data-aos="fade-up">Asthma、COPD、CHF（周邊支氣管水腫）</p>
    </td>
   </tr>
-  <tr>
+  <tr data-aos="fade-up">
    <td style="border-style:solid; border-color:#A3A3A3; border-width:1pt; vertical-align:top; width:1.8388in; padding:2.0pt 3.0pt 2.0pt 3.0pt" class="oldColor-a3a3a3" data-aos="fade-up">
    <p style="margin:0in; font-family:&quot;Microsoft JhengHei&quot;" lang="zh-TW" class="oldFontSize-11.0Pt" data-aos="fade-up"><span style="font-weight:bold" data-aos="fade-up">Rhonchi（濕哮）</span></p>
    </td>
@@ -829,7 +815,7 @@ td {
    <p style="margin:0in; font-family:&quot;Microsoft JhengHei&quot;" lang="zh-TW" class="oldFontSize-11.0Pt" data-aos="fade-up">急性支氣管炎、COPD、支氣管擴張症</p>
    </td>
   </tr>
-  <tr>
+  <tr data-aos="fade-up">
    <td style="border-style:solid; border-color:#A3A3A3; border-width:1pt; vertical-align:top; width:1.8388in; padding:2.0pt 3.0pt 2.0pt 3.0pt" class="oldColor-a3a3a3" data-aos="fade-up">
    <p style="margin:0in; font-family:&quot;Microsoft JhengHei&quot;" lang="zh-TW" class="oldFontSize-11.0Pt" data-aos="fade-up"><span style="font-weight:bold" data-aos="fade-up">Stridor（吸氣高音）</span></p>
    </td>
@@ -840,7 +826,7 @@ td {
    <p style="margin:0in; font-family:&quot;Microsoft JhengHei&quot;" lang="zh-TW" class="oldFontSize-11.0Pt" data-aos="fade-up">上呼吸道阻塞（如聲門水腫、異物）</p>
    </td>
   </tr>
-  <tr>
+  <tr data-aos="fade-up">
    <td style="border-style:solid; border-color:#A3A3A3; border-width:1pt; vertical-align:top; width:1.8388in; padding:2.0pt 3.0pt 2.0pt 3.0pt" class="oldColor-a3a3a3" data-aos="fade-up">
    <p style="margin:0in; font-family:&quot;Microsoft JhengHei&quot;" lang="zh-TW" class="oldFontSize-11.0Pt" data-aos="fade-up"><span style="font-weight:bold" data-aos="fade-up">Crackles（Rales）</span></p>
    </td>
@@ -851,7 +837,7 @@ td {
    <p style="margin:0in; font-family:&quot;Microsoft JhengHei&quot;" lang="zh-TW" class="oldFontSize-11.0Pt" data-aos="fade-up">肺水腫（濕）、IPF（Velcro rales）</p>
    </td>
   </tr>
-  <tr>
+  <tr data-aos="fade-up">
    <td style="border-style:solid; border-color:#A3A3A3; border-width:1pt; vertical-align:top; width:1.8388in; padding:2.0pt 3.0pt 2.0pt 3.0pt" class="oldColor-a3a3a3" data-aos="fade-up">
    <p style="margin:0in; font-family:&quot;Microsoft JhengHei&quot;" lang="zh-TW" class="oldFontSize-11.0Pt" data-aos="fade-up"><span style="font-weight:bold" data-aos="fade-up">Bronchial breath sound</span></p>
    </td>
@@ -862,7 +848,7 @@ td {
    <p style="margin:0in; font-family:&quot;Microsoft JhengHei&quot;" lang="zh-TW" class="oldFontSize-11.0Pt" data-aos="fade-up">肺炎（Lobar pneumonia）</p>
    </td>
   </tr>
-  <tr>
+  <tr data-aos="fade-up">
    <td style="border-style:solid; border-color:#A3A3A3; border-width:1pt; vertical-align:top; width:1.8569in; padding:2.0pt 3.0pt 2.0pt 3.0pt" class="oldColor-a3a3a3" data-aos="fade-up">
    <p style="margin:0in; font-family:&quot;Microsoft JhengHei&quot;" lang="zh-TW" class="oldFontSize-11.0Pt" data-aos="fade-up"><span style="font-weight:bold" data-aos="fade-up">Absent breath sounds</span></p>
    </td>
@@ -873,7 +859,7 @@ td {
    <p style="margin:0in; font-family:&quot;Microsoft JhengHei&quot;" lang="zh-TW" class="oldFontSize-11.0Pt" data-aos="fade-up">氣胸、胸水、大腫瘤、重度COPD</p>
    </td>
   </tr>
-  <tr>
+  <tr data-aos="fade-up">
    <td style="border-style:solid; border-color:#A3A3A3; border-width:1pt; vertical-align:top; width:1.8388in; padding:2.0pt 3.0pt 2.0pt 3.0pt" class="oldColor-a3a3a3" data-aos="fade-up">
    <p style="margin:0in; font-family:&quot;Microsoft JhengHei&quot;" lang="zh-TW" class="oldFontSize-11.0Pt" data-aos="fade-up"><span style="font-weight:bold" data-aos="fade-up">Egophony（共鳴音）</span></p>
    </td>
@@ -884,7 +870,7 @@ td {
    <p style="margin:0in; font-family:&quot;Microsoft JhengHei&quot;" lang="zh-TW" class="oldFontSize-11.0Pt" data-aos="fade-up">肺實變（如肺炎）</p>
    </td>
   </tr>
-  <tr>
+  <tr data-aos="fade-up">
    <td style="border-style:solid; border-color:#A3A3A3; border-width:1pt; vertical-align:top; width:1.8388in; padding:2.0pt 3.0pt 2.0pt 3.0pt" class="oldColor-a3a3a3" data-aos="fade-up">
    <p style="margin:0in; font-family:&quot;Microsoft JhengHei&quot;" lang="zh-TW" class="oldFontSize-11.0Pt" data-aos="fade-up"><span style="font-weight:bold" data-aos="fade-up">Whispered pectoriloquy（低聲語音清晰）</span></p>
    </td>
@@ -904,7 +890,7 @@ td {
  <div style="direction:ltr" data-aos="fade-up">
  <table border="1" cellpadding="0" cellspacing="0" valign="top" style="direction:ltr; border-collapse:collapse; border-style:solid; border-color:#A3A3A3; border-width:
   1pt; margin-left:.3333in" title="" summary="" class="oldColor-a3a3a3" data-aos="fade-up">
-  <tbody><tr>
+  <tbody data-aos="fade-up"><tr data-aos="fade-up">
    <td style="border-style:solid; border-color:#A3A3A3; border-width:1pt; vertical-align:top; width:2.7868in; padding:2.0pt 3.0pt 2.0pt 3.0pt" class="oldColor-a3a3a3" data-aos="fade-up">
    <p style="margin:0in; font-family:&quot;Microsoft JhengHei&quot;" lang="zh-TW" class="oldFontSize-11.0Pt" data-aos="fade-up"><span style="font-weight:bold" data-aos="fade-up">組成系統</span></p>
    </td>
@@ -912,7 +898,7 @@ td {
    <p style="margin:0in; font-family:&quot;Microsoft JhengHei&quot;" lang="zh-TW" class="oldFontSize-11.0Pt" data-aos="fade-up"><span style="font-weight:bold" data-aos="fade-up">功能說明</span></p>
    </td>
   </tr>
-  <tr>
+  <tr data-aos="fade-up">
    <td style="border-style:solid; border-color:#A3A3A3; border-width:1pt; vertical-align:top; width:2.7868in; padding:2.0pt 3.0pt 2.0pt 3.0pt" class="oldColor-a3a3a3" data-aos="fade-up">
    <p style="margin:0in; font-family:&quot;Microsoft JhengHei&quot;" lang="zh-TW" class="oldFontSize-11.0Pt" data-aos="fade-up"><span style="font-weight:bold" data-aos="fade-up">肺（Lung）</span></p>
    </td>
@@ -920,7 +906,7 @@ td {
    <p style="margin:0in; font-family:&quot;Microsoft JhengHei&quot;" lang="zh-TW" class="oldFontSize-11.0Pt" data-aos="fade-up">含肺泡與氣道，是氣體交換的場所</p>
    </td>
   </tr>
-  <tr>
+  <tr data-aos="fade-up">
    <td style="border-style:solid; border-color:#A3A3A3; border-width:1pt; vertical-align:top; width:2.7868in; padding:2.0pt 3.0pt 2.0pt 3.0pt" class="oldColor-a3a3a3" data-aos="fade-up">
    <p style="margin:0in; font-family:&quot;Microsoft JhengHei&quot;" lang="zh-TW" class="oldFontSize-11.0Pt" data-aos="fade-up"><span style="font-weight:bold" data-aos="fade-up">神經肌肉系統（Neuromuscular system）</span></p>
    </td>
@@ -928,7 +914,7 @@ td {
    <p style="margin:0in; font-family:&quot;Microsoft JhengHei&quot;" lang="zh-TW" class="oldFontSize-11.0Pt" data-aos="fade-up">控制呼吸肌產生運動（主動）</p>
    </td>
   </tr>
-  <tr>
+  <tr data-aos="fade-up">
    <td style="border-style:solid; border-color:#A3A3A3; border-width:1pt; vertical-align:top; width:2.7868in; padding:2.0pt 3.0pt 2.0pt 3.0pt" class="oldColor-a3a3a3" data-aos="fade-up">
    <p style="margin:0in; font-family:&quot;Microsoft JhengHei&quot;" lang="zh-TW" class="oldFontSize-11.0Pt" data-aos="fade-up"><span style="font-weight:bold" data-aos="fade-up">胸壁（Chest wall）</span></p>
    </td>
@@ -976,11 +962,11 @@ td {
  <ul type="disc" style="direction:ltr; unicode-bidi:embed; margin-top:0in; margin-bottom:0in" data-aos="fade-up">
   <li style="margin-top:0; margin-bottom:0; vertical-align:middle; color:black" lang="zh-TW" data-aos="fade-up"><span style="font-weight:bold; font-family:&quot;Microsoft JhengHei&quot;" class="oldFontSize-16.0Pt" data-aos="fade-up">肺容積與功能區（Lung Volumes）</span></li>
  </ul>
- <p style="margin:0in; margin-left:.375in" data-aos="fade-up"><img src="胸腔基礎_asset_0.png" width="577" height="392" alt="File:Lungvolumes.svg"></p>
+ <p style="margin:0in; margin-left:.375in" data-aos="fade-up"><img src="胸腔基礎_asset_0.png" width="577" height="392" alt="File:Lungvolumes.svg" data-aos="fade-up"></p>
  <div style="direction:ltr" data-aos="fade-up">
  <table border="1" cellpadding="0" cellspacing="0" valign="top" style="direction:ltr; border-collapse:collapse; border-style:solid; border-color:#A3A3A3; border-width:
   1pt; margin-left:.3333in" title="" summary="" class="oldColor-a3a3a3" data-aos="fade-up">
-  <tbody><tr>
+  <tbody data-aos="fade-up"><tr data-aos="fade-up">
    <td style="border-style:solid; border-color:#A3A3A3; border-width:1pt; vertical-align:top; width:1.0423in; padding:2.0pt 3.0pt 2.0pt 3.0pt" class="oldColor-a3a3a3" data-aos="fade-up">
    <p style="margin:0in; font-family:&quot;Microsoft JhengHei&quot;" lang="zh-TW" class="oldFontSize-11.0Pt" data-aos="fade-up"><span style="font-weight:bold" data-aos="fade-up">基本肺容積名稱</span></p>
    </td>
@@ -994,7 +980,7 @@ td {
    <p style="margin:0in; font-family:&quot;Microsoft JhengHei&quot;" lang="zh-TW" class="oldFontSize-11.0Pt" data-aos="fade-up"><span style="font-weight:bold" data-aos="fade-up">常見數值（成人）</span></p>
    </td>
   </tr>
-  <tr>
+  <tr data-aos="fade-up">
    <td style="border-style:solid; border-color:#A3A3A3; border-width:1pt; vertical-align:top; width:1.0423in; padding:2.0pt 3.0pt 2.0pt 3.0pt" class="oldColor-a3a3a3" data-aos="fade-up">
    <p style="margin:0in; font-family:&quot;Microsoft JhengHei&quot;" lang="zh-TW" class="oldFontSize-11.0Pt" data-aos="fade-up"><span style="font-weight:bold" data-aos="fade-up">潮氣容積</span></p>
    </td>
@@ -1008,7 +994,7 @@ td {
    <p style="margin:0in; font-family:&quot;Microsoft JhengHei&quot;" lang="zh-TW" class="oldFontSize-11.0Pt" data-aos="fade-up">約 500 mL</p>
    </td>
   </tr>
-  <tr>
+  <tr data-aos="fade-up">
    <td style="border-style:solid; border-color:#A3A3A3; border-width:1pt; vertical-align:top; width:1.0423in; padding:2.0pt 3.0pt 2.0pt 3.0pt" class="oldColor-a3a3a3" data-aos="fade-up">
    <p style="margin:0in; font-family:&quot;Microsoft JhengHei&quot;" lang="zh-TW" class="oldFontSize-11.0Pt" data-aos="fade-up"><span style="font-weight:bold" data-aos="fade-up">吸氣儲備容積</span></p>
    </td>
@@ -1022,7 +1008,7 @@ td {
    <p style="margin:0in; font-family:&quot;Microsoft JhengHei&quot;" lang="zh-TW" class="oldFontSize-11.0Pt" data-aos="fade-up">約 3000 mL</p>
    </td>
   </tr>
-  <tr>
+  <tr data-aos="fade-up">
    <td style="border-style:solid; border-color:#A3A3A3; border-width:1pt; vertical-align:top; width:1.0423in; padding:2.0pt 3.0pt 2.0pt 3.0pt" class="oldColor-a3a3a3" data-aos="fade-up">
    <p style="margin:0in; font-family:&quot;Microsoft JhengHei&quot;" lang="zh-TW" class="oldFontSize-11.0Pt" data-aos="fade-up"><span style="font-weight:bold" data-aos="fade-up">呼氣儲備容積</span></p>
    </td>
@@ -1036,7 +1022,7 @@ td {
    <p style="margin:0in; font-family:&quot;Microsoft JhengHei&quot;" lang="zh-TW" class="oldFontSize-11.0Pt" data-aos="fade-up">約 1100 mL</p>
    </td>
   </tr>
-  <tr>
+  <tr data-aos="fade-up">
    <td style="border-style:solid; border-color:#A3A3A3; border-width:1pt; vertical-align:top; width:1.0423in; padding:2.0pt 3.0pt 2.0pt 3.0pt" class="oldColor-a3a3a3" data-aos="fade-up">
    <p style="margin:0in; font-family:&quot;Microsoft JhengHei&quot;" lang="zh-TW" class="oldFontSize-11.0Pt" data-aos="fade-up"><span style="font-weight:bold" data-aos="fade-up">殘氣容積</span></p>
    </td>
@@ -1050,7 +1036,7 @@ td {
    <p style="margin:0in; font-family:&quot;Microsoft JhengHei&quot;" lang="zh-TW" class="oldFontSize-11.0Pt" data-aos="fade-up">約 1200 mL</p>
    </td>
   </tr>
-  <tr>
+  <tr data-aos="fade-up">
    <td style="border-style:solid; border-color:#A3A3A3; border-width:1pt; vertical-align:top; width:1.0423in; padding:2.0pt 3.0pt 2.0pt 3.0pt" class="oldColor-a3a3a3" data-aos="fade-up">
    <p style="margin:0in; font-family:&quot;Microsoft JhengHei&quot;" lang="zh-TW" class="oldFontSize-11.0Pt" data-aos="fade-up"><span style="font-weight:bold" data-aos="fade-up">肺容量名稱</span></p>
    </td>
@@ -1064,7 +1050,7 @@ td {
    <p style="margin:0in; font-family:&quot;Microsoft JhengHei&quot;" lang="zh-TW" class="oldFontSize-11.0Pt" data-aos="fade-up"><span style="font-weight:bold" data-aos="fade-up">組成</span></p>
    </td>
   </tr>
-  <tr>
+  <tr data-aos="fade-up">
    <td style="border-style:solid; border-color:#A3A3A3; border-width:1pt; vertical-align:top; width:1.0423in; padding:2.0pt 3.0pt 2.0pt 3.0pt" class="oldColor-a3a3a3" data-aos="fade-up">
    <p style="margin:0in; font-family:&quot;Microsoft JhengHei&quot;" lang="zh-TW" class="oldFontSize-11.0Pt" data-aos="fade-up"><span style="font-weight:bold" data-aos="fade-up">肺總容量</span></p>
    </td>
@@ -1078,7 +1064,7 @@ td {
    <p style="margin:0in; font-family:&quot;Microsoft JhengHei&quot;" lang="zh-TW" class="oldFontSize-11.0Pt" data-aos="fade-up">TV + IRV + ERV + RV</p>
    </td>
   </tr>
-  <tr>
+  <tr data-aos="fade-up">
    <td style="border-style:solid; border-color:#A3A3A3; border-width:1pt; vertical-align:top; width:1.0423in; padding:2.0pt 3.0pt 2.0pt 3.0pt" class="oldColor-a3a3a3" data-aos="fade-up">
    <p style="margin:0in; font-family:&quot;Microsoft JhengHei&quot;" lang="zh-TW" class="oldFontSize-11.0Pt" data-aos="fade-up"><span style="font-weight:bold" data-aos="fade-up">肺活量</span></p>
    </td>
@@ -1092,7 +1078,7 @@ td {
    <p style="margin:0in; font-family:&quot;Microsoft JhengHei&quot;" lang="zh-TW" class="oldFontSize-11.0Pt" data-aos="fade-up">TV + IRV + ERV</p>
    </td>
   </tr>
-  <tr>
+  <tr data-aos="fade-up">
    <td style="border-style:solid; border-color:#A3A3A3; border-width:1pt; vertical-align:top; width:1.0423in; padding:2.0pt 3.0pt 2.0pt 3.0pt" class="oldColor-a3a3a3" data-aos="fade-up">
    <p style="margin:0in; font-family:&quot;Microsoft JhengHei&quot;" lang="zh-TW" class="oldFontSize-11.0Pt" data-aos="fade-up"><span style="font-weight:bold" data-aos="fade-up">功能性殘氣量</span></p>
    </td>
@@ -1106,7 +1092,7 @@ td {
    <p style="margin:0in; font-family:&quot;Microsoft JhengHei&quot;" lang="zh-TW" class="oldFontSize-11.0Pt" data-aos="fade-up">ERV + RV</p>
    </td>
   </tr>
-  <tr>
+  <tr data-aos="fade-up">
    <td style="border-style:solid; border-color:#A3A3A3; border-width:1pt; vertical-align:top; width:1.0423in; padding:2.0pt 3.0pt 2.0pt 3.0pt" class="oldColor-a3a3a3" data-aos="fade-up">
    <p style="margin:0in; font-family:&quot;Microsoft JhengHei&quot;" lang="zh-TW" class="oldFontSize-11.0Pt" data-aos="fade-up"><span style="font-weight:bold" data-aos="fade-up">吸氣容量</span></p>
    </td>
@@ -1133,7 +1119,7 @@ td {
  <div style="direction:ltr" data-aos="fade-up">
  <table border="1" cellpadding="0" cellspacing="0" valign="top" style="direction:ltr; border-collapse:collapse; border-style:solid; border-color:#A3A3A3; border-width:
   1pt; margin-left:.7083in" title="" summary="" class="oldColor-a3a3a3" data-aos="fade-up">
-  <tbody><tr>
+  <tbody data-aos="fade-up"><tr data-aos="fade-up">
    <td style="border-style:solid; border-color:#A3A3A3; border-width:1pt; vertical-align:top; width:1.3347in; padding:2.0pt 3.0pt 2.0pt 3.0pt" class="oldColor-a3a3a3" data-aos="fade-up">
    <p style="margin:0in; font-family:&quot;Microsoft JhengHei&quot;" lang="zh-TW" class="oldFontSize-11.0Pt" data-aos="fade-up"><span style="font-weight:bold" data-aos="fade-up">名稱</span></p>
    </td>
@@ -1144,7 +1130,7 @@ td {
    <p style="margin:0in; font-family:&quot;Microsoft JhengHei&quot;" lang="zh-TW" class="oldFontSize-11.0Pt" data-aos="fade-up"><span style="font-weight:bold" data-aos="fade-up">說明與意義</span></p>
    </td>
   </tr>
-  <tr>
+  <tr data-aos="fade-up">
    <td style="border-style:solid; border-color:#A3A3A3; border-width:1pt; vertical-align:top; width:1.3347in; padding:2.0pt 3.0pt 2.0pt 3.0pt" class="oldColor-a3a3a3" data-aos="fade-up">
    <p style="margin:0in; font-family:&quot;Microsoft JhengHei&quot;" lang="zh-TW" class="oldFontSize-11.0Pt" data-aos="fade-up"><span style="font-weight:bold" data-aos="fade-up">肺活量</span></p>
    </td>
@@ -1155,7 +1141,7 @@ td {
    <p style="margin:0in; font-family:&quot;Microsoft JhengHei&quot;" lang="zh-TW" class="oldFontSize-11.0Pt" data-aos="fade-up">最大吸氣後完全呼氣之容量</p>
    </td>
   </tr>
-  <tr>
+  <tr data-aos="fade-up">
    <td style="border-style:solid; border-color:#A3A3A3; border-width:1pt; vertical-align:top; width:1.3347in; padding:2.0pt 3.0pt 2.0pt 3.0pt" class="oldColor-a3a3a3" data-aos="fade-up">
    <p style="margin:0in; font-family:&quot;Microsoft JhengHei&quot;" lang="zh-TW" class="oldFontSize-11.0Pt" data-aos="fade-up"><span style="font-weight:bold" data-aos="fade-up">第一秒用力呼氣容積</span></p>
    </td>
@@ -1168,7 +1154,7 @@ td {
    <p style="margin:0in; font-family:&quot;Microsoft JhengHei&quot;" lang="zh-TW" class="oldFontSize-11.0Pt" data-aos="fade-up">最大努力呼氣第一秒排出的氣體量</p>
    </td>
   </tr>
-  <tr>
+  <tr data-aos="fade-up">
    <td style="border-style:solid; border-color:#A3A3A3; border-width:1pt; vertical-align:top; width:1.3347in; padding:2.0pt 3.0pt 2.0pt 3.0pt" class="oldColor-a3a3a3" data-aos="fade-up">
    <p style="margin:0in" lang="zh-TW" class="oldFontSize-11.0Pt" data-aos="fade-up"><span style="font-weight:
    bold; font-family:&quot;Microsoft JhengHei&quot;" data-aos="fade-up">FEV</span><span style="font-weight:
@@ -1181,7 +1167,7 @@ td {
    <p style="margin:0in; font-family:&quot;Microsoft JhengHei&quot;" lang="zh-TW" class="oldFontSize-11.0Pt" data-aos="fade-up">最常用於區分阻塞型肺病，正常約 &gt;70%</p>
    </td>
   </tr>
-  <tr>
+  <tr data-aos="fade-up">
    <td style="border-style:solid; border-color:#A3A3A3; border-width:1pt; vertical-align:top; width:1.3347in; padding:2.0pt 3.0pt 2.0pt 3.0pt" class="oldColor-a3a3a3" data-aos="fade-up">
    <p style="margin:0in; font-family:&quot;Microsoft JhengHei&quot;" lang="zh-TW" class="oldFontSize-11.0Pt" data-aos="fade-up"><span style="font-weight:bold" data-aos="fade-up">肺總容量</span></p>
    </td>
@@ -1192,7 +1178,7 @@ td {
    <p style="margin:0in; font-family:&quot;Microsoft JhengHei&quot;" lang="zh-TW" class="oldFontSize-11.0Pt" data-aos="fade-up">吸氣至極限之最大肺容量（量測限制型疾病）</p>
    </td>
   </tr>
-  <tr>
+  <tr data-aos="fade-up">
    <td style="border-style:solid; border-color:#A3A3A3; border-width:1pt; vertical-align:top; width:1.3347in; padding:2.0pt 3.0pt 2.0pt 3.0pt" class="oldColor-a3a3a3" data-aos="fade-up">
    <p style="margin:0in; font-family:&quot;Microsoft JhengHei&quot;" lang="zh-TW" class="oldFontSize-11.0Pt" data-aos="fade-up"><span style="font-weight:bold" data-aos="fade-up">功能性殘氣量</span></p>
    </td>
@@ -1203,7 +1189,7 @@ td {
    <p style="margin:0in; font-family:&quot;Microsoft JhengHei&quot;" lang="zh-TW" class="oldFontSize-11.0Pt" data-aos="fade-up">正常呼氣後肺內剩餘空氣量（體積過度膨脹指標）</p>
    </td>
   </tr>
-  <tr>
+  <tr data-aos="fade-up">
    <td style="border-style:solid; border-color:#A3A3A3; border-width:1pt; vertical-align:top; width:1.3347in; padding:2.0pt 3.0pt 2.0pt 3.0pt" class="oldColor-a3a3a3" data-aos="fade-up">
    <p style="margin:0in; font-family:&quot;Microsoft JhengHei&quot;" lang="zh-TW" class="oldFontSize-11.0Pt" data-aos="fade-up"><span style="font-weight:bold" data-aos="fade-up">殘氣容積</span></p>
    </td>
@@ -1214,7 +1200,7 @@ td {
    <p style="margin:0in; font-family:&quot;Microsoft JhengHei&quot;" lang="zh-TW" class="oldFontSize-11.0Pt" data-aos="fade-up">肺內無法排出的氣體，需特殊檢查才能測出</p>
    </td>
   </tr>
-  <tr>
+  <tr data-aos="fade-up">
    <td style="border-style:solid; border-color:#A3A3A3; border-width:1pt; vertical-align:top; width:1.3347in; padding:2.0pt 3.0pt 2.0pt 3.0pt" class="oldColor-a3a3a3" data-aos="fade-up">
    <p style="margin:0in; font-family:&quot;Microsoft JhengHei&quot;" lang="zh-TW" class="oldFontSize-11.0Pt" data-aos="fade-up"><span style="font-weight:bold" data-aos="fade-up">氣體擴散能力</span></p>
    </td>
@@ -1252,7 +1238,7 @@ td {
    </ul>
   </ol>
  </ul>
- <p style="margin:0in; margin-left:1.125in" data-aos="fade-up"><img src="胸腔基礎_asset_1.png" width="247" height="371" alt="Generated image"></p>
+ <p style="margin:0in; margin-left:1.125in" data-aos="fade-up"><img src="胸腔基礎_asset_1.png" width="247" height="371" alt="Generated image" data-aos="fade-up"></p>
  <p style="margin:0in; margin-left:1.125in; font-family:&quot;Microsoft JhengHei&quot;; color:black" lang="zh-TW" class="oldFontSize-11.0Pt" data-aos="fade-up">&nbsp;</p>
  <ol type="1" style="direction:ltr; unicode-bidi:embed; margin-top:0in; margin-bottom:
   0in; font-family:Calibri; font-weight:bold; font-style:normal" class="oldFontSize-11.0Pt" data-aos="fade-up">
@@ -1272,7 +1258,7 @@ td {
  <div style="direction:ltr" data-aos="fade-up">
  <table border="1" cellpadding="0" cellspacing="0" valign="top" style="direction:ltr; border-collapse:collapse; border-style:solid; border-color:#A3A3A3; border-width:
   1pt; margin-left:.7083in" title="" summary="" class="oldColor-a3a3a3" data-aos="fade-up">
-  <tbody><tr>
+  <tbody data-aos="fade-up"><tr data-aos="fade-up">
    <td style="border-style:solid; border-color:#A3A3A3; border-width:1pt; vertical-align:top; width:1.6402in; padding:2.0pt 3.0pt 2.0pt 3.0pt" class="oldColor-a3a3a3" data-aos="fade-up">
    <p style="margin:0in; font-family:&quot;Microsoft JhengHei&quot;" lang="zh-TW" class="oldFontSize-11.0Pt" data-aos="fade-up"><span style="font-weight:bold" data-aos="fade-up">疾病</span></p>
    </td>
@@ -1291,7 +1277,7 @@ td {
    <p style="margin:0in; font-family:&quot;Microsoft JhengHei&quot;" lang="zh-TW" class="oldFontSize-11.0Pt" data-aos="fade-up"><span style="font-weight:bold" data-aos="fade-up">特殊變化</span></p>
    </td>
   </tr>
-  <tr>
+  <tr data-aos="fade-up">
    <td style="border-style:solid; border-color:#A3A3A3; border-width:1pt; vertical-align:top; width:1.6402in; padding:2.0pt 3.0pt 2.0pt 3.0pt" class="oldColor-a3a3a3" data-aos="fade-up">
    <p style="margin:0in; font-family:&quot;Microsoft JhengHei&quot;" lang="zh-TW" class="oldFontSize-11.0Pt" data-aos="fade-up"><span style="font-weight:bold" data-aos="fade-up">Asthma</span></p>
    </td>
@@ -1308,7 +1294,7 @@ td {
    <p style="margin:0in; font-family:&quot;Microsoft JhengHei&quot;" lang="zh-TW" class="oldFontSize-11.0Pt" data-aos="fade-up">可逆性氣流受限</p>
    </td>
   </tr>
-  <tr>
+  <tr data-aos="fade-up">
    <td style="border-style:solid; border-color:#A3A3A3; border-width:1pt; vertical-align:top; width:1.6444in; padding:2.0pt 3.0pt 2.0pt 3.0pt" class="oldColor-a3a3a3" data-aos="fade-up">
    <p style="margin:0in; font-family:&quot;Microsoft JhengHei&quot;" lang="zh-TW" class="oldFontSize-11.0Pt" data-aos="fade-up"><span style="font-weight:bold" data-aos="fade-up">COPD（Emphysema）</span></p>
    </td>
@@ -1325,7 +1311,7 @@ td {
    <p style="margin:0in; font-family:&quot;Microsoft JhengHei&quot;" lang="zh-TW" class="oldFontSize-11.0Pt" data-aos="fade-up">氣體交換表面積減少</p>
    </td>
   </tr>
-  <tr>
+  <tr data-aos="fade-up">
    <td style="border-style:solid; border-color:#A3A3A3; border-width:1pt; vertical-align:top; width:1.6402in; padding:2.0pt 3.0pt 2.0pt 3.0pt" class="oldColor-a3a3a3" data-aos="fade-up">
    <p style="margin:0in; font-family:&quot;Microsoft JhengHei&quot;" lang="zh-TW" class="oldFontSize-11.0Pt" data-aos="fade-up"><span style="font-weight:bold" data-aos="fade-up">Restrictive（ILD）</span></p>
    </td>
@@ -1342,7 +1328,7 @@ td {
    <p style="margin:0in; font-family:&quot;Microsoft JhengHei&quot;" lang="zh-TW" class="oldFontSize-11.0Pt" data-aos="fade-up">肺彈性減少，氣體交換障礙</p>
    </td>
   </tr>
-  <tr>
+  <tr data-aos="fade-up">
    <td style="border-style:solid; border-color:#A3A3A3; border-width:1pt; vertical-align:top; width:1.6402in; padding:2.0pt 3.0pt 2.0pt 3.0pt" class="oldColor-a3a3a3" data-aos="fade-up">
    <p style="margin:0in; font-family:&quot;Microsoft JhengHei&quot;" lang="zh-TW" class="oldFontSize-11.0Pt" data-aos="fade-up"><span style="font-weight:bold" data-aos="fade-up">Obesity</span></p>
    </td>
@@ -1359,7 +1345,7 @@ td {
    <p style="margin:0in; font-family:&quot;Microsoft JhengHei&quot;" lang="zh-TW" class="oldFontSize-11.0Pt" data-aos="fade-up">胸壁限制型通氣障礙</p>
    </td>
   </tr>
-  <tr>
+  <tr data-aos="fade-up">
    <td style="border-style:solid; border-color:#A3A3A3; border-width:1pt; vertical-align:top; width:1.6402in; padding:2.0pt 3.0pt 2.0pt 3.0pt" class="oldColor-a3a3a3" data-aos="fade-up">
    <p style="margin:0in; font-family:&quot;Microsoft JhengHei&quot;" lang="zh-TW" class="oldFontSize-11.0Pt" data-aos="fade-up"><span style="font-weight:bold" data-aos="fade-up">Myasthenia Gravis</span></p>
    </td>
@@ -1376,7 +1362,7 @@ td {
    <p style="margin:0in; font-family:&quot;Microsoft JhengHei&quot;" lang="zh-TW" class="oldFontSize-11.0Pt" data-aos="fade-up">呼吸肌無力造成 TLC 降低</p>
    </td>
   </tr>
-  <tr>
+  <tr data-aos="fade-up">
    <td style="border-style:solid; border-color:#A3A3A3; border-width:1pt; vertical-align:top; width:1.6402in; padding:2.0pt 3.0pt 2.0pt 3.0pt" class="oldColor-a3a3a3" data-aos="fade-up">
    <p style="margin:0in; font-family:&quot;Microsoft JhengHei&quot;" lang="zh-TW" class="oldFontSize-11.0Pt" data-aos="fade-up"><span style="font-weight:bold" data-aos="fade-up">Pulmonary Hypertension</span></p>
    </td>
@@ -1406,7 +1392,7 @@ td {
  <div style="direction:ltr" data-aos="fade-up">
  <table border="1" cellpadding="0" cellspacing="0" valign="top" style="direction:ltr; border-collapse:collapse; border-style:solid; border-color:#A3A3A3; border-width:
   1pt; margin-left:.7083in" title="" summary="" class="oldColor-a3a3a3" data-aos="fade-up">
-  <tbody><tr>
+  <tbody data-aos="fade-up"><tr data-aos="fade-up">
    <td style="border-style:solid; border-color:#A3A3A3; border-width:1pt; vertical-align:top; width:1.4243in; padding:2.0pt 3.0pt 2.0pt 3.0pt" class="oldColor-a3a3a3" data-aos="fade-up">
    <p style="margin:0in; font-family:&quot;Microsoft JhengHei&quot;" lang="zh-TW" class="oldFontSize-11.0Pt" data-aos="fade-up"><span style="font-weight:bold" data-aos="fade-up">DLCO 下降</span></p>
    </td>
@@ -1414,7 +1400,7 @@ td {
    <p style="margin:0in; font-family:&quot;Microsoft JhengHei&quot;" lang="zh-TW" class="oldFontSize-11.0Pt" data-aos="fade-up"><span style="font-weight:bold" data-aos="fade-up">DLCO 上升</span></p>
    </td>
   </tr>
-  <tr>
+  <tr data-aos="fade-up">
    <td style="border-style:solid; border-color:#A3A3A3; border-width:1pt; vertical-align:top; width:1.4437in; padding:2.0pt 3.0pt 2.0pt 3.0pt" class="oldColor-a3a3a3" data-aos="fade-up">
    <p style="margin:0in; font-family:&quot;Microsoft JhengHei&quot;" lang="zh-TW" class="oldFontSize-11.0Pt" data-aos="fade-up">肺氣腫、肺纖維化</p>
    </td>
@@ -1422,7 +1408,7 @@ td {
    <p style="margin:0in; font-family:&quot;Microsoft JhengHei&quot;" lang="zh-TW" class="oldFontSize-11.0Pt" data-aos="fade-up">肺出血、心衰（急性）、氣喘、紅血球過多症</p>
    </td>
   </tr>
-  <tr>
+  <tr data-aos="fade-up">
    <td style="border-style:solid; border-color:#A3A3A3; border-width:1pt; vertical-align:top; width:1.4243in; padding:2.0pt 3.0pt 2.0pt 3.0pt" class="oldColor-a3a3a3" data-aos="fade-up">
    <p style="margin:0in; font-family:&quot;Microsoft JhengHei&quot;" lang="zh-TW" class="oldFontSize-11.0Pt" data-aos="fade-up">肺高壓、貧血</p>
    </td>
@@ -1436,7 +1422,7 @@ td {
  <div style="direction:ltr" data-aos="fade-up">
  <table border="1" cellpadding="0" cellspacing="0" valign="top" style="direction:ltr; border-collapse:collapse; border-style:solid; border-color:#A3A3A3; border-width:
   1pt; margin-left:.7083in" title="" summary="" class="oldColor-a3a3a3" data-aos="fade-up">
-  <tbody><tr>
+  <tbody data-aos="fade-up"><tr data-aos="fade-up">
    <td style="border-style:solid; border-color:#A3A3A3; border-width:1pt; vertical-align:top; width:.9076in; padding:2.0pt 3.0pt 2.0pt 3.0pt" class="oldColor-a3a3a3" data-aos="fade-up">
    <p style="margin:0in; font-family:&quot;Microsoft JhengHei&quot;" lang="zh-TW" class="oldFontSize-11.0Pt" data-aos="fade-up"><span style="font-weight:bold" data-aos="fade-up">指標</span></p>
    </td>
@@ -1447,7 +1433,7 @@ td {
    <p style="margin:0in; font-family:&quot;Microsoft JhengHei&quot;" lang="zh-TW" class="oldFontSize-11.0Pt" data-aos="fade-up"><span style="font-weight:bold" data-aos="fade-up">異常意義</span></p>
    </td>
   </tr>
-  <tr>
+  <tr data-aos="fade-up">
    <td style="border-style:solid; border-color:#A3A3A3; border-width:1pt; vertical-align:top; width:.927in; padding:2.0pt 3.0pt 2.0pt 3.0pt" class="oldColor-a3a3a3" data-aos="fade-up">
    <p style="margin:0in; font-family:&quot;Microsoft JhengHei&quot;" lang="zh-TW" class="oldFontSize-11.0Pt" data-aos="fade-up">FEV1/FVC</p>
    </td>
@@ -1458,7 +1444,7 @@ td {
    <p style="margin:0in; font-family:&quot;Microsoft JhengHei&quot;" lang="zh-TW" class="oldFontSize-11.0Pt" data-aos="fade-up">↓ → Obstruction</p>
    </td>
   </tr>
-  <tr>
+  <tr data-aos="fade-up">
    <td style="border-style:solid; border-color:#A3A3A3; border-width:1pt; vertical-align:top; width:.9076in; padding:2.0pt 3.0pt 2.0pt 3.0pt" class="oldColor-a3a3a3" data-aos="fade-up">
    <p style="margin:0in; font-family:&quot;Microsoft JhengHei&quot;" lang="zh-TW" class="oldFontSize-11.0Pt" data-aos="fade-up">TLC</p>
    </td>
@@ -1469,7 +1455,7 @@ td {
    <p style="margin:0in; font-family:&quot;Microsoft JhengHei&quot;" lang="zh-TW" class="oldFontSize-11.0Pt" data-aos="fade-up">↓ → Restriction</p>
    </td>
   </tr>
-  <tr>
+  <tr data-aos="fade-up">
    <td style="border-style:solid; border-color:#A3A3A3; border-width:1pt; vertical-align:top; width:.9076in; padding:2.0pt 3.0pt 2.0pt 3.0pt" class="oldColor-a3a3a3" data-aos="fade-up">
    <p style="margin:0in; font-family:&quot;Microsoft JhengHei&quot;" lang="zh-TW" class="oldFontSize-11.0Pt" data-aos="fade-up">DLCO</p>
    </td>
@@ -1519,7 +1505,7 @@ td {
  <div style="direction:ltr" data-aos="fade-up">
  <table border="1" cellpadding="0" cellspacing="0" valign="top" style="direction:ltr; border-collapse:collapse; border-style:solid; border-color:#A3A3A3; border-width:
   1pt; margin-left:.7083in" title="" summary="" class="oldColor-a3a3a3" data-aos="fade-up">
-  <tbody><tr>
+  <tbody data-aos="fade-up"><tr data-aos="fade-up">
    <td style="border-style:solid; border-color:#A3A3A3; border-width:1pt; vertical-align:top; width:1.2763in; padding:2.0pt 3.0pt 2.0pt 3.0pt" class="oldColor-a3a3a3" data-aos="fade-up">
    <p style="margin:0in; font-family:&quot;Microsoft JhengHei&quot;" lang="zh-TW" class="oldFontSize-11.0Pt" data-aos="fade-up"><span style="font-weight:bold" data-aos="fade-up">型態</span></p>
    </td>
@@ -1530,7 +1516,7 @@ td {
    <p style="margin:0in; font-family:&quot;Microsoft JhengHei&quot;" lang="zh-TW" class="oldFontSize-11.0Pt" data-aos="fade-up"><span style="font-weight:bold" data-aos="fade-up">臨床意義</span></p>
    </td>
   </tr>
-  <tr>
+  <tr data-aos="fade-up">
    <td style="border-style:solid; border-color:#A3A3A3; border-width:1pt; vertical-align:top; width:1.2763in; padding:2.0pt 3.0pt 2.0pt 3.0pt" class="oldColor-a3a3a3" data-aos="fade-up">
    <p style="margin:0in; font-family:&quot;Microsoft JhengHei&quot;" lang="zh-TW" class="oldFontSize-11.0Pt" data-aos="fade-up"><span style="font-weight:bold" data-aos="fade-up">高V/Q</span></p>
    </td>
@@ -1541,7 +1527,7 @@ td {
    <p style="margin:0in; font-family:&quot;Microsoft JhengHei&quot;" lang="zh-TW" class="oldFontSize-11.0Pt" data-aos="fade-up">肺栓塞（Pulmonary Embolism）</p>
    </td>
   </tr>
-  <tr>
+  <tr data-aos="fade-up">
    <td style="border-style:solid; border-color:#A3A3A3; border-width:1pt; vertical-align:top; width:1.2763in; padding:2.0pt 3.0pt 2.0pt 3.0pt" class="oldColor-a3a3a3" data-aos="fade-up">
    <p style="margin:0in; font-family:&quot;Microsoft JhengHei&quot;" lang="zh-TW" class="oldFontSize-11.0Pt" data-aos="fade-up"><span style="font-weight:bold" data-aos="fade-up">低V/Q</span></p>
    </td>
@@ -1552,7 +1538,7 @@ td {
    <p style="margin:0in; font-family:&quot;Microsoft JhengHei&quot;" lang="zh-TW" class="oldFontSize-11.0Pt" data-aos="fade-up">肺炎、肺水腫、小氣道疾病</p>
    </td>
   </tr>
-  <tr>
+  <tr data-aos="fade-up">
    <td style="border-style:solid; border-color:#A3A3A3; border-width:1pt; vertical-align:top; width:1.2763in; padding:2.0pt 3.0pt 2.0pt 3.0pt" class="oldColor-a3a3a3" data-aos="fade-up">
    <p style="margin:0in; font-family:&quot;Microsoft JhengHei&quot;" lang="zh-TW" class="oldFontSize-11.0Pt" data-aos="fade-up"><span style="font-weight:bold" data-aos="fade-up">真正分流（Shunt）</span></p>
    </td>
@@ -1563,7 +1549,7 @@ td {
    <p style="margin:0in; font-family:&quot;Microsoft JhengHei&quot;" lang="zh-TW" class="oldFontSize-11.0Pt" data-aos="fade-up">ARDS、肺炎、肺水腫</p>
    </td>
   </tr>
-  <tr>
+  <tr data-aos="fade-up">
    <td style="border-style:solid; border-color:#A3A3A3; border-width:1pt; vertical-align:top; width:1.2763in; padding:2.0pt 3.0pt 2.0pt 3.0pt" class="oldColor-a3a3a3" data-aos="fade-up">
    <p style="margin:0in; font-family:&quot;Microsoft JhengHei&quot;" lang="zh-TW" class="oldFontSize-11.0Pt" data-aos="fade-up"><span style="font-weight:bold" data-aos="fade-up">死腔通氣增加</span></p>
    </td>
@@ -1582,7 +1568,7 @@ td {
  <div style="direction:ltr" data-aos="fade-up">
  <table border="1" cellpadding="0" cellspacing="0" valign="top" style="direction:ltr; border-collapse:collapse; border-style:solid; border-color:#A3A3A3; border-width:
   1pt; margin-left:.7083in" title="" summary="" class="oldColor-a3a3a3" data-aos="fade-up">
-  <tbody><tr>
+  <tbody data-aos="fade-up"><tr data-aos="fade-up">
    <td style="border-style:solid; border-color:#A3A3A3; border-width:1pt; vertical-align:top; width:.6673in; padding:2.0pt 3.0pt 2.0pt 3.0pt" class="oldColor-a3a3a3" data-aos="fade-up">
    <p style="margin:0in; font-family:&quot;Microsoft JhengHei&quot;" lang="zh-TW" class="oldFontSize-11.0Pt" data-aos="fade-up"><span style="font-weight:bold" data-aos="fade-up">機制</span></p>
    </td>
@@ -1590,7 +1576,7 @@ td {
    <p style="margin:0in; font-family:&quot;Microsoft JhengHei&quot;" lang="zh-TW" class="oldFontSize-11.0Pt" data-aos="fade-up"><span style="font-weight:bold" data-aos="fade-up">對氧氣補充反應</span></p>
    </td>
   </tr>
-  <tr>
+  <tr data-aos="fade-up">
    <td style="border-style:solid; border-color:#A3A3A3; border-width:1pt; vertical-align:top; width:.6868in; padding:2.0pt 3.0pt 2.0pt 3.0pt" class="oldColor-a3a3a3" data-aos="fade-up">
    <p style="margin:0in; font-family:&quot;Microsoft JhengHei&quot;" lang="zh-TW" class="oldFontSize-11.0Pt" data-aos="fade-up"><span style="font-weight:bold" data-aos="fade-up">低V/Q</span></p>
    </td>
@@ -1598,7 +1584,7 @@ td {
    <p style="margin:0in; font-family:&quot;Microsoft JhengHei&quot;" lang="zh-TW" class="oldFontSize-11.0Pt" data-aos="fade-up">有改善</p>
    </td>
   </tr>
-  <tr>
+  <tr data-aos="fade-up">
    <td style="border-style:solid; border-color:#A3A3A3; border-width:1pt; vertical-align:top; width:.6736in; padding:2.0pt 3.0pt 2.0pt 3.0pt" class="oldColor-a3a3a3" data-aos="fade-up">
    <p style="margin:0in; font-family:&quot;Microsoft JhengHei&quot;" lang="zh-TW" class="oldFontSize-11.0Pt" data-aos="fade-up"><span style="font-weight:bold" data-aos="fade-up">Shunt</span></p>
    </td>
@@ -1615,7 +1601,7 @@ td {
  <div style="direction:ltr" data-aos="fade-up">
  <table border="1" cellpadding="0" cellspacing="0" valign="top" style="direction:ltr; border-collapse:collapse; border-style:solid; border-color:#A3A3A3; border-width:
   1pt; margin-left:.3333in" title="" summary="" class="oldColor-a3a3a3" data-aos="fade-up">
-  <tbody><tr>
+  <tbody data-aos="fade-up"><tr data-aos="fade-up">
    <td style="border-style:solid; border-color:#A3A3A3; border-width:1pt; vertical-align:top; width:2.409in; padding:2.0pt 3.0pt 2.0pt 3.0pt" class="oldColor-a3a3a3" data-aos="fade-up">
    <p style="margin:0in; font-family:&quot;Microsoft JhengHei&quot;" lang="zh-TW" class="oldFontSize-11.0Pt" data-aos="fade-up"><span style="font-weight:bold" data-aos="fade-up">機制</span></p>
    </td>
@@ -1626,7 +1612,7 @@ td {
    <p style="margin:0in; font-family:&quot;Microsoft JhengHei&quot;" lang="zh-TW" class="oldFontSize-11.0Pt" data-aos="fade-up"><span style="font-weight:bold" data-aos="fade-up">臨床代表</span></p>
    </td>
   </tr>
-  <tr>
+  <tr data-aos="fade-up">
    <td style="border-style:solid; border-color:#A3A3A3; border-width:1pt; vertical-align:top; width:2.409in; padding:2.0pt 3.0pt 2.0pt 3.0pt" class="oldColor-a3a3a3" data-aos="fade-up">
    <p style="margin:0in" lang="zh-TW" class="oldFontSize-11.0Pt" data-aos="fade-up"><span style="font-weight:
    bold; font-family:&quot;Microsoft JhengHei&quot;" data-aos="fade-up">低吸入氧氣濃度（↓FiO</span><span style="font-weight:bold; font-family:&quot;Cambria Math&quot;" data-aos="fade-up">₂</span><span style="font-weight:bold; font-family:&quot;Microsoft JhengHei&quot;" data-aos="fade-up">）</span></p>
@@ -1638,7 +1624,7 @@ td {
    <p style="margin:0in; font-family:&quot;Microsoft JhengHei&quot;" lang="zh-TW" class="oldFontSize-11.0Pt" data-aos="fade-up">高山症</p>
    </td>
   </tr>
-  <tr>
+  <tr data-aos="fade-up">
    <td style="border-style:solid; border-color:#A3A3A3; border-width:1pt; vertical-align:top; width:2.409in; padding:2.0pt 3.0pt 2.0pt 3.0pt" class="oldColor-a3a3a3" data-aos="fade-up">
    <p style="margin:0in; font-family:&quot;Microsoft JhengHei&quot;" lang="zh-TW" class="oldFontSize-11.0Pt" data-aos="fade-up"><span style="font-weight:bold" data-aos="fade-up">肺泡低通氣（Alveolar Hypoventilation）</span></p>
    </td>
@@ -1650,7 +1636,7 @@ td {
    <p style="margin:0in; font-family:&quot;Microsoft JhengHei&quot;" lang="zh-TW" class="oldFontSize-11.0Pt" data-aos="fade-up">神經肌肉疾病、麻醉過度</p>
    </td>
   </tr>
-  <tr>
+  <tr data-aos="fade-up">
    <td style="border-style:solid; border-color:#A3A3A3; border-width:1pt; vertical-align:top; width:2.409in; padding:2.0pt 3.0pt 2.0pt 3.0pt" class="oldColor-a3a3a3" data-aos="fade-up">
    <p style="margin:0in; font-family:&quot;Microsoft JhengHei&quot;" lang="zh-TW" class="oldFontSize-11.0Pt" data-aos="fade-up"><span style="font-weight:bold" data-aos="fade-up">V/Q 不均</span></p>
    </td>
@@ -1661,7 +1647,7 @@ td {
    <p style="margin:0in; font-family:&quot;Microsoft JhengHei&quot;" lang="zh-TW" class="oldFontSize-11.0Pt" data-aos="fade-up">COPD、肺炎</p>
    </td>
   </tr>
-  <tr>
+  <tr data-aos="fade-up">
    <td style="border-style:solid; border-color:#A3A3A3; border-width:1pt; vertical-align:top; width:2.409in; padding:2.0pt 3.0pt 2.0pt 3.0pt" class="oldColor-a3a3a3" data-aos="fade-up">
    <p style="margin:0in; font-family:&quot;Microsoft JhengHei&quot;" lang="zh-TW" class="oldFontSize-11.0Pt" data-aos="fade-up"><span style="font-weight:bold" data-aos="fade-up">Shunt</span></p>
    </td>
@@ -1672,7 +1658,7 @@ td {
    <p style="margin:0in; font-family:&quot;Microsoft JhengHei&quot;" lang="zh-TW" class="oldFontSize-11.0Pt" data-aos="fade-up">ARDS、重症肺炎</p>
    </td>
   </tr>
-  <tr>
+  <tr data-aos="fade-up">
    <td style="border-style:solid; border-color:#A3A3A3; border-width:1pt; vertical-align:top; width:2.409in; padding:2.0pt 3.0pt 2.0pt 3.0pt" class="oldColor-a3a3a3" data-aos="fade-up">
    <p style="margin:0in; font-family:&quot;Microsoft JhengHei&quot;" lang="zh-TW" class="oldFontSize-11.0Pt" data-aos="fade-up"><span style="font-weight:bold" data-aos="fade-up">擴散障礙（Diffusion limitation）</span></p>
    </td>
@@ -1692,7 +1678,7 @@ td {
  <div style="direction:ltr" data-aos="fade-up">
  <table border="1" cellpadding="0" cellspacing="0" valign="top" style="direction:ltr; border-collapse:collapse; border-style:solid; border-color:#A3A3A3; border-width:
   1pt; margin-left:.3333in" title="" summary="" class="oldColor-a3a3a3" data-aos="fade-up">
-  <tbody><tr>
+  <tbody data-aos="fade-up"><tr data-aos="fade-up">
    <td style="border-style:solid; border-color:#A3A3A3; border-width:1pt; vertical-align:top; width:1.8208in; padding:2.0pt 3.0pt 2.0pt 3.0pt" class="oldColor-a3a3a3" data-aos="fade-up">
    <p style="margin:0in; font-family:&quot;Microsoft JhengHei&quot;" lang="zh-TW" class="oldFontSize-11.0Pt" data-aos="fade-up"><span style="font-weight:bold" data-aos="fade-up">疾病範例</span></p>
    </td>
@@ -1706,7 +1692,7 @@ td {
    <p style="margin:0in; font-family:&quot;Microsoft JhengHei&quot;" lang="zh-TW" class="oldFontSize-11.0Pt" data-aos="fade-up"><span style="font-weight:bold" data-aos="fade-up">DLCO變化</span></p>
    </td>
   </tr>
-  <tr>
+  <tr data-aos="fade-up">
    <td style="border-style:solid; border-color:#A3A3A3; border-width:1pt; vertical-align:top; width:1.8388in; padding:2.0pt 3.0pt 2.0pt 3.0pt" class="oldColor-a3a3a3" data-aos="fade-up">
    <p style="margin:0in; font-family:&quot;Microsoft JhengHei&quot;" lang="zh-TW" class="oldFontSize-11.0Pt" data-aos="fade-up"><span style="font-weight:bold" data-aos="fade-up">IPF（特發性肺纖維化）</span></p>
    </td>
@@ -1720,7 +1706,7 @@ td {
    <p style="margin:0in; font-family:&quot;Microsoft JhengHei&quot;" lang="zh-TW" class="oldFontSize-11.0Pt" data-aos="fade-up">↓DLCO</p>
    </td>
   </tr>
-  <tr>
+  <tr data-aos="fade-up">
    <td style="border-style:solid; border-color:#A3A3A3; border-width:1pt; vertical-align:top; width:1.8402in; padding:2.0pt 3.0pt 2.0pt 3.0pt" class="oldColor-a3a3a3" data-aos="fade-up">
    <p style="margin:0in; font-family:&quot;Microsoft JhengHei&quot;" lang="zh-TW" class="oldFontSize-11.0Pt" data-aos="fade-up"><span style="font-weight:bold" data-aos="fade-up">中度肥胖症（Moderate Obesity）</span></p>
    </td>
@@ -1734,7 +1720,7 @@ td {
    <p style="margin:0in; font-family:&quot;Microsoft JhengHei&quot;" lang="zh-TW" class="oldFontSize-11.0Pt" data-aos="fade-up">正常DLCO</p>
    </td>
   </tr>
-  <tr>
+  <tr data-aos="fade-up">
    <td style="border-style:solid; border-color:#A3A3A3; border-width:1pt; vertical-align:top; width:1.8208in; padding:2.0pt 3.0pt 2.0pt 3.0pt" class="oldColor-a3a3a3" data-aos="fade-up">
    <p style="margin:0in; font-family:&quot;Microsoft JhengHei&quot;" lang="zh-TW" class="oldFontSize-11.0Pt" data-aos="fade-up"><span style="font-weight:bold" data-aos="fade-up">重症Myasthenia Gravis</span></p>
    </td>
@@ -1748,7 +1734,7 @@ td {
    <p style="margin:0in; font-family:&quot;Microsoft JhengHei&quot;" lang="zh-TW" class="oldFontSize-11.0Pt" data-aos="fade-up">正常DLCO</p>
    </td>
   </tr>
-  <tr>
+  <tr data-aos="fade-up">
    <td style="border-style:solid; border-color:#A3A3A3; border-width:1pt; vertical-align:top; width:1.8208in; padding:2.0pt 3.0pt 2.0pt 3.0pt" class="oldColor-a3a3a3" data-aos="fade-up">
    <p style="margin:0in; font-family:&quot;Microsoft JhengHei&quot;" lang="zh-TW" class="oldFontSize-11.0Pt" data-aos="fade-up"><span style="font-weight:bold" data-aos="fade-up">急性氣喘發作（Acute Asthma）</span></p>
    </td>
@@ -1762,7 +1748,7 @@ td {
    <p style="margin:0in; font-family:&quot;Microsoft JhengHei&quot;" lang="zh-TW" class="oldFontSize-11.0Pt" data-aos="fade-up">正常或輕微↑DLCO</p>
    </td>
   </tr>
-  <tr>
+  <tr data-aos="fade-up">
    <td style="border-style:solid; border-color:#A3A3A3; border-width:1pt; vertical-align:top; width:1.8208in; padding:2.0pt 3.0pt 2.0pt 3.0pt" class="oldColor-a3a3a3" data-aos="fade-up">
    <p style="margin:0in; font-family:&quot;Microsoft JhengHei&quot;" lang="zh-TW" class="oldFontSize-11.0Pt" data-aos="fade-up"><span style="font-weight:bold" data-aos="fade-up">嚴重肺氣腫（Severe Emphysema）</span></p>
    </td>
@@ -1788,7 +1774,7 @@ td {
  <div style="direction:ltr" data-aos="fade-up">
  <table border="1" cellpadding="0" cellspacing="0" valign="top" style="direction:ltr; border-collapse:collapse; border-style:solid; border-color:#A3A3A3; border-width:
   1pt; margin-left:.7083in" title="" summary="" class="oldColor-a3a3a3" data-aos="fade-up">
-  <tbody><tr>
+  <tbody data-aos="fade-up"><tr data-aos="fade-up">
    <td style="border-style:solid; border-color:#A3A3A3; border-width:1pt; vertical-align:top; width:1.0784in; padding:2.0pt 3.0pt 2.0pt 3.0pt" class="oldColor-a3a3a3" data-aos="fade-up">
    <p style="margin:0in; font-family:&quot;Microsoft JhengHei&quot;" lang="zh-TW" class="oldFontSize-11.0Pt" data-aos="fade-up"><span style="font-weight:bold" data-aos="fade-up">項目</span></p>
    </td>
@@ -1796,7 +1782,7 @@ td {
    <p style="margin:0in; font-family:&quot;Microsoft JhengHei&quot;" lang="zh-TW" class="oldFontSize-11.0Pt" data-aos="fade-up"><span style="font-weight:bold" data-aos="fade-up">說明</span></p>
    </td>
   </tr>
-  <tr>
+  <tr data-aos="fade-up">
    <td style="border-style:solid; border-color:#A3A3A3; border-width:1pt; vertical-align:top; width:1.0784in; padding:2.0pt 3.0pt 2.0pt 3.0pt" class="oldColor-a3a3a3" data-aos="fade-up">
    <p style="margin:0in; font-family:&quot;Microsoft JhengHei&quot;" lang="zh-TW" class="oldFontSize-11.0Pt" data-aos="fade-up"><span style="font-weight:bold" data-aos="fade-up">基本觀察方向</span></p>
    </td>
@@ -1804,7 +1790,7 @@ td {
    <p style="margin:0in; font-family:&quot;Microsoft JhengHei&quot;" lang="zh-TW" class="oldFontSize-11.0Pt" data-aos="fade-up">PA + Lateral 是標準；臥位片用於重症病人（解析度差）</p>
    </td>
   </tr>
-  <tr>
+  <tr data-aos="fade-up">
    <td style="border-style:solid; border-color:#A3A3A3; border-width:1pt; vertical-align:top; width:1.0784in; padding:2.0pt 3.0pt 2.0pt 3.0pt" class="oldColor-a3a3a3" data-aos="fade-up">
    <p style="margin:0in; font-family:&quot;Microsoft JhengHei&quot;" lang="zh-TW" class="oldFontSize-11.0Pt" data-aos="fade-up"><span style="font-weight:bold" data-aos="fade-up">特殊角度</span></p>
    </td>
@@ -1812,7 +1798,7 @@ td {
    <p style="margin:0in; font-family:&quot;Microsoft JhengHei&quot;" lang="zh-TW" class="oldFontSize-11.0Pt" data-aos="fade-up">Lateral decubitus（判斷游離胸水）、Apical lordotic（上肺病灶）</p>
    </td>
   </tr>
-  <tr>
+  <tr data-aos="fade-up">
    <td style="border-style:solid; border-color:#A3A3A3; border-width:1pt; vertical-align:top; width:1.0784in; padding:2.0pt 3.0pt 2.0pt 3.0pt" class="oldColor-a3a3a3" data-aos="fade-up">
    <p style="margin:0in; font-family:&quot;Microsoft JhengHei&quot;" lang="zh-TW" class="oldFontSize-11.0Pt" data-aos="fade-up"><span style="font-weight:bold" data-aos="fade-up">優點</span></p>
    </td>
@@ -1820,7 +1806,7 @@ td {
    <p style="margin:0in; font-family:&quot;Microsoft JhengHei&quot;" lang="zh-TW" class="oldFontSize-11.0Pt" data-aos="fade-up">快速、普及；適合篩檢肺炎、肺水腫、氣胸等</p>
    </td>
   </tr>
-  <tr>
+  <tr data-aos="fade-up">
    <td style="border-style:solid; border-color:#A3A3A3; border-width:1pt; vertical-align:top; width:1.0784in; padding:2.0pt 3.0pt 2.0pt 3.0pt" class="oldColor-a3a3a3" data-aos="fade-up">
    <p style="margin:0in; font-family:&quot;Microsoft JhengHei&quot;" lang="zh-TW" class="oldFontSize-11.0Pt" data-aos="fade-up"><span style="font-weight:bold" data-aos="fade-up">限制</span></p>
    </td>
@@ -1837,7 +1823,7 @@ td {
  <div style="direction:ltr" data-aos="fade-up">
  <table border="1" cellpadding="0" cellspacing="0" valign="top" style="direction:ltr; border-collapse:collapse; border-style:solid; border-color:#A3A3A3; border-width:
   1pt; margin-left:.7083in" title="" summary="" class="oldColor-a3a3a3" data-aos="fade-up">
-  <tbody><tr>
+  <tbody data-aos="fade-up"><tr data-aos="fade-up">
    <td style="border-style:solid; border-color:#A3A3A3; border-width:1pt; vertical-align:top; width:1.1222in; padding:2.0pt 3.0pt 2.0pt 3.0pt" class="oldColor-a3a3a3" data-aos="fade-up">
    <p style="margin:0in; font-family:&quot;Microsoft JhengHei&quot;" lang="zh-TW" class="oldFontSize-11.0Pt" data-aos="fade-up"><span style="font-weight:bold" data-aos="fade-up">用途</span></p>
    </td>
@@ -1845,7 +1831,7 @@ td {
    <p style="margin:0in; font-family:&quot;Microsoft JhengHei&quot;" lang="zh-TW" class="oldFontSize-11.0Pt" data-aos="fade-up"><span style="font-weight:bold" data-aos="fade-up">說明</span></p>
    </td>
   </tr>
-  <tr>
+  <tr data-aos="fade-up">
    <td style="border-style:solid; border-color:#A3A3A3; border-width:1pt; vertical-align:top; width:1.1416in; padding:2.0pt 3.0pt 2.0pt 3.0pt" class="oldColor-a3a3a3" data-aos="fade-up">
    <p style="margin:0in; font-family:&quot;Microsoft JhengHei&quot;" lang="zh-TW" class="oldFontSize-11.0Pt" data-aos="fade-up"><span style="font-weight:bold" data-aos="fade-up">胸腔病灶定位</span></p>
    </td>
@@ -1853,7 +1839,7 @@ td {
    <p style="margin:0in; font-family:&quot;Microsoft JhengHei&quot;" lang="zh-TW" class="oldFontSize-11.0Pt" data-aos="fade-up">協助引導胸腔穿刺、引流、肺周邊病灶定位</p>
    </td>
   </tr>
-  <tr>
+  <tr data-aos="fade-up">
    <td style="border-style:solid; border-color:#A3A3A3; border-width:1pt; vertical-align:top; width:1.1222in; padding:2.0pt 3.0pt 2.0pt 3.0pt" class="oldColor-a3a3a3" data-aos="fade-up">
    <p style="margin:0in; font-family:&quot;Microsoft JhengHei&quot;" lang="zh-TW" class="oldFontSize-11.0Pt" data-aos="fade-up"><span style="font-weight:bold" data-aos="fade-up">橫膈功能</span></p>
    </td>
@@ -1861,7 +1847,7 @@ td {
    <p style="margin:0in; font-family:&quot;Microsoft JhengHei&quot;" lang="zh-TW" class="oldFontSize-11.0Pt" data-aos="fade-up">可評估橫膈活動</p>
    </td>
   </tr>
-  <tr>
+  <tr data-aos="fade-up">
    <td style="border-style:solid; border-color:#A3A3A3; border-width:1pt; vertical-align:top; width:1.1222in; padding:2.0pt 3.0pt 2.0pt 3.0pt" class="oldColor-a3a3a3" data-aos="fade-up">
    <p style="margin:0in; font-family:&quot;Microsoft JhengHei&quot;" lang="zh-TW" class="oldFontSize-11.0Pt" data-aos="fade-up"><span style="font-weight:bold" data-aos="fade-up">病灶評估</span></p>
    </td>
@@ -1869,7 +1855,7 @@ td {
    <p style="margin:0in; font-family:&quot;Microsoft JhengHei&quot;" lang="zh-TW" class="oldFontSize-11.0Pt" data-aos="fade-up">快速診斷氣胸、胸水、肺鬱血（肺水腫B-lines）</p>
    </td>
   </tr>
-  <tr>
+  <tr data-aos="fade-up">
    <td style="border-style:solid; border-color:#A3A3A3; border-width:1pt; vertical-align:top; width:1.1222in; padding:2.0pt 3.0pt 2.0pt 3.0pt" class="oldColor-a3a3a3" data-aos="fade-up">
    <p style="margin:0in; font-family:&quot;Microsoft JhengHei&quot;" lang="zh-TW" class="oldFontSize-11.0Pt" data-aos="fade-up"><span style="font-weight:bold" data-aos="fade-up">特色</span></p>
    </td>
@@ -1886,7 +1872,7 @@ td {
  <div style="direction:ltr" data-aos="fade-up">
  <table border="1" cellpadding="0" cellspacing="0" valign="top" style="direction:ltr; border-collapse:collapse; border-style:solid; border-color:#A3A3A3; border-width:
   1pt; margin-left:.7083in" title="" summary="" class="oldColor-a3a3a3" data-aos="fade-up">
-  <tbody><tr>
+  <tbody data-aos="fade-up"><tr data-aos="fade-up">
    <td style="border-style:solid; border-color:#A3A3A3; border-width:1pt; vertical-align:top; width:.8888in; padding:2.0pt 3.0pt 2.0pt 3.0pt" class="oldColor-a3a3a3" data-aos="fade-up">
    <p style="margin:0in; font-family:&quot;Microsoft JhengHei&quot;" lang="zh-TW" class="oldFontSize-11.0Pt" data-aos="fade-up"><span style="font-weight:bold" data-aos="fade-up">項目</span></p>
    </td>
@@ -1894,7 +1880,7 @@ td {
    <p style="margin:0in; font-family:&quot;Microsoft JhengHei&quot;" lang="zh-TW" class="oldFontSize-11.0Pt" data-aos="fade-up"><span style="font-weight:bold" data-aos="fade-up">說明</span></p>
    </td>
   </tr>
-  <tr>
+  <tr data-aos="fade-up">
    <td style="border-style:solid; border-color:#A3A3A3; border-width:1pt; vertical-align:top; width:.9083in; padding:2.0pt 3.0pt 2.0pt 3.0pt" class="oldColor-a3a3a3" data-aos="fade-up">
    <p style="margin:0in; font-family:&quot;Microsoft JhengHei&quot;" lang="zh-TW" class="oldFontSize-11.0Pt" data-aos="fade-up"><span style="font-weight:bold" data-aos="fade-up">V/Q Scan</span></p>
    </td>
@@ -1902,7 +1888,7 @@ td {
    <p style="margin:0in; font-family:&quot;Microsoft JhengHei&quot;" lang="zh-TW" class="oldFontSize-11.0Pt" data-aos="fade-up">用於診斷肺栓塞（Perfusion缺損但Ventilation正常）</p>
    </td>
   </tr>
-  <tr>
+  <tr data-aos="fade-up">
    <td style="border-style:solid; border-color:#A3A3A3; border-width:1pt; vertical-align:top; width:.8888in; padding:2.0pt 3.0pt 2.0pt 3.0pt" class="oldColor-a3a3a3" data-aos="fade-up">
    <p style="margin:0in; font-family:&quot;Microsoft JhengHei&quot;" lang="zh-TW" class="oldFontSize-11.0Pt" data-aos="fade-up"><span style="font-weight:bold" data-aos="fade-up">輔助用途</span></p>
    </td>
@@ -1910,7 +1896,7 @@ td {
    <p style="margin:0in; font-family:&quot;Microsoft JhengHei&quot;" lang="zh-TW" class="oldFontSize-11.0Pt" data-aos="fade-up">評估手術後肺功能（如肺葉切除前）</p>
    </td>
   </tr>
-  <tr>
+  <tr data-aos="fade-up">
    <td style="border-style:solid; border-color:#A3A3A3; border-width:1pt; vertical-align:top; width:.8888in; padding:2.0pt 3.0pt 2.0pt 3.0pt" class="oldColor-a3a3a3" data-aos="fade-up">
    <p style="margin:0in; font-family:&quot;Microsoft JhengHei&quot;" lang="zh-TW" class="oldFontSize-11.0Pt" data-aos="fade-up"><span style="font-weight:bold" data-aos="fade-up">限制</span></p>
    </td>
@@ -1927,7 +1913,7 @@ td {
  <div style="direction:ltr" data-aos="fade-up">
  <table border="1" cellpadding="0" cellspacing="0" valign="top" style="direction:ltr; border-collapse:collapse; border-style:solid; border-color:#A3A3A3; border-width:
   1pt; margin-left:.7083in" title="" summary="" class="oldColor-a3a3a3" data-aos="fade-up">
-  <tbody><tr>
+  <tbody data-aos="fade-up"><tr data-aos="fade-up">
    <td style="border-style:solid; border-color:#A3A3A3; border-width:1pt; vertical-align:top; width:2.3222in; padding:2.0pt 3.0pt 2.0pt 3.0pt" class="oldColor-a3a3a3" data-aos="fade-up">
    <p style="margin:0in; font-family:&quot;Microsoft JhengHei&quot;" lang="zh-TW" class="oldFontSize-11.0Pt" data-aos="fade-up"><span style="font-weight:bold" data-aos="fade-up">項目</span></p>
    </td>
@@ -1935,7 +1921,7 @@ td {
    <p style="margin:0in; font-family:&quot;Microsoft JhengHei&quot;" lang="zh-TW" class="oldFontSize-11.0Pt" data-aos="fade-up"><span style="font-weight:bold" data-aos="fade-up">說明</span></p>
    </td>
   </tr>
-  <tr>
+  <tr data-aos="fade-up">
    <td style="border-style:solid; border-color:#A3A3A3; border-width:1pt; vertical-align:top; width:2.3222in; padding:2.0pt 3.0pt 2.0pt 3.0pt" class="oldColor-a3a3a3" data-aos="fade-up">
    <p style="margin:0in; font-family:&quot;Microsoft JhengHei&quot;" lang="zh-TW" class="oldFontSize-11.0Pt" data-aos="fade-up"><span style="font-weight:bold" data-aos="fade-up">CT用途</span></p>
    </td>
@@ -1943,7 +1929,7 @@ td {
    <p style="margin:0in; font-family:&quot;Microsoft JhengHei&quot;" lang="zh-TW" class="oldFontSize-11.0Pt" data-aos="fade-up">肺癌分期、肺間質病變（如UIP）、肺結節評估</p>
    </td>
   </tr>
-  <tr>
+  <tr data-aos="fade-up">
    <td style="border-style:solid; border-color:#A3A3A3; border-width:1pt; vertical-align:top; width:2.3222in; padding:2.0pt 3.0pt 2.0pt 3.0pt" class="oldColor-a3a3a3" data-aos="fade-up">
    <p style="margin:0in; font-family:&quot;Microsoft JhengHei&quot;" lang="zh-TW" class="oldFontSize-11.0Pt" data-aos="fade-up"><span style="font-weight:bold" data-aos="fade-up">MDCT</span></p>
    </td>
@@ -1951,7 +1937,7 @@ td {
    <p style="margin:0in; font-family:&quot;Microsoft JhengHei&quot;" lang="zh-TW" class="oldFontSize-11.0Pt" data-aos="fade-up">多切面、多偵測器 → 提高解析度、重建3D圖像</p>
    </td>
   </tr>
-  <tr>
+  <tr data-aos="fade-up">
    <td style="border-style:solid; border-color:#A3A3A3; border-width:1pt; vertical-align:top; width:2.3222in; padding:2.0pt 3.0pt 2.0pt 3.0pt" class="oldColor-a3a3a3" data-aos="fade-up">
    <p style="margin:0in; font-family:&quot;Microsoft JhengHei&quot;" lang="zh-TW" class="oldFontSize-11.0Pt" data-aos="fade-up"><span style="font-weight:bold" data-aos="fade-up">CTPA（CT Pulmonary Angiography）</span></p>
    </td>
@@ -1959,7 +1945,7 @@ td {
    <p style="margin:0in; font-family:&quot;Microsoft JhengHei&quot;" lang="zh-TW" class="oldFontSize-11.0Pt" data-aos="fade-up">肺栓塞檢查首選</p>
    </td>
   </tr>
-  <tr>
+  <tr data-aos="fade-up">
    <td style="border-style:solid; border-color:#A3A3A3; border-width:1pt; vertical-align:top; width:2.3222in; padding:2.0pt 3.0pt 2.0pt 3.0pt" class="oldColor-a3a3a3" data-aos="fade-up">
    <p style="margin:0in; font-family:&quot;Microsoft JhengHei&quot;" lang="zh-TW" class="oldFontSize-11.0Pt" data-aos="fade-up"><span style="font-weight:bold" data-aos="fade-up">Low-dose CT</span></p>
    </td>
@@ -1984,7 +1970,7 @@ td {
  <div style="direction:ltr" data-aos="fade-up">
  <table border="1" cellpadding="0" cellspacing="0" valign="top" style="direction:ltr; border-collapse:collapse; border-style:solid; border-color:#A3A3A3; border-width:
   1pt; margin-left:.7083in" title="" summary="" class="oldColor-a3a3a3" data-aos="fade-up">
-  <tbody><tr>
+  <tbody data-aos="fade-up"><tr data-aos="fade-up">
    <td style="border-style:solid; border-color:#A3A3A3; border-width:1pt; vertical-align:top; width:1.2736in; padding:2.0pt 3.0pt 2.0pt 3.0pt" class="oldColor-a3a3a3" data-aos="fade-up">
    <p style="margin:0in; font-family:&quot;Microsoft JhengHei&quot;" lang="zh-TW" class="oldFontSize-11.0Pt" data-aos="fade-up"><span style="font-weight:bold" data-aos="fade-up">用途</span></p>
    </td>
@@ -1992,7 +1978,7 @@ td {
    <p style="margin:0in; font-family:&quot;Microsoft JhengHei&quot;" lang="zh-TW" class="oldFontSize-11.0Pt" data-aos="fade-up"><span style="font-weight:bold" data-aos="fade-up">說明</span></p>
    </td>
   </tr>
-  <tr>
+  <tr data-aos="fade-up">
    <td style="border-style:solid; border-color:#A3A3A3; border-width:1pt; vertical-align:top; width:1.2736in; padding:2.0pt 3.0pt 2.0pt 3.0pt" class="oldColor-a3a3a3" data-aos="fade-up">
    <p style="margin:0in; font-family:&quot;Microsoft JhengHei&quot;" lang="zh-TW" class="oldFontSize-11.0Pt" data-aos="fade-up"><span style="font-weight:bold" data-aos="fade-up">肺癌分期</span></p>
    </td>
@@ -2000,7 +1986,7 @@ td {
    <p style="margin:0in; font-family:&quot;Microsoft JhengHei&quot;" lang="zh-TW" class="oldFontSize-11.0Pt" data-aos="fade-up">利用高代謝率的[18F]-FDG示踪劑判斷惡性病灶、淋巴轉移</p>
    </td>
   </tr>
-  <tr>
+  <tr data-aos="fade-up">
    <td style="border-style:solid; border-color:#A3A3A3; border-width:1pt; vertical-align:top; width:1.293in; padding:2.0pt 3.0pt 2.0pt 3.0pt" class="oldColor-a3a3a3" data-aos="fade-up">
    <p style="margin:0in; font-family:&quot;Microsoft JhengHei&quot;" lang="zh-TW" class="oldFontSize-11.0Pt" data-aos="fade-up"><span style="font-weight:bold" data-aos="fade-up">Hybrid PET/CT</span></p>
    </td>
@@ -2008,7 +1994,7 @@ td {
    <p style="margin:0in; font-family:&quot;Microsoft JhengHei&quot;" lang="zh-TW" class="oldFontSize-11.0Pt" data-aos="fade-up">將代謝活動與解剖結構疊合 → 提高診斷精準度</p>
    </td>
   </tr>
-  <tr>
+  <tr data-aos="fade-up">
    <td style="border-style:solid; border-color:#A3A3A3; border-width:1pt; vertical-align:top; width:1.2736in; padding:2.0pt 3.0pt 2.0pt 3.0pt" class="oldColor-a3a3a3" data-aos="fade-up">
    <p style="margin:0in; font-family:&quot;Microsoft JhengHei&quot;" lang="zh-TW" class="oldFontSize-11.0Pt" data-aos="fade-up"><span style="font-weight:bold" data-aos="fade-up">限制</span></p>
    </td>
@@ -2055,7 +2041,7 @@ td {
  <div style="direction:ltr" data-aos="fade-up">
  <table border="1" cellpadding="0" cellspacing="0" valign="top" style="direction:ltr; border-collapse:collapse; border-style:solid; border-color:#A3A3A3; border-width:
   1pt; margin-left:.7083in" title="" summary="" class="oldColor-a3a3a3" data-aos="fade-up">
-  <tbody><tr>
+  <tbody data-aos="fade-up"><tr data-aos="fade-up">
    <td style="border-style:solid; border-color:#A3A3A3; border-width:1pt; vertical-align:top; width:2.0187in; padding:2.0pt 3.0pt 2.0pt 3.0pt" class="oldColor-a3a3a3" data-aos="fade-up">
    <p style="margin:0in; font-family:&quot;Microsoft JhengHei&quot;" lang="zh-TW" class="oldFontSize-11.0Pt" data-aos="fade-up"><span style="font-weight:bold" data-aos="fade-up">種類</span></p>
    </td>
@@ -2063,7 +2049,7 @@ td {
    <p style="margin:0in; font-family:&quot;Microsoft JhengHei&quot;" lang="zh-TW" class="oldFontSize-11.0Pt" data-aos="fade-up"><span style="font-weight:bold" data-aos="fade-up">說明</span></p>
    </td>
   </tr>
-  <tr>
+  <tr data-aos="fade-up">
    <td style="border-style:solid; border-color:#A3A3A3; border-width:1pt; vertical-align:top; width:2.0187in; padding:2.0pt 3.0pt 2.0pt 3.0pt" class="oldColor-a3a3a3" data-aos="fade-up">
    <p style="margin:0in; font-family:&quot;Microsoft JhengHei&quot;" lang="zh-TW" class="oldFontSize-11.0Pt" data-aos="fade-up"><span style="font-weight:bold" data-aos="fade-up">誘導痰（Induced sputum）</span></p>
    </td>
@@ -2071,7 +2057,7 @@ td {
    <p style="margin:0in; font-family:&quot;Microsoft JhengHei&quot;" lang="zh-TW" class="oldFontSize-11.0Pt" data-aos="fade-up">利用高張鹽水霧化誘發，適合評估PJP</p>
    </td>
   </tr>
-  <tr>
+  <tr data-aos="fade-up">
    <td style="border-style:solid; border-color:#A3A3A3; border-width:1pt; vertical-align:top; width:2.0187in; padding:2.0pt 3.0pt 2.0pt 3.0pt" class="oldColor-a3a3a3" data-aos="fade-up">
    <p style="margin:0in; font-family:&quot;Microsoft JhengHei&quot;" lang="zh-TW" class="oldFontSize-11.0Pt" data-aos="fade-up"><span style="font-weight:bold" data-aos="fade-up">常見應用</span></p>
    </td>
@@ -2105,7 +2091,7 @@ td {
  <div style="direction:ltr" data-aos="fade-up">
  <table border="1" cellpadding="0" cellspacing="0" valign="top" style="direction:ltr; border-collapse:collapse; border-style:solid; border-color:#A3A3A3; border-width:
   1pt; margin-left:.7083in" title="" summary="" class="oldColor-a3a3a3" data-aos="fade-up">
-  <tbody><tr>
+  <tbody data-aos="fade-up"><tr data-aos="fade-up">
    <td style="border-style:solid; border-color:#A3A3A3; border-width:1pt; vertical-align:top; width:2.402in; padding:2.0pt 3.0pt 2.0pt 3.0pt" class="oldColor-a3a3a3" data-aos="fade-up">
    <p style="margin:0in; font-family:&quot;Microsoft JhengHei&quot;" lang="zh-TW" class="oldFontSize-11.0Pt" data-aos="fade-up"><span style="font-weight:bold" data-aos="fade-up">類別</span></p>
    </td>
@@ -2113,7 +2099,7 @@ td {
    <p style="margin:0in; font-family:&quot;Microsoft JhengHei&quot;" lang="zh-TW" class="oldFontSize-11.0Pt" data-aos="fade-up"><span style="font-weight:bold" data-aos="fade-up">說明</span></p>
    </td>
   </tr>
-  <tr>
+  <tr data-aos="fade-up">
    <td style="border-style:solid; border-color:#A3A3A3; border-width:1pt; vertical-align:top; width:2.402in; padding:2.0pt 3.0pt 2.0pt 3.0pt" class="oldColor-a3a3a3" data-aos="fade-up">
    <p style="margin:0in; font-family:&quot;Microsoft JhengHei&quot;" lang="zh-TW" class="oldFontSize-11.0Pt" data-aos="fade-up"><span style="font-weight:bold" data-aos="fade-up">Flexible Fiberoptic Bronchoscopy</span></p>
    </td>
@@ -2121,7 +2107,7 @@ td {
    <p style="margin:0in; font-family:&quot;Microsoft JhengHei&quot;" lang="zh-TW" class="oldFontSize-11.0Pt" data-aos="fade-up">可進行洗液（BAL）、刷檢（brushing）、活檢（biopsy）</p>
    </td>
   </tr>
-  <tr>
+  <tr data-aos="fade-up">
    <td style="border-style:solid; border-color:#A3A3A3; border-width:1pt; vertical-align:top; width:2.402in; padding:2.0pt 3.0pt 2.0pt 3.0pt" class="oldColor-a3a3a3" data-aos="fade-up">
    <p style="margin:0in; font-family:&quot;Microsoft JhengHei&quot;" lang="zh-TW" class="oldFontSize-11.0Pt" data-aos="fade-up"><span style="font-weight:bold" data-aos="fade-up">Transbronchial Biopsy (TBBx)</span></p>
    </td>
@@ -2129,7 +2115,7 @@ td {
    <p style="margin:0in; font-family:&quot;Microsoft JhengHei&quot;" lang="zh-TW" class="oldFontSize-11.0Pt" data-aos="fade-up">取得肺泡組織，用於間質性肺病或周邊病灶</p>
    </td>
   </tr>
-  <tr>
+  <tr data-aos="fade-up">
    <td style="border-style:solid; border-color:#A3A3A3; border-width:1pt; vertical-align:top; width:2.402in; padding:2.0pt 3.0pt 2.0pt 3.0pt" class="oldColor-a3a3a3" data-aos="fade-up">
    <p style="margin:0in; font-family:&quot;Microsoft JhengHei&quot;" lang="zh-TW" class="oldFontSize-11.0Pt" data-aos="fade-up"><span style="font-weight:bold" data-aos="fade-up">Transbronchial Needle Aspiration
    (TBNA)</span></p>
@@ -2138,7 +2124,7 @@ td {
    <p style="margin:0in; font-family:&quot;Microsoft JhengHei&quot;" lang="zh-TW" class="oldFontSize-11.0Pt" data-aos="fade-up">經氣管壁針吸淋巴結，評估肺癌分期</p>
    </td>
   </tr>
-  <tr>
+  <tr data-aos="fade-up">
    <td style="border-style:solid; border-color:#A3A3A3; border-width:1pt; vertical-align:top; width:2.402in; padding:2.0pt 3.0pt 2.0pt 3.0pt" class="oldColor-a3a3a3" data-aos="fade-up">
    <p style="margin:0in; font-family:&quot;Microsoft JhengHei&quot;" lang="zh-TW" class="oldFontSize-11.0Pt" data-aos="fade-up"><span style="font-weight:bold" data-aos="fade-up">EBUS-TBNA</span></p>
    </td>
@@ -2146,7 +2132,7 @@ td {
    <p style="margin:0in; font-family:&quot;Microsoft JhengHei&quot;" lang="zh-TW" class="oldFontSize-11.0Pt" data-aos="fade-up">超音波導引針吸，實時定位→取樣精準</p>
    </td>
   </tr>
-  <tr>
+  <tr data-aos="fade-up">
    <td style="border-style:solid; border-color:#A3A3A3; border-width:1pt; vertical-align:top; width:2.402in; padding:2.0pt 3.0pt 2.0pt 3.0pt" class="oldColor-a3a3a3" data-aos="fade-up">
    <p style="margin:0in; font-family:&quot;Microsoft JhengHei&quot;" lang="zh-TW" class="oldFontSize-11.0Pt" data-aos="fade-up"><span style="font-weight:bold" data-aos="fade-up">Radial Probe EBUS (RP-EBUS)</span></p>
    </td>
@@ -2163,7 +2149,7 @@ td {
  <div style="direction:ltr" data-aos="fade-up">
  <table border="1" cellpadding="0" cellspacing="0" valign="top" style="direction:ltr; border-collapse:collapse; border-style:solid; border-color:#A3A3A3; border-width:
   1pt; margin-left:.7083in" title="" summary="" class="oldColor-a3a3a3" data-aos="fade-up">
-  <tbody><tr>
+  <tbody data-aos="fade-up"><tr data-aos="fade-up">
    <td style="border-style:solid; border-color:#A3A3A3; border-width:1pt; vertical-align:top; width:3.0319in; padding:2.0pt 3.0pt 2.0pt 3.0pt" class="oldColor-a3a3a3" data-aos="fade-up">
    <p style="margin:0in; font-family:&quot;Microsoft JhengHei&quot;" lang="zh-TW" class="oldFontSize-11.0Pt" data-aos="fade-up"><span style="font-weight:bold" data-aos="fade-up">技術</span></p>
    </td>
@@ -2171,7 +2157,7 @@ td {
    <p style="margin:0in; font-family:&quot;Microsoft JhengHei&quot;" lang="zh-TW" class="oldFontSize-11.0Pt" data-aos="fade-up"><span style="font-weight:bold" data-aos="fade-up">特點</span></p>
    </td>
   </tr>
-  <tr>
+  <tr data-aos="fade-up">
    <td style="border-style:solid; border-color:#A3A3A3; border-width:1pt; vertical-align:top; width:3.0513in; padding:2.0pt 3.0pt 2.0pt 3.0pt" class="oldColor-a3a3a3" data-aos="fade-up">
    <p style="margin:0in; font-family:&quot;Microsoft JhengHei&quot;" lang="zh-TW" class="oldFontSize-11.0Pt" data-aos="fade-up"><span style="font-weight:bold" data-aos="fade-up">Autofluorescence Bronchoscopy
    (AFB)</span></p>
@@ -2180,7 +2166,7 @@ td {
    <p style="margin:0in; font-family:&quot;Microsoft JhengHei&quot;" lang="zh-TW" class="oldFontSize-11.0Pt" data-aos="fade-up">偵測癌前病變</p>
    </td>
   </tr>
-  <tr>
+  <tr data-aos="fade-up">
    <td style="border-style:solid; border-color:#A3A3A3; border-width:1pt; vertical-align:top; width:3.0319in; padding:2.0pt 3.0pt 2.0pt 3.0pt" class="oldColor-a3a3a3" data-aos="fade-up">
    <p style="margin:0in; font-family:&quot;Microsoft JhengHei&quot;" lang="zh-TW" class="oldFontSize-11.0Pt" data-aos="fade-up"><span style="font-weight:bold" data-aos="fade-up">Narrow Band Imaging (NBI)</span></p>
    </td>
@@ -2188,7 +2174,7 @@ td {
    <p style="margin:0in; font-family:&quot;Microsoft JhengHei&quot;" lang="zh-TW" class="oldFontSize-11.0Pt" data-aos="fade-up">提高血管顯影，區辨惡性病變</p>
    </td>
   </tr>
-  <tr>
+  <tr data-aos="fade-up">
    <td style="border-style:solid; border-color:#A3A3A3; border-width:1pt; vertical-align:top; width:3.0513in; padding:2.0pt 3.0pt 2.0pt 3.0pt" class="oldColor-a3a3a3" data-aos="fade-up">
    <p style="margin:0in; font-family:&quot;Microsoft JhengHei&quot;" lang="zh-TW" class="oldFontSize-11.0Pt" data-aos="fade-up"><span style="font-weight:bold" data-aos="fade-up">Optical Coherence Tomography (OCT)</span></p>
    </td>
@@ -2196,7 +2182,7 @@ td {
    <p style="margin:0in; font-family:&quot;Microsoft JhengHei&quot;" lang="zh-TW" class="oldFontSize-11.0Pt" data-aos="fade-up">細胞層級斷層影像（高解析度）</p>
    </td>
   </tr>
-  <tr>
+  <tr data-aos="fade-up">
    <td style="border-style:solid; border-color:#A3A3A3; border-width:1pt; vertical-align:top; width:3.0319in; padding:2.0pt 3.0pt 2.0pt 3.0pt" class="oldColor-a3a3a3" data-aos="fade-up">
    <p style="margin:0in; font-family:&quot;Microsoft JhengHei&quot;" lang="zh-TW" class="oldFontSize-11.0Pt" data-aos="fade-up"><span style="font-weight:bold" data-aos="fade-up">Confocal Laser Microscopy (CFM)</span></p>
    </td>
@@ -2221,7 +2207,7 @@ td {
  <div style="direction:ltr" data-aos="fade-up">
  <table border="1" cellpadding="0" cellspacing="0" valign="top" style="direction:ltr; border-collapse:collapse; border-style:solid; border-color:#A3A3A3; border-width:
   1pt; margin-left:.7083in" title="" summary="" class="oldColor-a3a3a3" data-aos="fade-up">
-  <tbody><tr>
+  <tbody data-aos="fade-up"><tr data-aos="fade-up">
    <td style="border-style:solid; border-color:#A3A3A3; border-width:1pt; vertical-align:top; width:2.7826in; padding:2.0pt 3.0pt 2.0pt 3.0pt" class="oldColor-a3a3a3" data-aos="fade-up">
    <p style="margin:0in; font-family:&quot;Microsoft JhengHei&quot;" lang="zh-TW" class="oldFontSize-11.0Pt" data-aos="fade-up"><span style="font-weight:bold" data-aos="fade-up">技術</span></p>
    </td>
@@ -2229,7 +2215,7 @@ td {
    <p style="margin:0in; font-family:&quot;Microsoft JhengHei&quot;" lang="zh-TW" class="oldFontSize-11.0Pt" data-aos="fade-up"><span style="font-weight:bold" data-aos="fade-up">說明</span></p>
    </td>
   </tr>
-  <tr>
+  <tr data-aos="fade-up">
    <td style="border-style:solid; border-color:#A3A3A3; border-width:1pt; vertical-align:top; width:2.7826in; padding:2.0pt 3.0pt 2.0pt 3.0pt" class="oldColor-a3a3a3" data-aos="fade-up">
    <p style="margin:0in; font-family:&quot;Microsoft JhengHei&quot;" lang="zh-TW" class="oldFontSize-11.0Pt" data-aos="fade-up"><span style="font-weight:bold" data-aos="fade-up">Mediastinoscopy</span></p>
    </td>
@@ -2237,7 +2223,7 @@ td {
    <p style="margin:0in; font-family:&quot;Microsoft JhengHei&quot;" lang="zh-TW" class="oldFontSize-11.0Pt" data-aos="fade-up">取樣2R/4R等縱膈前方淋巴結，肺癌分期用</p>
    </td>
   </tr>
-  <tr>
+  <tr data-aos="fade-up">
    <td style="border-style:solid; border-color:#A3A3A3; border-width:1pt; vertical-align:top; width:2.7826in; padding:2.0pt 3.0pt 2.0pt 3.0pt" class="oldColor-a3a3a3" data-aos="fade-up">
    <p style="margin:0in; font-family:&quot;Microsoft JhengHei&quot;" lang="zh-TW" class="oldFontSize-11.0Pt" data-aos="fade-up"><span style="font-weight:bold" data-aos="fade-up">Mediastinotomy（Chamberlain
    procedure）</span></p>
@@ -2246,7 +2232,7 @@ td {
    <p style="margin:0in; font-family:&quot;Microsoft JhengHei&quot;" lang="zh-TW" class="oldFontSize-11.0Pt" data-aos="fade-up">取樣5/6區塊淋巴結</p>
    </td>
   </tr>
-  <tr>
+  <tr data-aos="fade-up">
    <td style="border-style:solid; border-color:#A3A3A3; border-width:1pt; vertical-align:top; width:2.7826in; padding:2.0pt 3.0pt 2.0pt 3.0pt" class="oldColor-a3a3a3" data-aos="fade-up">
    <p style="margin:0in; font-family:&quot;Microsoft JhengHei&quot;" lang="zh-TW" class="oldFontSize-11.0Pt" data-aos="fade-up"><span style="font-weight:bold" data-aos="fade-up">VATS（Video-Assisted Thoracoscopic
    Surgery）</span></p>
@@ -2255,7 +2241,7 @@ td {
    <p style="margin:0in; font-family:&quot;Microsoft JhengHei&quot;" lang="zh-TW" class="oldFontSize-11.0Pt" data-aos="fade-up">微創手術，可進行肺活檢、肺葉切除、胸膜處理</p>
    </td>
   </tr>
-  <tr>
+  <tr data-aos="fade-up">
    <td style="border-style:solid; border-color:#A3A3A3; border-width:1pt; vertical-align:top; width:2.7826in; padding:2.0pt 3.0pt 2.0pt 3.0pt" class="oldColor-a3a3a3" data-aos="fade-up">
    <p style="margin:0in; font-family:&quot;Microsoft JhengHei&quot;" lang="zh-TW" class="oldFontSize-11.0Pt" data-aos="fade-up"><span style="font-weight:bold" data-aos="fade-up">Thoracotomy</span></p>
    </td>
@@ -2266,7 +2252,7 @@ td {
  </tbody></table>
  </div>
  <p style="margin:0in; margin-left:.75in; font-family:&quot;Microsoft JhengHei&quot;; color:black" lang="zh-TW" class="oldFontSize-18.0Pt" data-aos="fade-up">&nbsp;</p>
- <p style="margin:0in; margin-left:.375in; font-family:Calibri" lang="zh-TW" class="oldFontSize-11.0Pt" data-aos="fade-up"><a href="https://commons.wikimedia.org/wiki/File:Lungvolumes.svg">https://commons.wikimedia.org/wiki/File:Lungvolumes.svg</a></p>
+ <p style="margin:0in; margin-left:.375in; font-family:Calibri" lang="zh-TW" class="oldFontSize-11.0Pt" data-aos="fade-up"><a href="https://commons.wikimedia.org/wiki/File:Lungvolumes.svg" data-aos="fade-up">https://commons.wikimedia.org/wiki/File:Lungvolumes.svg</a></p>
 </ul>
 
 </div><div style="direction:ltr; margin-top:0in; margin-left:0in; width:6.4222in" class="outerSpaceWithTopic" data-aos="fade-up">
@@ -2295,7 +2281,7 @@ td {
 
 </div>
 
-<div class="outerSpaceOld display-none">
+<div class="outerSpaceOld display-none" data-aos="fade-up">
 
 <p style="margin:0in" data-aos="fade-up">&nbsp;</p>
 
@@ -2309,7 +2295,7 @@ td {
 <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js" integrity="sha512-A7AYk1fGKX6S2SsHywmPkrnzTZHrgiVT7GcQkLGDe2ev0aWb8zejytzS8wjo7PGEXKqJOrjQ4oORtnimIRZBtw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" integrity="sha512-1cK78a1o+ht2JcaW6g8OXYwqpev9+6GqOkz9xmBN9iUUhIndKtxwILGWYOSibOKjLsEdjyjZvYDq/cZwNeak0w==" crossorigin="anonymous" referrerpolicy="no-referrer">
 <script>
-  AOS.init();
+    AOS.init();
 </script>
 <!--ENDOF AOS 區-->
 
@@ -2332,7 +2318,7 @@ https://cdn.jsdelivr.net/npm/sweetalert2@11.22.2/dist/sweetalert2.all.min.js
 <link href="
 https://cdn.jsdelivr.net/npm/sweetalert2@11.22.2/dist/sweetalert2.min.css
 " rel="stylesheet">
-<script>
+<!--script>
     function selFont() {
         const fonts = {
             "ChenYuluoyan Mono": [100],
@@ -2392,7 +2378,7 @@ https://cdn.jsdelivr.net/npm/sweetalert2@11.22.2/dist/sweetalert2.min.css
             }
         });
     }
-</script>
+</script-->
 <button class="float-button" onclick="selFont()">選擇字體</button>
 <!--ENDOF 字體選擇區 (生產環境請移除) -->
 <!--important 主字體大小選擇區 (生產環境請移除) 此段AI生成 (些微手動更動)-->
@@ -2437,61 +2423,61 @@ https://cdn.jsdelivr.net/npm/sweetalert2@11.22.2/dist/sweetalert2.min.css
 </div>
 
 <script>
-function initNavigation() {
-    // 解析 TOC 結構
-    const tocDiv = document.getElementById('toc-for-dev');
-    const pages = [];
-    
-    if (tocDiv) {
-        const links = tocDiv.querySelectorAll('a[href]');
-        links.forEach(link => {
-            pages.push({
-                url: link.getAttribute('href'),
-                title: link.textContent.trim()
-            });
-        });
-    }
-    
-    // 獲取當前頁面 URL
-    const currentUrl = window.location.pathname;
-    
-    // 找到當前頁面在 TOC 中的位置
-    const currentIndex = pages.findIndex(page => page.url === currentUrl);
-    
-    const prevButton = document.getElementById('prev-page');
-    const nextButton = document.getElementById('next-page');
-    
-    // 設置上一頁按鈕
-    if (currentIndex > 0) {
-        prevButton.disabled = false;
-        prevButton.onclick = () => {
-            window.location.href = pages[currentIndex - 1].url;
-        };
-        prevButton.title = `上一頁: ${pages[currentIndex - 1].title}`;
-    } else {
-        prevButton.disabled = true;
-    }
-    
-    // 設置下一頁按鈕
-    if (currentIndex >= 0 && currentIndex < pages.length - 1) {
-        nextButton.disabled = false;
-        nextButton.onclick = () => {
-            window.location.href = pages[currentIndex + 1].url;
-        };
-        nextButton.title = `下一頁: ${pages[currentIndex + 1].title}`;
-    } else {
-        nextButton.disabled = true;
-    }
-    
-    // 如果當前頁面不在 TOC 中，禁用所有按鈕
-    if (currentIndex === -1) {
-        prevButton.disabled = true;
-        nextButton.disabled = true;
-    }
-}
+    function initNavigation() {
+        // 解析 TOC 結構
+        const tocDiv = document.getElementById('toc-for-dev');
+        const pages = [];
 
-// 頁面載入完成後初始化導航
-document.addEventListener('DOMContentLoaded', initNavigation);
+        if (tocDiv) {
+            const links = tocDiv.querySelectorAll('a[href]');
+            links.forEach(link => {
+                pages.push({
+                    url: link.getAttribute('href'),
+                    title: link.textContent.trim()
+                });
+            });
+        }
+
+        // 獲取當前頁面 URL
+        const currentUrl = window.location.pathname;
+
+        // 找到當前頁面在 TOC 中的位置
+        const currentIndex = pages.findIndex(page => page.url === currentUrl);
+
+        const prevButton = document.getElementById('prev-page');
+        const nextButton = document.getElementById('next-page');
+
+        // 設置上一頁按鈕
+        if (currentIndex > 0) {
+            prevButton.disabled = false;
+            prevButton.onclick = () => {
+                window.location.href = pages[currentIndex - 1].url;
+            };
+            prevButton.title = `上一頁: ${pages[currentIndex - 1].title}`;
+        } else {
+            prevButton.disabled = true;
+        }
+
+        // 設置下一頁按鈕
+        if (currentIndex >= 0 && currentIndex < pages.length - 1) {
+            nextButton.disabled = false;
+            nextButton.onclick = () => {
+                window.location.href = pages[currentIndex + 1].url;
+            };
+            nextButton.title = `下一頁: ${pages[currentIndex + 1].title}`;
+        } else {
+            nextButton.disabled = true;
+        }
+
+        // 如果當前頁面不在 TOC 中，禁用所有按鈕
+        if (currentIndex === -1) {
+            prevButton.disabled = true;
+            nextButton.disabled = true;
+        }
+    }
+
+    // 頁面載入完成後初始化導航
+    document.addEventListener('DOMContentLoaded', initNavigation);
 </script>
 <!--ENDOF 上一頁下一頁導航區-->
 
