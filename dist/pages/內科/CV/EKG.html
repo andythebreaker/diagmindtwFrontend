@@ -441,9 +441,9 @@ ul {
     background: #ffffffff !important;
 }
 
-html {
+/*html {
     overflow-y: scroll;
-}
+}*/
 
 body {
     margin-bottom: 0px;
@@ -454,9 +454,9 @@ body {
     /*padding-top: 14vh; XXX*/
     /*padding-bottom: 1rem;*/
     /*overflow: hidden; 重要更動 2025 07 24*/
-    overflow-y: hidden;
+    /*overflow-y: hidden;*/
     height: max-content;
-    overflow-x: hidden;
+    /*overflow-x: hidden;*/
     background: #f6e5c9 !important;
 }
 
@@ -580,22 +580,28 @@ td {
 /*瀏海區****************************/
 
 .containerBangs {
-    position: sticky;
+    position: fixed;
+    top: 0px;
+    left: 0px;
     background-color: #f6e5c9;
-    padding: 26% 7% 26% 3%;
+    padding-right: 7%;
+    padding-left: 3%;
     display: grid;
     grid-template-columns: 7% 25% 3% 3% 3% 1fr;
     direction: rtl;
     gap: 2%;
     height: 14vh;
-    max-height: 14vh;
+    width: 100vw;
     box-sizing: border-box;
+    z-index: 1000;
 }
 
 .itemBangs {
+    margin-top: 26%;
+    margin-bottom: 26%;
     background-color: #ccc;
     text-align: center;
-    padding: 10px;
+    /*padding: 10px;*/
     border: 1px solid #999;
 }
 
@@ -2027,10 +2033,10 @@ https://cdn.jsdelivr.net/npm/sweetalert2@11.22.2/dist/sweetalert2.min.css
 <button class="float-button" onclick="selFont()">選擇字體</button>
 <!--ENDOF 字體選擇區 (生產環境請移除) -->
 <!--important 主字體大小選擇區 (生產環境請移除) 此段AI生成 (些微手動更動)-->
-<div id="font-controls">
-    <button id="decrease">➖</button>
-    <span id="font-size-display">16px</span>
-    <button id="increase">➕</button>
+<div id="font-controls" data-aos="fade-up">
+    <button id="decrease" data-aos="fade-up">➖</button>
+    <span id="font-size-display" data-aos="fade-up">16px</span>
+    <button id="increase" data-aos="fade-up">➕</button>
 </div>
 <script>
     const html = document.documentElement;
