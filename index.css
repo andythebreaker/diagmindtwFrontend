@@ -50,7 +50,7 @@
 }
 
 * {
-    font-family: 'Quicksand', 'jf-lanyangming', 'Source Han Sans TC', 'Iansui', sans-serif !important;
+    font-family: 'Quicksand', 'jf-lanyangming', sans-serif;
     font-weight: 600 !important;
     background: #ffffff00 !important;
 }
