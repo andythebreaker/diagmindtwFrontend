@@ -327,21 +327,6 @@ function processHtml(html) {
   // Call dateTimeProcessor to process date/time information
   dateTimeProcessor($);
 
-  $('body').prepend(`
-<div class="containerBangs newFontSizeRank-3">
-  <div class="itemBangs buttonLogin"><p>登入</p></div>
-  <div class="itemBangs buttonSearch"><p>搜尋</p></div>
-  <div class="itemBangs"><p>題目</p></div>
-  <div class="itemBangs"><p>主題</p></div>
-  <div class="itemBangs"><p>分科</p></div>
-  <div class="itemBangs"></div>
-  <div class="logoGroup">
-  <div class="logoText"></div>
-  <div class="logoImage"></div>
-  </div>
-</div>
-  `);
-
   return $.html();
 }
 
