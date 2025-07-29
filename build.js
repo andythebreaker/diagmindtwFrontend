@@ -12,7 +12,7 @@ const { processHtml } = require('./processHtml');
 
 
 
-const dataPath = path.join(__dirname, 'a0725v1');
+const dataPath = path.join(__dirname, 'b0729m1');
 if (!fs.existsSync(dataPath)) {
   console.error('a0725v1 directory not found');
   process.exit(1);
@@ -86,6 +86,9 @@ fs.mkdirSync(dataDir, { recursive: true });
 // Copy image files from a0725v1 directories to dist/pages, preserving structure
 function copyImageFiles(sourceDir, destDir) {
   function copyImagesRecursively(currentSourceDir, currentDestDir) {
+
+console.log(`Copying images from ${currentSourceDir} to ${currentDestDir}`);
+
     const items = fs.readdirSync(currentSourceDir, { withFileTypes: true });
     
     items.forEach(item => {
@@ -125,12 +128,17 @@ sectionsForSite.forEach((section, sIndex) => {
 
     // Create directory structure in pages folder matching a0725v1
     const sectionPath = section.sectionInfo.displayName;
-    const pageDirPath = path.join(pagesDir, sectionPath);
+
+    console.log(`Processing section: ${sectionPath}, page: ${page.pageInfo.title}`);
+
+    const pageDirPath =pagesDir;// path.join(pagesDir, sectionPath);
     fs.mkdirSync(pageDirPath, { recursive: true });
     
     // Use original filename
     const fileName = `${page.pageInfo.title}.html`;
     const filePath = path.join(pageDirPath, fileName);
+
+    console.log(`Creating file: ${filePath}`);
     
     page.url = `/pages/${sectionPath}/${fileName}`;
     const pageContent = `---\nlayout: default\ntitle: ${JSON.stringify(page.pageInfo.title)}\n---\n\n${processedBody}\n`;
