@@ -345,11 +345,6 @@ function processHtml(html) {
   return $.html();
 }
 
-module.exports = {
-  processHtml,
-  fontSizeSetAll,
-  colorSetAll
-};
 
 module.exports = {
   processHtml,

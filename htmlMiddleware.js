@@ -4,6 +4,10 @@
  * @param {string} htmlString - 原始 HTML 字串
  * @returns {string} - 處理後的 HTML 字串
  */
+
+const { transformHtmlImages } = require('./imgswap');
+
+
 function htmlPreprocessMiddleware(htmlString) {
     let processedHtml = htmlString;
 
@@ -16,6 +20,8 @@ function htmlPreprocessMiddleware(htmlString) {
     processedHtml = processedHtml.replace(/[➔→]/g, '<i class="fa-light fa-arrow-right"></i>');
     processedHtml = processedHtml.replace(/[⬆️↑⭡]/g, '<i class="fa-solid fa-arrow-up"></i>');
     processedHtml = processedHtml.replace(/[⬇️↓⭣]/g, '<i class="fa-solid fa-arrow-down"></i>');
+
+    //TODO:important//processedHtml = transformHtmlImages(processedHtml);
 
     return processedHtml;
 }
