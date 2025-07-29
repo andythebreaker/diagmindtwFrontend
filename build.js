@@ -198,6 +198,7 @@ const destDir = path.resolve(__dirname, './dist');
 // Ensure the destination directory exists
 fse.ensureDirSync(destDir);
 
+/*
 // Copy 'fonts' directory (same directory as build.js)
 const fontsSrc = path.join(__dirname, 'fonts');
 const fontsDest = path.join(destDir, 'fonts');
@@ -209,6 +210,7 @@ fse.copy(fontsSrc, fontsDest, { overwrite: true }, (err) => {
     console.log('Fonts directory copied successfully.');
   }
 });
+*/
 
 // Copy 'shader.frag' file (same directory as build.js)
 const shaderSrc = path.join(__dirname, 'shader.frag');
